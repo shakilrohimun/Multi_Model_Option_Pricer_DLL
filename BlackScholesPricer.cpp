@@ -7,26 +7,31 @@
  * using the Black-Scholes formula with continuous dividends.
  */
 
-#include "pch.h"
-#include "BlackScholesPricer.hpp"
-#include "Option.hpp"
-#include "DateConverter.hpp"  // For date conversion functions
-#include <cmath>
-#include <stdexcept>
+#include "pch.h"                        // Precompiled header for improved build performance.
+#include "BlackScholesPricer.hpp"       // Declaration of the BlackScholesPricer class.
+#include "Option.hpp"                   // Declaration of the Option class and associated structures.
+#include "DateConverter.hpp"            // Provides utility functions for date conversion.
+#include <cmath>                        // Provides mathematical functions (exp, log, sqrt, etc.).
+#include <stdexcept>                    // Provides exception classes such as std::runtime_error.
 
 #ifndef M_SQRT1_2
-#define M_SQRT1_2 0.70710678118654752440
+#define M_SQRT1_2 0.70710678118654752440 // Define the constant for 1/sqrt(2) if not already defined.
 #endif
 
 #ifndef M_PI
-#define M_PI 3.14159265358979323846 // Definition of the constant PI
+#define M_PI 3.14159265358979323846      // Define the constant PI if not already defined.
 #endif
 
  /**
   * @brief Utility function to compute the cumulative distribution function (CDF)
   *        of the standard normal distribution.
+  *
+  * The CDF represents the probability that a normally distributed random variable
+  * is less than or equal to a given value. This implementation uses the complementary
+  * error function (erfc) to compute the CDF.
+  *
   * @param x The value at which to compute the CDF.
-  * @return The probability that the standard normal variable is less than or equal to x.
+  * @return The probability that a standard normal variable is less than or equal to x.
   */
 static double norm_cdf(double x) {
     return 0.5 * std::erfc(-x * M_SQRT1_2);
@@ -35,6 +40,10 @@ static double norm_cdf(double x) {
 /**
  * @brief Utility function to compute the probability density function (PDF)
  *        of the standard normal distribution.
+ *
+ * The PDF represents the likelihood of a random variable taking a particular value.
+ * This function uses the well-known formula for the standard normal distribution.
+ *
  * @param x The value at which to compute the PDF.
  * @return The density at x.
  */
@@ -63,7 +72,7 @@ BlackScholesPricer::BlackScholesPricer() {
 BlackScholesPricer::BlackScholesPricer(const PricingConfiguration& config)
     : config_(config)
 {
-    // Configuration parameters are now stored in config_
+    // Configuration parameters are now stored in config_.
 }
 
 /**
@@ -112,14 +121,17 @@ double BlackScholesPricer::price(const Option& opt) const {
     // Determine effective risk-free rate using the yield curve if available.
     double effective_r = r_default;
 
-    double d1 = (std::log(S / K) + (effective_r - q + 0.5 * sigma * sigma) * T_effective) / (sigma * std::sqrt(T_effective));
+    double d1 = (std::log(S / K) + (effective_r - q + 0.5 * sigma * sigma) * T_effective) /
+        (sigma * std::sqrt(T_effective));
     double d2 = d1 - sigma * std::sqrt(T_effective);
 
     if (opt.getOptionType() == Option::OptionType::Call) {
-        return S * std::exp(-q * T_effective) * norm_cdf(d1) - K * std::exp(-effective_r * T_effective) * norm_cdf(d2);
+        return S * std::exp(-q * T_effective) * norm_cdf(d1) -
+            K * std::exp(-effective_r * T_effective) * norm_cdf(d2);
     }
     else {
-        return K * std::exp(-effective_r * T_effective) * norm_cdf(-d2) - S * std::exp(-q * T_effective) * norm_cdf(-d1);
+        return K * std::exp(-effective_r * T_effective) * norm_cdf(-d2) -
+            S * std::exp(-q * T_effective) * norm_cdf(-d1);
     }
 }
 
@@ -163,10 +175,11 @@ Greeks BlackScholesPricer::computeGreeks(const Option& opt) const {
         T_effective = T - offset;
     }
 
-    // Determine effective risk-free rate using the yield curve if available.
+    // Determine effective risk-free rate.
     double effective_r = r_default;
 
-    double d1 = (std::log(S / K) + (effective_r - q + 0.5 * sigma * sigma) * T_effective) / (sigma * std::sqrt(T_effective));
+    double d1 = (std::log(S / K) + (effective_r - q + 0.5 * sigma * sigma) * T_effective) /
+        (sigma * std::sqrt(T_effective));
     double d2 = d1 - sigma * std::sqrt(T_effective);
 
     Greeks greeks;
@@ -177,16 +190,20 @@ Greeks BlackScholesPricer::computeGreeks(const Option& opt) const {
         greeks.delta = -std::exp(-q * T_effective) * norm_cdf(-d1);
     }
 
-    greeks.gamma = std::exp(-q * T_effective) * norm_pdf(d1) / (S * sigma * std::sqrt(T_effective));
-    greeks.vega = S * std::exp(-q * T_effective) * norm_pdf(d1) * std::sqrt(T_effective);
+    greeks.gamma = std::exp(-q * T_effective) * norm_pdf(d1) /
+        (S * sigma * std::sqrt(T_effective));
+    greeks.vega = S * std::exp(-q * T_effective) * norm_pdf(d1) *
+        std::sqrt(T_effective);
 
     if (opt.getOptionType() == Option::OptionType::Call) {
-        greeks.theta = -(S * sigma * std::exp(-q * T_effective) * norm_pdf(d1)) / (2 * std::sqrt(T_effective))
+        greeks.theta = -(S * sigma * std::exp(-q * T_effective) * norm_pdf(d1)) /
+            (2 * std::sqrt(T_effective))
             - effective_r * K * std::exp(-effective_r * T_effective) * norm_cdf(d2)
             + q * S * std::exp(-q * T_effective) * norm_cdf(d1);
     }
     else {
-        greeks.theta = -(S * sigma * std::exp(-q * T_effective) * norm_pdf(d1)) / (2 * std::sqrt(T_effective))
+        greeks.theta = -(S * sigma * std::exp(-q * T_effective) * norm_pdf(d1)) /
+            (2 * std::sqrt(T_effective))
             + effective_r * K * std::exp(-effective_r * T_effective) * norm_cdf(-d2)
             - q * S * std::exp(-q * T_effective) * norm_cdf(-d1);
     }
@@ -198,6 +215,7 @@ Greeks BlackScholesPricer::computeGreeks(const Option& opt) const {
         greeks.rho = -K * T_effective * std::exp(-effective_r * T_effective) * norm_cdf(-d2);
     }
 
+    // Invert the sign of theta to follow the convention where theta is positive when the option loses value over time.
     greeks.theta = -greeks.theta;
 
     return greeks;

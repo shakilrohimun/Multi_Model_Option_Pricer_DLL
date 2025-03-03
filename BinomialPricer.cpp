@@ -17,21 +17,42 @@
 #include <algorithm>
 #include <stdexcept>
 
- /// Default constructor, using default configuration values.
+ // The BinomialPricer class utilizes the Cox-Ross-Rubinstein (CRR) model to simulate the evolution
+ // of the underlying asset's price through a recombining binomial tree. This implementation supports both
+ // European and American options, and leverages a variable risk-free rate by interpolating values from a yield curve.
+
+ /**
+  * @brief Default constructor, using default configuration values.
+  *
+  * Constructs a BinomialPricer instance with default configuration parameters.
+  * The default configuration is obtained from the PricingConfiguration's default constructor.
+  */
 BinomialPricer::BinomialPricer()
     : config_() // Default configuration from PricingConfiguration's default constructor
 {
     // No additional initialization required.
 }
 
-/// Constructor with pricing configuration.
+/**
+ * @brief Constructor with pricing configuration.
+ *
+ * Constructs a BinomialPricer instance using the provided PricingConfiguration object.
+ * The configuration parameters (e.g., calculation date, number of steps, maturity, etc.) are stored internally
+ * and used in subsequent pricing computations.
+ *
+ * @param config A PricingConfiguration object containing custom pricing parameters.
+ */
 BinomialPricer::BinomialPricer(const PricingConfiguration& config)
     : config_(config)
 {
     // The configuration parameters are now stored in config_.
 }
 
-/// Destructor.
+/**
+ * @brief Destructor.
+ *
+ * Destroys the BinomialPricer instance. No explicit dynamic memory cleanup is required.
+ */
 BinomialPricer::~BinomialPricer() {
     // No dynamic cleanup is required.
 }
@@ -39,17 +60,20 @@ BinomialPricer::~BinomialPricer() {
 /**
  * @brief Computes the option price using the binomial CRR model.
  *
- * This function calculates the price of an option using a binomial tree.
- * The number of steps in the tree is taken from the configuration (config_.binomialSteps).
+ * This function calculates the price of an option using a binomial tree constructed according to the CRR method.
+ * The number of steps in the tree is determined by config_.binomialSteps. For each time step, a local risk-free rate is
+ * obtained via interpolation from the yield curve, allowing for a variable rate across the tree.
  *
- * Instead of using a constant risk-free rate, the backward induction uses a variable rate
- * obtained via interpolation from the yield curve stored in the configuration.
- * For each time step, the local rate is obtained by:
- *   r_local = config_.yieldCurve.getRate(t_norm)
- * where t_norm is the normalized time (between 0 and 1).
+ * The procedure involves:
+ * - Computing the up (u) and down (d) factors based on the volatility and time increment.
+ * - Determining the risk-neutral probability (p) using a constant risk-free rate for the forward simulation.
+ * - Calculating the terminal payoffs for each final node.
+ * - Performing backward induction to discount the payoffs to present value, with adjustments for American options.
  *
- * @param opt The option to be priced.
- * @return The computed option price.
+ * @param opt The Option object to be priced, which contains parameters such as underlying price, strike, volatility,
+ *            dividend yield, option type (Call/Put), and option style (European/American).
+ * @return The computed option price as a double.
+ * @throw std::runtime_error if the computed risk-neutral probability is invalid.
  */
 double BinomialPricer::price(const Option& opt) const {
     // Retrieve basic option parameters.
@@ -65,10 +89,10 @@ double BinomialPricer::price(const Option& opt) const {
     int N = config_.binomialSteps;
     double dt = T / N;
 
-    // Compute the up and down factors using the CRR model.
+    // Compute the up (u) and down (d) factors using the CRR model.
     double u = std::exp(sigma * std::sqrt(dt));
     double d = 1.0 / u;
-    // For the forward simulation, use the constant risk-free rate.
+    // Calculate the risk-neutral probability using the constant risk-free rate.
     double p = (std::exp((r_const - q) * dt) - d) / (u - d);
     if (p < 0.0 || p > 1.0) {
         throw std::runtime_error("Invalid risk-neutral probability in the binomial model.");
@@ -86,12 +110,12 @@ double BinomialPricer::price(const Option& opt) const {
         }
     }
 
-    // Backward induction through the binomial tree with variable interest rate.
+    // Backward induction through the binomial tree with a variable interest rate.
     for (int i = N - 1; i >= 0; --i) {
         // Compute normalized time for the current step (i/N).
         double t_norm = static_cast<double>(i) / N;
         // Obtain the local risk-free rate via the yield curve.
-        // If the yield curve is not loaded, it should return the default risk-free rate.
+        // If the yield curve is not loaded, it returns the default risk-free rate.
         double r_local = config_.yieldCurve.getRate(t_norm);
         // Compute the discount factor using the local rate.
         double discountFactor = std::exp(-r_local * dt);
@@ -99,8 +123,10 @@ double BinomialPricer::price(const Option& opt) const {
         double p_local = (std::exp((r_local - q) * dt) - d) / (u - d);
 
         for (int j = 0; j <= i; ++j) {
+            // Calculate the expected continuation value at the current node.
             double continuation = discountFactor * (p_local * prices[j + 1] + (1.0 - p_local) * prices[j]);
             if (opt.getOptionStyle() == Option::OptionStyle::American) {
+                // For American options, compare the continuation value with the immediate exercise value.
                 double S_i = S * std::pow(u, j) * std::pow(d, i - j);
                 double intrinsic = 0.0;
                 if (opt.getOptionType() == Option::OptionType::Call) {
@@ -112,27 +138,33 @@ double BinomialPricer::price(const Option& opt) const {
                 prices[j] = std::max(continuation, intrinsic);
             }
             else {
+                // For European options, only the continuation value is considered.
                 prices[j] = continuation;
             }
         }
     }
 
+    // The price at the root of the tree is the computed option price.
     return prices[0];
 }
 
 /**
  * @brief Computes the Greeks of the option using finite differences applied to the binomial model.
  *
- * This function estimates the Greeks (Delta, Gamma, Vega, Theta, and Rho)
- * by perturbing the input parameters and recalculating the option price.
+ * This function estimates the sensitivity measures (Greeks) by perturbing the input parameters and
+ * recalculating the option price. Finite difference approximations are used as follows:
+ * - Delta and Gamma are computed by perturbing the underlying price.
+ * - Vega is computed by perturbing the volatility.
+ * - Theta is computed by reducing the maturity by one day.
+ * - Rho is computed by perturbing the risk-free rate (or yield curve).
  *
- * @param opt The option to evaluate.
- * @return A Greeks structure containing the calculated values.
+ * @param opt The Option object to be evaluated.
+ * @return A Greeks structure containing the calculated values for Delta, Gamma, Vega, Theta, and Rho.
  */
 Greeks BinomialPricer::computeGreeks(const Option& opt) const {
     double h = 0.01 * opt.getUnderlying();
 
-    // Compute Delta and Gamma via finite differences for the underlying price.
+    // Compute Delta and Gamma by perturbing the underlying asset price.
     Option opt_up = opt;
     Option opt_down = opt;
     opt_up.setUnderlying(opt.getUnderlying() + h);
@@ -143,7 +175,7 @@ Greeks BinomialPricer::computeGreeks(const Option& opt) const {
     double delta = (price_up - price_down) / (2 * h);
     double gamma = (price_up - 2 * basePrice + price_down) / (h * h);
 
-    // Compute Vega via finite differences for volatility.
+    // Compute Vega by perturbing the volatility.
     double volStep = 0.01;
     Option opt_vol_up = opt;
     Option opt_vol_down = opt;
@@ -151,21 +183,23 @@ Greeks BinomialPricer::computeGreeks(const Option& opt) const {
     opt_vol_down.setVolatility(opt.getVolatility() - volStep);
     double vega = (price(opt_vol_up) - price(opt_vol_down)) / (2 * volStep);
 
-    // --- Ajout de l'implémentation de Theta ---
-    double dt_small = 1.0 / 365.0; // 1 jour en années
+    // --- Theta Implementation ---
+    // Estimate Theta by reducing the maturity by one day (converted to years).
+    double dt_small = 1.0 / 365.0; // One day in years
     PricingConfiguration config_time = config_;
     config_time.maturity = config_.maturity - dt_small;
     BinomialPricer pricer_time(config_time);
     double price_T_down = pricer_time.price(opt);
     double theta = (basePrice - price_T_down) / dt_small;
 
-    // --- Implémentation modifiée de Rho ---
+    // --- Modified Implementation of Rho ---
+    // Estimate Rho by perturbing the risk-free rate or the yield curve uniformly.
     double rStep = 0.001;
     PricingConfiguration config_r_up = config_;
     PricingConfiguration config_r_down = config_;
 
     if (!config_.yieldCurve.getData().empty()) {
-        // Décalage de tous les taux de la courbe pour refléter une variation uniforme
+        // Shift all rates in the yield curve uniformly by rStep.
         YieldCurve yc_up;
         YieldCurve yc_down;
         for (const auto& pt : config_.yieldCurve.getData()) {
@@ -176,6 +210,7 @@ Greeks BinomialPricer::computeGreeks(const Option& opt) const {
         config_r_down.yieldCurve = yc_down;
     }
     else {
+        // If no yield curve data is available, adjust the constant risk-free rate.
         config_r_up.riskFreeRate = config_.riskFreeRate + rStep;
         config_r_down.riskFreeRate = config_.riskFreeRate - rStep;
     }
@@ -186,7 +221,7 @@ Greeks BinomialPricer::computeGreeks(const Option& opt) const {
     double price_r_down = pricer_r_down.price(opt);
     double rho = (price_r_up - price_r_down) / (2 * rStep);
 
-
+    // Populate the Greeks structure with the computed values.
     Greeks g;
     g.delta = delta;
     g.gamma = gamma;
@@ -199,9 +234,11 @@ Greeks BinomialPricer::computeGreeks(const Option& opt) const {
 /**
  * @brief Sets the pricing configuration.
  *
- * Allows updating the configuration parameters used by the BinomialPricer.
+ * Updates the internal configuration parameters used by the BinomialPricer.
+ * This method allows the user to modify settings such as the number of steps, maturity,
+ * risk-free rate, and yield curve data, which will affect subsequent pricing computations.
  *
- * @param config A PricingConfiguration object containing the new parameters.
+ * @param config A PricingConfiguration object containing the new configuration parameters.
  */
 void BinomialPricer::setConfiguration(const PricingConfiguration& config) {
     config_ = config;
@@ -210,7 +247,10 @@ void BinomialPricer::setConfiguration(const PricingConfiguration& config) {
 /**
  * @brief Gets the current pricing configuration.
  *
- * @return The current PricingConfiguration object.
+ * Retrieves the PricingConfiguration object currently stored in the BinomialPricer.
+ * This function is useful for verifying the active configuration and for debugging purposes.
+ *
+ * @return A copy of the current PricingConfiguration.
  */
 PricingConfiguration BinomialPricer::getConfiguration() const {
     return config_;

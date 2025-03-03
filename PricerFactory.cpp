@@ -1,10 +1,10 @@
 /**
  * @file PricerFactory.cpp
- * @brief Implémentation de la factory pour créer des moteurs de pricing.
+ * @brief Implementation of the factory for creating pricing engines.
  *
- * Ce fichier contient l'implémentation complète de la classe PricerFactory qui fournit
- * une méthode statique pour créer dynamiquement une instance de moteur de pricing en fonction
- * du type spécifié (Black-Scholes, Binomial, Crank-Nicolson, ou Monte Carlo).
+ * This file contains the complete implementation of the PricerFactory class which provides
+ * a static method to dynamically create an instance of a pricing engine based on the specified type
+ * (BlackScholes, Binomial, CrankNicolson, or MonteCarlo).
  */
 
 #include "pch.h"
@@ -17,14 +17,14 @@
 #include <stdexcept>
 
  /**
-  * @brief Crée un moteur de pricing selon le type spécifié.
+  * @brief Creates a pricing engine based on the specified type.
   *
-  * En fonction de l'énumération passée en paramètre, cette méthode retourne un pointeur
-  * unique vers une instance concrète d'IOptionPricer.
+  * Depending on the enumeration passed as a parameter, this method returns a unique pointer
+  * to a concrete instance of IOptionPricer.
   *
-  * @param type Le type de pricer à créer (BlackScholes, Binomial, CrankNicolson, MonteCarlo).
-  * @return Un std::unique_ptr<IOptionPricer> pointant vers l'instance créée.
-  * @throw std::invalid_argument Si le type de pricer n'est pas reconnu.
+  * @param type The type of pricer to create (BlackScholes, Binomial, CrankNicolson, MonteCarlo).
+  * @return A std::unique_ptr<IOptionPricer> pointing to the created instance.
+  * @throw std::invalid_argument if the pricer type is not recognized.
   */
 std::unique_ptr<IOptionPricer> PricerFactory::createPricer(PricerType type) {
     switch (type) {
@@ -37,10 +37,21 @@ std::unique_ptr<IOptionPricer> PricerFactory::createPricer(PricerType type) {
     case PricerType::MonteCarlo:
         return std::make_unique<MonteCarloPricer>();
     default:
-        throw std::invalid_argument("Type de pricer inconnu.");
+        throw std::invalid_argument("Unknown pricer type.");
     }
 }
 
+/**
+ * @brief Creates a pricing engine with a specific configuration.
+ *
+ * This overload allows the user to specify additional configuration parameters via a
+ * PricingConfiguration object.
+ *
+ * @param type The type of pricer to create (BlackScholes, Binomial, CrankNicolson, MonteCarlo).
+ * @param config A PricingConfiguration object containing additional parameters.
+ * @return A std::unique_ptr<IOptionPricer> pointing to the created instance.
+ * @throw std::invalid_argument if the pricer type is not recognized.
+ */
 std::unique_ptr<IOptionPricer> PricerFactory::createPricer(PricerType type, const PricingConfiguration& config) {
     switch (type) {
     case PricerType::BlackScholes:
@@ -55,4 +66,3 @@ std::unique_ptr<IOptionPricer> PricerFactory::createPricer(PricerType type, cons
         throw std::invalid_argument("Unknown pricer type.");
     }
 }
-

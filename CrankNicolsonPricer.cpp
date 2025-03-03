@@ -37,7 +37,7 @@ CrankNicolsonPricer::~CrankNicolsonPricer() {
  * @brief Constructs a CrankNicolsonPricer with a custom pricing configuration.
  *
  * This constructor initializes the CrankNicolsonPricer using the provided PricingConfiguration object.
- * The configuration parameters (such as calculation date, maturity, risk-free rate, time discretization,
+ * The configuration parameters (such as calculationDate, maturity, risk-free rate, time discretization,
  * spatial discretization, and S_max) are stored internally and used in the pricing calculations.
  *
  * @param config A PricingConfiguration object containing custom parameters.
@@ -52,7 +52,7 @@ CrankNicolsonPricer::CrankNicolsonPricer(const PricingConfiguration& config)
  * @brief Computes the option price using the Crank-Nicolson method.
  *
  * This method solves the Black-Scholes PDE by discretizing time and the underlying asset price.
- * It uses configuration parameters for maturity, risk-free rate, and discretization. If a calculation date
+ * It uses configuration parameters for maturity, risk-free rate, and discretization. If a calculationDate
  * is provided, the effective time to maturity is computed as:
  *
  *    T_effective = T - offset,
@@ -253,17 +253,16 @@ Greeks CrankNicolsonPricer::computeGreeks(const Option& opt) const {
     double vega = (price(opt_vol_up) - price(opt_vol_down)) / (2 * volStep);
 
     // --- Theta ---
-    // Utiliser un pas de temps d'un jour (en années)
+    // Use a time step of one day (in years)
     double CranktimeStep = 1.0 / 365.0;
-    // Créer une nouvelle configuration avec la maturité réduite de timeStep
+    // Create a new configuration with maturity reduced by timeStep
     PricingConfiguration config_T_down = config_;
     config_T_down.maturity = config_.maturity - CranktimeStep;
-    // Recalculer le prix avec cette configuration modifiée
+    // Recalculate price with the modified configuration
     CrankNicolsonPricer pricer_T_down(config_T_down);
     double price_T_down = pricer_T_down.price(opt);
-    // Calculer Theta avec une différence finie arrière
+    // Calculate Theta using a backward finite difference
     double theta = (price_T_down - basePrice) / (-CranktimeStep);
-
 
     // --- Rho ---
     PricingConfiguration config_r_up = config_;
@@ -287,7 +286,6 @@ Greeks CrankNicolsonPricer::computeGreeks(const Option& opt) const {
     double price_r_up = pricer_r_up.price(opt);
     double price_r_down = pricer_r_down.price(opt);
     double rho = (price_r_up - price_r_down) / (2 * rStep);
-
 
     Greeks greeks;
     greeks.delta = delta;

@@ -1,22 +1,22 @@
 /**
  * @file Option.cpp
- * @brief Implémentation de la classe Option et de la structure Greeks pour le pricing d'options.
+ * @brief Implementation de la classe Option et de la structure Greeks pour le pricing d'options.
  *
- * Ce fichier contient l'implémentation complète de la classe Option, utilisée pour représenter
- * une option financière avec ses paramètres de base (sous-jacent, strike, volatilité, dividende,
- * type et style). Les méthodes getter et setter permettent de manipuler ces paramètres.
+ * Ce fichier contient l'implementation complete de la classe Option, utilisee pour representer
+ * une option financiere avec ses parametres de base (sous-jacent, strike, volatilite, dividende,
+ * type et style). Les methodes getter et setter permettent de manipuler ces parametres.
  */
 
 #include "pch.h"
 #include "Option.hpp"
 
  /**
-  * @brief Constructeur par défaut.
+  * @brief Constructeur par defaut.
   *
-  * Initialise l'option avec des valeurs par défaut :
+  * Initialise l'option avec des valeurs par defaut :
   * - sous-jacent = 0.0
   * - strike = 0.0
-  * - volatilité = 0.0
+  * - volatilite = 0.0
   * - dividende = 0.0
   * - type = Call
   * - style = European
@@ -25,37 +25,37 @@ Option::Option()
     : underlying_(0.0), strike_(0.0), volatility_(0.0), dividend_(0.0),
     type_(OptionType::Call), style_(OptionStyle::European)
 {
-    // Constructeur par défaut : aucune action supplémentaire requise.
+    // Constructeur par defaut : aucune action supplementaire requise.
 }
 
 /**
- * @brief Constructeur paramétré.
+ * @brief Constructeur parametre.
  *
- * Initialise l'option avec les paramètres fournis.
+ * Initialise l'option avec les parametres fournis.
  *
  * @param underlying Prix du sous-jacent.
  * @param strike Prix d'exercice.
- * @param volatility Volatilité du sous-jacent.
- * @param dividend Dividende éventuel.
+ * @param volatility Volatilite du sous-jacent.
+ * @param dividend Dividende eventuel.
  * @param optionType Type de l'option (Call ou Put).
- * @param optionStyle Style de l'option (Européenne ou Américaine).
+ * @param optionStyle Style de l'option (European ou American).
  */
 Option::Option(double underlying, double strike, double volatility, double dividend,
     OptionType optionType, OptionStyle optionStyle)
     : underlying_(underlying), strike_(strike), volatility_(volatility), dividend_(dividend),
     type_(optionType), style_(optionStyle)
 {
-    // Initialisation avec les paramètres fournis.
+    // Initialisation avec les parametres fournis.
 }
 
 /**
  * @brief Destructeur virtuel.
  *
- * Aucun nettoyage spécifique n'est requis car aucune allocation dynamique n'est utilisée.
+ * Aucun nettoyage specifique n'est requis car aucune allocation dynamique n'est utilisee.
  */
 Option::~Option()
 {
-    // Destructeur : rien à libérer.
+    // Destructeur : rien a liberer.
 }
 
 /**
@@ -75,15 +75,15 @@ double Option::getStrike() const {
 }
 
 /**
- * @brief Obtient la volatilité du sous-jacent.
- * @return La volatilité.
+ * @brief Obtient la volatilite du sous-jacent.
+ * @return La volatilite.
  */
 double Option::getVolatility() const {
     return volatility_;
 }
 
 /**
- * @brief Obtient le dividende éventuel de l'option.
+ * @brief Obtient le dividende eventuel de l'option.
  * @return Le dividende.
  */
 double Option::getDividend() const {
@@ -99,7 +99,7 @@ Option::OptionType Option::getOptionType() const {
 }
 
 /**
- * @brief Obtient le style de l'option (Européenne ou Américaine).
+ * @brief Obtient le style de l'option (European ou American).
  * @return Le style de l'option.
  */
 Option::OptionStyle Option::getOptionStyle() const {
@@ -123,8 +123,8 @@ void Option::setStrike(double strike) {
 }
 
 /**
- * @brief Modifie la volatilité du sous-jacent.
- * @param volatility Nouvelle volatilité.
+ * @brief Modifie la volatilite du sous-jacent.
+ * @param volatility Nouvelle volatilite.
  */
 void Option::setVolatility(double volatility) {
     volatility_ = volatility;
@@ -148,7 +148,7 @@ void Option::setOptionType(OptionType optionType) {
 
 /**
  * @brief Modifie le style de l'option.
- * @param optionStyle Nouveau style (Européenne ou Américaine).
+ * @param optionStyle Nouveau style (European ou American).
  */
 void Option::setOptionStyle(OptionStyle optionStyle) {
     style_ = optionStyle;

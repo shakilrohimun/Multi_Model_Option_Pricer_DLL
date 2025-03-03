@@ -8,7 +8,11 @@
  * is applied to determine the optimal early exercise.
  * The simulation parameters (maturity, risk-free rate, number of paths, time steps per path)
  * are taken from a PricingConfiguration object. If a calculation date is provided,
- * the effective time to maturity is adjusted as T_effective = T - offset.
+ * the effective time to maturity is adjusted as:
+ *
+ *    T_effective = T - offset,
+ *
+ * where offset is the number of years between config_.calculationDate and today.
  * The risk-free rate is obtained at each time step by interpolating the yield curve.
  */
 
@@ -23,21 +27,21 @@
 #include <numeric>
 #include <stdexcept>
 
- /// New constructor: initialize with a pricing configuration.
+ // Constructor: initialize with a pricing configuration.
 MonteCarloPricer::MonteCarloPricer(const PricingConfiguration& config)
     : config_(config)
 {
-    // The configuration parameters are now stored in config_
+    // The configuration parameters are now stored in config_.
 }
 
-/// Default constructor using the default configuration.
+// Default constructor using the default configuration.
 MonteCarloPricer::MonteCarloPricer()
-    : config_() // Default configuration from PricingConfiguration's default constructor
+    : config_() // Default configuration from PricingConfiguration's default constructor.
 {
     // No additional initialization is required.
 }
 
-/// Destructor.
+// Destructor.
 MonteCarloPricer::~MonteCarloPricer() {
     // No dynamic cleanup is required.
 }
@@ -57,7 +61,7 @@ MonteCarloPricer::~MonteCarloPricer() {
  * where offset is the number of years between config_.calculationDate and today.
  *
  * In the forward simulation, the local risk-free rate at each step is obtained by:
- *    r_local = (yieldCurve is available) ? yieldCurve.getRate(t_norm) : default riskFreeRate,
+ *    r_local = (if yieldCurve is available) ? yieldCurve.getRate(t_norm) : default riskFreeRate,
  * where t_norm is the normalized time (current time / T_effective).
  *
  * @param opt The option to be priced.
@@ -65,16 +69,16 @@ MonteCarloPricer::~MonteCarloPricer() {
  */
 double MonteCarloPricer::price(const Option& opt) const {
     // Retrieve option parameters.
-    double S0 = opt.getUnderlying();
-    double K = opt.getStrike();
-    double sigma = opt.getVolatility();
-    double q = opt.getDividend();
+    double S0 = opt.getUnderlying();    // Underlying asset price.
+    double K = opt.getStrike();         // Strike price.
+    double sigma = opt.getVolatility(); // Volatility.
+    double q = opt.getDividend();       // Dividend yield.
 
     // Retrieve simulation parameters from configuration.
-    double T = config_.maturity;           // Configured maturity
-    double r_default = config_.riskFreeRate; // Default risk-free rate
-    const int NPaths = config_.mcNumPaths;   // Number of simulation paths
-    const int NSteps = config_.mcTimeStepsPerPath; // Number of time steps per path
+    double T = config_.maturity;                // Configured maturity.
+    double r_default = config_.riskFreeRate;      // Default risk-free rate.
+    const int NPaths = config_.mcNumPaths;        // Number of simulation paths.
+    const int NSteps = config_.mcTimeStepsPerPath; // Number of time steps per path.
 
     // Adjust effective time to maturity based on the calculation date.
     double T_effective = T;
@@ -94,7 +98,7 @@ double MonteCarloPricer::price(const Option& opt) const {
     std::normal_distribution<double> norm(0.0, 1.0);
 
     if (opt.getOptionStyle() == Option::OptionStyle::European) {
-        // --- Standard Monte Carlo simulation for European options ---
+        // Standard Monte Carlo simulation for European options.
         double sumPayoff = 0.0;
         for (int i = 0; i < NPaths; i++) {
             double S = S0;
@@ -102,7 +106,7 @@ double MonteCarloPricer::price(const Option& opt) const {
             // Simulate one price path using GBM with variable interest rate.
             for (int j = 0; j < NSteps; j++) {
                 double t_current = j * dt;
-                double normTime = t_current / T_effective; // normalized time in [0,1]
+                double normTime = t_current / T_effective; // Normalized time in [0,1].
                 double r_local = (config_.yieldCurve.getData().empty()) ? r_default : config_.yieldCurve.getRate(normTime);
                 double Z = norm(rng);
                 S *= std::exp((r_local - q - 0.5 * sigma * sigma) * dt + sigma * std::sqrt(dt) * Z);
@@ -110,13 +114,13 @@ double MonteCarloPricer::price(const Option& opt) const {
             }
             double payoff = (opt.getOptionType() == Option::OptionType::Call) ? std::max(S - K, 0.0)
                 : std::max(K - S, 0.0);
-            sumPayoff += payoff * disc; // Already discounted along the path
+            sumPayoff += payoff * disc; // Payoff is already discounted along the path.
         }
         double priceMC = sumPayoff / NPaths;
         return priceMC;
     }
     else {
-        // --- Monte Carlo simulation for American options using Longstaff-Schwartz ---
+        // Monte Carlo simulation for American options using Longstaff-Schwartz.
         // Build a grid to store simulated paths.
         std::vector<std::vector<double>> paths(NPaths, std::vector<double>(NSteps + 1, 0.0));
         for (int i = 0; i < NPaths; i++) {
@@ -151,7 +155,7 @@ double MonteCarloPricer::price(const Option& opt) const {
                 if (intrinsic > 0.0 && exerciseTime[i] == NSteps) {
                     inTheMoneyIndices.push_back(i);
                     X.push_back(paths[i][t]);
-                    // Compute discount factor from t to exerciseTime using variable rates.
+                    // Compute discount factor from time t to exerciseTime using variable rates.
                     double disc = 1.0;
                     for (int k = t; k < exerciseTime[i]; k++) {
                         double normTime_k = ((T_effective - k * dt) / T_effective);
@@ -258,18 +262,14 @@ Greeks MonteCarloPricer::computeGreeks(const Option& opt) const {
     double vega = (price(opt_vol_up) - price(opt_vol_down)) / (2 * volStep);
 
     // --- Theta ---
-    // Création d'une nouvelle configuration avec une maturité légèrement réduite
+    // Create a new configuration with a slightly reduced maturity.
     PricingConfiguration config_T_down = config_;
     config_T_down.maturity = config_.maturity - timeStep;
-
-    // Création d'un nouveau pricer avec cette configuration
+    // Create a new pricer with this configuration.
     MonteCarloPricer pricer_T_down(config_T_down);
     double price_T_down = pricer_T_down.price(opt);
-
-    // Approximation par différences finies avec un décalage négatif
-    double theta = (price_T_down - basePrice) / (-timeStep);  // On divise par -timeStep car Theta est généralement négatif
-
-
+    // Approximate Theta using a backward finite difference.
+    double theta = (price_T_down - basePrice) / (-timeStep);
 
     // --- Rho ---
     PricingConfiguration config_r_up = config_;
@@ -293,7 +293,6 @@ Greeks MonteCarloPricer::computeGreeks(const Option& opt) const {
     double price_r_up = pricer_r_up.price(opt);
     double price_r_down = pricer_r_down.price(opt);
     double rho = (price_r_up - price_r_down) / (2 * rStep);
-
 
     Greeks greeks;
     greeks.delta = delta;

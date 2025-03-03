@@ -9,6 +9,7 @@
 #include <cmath>
 
 extern "C" {
+
     // Parameters:
     // S: Underlying price
     // K: Strike price
