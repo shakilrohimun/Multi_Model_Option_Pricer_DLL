@@ -1,0 +1,178 @@
+\doxysection{Crank\+Nicolson\+Pricer Class Reference}
+\hypertarget{class_crank_nicolson_pricer}{}\label{class_crank_nicolson_pricer}\index{CrankNicolsonPricer@{CrankNicolsonPricer}}
+
+
+Class that implements the Crank-\/\+Nicolson pricing model.  
+
+
+
+
+{\ttfamily \#include $<$Crank\+Nicolson\+Pricer.\+hpp$>$}
+
+Inheritance diagram for Crank\+Nicolson\+Pricer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_crank_nicolson_pricer}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_crank_nicolson_pricer_a540f3cef3e3759e5ea97838a367a483f}{Crank\+Nicolson\+Pricer}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_crank_nicolson_pricer_a42f952df2608342a1a5b23db1e32d11e}{\texorpdfstring{$\sim$}{\string~}\+Crank\+Nicolson\+Pricer}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual double \mbox{\hyperlink{class_crank_nicolson_pricer_a5cdd3d767a3512887e921f9b170460d2}{price}} (const \mbox{\hyperlink{class_option}{Option}} \&opt) const override
+\begin{DoxyCompactList}\small\item\em Computes the price of the option using the Crank-\/\+Nicolson method. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{struct_greeks}{Greeks}} \mbox{\hyperlink{class_crank_nicolson_pricer_addb3858ae0f703d17a35d1ed80c6dad9}{compute\+Greeks}} (const \mbox{\hyperlink{class_option}{Option}} \&opt) const override
+\begin{DoxyCompactList}\small\item\em Computes the \doxylink{struct_greeks}{Greeks} of the option using the Crank-\/\+Nicolson method. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_crank_nicolson_pricer_a344ba2afe260b58d295331207ac6190b}{Crank\+Nicolson\+Pricer}} (const \mbox{\hyperlink{struct_pricing_configuration}{Pricing\+Configuration}} \&config)
+\begin{DoxyCompactList}\small\item\em Constructor with pricing configuration. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_i_option_pricer}{IOption\+Pricer}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+IOption\+Pricer} ()=default
+\begin{DoxyCompactList}\small\item\em Destructeur virtuel. \end{DoxyCompactList}\item 
+virtual double \mbox{\hyperlink{class_i_option_pricer_a579dcf7f5ee091f88682d43766226a9b}{price}} (const \mbox{\hyperlink{class_option}{Option}} \&opt) const =0
+\begin{DoxyCompactList}\small\item\em Calcule le prix de l\textquotesingle{}option. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{struct_greeks}{Greeks}} \mbox{\hyperlink{class_i_option_pricer_a81a689339e44b1a224c44c84756b8d76}{compute\+Greeks}} (const \mbox{\hyperlink{class_option}{Option}} \&opt) const =0
+\begin{DoxyCompactList}\small\item\em Calcule les greeks de l\textquotesingle{}option. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class that implements the Crank-\/\+Nicolson pricing model. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_crank_nicolson_pricer_a540f3cef3e3759e5ea97838a367a483f}\label{class_crank_nicolson_pricer_a540f3cef3e3759e5ea97838a367a483f} 
+\index{CrankNicolsonPricer@{CrankNicolsonPricer}!CrankNicolsonPricer@{CrankNicolsonPricer}}
+\index{CrankNicolsonPricer@{CrankNicolsonPricer}!CrankNicolsonPricer@{CrankNicolsonPricer}}
+\doxysubsubsection{\texorpdfstring{CrankNicolsonPricer()}{CrankNicolsonPricer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Crank\+Nicolson\+Pricer\+::\+Crank\+Nicolson\+Pricer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+Default constructor of \doxylink{class_crank_nicolson_pricer}{Crank\+Nicolson\+Pricer}. \Hypertarget{class_crank_nicolson_pricer_a42f952df2608342a1a5b23db1e32d11e}\label{class_crank_nicolson_pricer_a42f952df2608342a1a5b23db1e32d11e} 
+\index{CrankNicolsonPricer@{CrankNicolsonPricer}!````~CrankNicolsonPricer@{\texorpdfstring{$\sim$}{\string~}CrankNicolsonPricer}}
+\index{````~CrankNicolsonPricer@{\texorpdfstring{$\sim$}{\string~}CrankNicolsonPricer}!CrankNicolsonPricer@{CrankNicolsonPricer}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}CrankNicolsonPricer()}{\string~CrankNicolsonPricer()}}
+{\footnotesize\ttfamily Crank\+Nicolson\+Pricer\+::\texorpdfstring{$\sim$}{\string~}\+Crank\+Nicolson\+Pricer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destructor. 
+
+Destructor of \doxylink{class_crank_nicolson_pricer}{Crank\+Nicolson\+Pricer}. \Hypertarget{class_crank_nicolson_pricer_a344ba2afe260b58d295331207ac6190b}\label{class_crank_nicolson_pricer_a344ba2afe260b58d295331207ac6190b} 
+\index{CrankNicolsonPricer@{CrankNicolsonPricer}!CrankNicolsonPricer@{CrankNicolsonPricer}}
+\index{CrankNicolsonPricer@{CrankNicolsonPricer}!CrankNicolsonPricer@{CrankNicolsonPricer}}
+\doxysubsubsection{\texorpdfstring{CrankNicolsonPricer()}{CrankNicolsonPricer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Crank\+Nicolson\+Pricer\+::\+Crank\+Nicolson\+Pricer (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_pricing_configuration}{Pricing\+Configuration}} \&}]{config }\end{DoxyParamCaption})}
+
+
+
+Constructor with pricing configuration. 
+
+Constructs a \doxylink{class_crank_nicolson_pricer}{Crank\+Nicolson\+Pricer} with a custom pricing configuration.
+
+
+\begin{DoxyParams}{Parameters}
+{\em config} & A \doxylink{struct_pricing_configuration}{Pricing\+Configuration} structure containing additional parameters, such as the calculation date, maturity, risk-\/free rate, time steps, spot steps, and S\+\_\+max.\\
+\hline
+\end{DoxyParams}
+
+
+This constructor initializes the \doxylink{class_crank_nicolson_pricer}{Crank\+Nicolson\+Pricer} using the provided \doxylink{struct_pricing_configuration}{Pricing\+Configuration} object. The configuration parameters (such as calculation date, maturity, risk-\/free rate, time discretization, spatial discretization, and S\+\_\+max) are stored internally and used in the pricing calculations.
+
+
+\begin{DoxyParams}{Parameters}
+{\em config} & A \doxylink{struct_pricing_configuration}{Pricing\+Configuration} object containing custom parameters. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crank_nicolson_pricer_addb3858ae0f703d17a35d1ed80c6dad9}\label{class_crank_nicolson_pricer_addb3858ae0f703d17a35d1ed80c6dad9} 
+\index{CrankNicolsonPricer@{CrankNicolsonPricer}!computeGreeks@{computeGreeks}}
+\index{computeGreeks@{computeGreeks}!CrankNicolsonPricer@{CrankNicolsonPricer}}
+\doxysubsubsection{\texorpdfstring{computeGreeks()}{computeGreeks()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_greeks}{Greeks}} Crank\+Nicolson\+Pricer\+::compute\+Greeks (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_option}{Option}} \&}]{opt }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Computes the \doxylink{struct_greeks}{Greeks} of the option using the Crank-\/\+Nicolson method. 
+
+Computes the \doxylink{struct_greeks}{Greeks} of the option using finite differences applied to the Crank-\/\+Nicolson pricer.
+
+
+\begin{DoxyParams}{Parameters}
+{\em opt} & The option to evaluate. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{struct_greeks}{Greeks} structure containing the calculated values.
+\end{DoxyReturn}
+
+
+The \doxylink{struct_greeks}{Greeks} (Delta, Gamma, Vega, Theta, and Rho) are estimated by perturbing the input parameters and recalculating the option price.
+
+
+\begin{DoxyParams}{Parameters}
+{\em opt} & The option to evaluate. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{struct_greeks}{Greeks} structure containing the calculated values. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_option_pricer_a81a689339e44b1a224c44c84756b8d76}{IOption\+Pricer}}.
+
+\Hypertarget{class_crank_nicolson_pricer_a5cdd3d767a3512887e921f9b170460d2}\label{class_crank_nicolson_pricer_a5cdd3d767a3512887e921f9b170460d2} 
+\index{CrankNicolsonPricer@{CrankNicolsonPricer}!price@{price}}
+\index{price@{price}!CrankNicolsonPricer@{CrankNicolsonPricer}}
+\doxysubsubsection{\texorpdfstring{price()}{price()}}
+{\footnotesize\ttfamily double Crank\+Nicolson\+Pricer\+::price (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_option}{Option}} \&}]{opt }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Computes the price of the option using the Crank-\/\+Nicolson method. 
+
+Computes the option price using the Crank-\/\+Nicolson method.
+
+
+\begin{DoxyParams}{Parameters}
+{\em opt} & The option to be priced. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The computed option price.
+\end{DoxyReturn}
+
+
+This method solves the Black-\/\+Scholes PDE by discretizing time and the underlying asset price. It uses configuration parameters for maturity, risk-\/free rate, and discretization. If a calculation date is provided, the effective time to maturity is computed as\+:
+
+T\+\_\+effective = T -\/ offset,
+
+where offset is the number of years between config\+\_\+.\+calculation\+Date and today.
+
+Moreover, at each time step the local risk-\/free rate is determined by interpolating the yield curve. If the yield curve is empty, the default risk-\/free rate from config\+\_\+ is used.
+
+
+\begin{DoxyParams}{Parameters}
+{\em opt} & The option to be priced. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The computed option price. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_option_pricer_a579dcf7f5ee091f88682d43766226a9b}{IOption\+Pricer}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_crank_nicolson_pricer_8hpp}{Crank\+Nicolson\+Pricer.\+hpp}}\item 
+\mbox{\hyperlink{_crank_nicolson_pricer_8cpp}{Crank\+Nicolson\+Pricer.\+cpp}}\end{DoxyCompactItemize}

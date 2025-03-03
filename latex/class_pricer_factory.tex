@@ -1,0 +1,94 @@
+\doxysection{Pricer\+Factory Class Reference}
+\hypertarget{class_pricer_factory}{}\label{class_pricer_factory}\index{PricerFactory@{PricerFactory}}
+
+
+Factory pour créer des instances de moteurs de pricing.  
+
+
+
+
+{\ttfamily \#include $<$Pricer\+Factory.\+hpp$>$}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_i_option_pricer}{IOption\+Pricer}} $>$ \mbox{\hyperlink{class_pricer_factory_a5a3f668dea3141b12a71e6812787b570}{create\+Pricer}} (\mbox{\hyperlink{_pricer_factory_8hpp_a6e3c4698785c67dc4caf497092b45250}{Pricer\+Type}} type)
+\begin{DoxyCompactList}\small\item\em Crée un moteur de pricing selon le type spécifié. \end{DoxyCompactList}\item 
+static std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_i_option_pricer}{IOption\+Pricer}} $>$ \mbox{\hyperlink{class_pricer_factory_a40cb129746b09cb431e18c834fe5723f}{create\+Pricer}} (\mbox{\hyperlink{_pricer_factory_8hpp_a6e3c4698785c67dc4caf497092b45250}{Pricer\+Type}} type, const \mbox{\hyperlink{struct_pricing_configuration}{Pricing\+Configuration}} \&config)
+\begin{DoxyCompactList}\small\item\em Creates a pricing engine according to the specified type and configuration. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Factory pour créer des instances de moteurs de pricing. 
+
+Cette classe fournit une méthode statique permettant de créer dynamiquement un pricer en fonction du type demandé. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_pricer_factory_a5a3f668dea3141b12a71e6812787b570}\label{class_pricer_factory_a5a3f668dea3141b12a71e6812787b570} 
+\index{PricerFactory@{PricerFactory}!createPricer@{createPricer}}
+\index{createPricer@{createPricer}!PricerFactory@{PricerFactory}}
+\doxysubsubsection{\texorpdfstring{createPricer()}{createPricer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_i_option_pricer}{IOption\+Pricer}} $>$ Pricer\+Factory\+::create\+Pricer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_pricer_factory_8hpp_a6e3c4698785c67dc4caf497092b45250}{Pricer\+Type}}}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Crée un moteur de pricing selon le type spécifié. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & Le type de pricer à créer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Un pointeur unique vers une instance de \doxylink{class_i_option_pricer}{IOption\+Pricer}.
+\end{DoxyReturn}
+
+
+En fonction de l\textquotesingle{}énumération passée en paramètre, cette méthode retourne un pointeur unique vers une instance concrète d\textquotesingle{}\doxylink{class_i_option_pricer}{IOption\+Pricer}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & Le type de pricer à créer (Black\+Scholes, Binomial, Crank\+Nicolson, Monte\+Carlo). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Un std\+::unique\+\_\+ptr$<$\+IOption\+Pricer$>$ pointant vers l\textquotesingle{}instance créée. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & Si le type de pricer n\textquotesingle{}est pas reconnu. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{class_pricer_factory_a40cb129746b09cb431e18c834fe5723f}\label{class_pricer_factory_a40cb129746b09cb431e18c834fe5723f} 
+\index{PricerFactory@{PricerFactory}!createPricer@{createPricer}}
+\index{createPricer@{createPricer}!PricerFactory@{PricerFactory}}
+\doxysubsubsection{\texorpdfstring{createPricer()}{createPricer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_i_option_pricer}{IOption\+Pricer}} $>$ Pricer\+Factory\+::create\+Pricer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_pricer_factory_8hpp_a6e3c4698785c67dc4caf497092b45250}{Pricer\+Type}}}]{type,  }\item[{const \mbox{\hyperlink{struct_pricing_configuration}{Pricing\+Configuration}} \&}]{config }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Creates a pricing engine according to the specified type and configuration. 
+
+This overload allows the user to specify additional configuration parameters (such as maturity, risk-\/free rate, discretization settings, etc.) via a \doxylink{struct_pricing_configuration}{Pricing\+Configuration} object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & The type of pricer to create (Black\+Scholes, Binomial, Crank\+Nicolson, Monte\+Carlo). \\
+\hline
+{\em config} & A \doxylink{struct_pricing_configuration}{Pricing\+Configuration} object containing additional parameters. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A std\+::unique\+\_\+ptr$<$\+IOption\+Pricer$>$ pointing to the created instance. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & if the pricer type is unknown. \\
+\hline
+\end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_pricer_factory_8hpp}{Pricer\+Factory.\+hpp}}\item 
+\mbox{\hyperlink{_pricer_factory_8cpp}{Pricer\+Factory.\+cpp}}\end{DoxyCompactItemize}

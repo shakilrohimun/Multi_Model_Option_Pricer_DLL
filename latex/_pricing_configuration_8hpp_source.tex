@@ -1,0 +1,61 @@
+\doxysection{Pricing\+Configuration.\+hpp}
+\hypertarget{_pricing_configuration_8hpp_source}{}\label{_pricing_configuration_8hpp_source}\mbox{\hyperlink{_pricing_configuration_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ PRICINGCONFIGURATION\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ PRICINGCONFIGURATION\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}pch.h"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_yield_curve_8hpp}{YieldCurve.hpp}}"{}}\ \ \textcolor{comment}{//\ Include\ the\ yield\ curve\ header}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_pricing_configuration}{PricingConfiguration}}\ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{comment}{//\ Common\ parameter:\ Calculation\ date\ (in\ ISO\ 8601\ format,\ e.g.,\ "{}2025-\/02-\/19"{}).}}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{comment}{//\ If\ not\ specified,\ the\ current\ date\ is\ assumed.}}
+\DoxyCodeLine{00027\ \ \ \ \ std::string\ calculationDate;}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{comment}{//\ New\ common\ parameters:}}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_pricing_configuration_a9ae4efdabf701f28b5c15dbc54ac3a7a}{maturity}};\ \ \ \ \ \ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_pricing_configuration_a77ee8c896b9a6ddd04437a7489b21c91}{riskFreeRate}};\ \ }
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{comment}{//\ Yield\ curve\ for\ variable\ interest\ rates.}}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{comment}{//\ If\ loaded\ with\ data,\ it\ is\ used\ to\ interpolate\ the\ risk-\/free\ rate;\ otherwise,\ riskFreeRate\ is\ used.}}
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{class_yield_curve}{YieldCurve}}\ yieldCurve;}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{comment}{//\ Black-\/Scholes\ parameters:}}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{comment}{//\ (No\ additional\ parameters\ beyond\ the\ calculation\ date\ are\ required.)}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{comment}{//\ Binomial\ model\ parameters:}}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{comment}{//\ Number\ of\ steps\ in\ the\ binomial\ tree.}}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{int}\ binomialSteps;}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{comment}{//\ Crank-\/Nicolson\ model\ parameters:}}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{comment}{//\ Number\ of\ time\ steps\ in\ the\ discretization.}}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{int}\ crankTimeSteps;}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{comment}{//\ Number\ of\ spatial\ (spot)\ steps\ in\ the\ discretization.}}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{int}\ crankSpotSteps;}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{comment}{//\ Upper\ limit\ for\ the\ underlying\ asset\ price\ (S\_max).}}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{comment}{//\ If\ set\ to\ 0.0,\ it\ can\ be\ computed\ from\ the\ underlying\ or\ strike.}}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{double}\ S\_max;}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{comment}{//\ Monte\ Carlo\ model\ parameters:}}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{comment}{//\ Number\ of\ simulation\ paths.}}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{int}\ mcNumPaths;}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{comment}{//\ Number\ of\ time\ steps\ per\ simulation\ path.}}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{int}\ mcTimeStepsPerPath;}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00066\ \ \ \ \ \mbox{\hyperlink{struct_pricing_configuration_a2bec29b456d4e0f45582d0a22a983ad0}{PricingConfiguration}}()}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ :\ calculationDate(\textcolor{stringliteral}{"{}"{}}),\ \textcolor{comment}{//\ Empty\ string\ means\ default\ to\ current\ date}}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_pricing_configuration_a9ae4efdabf701f28b5c15dbc54ac3a7a}{maturity}}(1.0),}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_pricing_configuration_a77ee8c896b9a6ddd04437a7489b21c91}{riskFreeRate}}(2.0),}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ binomialSteps(100),}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ crankTimeSteps(100),}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ crankSpotSteps(100),}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ S\_max(0.0),\ \textcolor{comment}{//\ 0.0\ indicates\ S\_max\ should\ be\ computed\ if\ needed}}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ mcNumPaths(10000),}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ mcTimeStepsPerPath(100)}
+\DoxyCodeLine{00076\ \ \ \ \ \{\}}
+\DoxyCodeLine{00077\ \};}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ PRICINGCONFIGURATION\_HPP}}
+
+\end{DoxyCode}

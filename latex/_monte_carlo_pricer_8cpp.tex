@@ -1,0 +1,23 @@
+\doxysection{Monte\+Carlo\+Pricer.\+cpp File Reference}
+\hypertarget{_monte_carlo_pricer_8cpp}{}\label{_monte_carlo_pricer_8cpp}\index{MonteCarloPricer.cpp@{MonteCarloPricer.cpp}}
+
+
+Implementation of the \doxylink{class_monte_carlo_pricer}{Monte\+Carlo\+Pricer} class using Monte Carlo simulation.  
+
+
+{\ttfamily \#include \"{}pch.\+h\"{}}\newline
+{\ttfamily \#include \"{}Monte\+Carlo\+Pricer.\+hpp\"{}}\newline
+{\ttfamily \#include \"{}Option.\+hpp\"{}}\newline
+{\ttfamily \#include \"{}Date\+Converter.\+hpp\"{}}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$random$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$numeric$>$}\newline
+{\ttfamily \#include $<$stdexcept$>$}\newline
+
+
+\doxysubsection{Detailed Description}
+Implementation of the \doxylink{class_monte_carlo_pricer}{Monte\+Carlo\+Pricer} class using Monte Carlo simulation. 
+
+This file implements the option pricing model using Monte Carlo simulation. For European options, a standard simulation of geometric Brownian motion is used. For American options, the Longstaff-\/\+Schwartz method (least-\/squares regression) is applied to determine the optimal early exercise. The simulation parameters (maturity, risk-\/free rate, number of paths, time steps per path) are taken from a \doxylink{struct_pricing_configuration}{Pricing\+Configuration} object. If a calculation date is provided, the effective time to maturity is adjusted as T\+\_\+effective = T -\/ offset. The risk-\/free rate is obtained at each time step by interpolating the yield curve. 

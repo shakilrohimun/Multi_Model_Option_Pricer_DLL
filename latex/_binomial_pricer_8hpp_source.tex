@@ -1,0 +1,33 @@
+\doxysection{Binomial\+Pricer.\+hpp}
+\hypertarget{_binomial_pricer_8hpp_source}{}\label{_binomial_pricer_8hpp_source}\mbox{\hyperlink{_binomial_pricer_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ BINOMIALPRICER\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ BINOMIALPRICER\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}pch.h"{}}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}InterfaceOptionPricer.hpp"{}}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_pricing_configuration_8hpp}{PricingConfiguration.hpp}}"{}}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_binomial_pricer}{BinomialPricer}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_i_option_pricer}{IOptionPricer}}\ \{}
+\DoxyCodeLine{00025\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{class_binomial_pricer_a84a007046a4fa06c1e354cf6c84e56f4}{BinomialPricer}}();}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{class_binomial_pricer_a84a007046a4fa06c1e354cf6c84e56f4}{BinomialPricer}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_pricing_configuration}{PricingConfiguration}}\&\ config);}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_binomial_pricer_ac43462463aca3c650edaad1cac4792be}{\string~BinomialPricer}}();}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_binomial_pricer_a7c9b655e4cf43b8a18f367588e8e58bf}{price}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_option}{Option}}\&\ opt)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{struct_greeks}{Greeks}}\ \mbox{\hyperlink{class_binomial_pricer_a13f7c3ea8814b0d0a070341f3e945180}{computeGreeks}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_option}{Option}}\&\ opt)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_binomial_pricer_a1876e1080d7d7bc1fd55bf26f38a7029}{setConfiguration}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_pricing_configuration}{PricingConfiguration}}\&\ config);}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00082\ \ \ \ \ \mbox{\hyperlink{struct_pricing_configuration}{PricingConfiguration}}\ \mbox{\hyperlink{class_binomial_pricer_a5189aac1be85c6e77ff4c56700d231df}{getConfiguration}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00085\ \ \ \ \ \mbox{\hyperlink{struct_pricing_configuration}{PricingConfiguration}}\ config\_;\ }
+\DoxyCodeLine{00086\ \};}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ BINOMIALPRICER\_HPP}}
+
+\end{DoxyCode}

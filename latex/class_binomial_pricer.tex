@@ -1,0 +1,192 @@
+\doxysection{Binomial\+Pricer Class Reference}
+\hypertarget{class_binomial_pricer}{}\label{class_binomial_pricer}\index{BinomialPricer@{BinomialPricer}}
+Inheritance diagram for Binomial\+Pricer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_binomial_pricer}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_binomial_pricer_a84a007046a4fa06c1e354cf6c84e56f4}{Binomial\+Pricer}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_binomial_pricer_a5b4596049ba5f1648c33ba231957ccfa}{Binomial\+Pricer}} (const \mbox{\hyperlink{struct_pricing_configuration}{Pricing\+Configuration}} \&config)
+\begin{DoxyCompactList}\small\item\em Constructor with pricing configuration. \end{DoxyCompactList}\item 
+\Hypertarget{class_binomial_pricer_ac43462463aca3c650edaad1cac4792be}\label{class_binomial_pricer_ac43462463aca3c650edaad1cac4792be} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Binomial\+Pricer} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual double \mbox{\hyperlink{class_binomial_pricer_a7c9b655e4cf43b8a18f367588e8e58bf}{price}} (const \mbox{\hyperlink{class_option}{Option}} \&opt) const override
+\begin{DoxyCompactList}\small\item\em Computes the option price using the binomial CRR model. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{struct_greeks}{Greeks}} \mbox{\hyperlink{class_binomial_pricer_a13f7c3ea8814b0d0a070341f3e945180}{compute\+Greeks}} (const \mbox{\hyperlink{class_option}{Option}} \&opt) const override
+\begin{DoxyCompactList}\small\item\em Computes the \doxylink{struct_greeks}{Greeks} of the option using finite differences applied to the binomial model. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_binomial_pricer_a1876e1080d7d7bc1fd55bf26f38a7029}{set\+Configuration}} (const \mbox{\hyperlink{struct_pricing_configuration}{Pricing\+Configuration}} \&config)
+\begin{DoxyCompactList}\small\item\em Sets the pricing configuration. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_pricing_configuration}{Pricing\+Configuration}} \mbox{\hyperlink{class_binomial_pricer_a5189aac1be85c6e77ff4c56700d231df}{get\+Configuration}} () const
+\begin{DoxyCompactList}\small\item\em Gets the current pricing configuration. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_i_option_pricer}{IOption\+Pricer}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+IOption\+Pricer} ()=default
+\begin{DoxyCompactList}\small\item\em Destructeur virtuel. \end{DoxyCompactList}\item 
+virtual double \mbox{\hyperlink{class_i_option_pricer_a579dcf7f5ee091f88682d43766226a9b}{price}} (const \mbox{\hyperlink{class_option}{Option}} \&opt) const =0
+\begin{DoxyCompactList}\small\item\em Calcule le prix de l\textquotesingle{}option. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{struct_greeks}{Greeks}} \mbox{\hyperlink{class_i_option_pricer_a81a689339e44b1a224c44c84756b8d76}{compute\+Greeks}} (const \mbox{\hyperlink{class_option}{Option}} \&opt) const =0
+\begin{DoxyCompactList}\small\item\em Calcule les greeks de l\textquotesingle{}option. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_binomial_pricer_a84a007046a4fa06c1e354cf6c84e56f4}\label{class_binomial_pricer_a84a007046a4fa06c1e354cf6c84e56f4} 
+\index{BinomialPricer@{BinomialPricer}!BinomialPricer@{BinomialPricer}}
+\index{BinomialPricer@{BinomialPricer}!BinomialPricer@{BinomialPricer}}
+\doxysubsubsection{\texorpdfstring{BinomialPricer()}{BinomialPricer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Binomial\+Pricer\+::\+Binomial\+Pricer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+Default constructor, using default configuration values.
+
+Constructs a \doxylink{class_binomial_pricer}{Binomial\+Pricer} using default configuration values. \Hypertarget{class_binomial_pricer_a5b4596049ba5f1648c33ba231957ccfa}\label{class_binomial_pricer_a5b4596049ba5f1648c33ba231957ccfa} 
+\index{BinomialPricer@{BinomialPricer}!BinomialPricer@{BinomialPricer}}
+\index{BinomialPricer@{BinomialPricer}!BinomialPricer@{BinomialPricer}}
+\doxysubsubsection{\texorpdfstring{BinomialPricer()}{BinomialPricer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Binomial\+Pricer\+::\+Binomial\+Pricer (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_pricing_configuration}{Pricing\+Configuration}} \&}]{config }\end{DoxyParamCaption})}
+
+
+
+Constructor with pricing configuration. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em config} & A \doxylink{struct_pricing_configuration}{Pricing\+Configuration} structure containing additional parameters, such as the calculation date and the number of steps (N). \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_binomial_pricer_a13f7c3ea8814b0d0a070341f3e945180}\label{class_binomial_pricer_a13f7c3ea8814b0d0a070341f3e945180} 
+\index{BinomialPricer@{BinomialPricer}!computeGreeks@{computeGreeks}}
+\index{computeGreeks@{computeGreeks}!BinomialPricer@{BinomialPricer}}
+\doxysubsubsection{\texorpdfstring{computeGreeks()}{computeGreeks()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_greeks}{Greeks}} Binomial\+Pricer\+::compute\+Greeks (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_option}{Option}} \&}]{opt }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Computes the \doxylink{struct_greeks}{Greeks} of the option using finite differences applied to the binomial model. 
+
+This function estimates the option \doxylink{struct_greeks}{Greeks} (Delta, Gamma, Vega, Theta, and Rho) by perturbing the input parameters and recalculating the option price.
+
+
+\begin{DoxyParams}{Parameters}
+{\em opt} & The option to evaluate. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{struct_greeks}{Greeks} structure containing the calculated values.
+\end{DoxyReturn}
+
+
+This function estimates the \doxylink{struct_greeks}{Greeks} (Delta, Gamma, Vega, Theta, and Rho) by perturbing the input parameters and recalculating the option price.
+
+
+\begin{DoxyParams}{Parameters}
+{\em opt} & The option to evaluate. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{struct_greeks}{Greeks} structure containing the calculated values. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_option_pricer_a81a689339e44b1a224c44c84756b8d76}{IOption\+Pricer}}.
+
+\Hypertarget{class_binomial_pricer_a5189aac1be85c6e77ff4c56700d231df}\label{class_binomial_pricer_a5189aac1be85c6e77ff4c56700d231df} 
+\index{BinomialPricer@{BinomialPricer}!getConfiguration@{getConfiguration}}
+\index{getConfiguration@{getConfiguration}!BinomialPricer@{BinomialPricer}}
+\doxysubsubsection{\texorpdfstring{getConfiguration()}{getConfiguration()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_pricing_configuration}{Pricing\+Configuration}} Binomial\+Pricer\+::get\+Configuration (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the current pricing configuration. 
+
+\begin{DoxyReturn}{Returns}
+The current \doxylink{struct_pricing_configuration}{Pricing\+Configuration} structure.
+\end{DoxyReturn}
+
+
+\begin{DoxyReturn}{Returns}
+The current \doxylink{struct_pricing_configuration}{Pricing\+Configuration} object. 
+\end{DoxyReturn}
+\Hypertarget{class_binomial_pricer_a7c9b655e4cf43b8a18f367588e8e58bf}\label{class_binomial_pricer_a7c9b655e4cf43b8a18f367588e8e58bf} 
+\index{BinomialPricer@{BinomialPricer}!price@{price}}
+\index{price@{price}!BinomialPricer@{BinomialPricer}}
+\doxysubsubsection{\texorpdfstring{price()}{price()}}
+{\footnotesize\ttfamily double Binomial\+Pricer\+::price (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_option}{Option}} \&}]{opt }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Computes the option price using the binomial CRR model. 
+
+This function calculates the price of an option using the binomial tree approach, with the number of steps specified in the pricing configuration.
+
+
+\begin{DoxyParams}{Parameters}
+{\em opt} & The option to be priced. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The computed option price.
+\end{DoxyReturn}
+
+
+This function calculates the price of an option using a binomial tree. The number of steps in the tree is taken from the configuration (config\+\_\+.\+binomial\+Steps).
+
+Instead of using a constant risk-\/free rate, the backward induction uses a variable rate obtained via interpolation from the yield curve stored in the configuration. For each time step, the local rate is obtained by\+: r\+\_\+local = config\+\_\+.\+yield\+Curve.\+get\+Rate(t\+\_\+norm) where t\+\_\+norm is the normalized time (between 0 and 1).
+
+
+\begin{DoxyParams}{Parameters}
+{\em opt} & The option to be priced. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The computed option price. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_option_pricer_a579dcf7f5ee091f88682d43766226a9b}{IOption\+Pricer}}.
+
+\Hypertarget{class_binomial_pricer_a1876e1080d7d7bc1fd55bf26f38a7029}\label{class_binomial_pricer_a1876e1080d7d7bc1fd55bf26f38a7029} 
+\index{BinomialPricer@{BinomialPricer}!setConfiguration@{setConfiguration}}
+\index{setConfiguration@{setConfiguration}!BinomialPricer@{BinomialPricer}}
+\doxysubsubsection{\texorpdfstring{setConfiguration()}{setConfiguration()}}
+{\footnotesize\ttfamily void Binomial\+Pricer\+::set\+Configuration (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_pricing_configuration}{Pricing\+Configuration}} \&}]{config }\end{DoxyParamCaption})}
+
+
+
+Sets the pricing configuration. 
+
+Allows updating the configuration parameters used by the \doxylink{class_binomial_pricer}{Binomial\+Pricer}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em config} & A \doxylink{struct_pricing_configuration}{Pricing\+Configuration} structure containing the new parameters.\\
+\hline
+\end{DoxyParams}
+
+
+Allows updating the configuration parameters used by the \doxylink{class_binomial_pricer}{Binomial\+Pricer}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em config} & A \doxylink{struct_pricing_configuration}{Pricing\+Configuration} object containing the new parameters. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_binomial_pricer_8hpp}{Binomial\+Pricer.\+hpp}}\item 
+\mbox{\hyperlink{_binomial_pricer_8cpp}{Binomial\+Pricer.\+cpp}}\end{DoxyCompactItemize}

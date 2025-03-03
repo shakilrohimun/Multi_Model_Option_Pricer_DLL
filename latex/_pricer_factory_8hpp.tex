@@ -1,0 +1,62 @@
+\doxysection{Pricer\+Factory.\+hpp File Reference}
+\hypertarget{_pricer_factory_8hpp}{}\label{_pricer_factory_8hpp}\index{PricerFactory.hpp@{PricerFactory.hpp}}
+
+
+Déclaration de la factory pour créer des moteurs de pricing.  
+
+
+{\ttfamily \#include \"{}pch.\+h\"{}}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include \"{}Interface\+Option\+Pricer.\+hpp\"{}}\newline
+{\ttfamily \#include \"{}Pricing\+Configuration.\+hpp\"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_pricer_factory}{Pricer\+Factory}}
+\begin{DoxyCompactList}\small\item\em Factory pour créer des instances de moteurs de pricing. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{_pricer_factory_8hpp_a6e3c4698785c67dc4caf497092b45250}{Pricer\+Type}} \{ \mbox{\hyperlink{_pricer_factory_8hpp_a6e3c4698785c67dc4caf497092b45250ac40bd32b046f27c90a6a0d2aebc48d8c}{Black\+Scholes}}
+, \mbox{\hyperlink{_pricer_factory_8hpp_a6e3c4698785c67dc4caf497092b45250af0dc57106e362cb815789ed45ed989ad}{Binomial}}
+, \mbox{\hyperlink{_pricer_factory_8hpp_a6e3c4698785c67dc4caf497092b45250a8c12763e7ca8639982cbb121e19a52a1}{Crank\+Nicolson}}
+, \mbox{\hyperlink{_pricer_factory_8hpp_a6e3c4698785c67dc4caf497092b45250aedd652c19d7dbbfb3d242aa14b2fec8c}{Monte\+Carlo}}
+ \}
+\begin{DoxyCompactList}\small\item\em Enumération des types de pricers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Déclaration de la factory pour créer des moteurs de pricing. 
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{_pricer_factory_8hpp_a6e3c4698785c67dc4caf497092b45250}\label{_pricer_factory_8hpp_a6e3c4698785c67dc4caf497092b45250} 
+\index{PricerFactory.hpp@{PricerFactory.hpp}!PricerType@{PricerType}}
+\index{PricerType@{PricerType}!PricerFactory.hpp@{PricerFactory.hpp}}
+\doxysubsubsection{\texorpdfstring{PricerType}{PricerType}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{_pricer_factory_8hpp_a6e3c4698785c67dc4caf497092b45250}{Pricer\+Type}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Enumération des types de pricers. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BlackScholes@{BlackScholes}!PricerFactory.hpp@{PricerFactory.hpp}}\index{PricerFactory.hpp@{PricerFactory.hpp}!BlackScholes@{BlackScholes}}}\Hypertarget{_pricer_factory_8hpp_a6e3c4698785c67dc4caf497092b45250ac40bd32b046f27c90a6a0d2aebc48d8c}\label{_pricer_factory_8hpp_a6e3c4698785c67dc4caf497092b45250ac40bd32b046f27c90a6a0d2aebc48d8c} 
+Black\+Scholes&Pricer utilisant la formule de Black-\/\+Scholes. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Binomial@{Binomial}!PricerFactory.hpp@{PricerFactory.hpp}}\index{PricerFactory.hpp@{PricerFactory.hpp}!Binomial@{Binomial}}}\Hypertarget{_pricer_factory_8hpp_a6e3c4698785c67dc4caf497092b45250af0dc57106e362cb815789ed45ed989ad}\label{_pricer_factory_8hpp_a6e3c4698785c67dc4caf497092b45250af0dc57106e362cb815789ed45ed989ad} 
+Binomial&Pricer basé sur la méthode binomiale. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CrankNicolson@{CrankNicolson}!PricerFactory.hpp@{PricerFactory.hpp}}\index{PricerFactory.hpp@{PricerFactory.hpp}!CrankNicolson@{CrankNicolson}}}\Hypertarget{_pricer_factory_8hpp_a6e3c4698785c67dc4caf497092b45250a8c12763e7ca8639982cbb121e19a52a1}\label{_pricer_factory_8hpp_a6e3c4698785c67dc4caf497092b45250a8c12763e7ca8639982cbb121e19a52a1} 
+Crank\+Nicolson&Pricer utilisant la méthode des différences finies de Crank-\/\+Nicolson. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MonteCarlo@{MonteCarlo}!PricerFactory.hpp@{PricerFactory.hpp}}\index{PricerFactory.hpp@{PricerFactory.hpp}!MonteCarlo@{MonteCarlo}}}\Hypertarget{_pricer_factory_8hpp_a6e3c4698785c67dc4caf497092b45250aedd652c19d7dbbfb3d242aa14b2fec8c}\label{_pricer_factory_8hpp_a6e3c4698785c67dc4caf497092b45250aedd652c19d7dbbfb3d242aa14b2fec8c} 
+Monte\+Carlo&Pricer basé sur la simulation par Monte Carlo. \\
+\hline
+
+\end{DoxyEnumFields}

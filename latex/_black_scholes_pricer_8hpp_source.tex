@@ -1,0 +1,29 @@
+\doxysection{Black\+Scholes\+Pricer.\+hpp}
+\hypertarget{_black_scholes_pricer_8hpp_source}{}\label{_black_scholes_pricer_8hpp_source}\mbox{\hyperlink{_black_scholes_pricer_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ BLACKSCHOLESPRICER\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ BLACKSCHOLESPRICER\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}pch.h"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}InterfaceOptionPricer.hpp"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_pricing_configuration_8hpp}{PricingConfiguration.hpp}}"{}}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_black_scholes_pricer}{BlackScholesPricer}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_i_option_pricer}{IOptionPricer}}\ \{}
+\DoxyCodeLine{00020\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{class_black_scholes_pricer_a44fa2237bc179b762fe26feeaafd94e7}{BlackScholesPricer}}();}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{class_black_scholes_pricer_a44fa2237bc179b762fe26feeaafd94e7}{BlackScholesPricer}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_pricing_configuration}{PricingConfiguration}}\&\ config);}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_black_scholes_pricer_ae298e83cd2505628a53f515c29326176}{\string~BlackScholesPricer}}();}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_black_scholes_pricer_a35afc68932ea489cf505e73a21fb64c7}{price}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_option}{Option}}\&\ opt)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{struct_greeks}{Greeks}}\ \mbox{\hyperlink{class_black_scholes_pricer_abd9a2826b0592e7229d06444cd22c6df}{computeGreeks}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_option}{Option}}\&\ opt)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00075\ \ \ \ \ \mbox{\hyperlink{struct_pricing_configuration}{PricingConfiguration}}\ config\_;\ }
+\DoxyCodeLine{00076\ \};}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ BLACKSCHOLESPRICER\_HPP}}
+
+\end{DoxyCode}

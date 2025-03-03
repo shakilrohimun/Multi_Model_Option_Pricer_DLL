@@ -1,0 +1,162 @@
+\doxysection{Monte\+Carlo\+Pricer Class Reference}
+\hypertarget{class_monte_carlo_pricer}{}\label{class_monte_carlo_pricer}\index{MonteCarloPricer@{MonteCarloPricer}}
+
+
+Class that implements the Monte Carlo pricing model.  
+
+
+
+
+{\ttfamily \#include $<$Monte\+Carlo\+Pricer.\+hpp$>$}
+
+Inheritance diagram for Monte\+Carlo\+Pricer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_monte_carlo_pricer}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_monte_carlo_pricer_a0ccb5d50908f7a7f693239f414011672}{Monte\+Carlo\+Pricer}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\Hypertarget{class_monte_carlo_pricer_a9f1e66e21831c8b436b64e879cf17d1e}\label{class_monte_carlo_pricer_a9f1e66e21831c8b436b64e879cf17d1e} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Monte\+Carlo\+Pricer} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual double \mbox{\hyperlink{class_monte_carlo_pricer_a90b5b22a15176584584226ec5ec92978}{price}} (const \mbox{\hyperlink{class_option}{Option}} \&opt) const override
+\begin{DoxyCompactList}\small\item\em Computes the price of the option using Monte Carlo simulation. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{struct_greeks}{Greeks}} \mbox{\hyperlink{class_monte_carlo_pricer_a10253f55e3e5f4618dd7dce5a83b6503}{compute\+Greeks}} (const \mbox{\hyperlink{class_option}{Option}} \&opt) const override
+\begin{DoxyCompactList}\small\item\em Computes the \doxylink{struct_greeks}{Greeks} of the option using Monte Carlo simulation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_monte_carlo_pricer_ad4f014058bcd1218f777868012546076}{Monte\+Carlo\+Pricer}} (const \mbox{\hyperlink{struct_pricing_configuration}{Pricing\+Configuration}} \&config)
+\begin{DoxyCompactList}\small\item\em Constructor with pricing configuration. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_i_option_pricer}{IOption\+Pricer}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+IOption\+Pricer} ()=default
+\begin{DoxyCompactList}\small\item\em Destructeur virtuel. \end{DoxyCompactList}\item 
+virtual double \mbox{\hyperlink{class_i_option_pricer_a579dcf7f5ee091f88682d43766226a9b}{price}} (const \mbox{\hyperlink{class_option}{Option}} \&opt) const =0
+\begin{DoxyCompactList}\small\item\em Calcule le prix de l\textquotesingle{}option. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{struct_greeks}{Greeks}} \mbox{\hyperlink{class_i_option_pricer_a81a689339e44b1a224c44c84756b8d76}{compute\+Greeks}} (const \mbox{\hyperlink{class_option}{Option}} \&opt) const =0
+\begin{DoxyCompactList}\small\item\em Calcule les greeks de l\textquotesingle{}option. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class that implements the Monte Carlo pricing model. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_monte_carlo_pricer_a0ccb5d50908f7a7f693239f414011672}\label{class_monte_carlo_pricer_a0ccb5d50908f7a7f693239f414011672} 
+\index{MonteCarloPricer@{MonteCarloPricer}!MonteCarloPricer@{MonteCarloPricer}}
+\index{MonteCarloPricer@{MonteCarloPricer}!MonteCarloPricer@{MonteCarloPricer}}
+\doxysubsubsection{\texorpdfstring{MonteCarloPricer()}{MonteCarloPricer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Monte\+Carlo\+Pricer\+::\+Monte\+Carlo\+Pricer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+Default constructor using the default configuration. \Hypertarget{class_monte_carlo_pricer_ad4f014058bcd1218f777868012546076}\label{class_monte_carlo_pricer_ad4f014058bcd1218f777868012546076} 
+\index{MonteCarloPricer@{MonteCarloPricer}!MonteCarloPricer@{MonteCarloPricer}}
+\index{MonteCarloPricer@{MonteCarloPricer}!MonteCarloPricer@{MonteCarloPricer}}
+\doxysubsubsection{\texorpdfstring{MonteCarloPricer()}{MonteCarloPricer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Monte\+Carlo\+Pricer\+::\+Monte\+Carlo\+Pricer (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_pricing_configuration}{Pricing\+Configuration}} \&}]{config }\end{DoxyParamCaption})}
+
+
+
+Constructor with pricing configuration. 
+
+New constructor\+: initialize with a pricing configuration.
+
+
+\begin{DoxyParams}{Parameters}
+{\em config} & A \doxylink{struct_pricing_configuration}{Pricing\+Configuration} structure containing additional parameters, such as the calculation date, maturity, risk-\/free rate, number of paths, and time steps per path. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_monte_carlo_pricer_a10253f55e3e5f4618dd7dce5a83b6503}\label{class_monte_carlo_pricer_a10253f55e3e5f4618dd7dce5a83b6503} 
+\index{MonteCarloPricer@{MonteCarloPricer}!computeGreeks@{computeGreeks}}
+\index{computeGreeks@{computeGreeks}!MonteCarloPricer@{MonteCarloPricer}}
+\doxysubsubsection{\texorpdfstring{computeGreeks()}{computeGreeks()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_greeks}{Greeks}} Monte\+Carlo\+Pricer\+::compute\+Greeks (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_option}{Option}} \&}]{opt }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Computes the \doxylink{struct_greeks}{Greeks} of the option using Monte Carlo simulation. 
+
+Computes the \doxylink{struct_greeks}{Greeks} of the option using finite differences applied to the Monte Carlo pricer.
+
+
+\begin{DoxyParams}{Parameters}
+{\em opt} & The option to evaluate. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{struct_greeks}{Greeks} structure containing the calculated values.
+\end{DoxyReturn}
+
+
+This function estimates the \doxylink{struct_greeks}{Greeks} (Delta, Gamma, Vega, Theta, and Rho) by perturbing the input parameters and recalculating the option price.
+
+
+\begin{DoxyParams}{Parameters}
+{\em opt} & The option to evaluate. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{struct_greeks}{Greeks} structure containing the calculated values. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_option_pricer_a81a689339e44b1a224c44c84756b8d76}{IOption\+Pricer}}.
+
+\Hypertarget{class_monte_carlo_pricer_a90b5b22a15176584584226ec5ec92978}\label{class_monte_carlo_pricer_a90b5b22a15176584584226ec5ec92978} 
+\index{MonteCarloPricer@{MonteCarloPricer}!price@{price}}
+\index{price@{price}!MonteCarloPricer@{MonteCarloPricer}}
+\doxysubsubsection{\texorpdfstring{price()}{price()}}
+{\footnotesize\ttfamily double Monte\+Carlo\+Pricer\+::price (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_option}{Option}} \&}]{opt }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Computes the price of the option using Monte Carlo simulation. 
+
+Computes the option price using Monte Carlo simulation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em opt} & The option to be priced. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The computed option price.
+\end{DoxyReturn}
+
+
+For European options, a standard simulation of geometric Brownian motion is used. For American options, the Longstaff-\/\+Schwartz algorithm is applied to determine the optimal exercise.
+
+The simulation parameters (maturity, risk-\/free rate, number of simulation paths, and number of time steps) are obtained from the \doxylink{struct_pricing_configuration}{Pricing\+Configuration} object. If a calculation date is provided, the effective time to maturity is adjusted as\+:
+
+T\+\_\+effective = T -\/ offset,
+
+where offset is the number of years between config\+\_\+.\+calculation\+Date and today.
+
+In the forward simulation, the local risk-\/free rate at each step is obtained by\+: r\+\_\+local = (yield\+Curve is available) ? yield\+Curve.\+get\+Rate(t\+\_\+norm) \+: default risk\+Free\+Rate, where t\+\_\+norm is the normalized time (current time / T\+\_\+effective).
+
+
+\begin{DoxyParams}{Parameters}
+{\em opt} & The option to be priced. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The computed option price. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_option_pricer_a579dcf7f5ee091f88682d43766226a9b}{IOption\+Pricer}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_monte_carlo_pricer_8hpp}{Monte\+Carlo\+Pricer.\+hpp}}\item 
+\mbox{\hyperlink{_monte_carlo_pricer_8cpp}{Monte\+Carlo\+Pricer.\+cpp}}\end{DoxyCompactItemize}

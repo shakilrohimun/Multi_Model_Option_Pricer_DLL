@@ -1,0 +1,72 @@
+\doxysection{Pricing\+Configuration Struct Reference}
+\hypertarget{struct_pricing_configuration}{}\label{struct_pricing_configuration}\index{PricingConfiguration@{PricingConfiguration}}
+
+
+Structure holding pricing configuration parameters.  
+
+
+
+
+{\ttfamily \#include $<$Pricing\+Configuration.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_pricing_configuration_a2bec29b456d4e0f45582d0a22a983ad0}{Pricing\+Configuration}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor with default parameter values. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_pricing_configuration_a86654268cc7202dec16251f02873a629}\label{struct_pricing_configuration_a86654268cc7202dec16251f02873a629} 
+std\+::string {\bfseries calculation\+Date}
+\item 
+\Hypertarget{struct_pricing_configuration_a9ae4efdabf701f28b5c15dbc54ac3a7a}\label{struct_pricing_configuration_a9ae4efdabf701f28b5c15dbc54ac3a7a} 
+double {\bfseries maturity}
+\begin{DoxyCompactList}\small\item\em Maturity in years (default\+: 1.\+0) \end{DoxyCompactList}\item 
+\Hypertarget{struct_pricing_configuration_a77ee8c896b9a6ddd04437a7489b21c91}\label{struct_pricing_configuration_a77ee8c896b9a6ddd04437a7489b21c91} 
+double {\bfseries risk\+Free\+Rate}
+\begin{DoxyCompactList}\small\item\em Default risk-\/free interest rate (default\+: 0.\+0 if no yield curve data is available) \end{DoxyCompactList}\item 
+\Hypertarget{struct_pricing_configuration_a8564f465b2656557af9eba82722e5e19}\label{struct_pricing_configuration_a8564f465b2656557af9eba82722e5e19} 
+\mbox{\hyperlink{class_yield_curve}{Yield\+Curve}} {\bfseries yield\+Curve}
+\item 
+\Hypertarget{struct_pricing_configuration_ae75cb39110c5afd84c593a8b945158fb}\label{struct_pricing_configuration_ae75cb39110c5afd84c593a8b945158fb} 
+int {\bfseries binomial\+Steps}
+\item 
+\Hypertarget{struct_pricing_configuration_a19af78dfee60063e83346cb99710dcf7}\label{struct_pricing_configuration_a19af78dfee60063e83346cb99710dcf7} 
+int {\bfseries crank\+Time\+Steps}
+\item 
+\Hypertarget{struct_pricing_configuration_a3b7221633527d9b1d758f2a5ab7eaf29}\label{struct_pricing_configuration_a3b7221633527d9b1d758f2a5ab7eaf29} 
+int {\bfseries crank\+Spot\+Steps}
+\item 
+\Hypertarget{struct_pricing_configuration_a0252e37ed36dce2e03317c5715081a9d}\label{struct_pricing_configuration_a0252e37ed36dce2e03317c5715081a9d} 
+double {\bfseries S\+\_\+max}
+\item 
+\Hypertarget{struct_pricing_configuration_ae6c8a854a8cae03c47e20e199885e1db}\label{struct_pricing_configuration_ae6c8a854a8cae03c47e20e199885e1db} 
+int {\bfseries mc\+Num\+Paths}
+\item 
+\Hypertarget{struct_pricing_configuration_a6f1d5c5506012916fff9974f820a4b23}\label{struct_pricing_configuration_a6f1d5c5506012916fff9974f820a4b23} 
+int {\bfseries mc\+Time\+Steps\+Per\+Path}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Structure holding pricing configuration parameters. 
+
+This structure contains additional input parameters for the pricing models. It provides flexibility by allowing customization of numerical discretization, simulation parameters, and variable interest rates via a yield curve. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{struct_pricing_configuration_a2bec29b456d4e0f45582d0a22a983ad0}\label{struct_pricing_configuration_a2bec29b456d4e0f45582d0a22a983ad0} 
+\index{PricingConfiguration@{PricingConfiguration}!PricingConfiguration@{PricingConfiguration}}
+\index{PricingConfiguration@{PricingConfiguration}!PricingConfiguration@{PricingConfiguration}}
+\doxysubsubsection{\texorpdfstring{PricingConfiguration()}{PricingConfiguration()}}
+{\footnotesize\ttfamily Pricing\+Configuration\+::\+Pricing\+Configuration (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Default constructor with default parameter values. 
+
+The default values are chosen to provide a reasonable starting point. Note that the risk-\/free rate is set to 0.\+0 by default; if no yield curve is loaded, this value will be used. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_pricing_configuration_8hpp}{Pricing\+Configuration.\+hpp}}\end{DoxyCompactItemize}
