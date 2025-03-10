@@ -1,0 +1,170 @@
+\doxysection{Pricer\+Factory Class Reference}
+\hypertarget{class_pricer_factory}{}\label{class_pricer_factory}\index{PricerFactory@{PricerFactory}}
+
+
+Factory for creating pricing engine instances.  
+
+
+
+
+{\ttfamily \#include $<$Pricer\+Factory.\+hpp$>$}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_i_option_pricer}{IOption\+Pricer}} $>$ \mbox{\hyperlink{class_pricer_factory_a5a3f668dea3141b12a71e6812787b570}{create\+Pricer}} (\mbox{\hyperlink{_pricer_factory_8hpp_a6e3c4698785c67dc4caf497092b45250}{Pricer\+Type}} type)
+\begin{DoxyCompactList}\small\item\em Creates a pricing engine according to the specified type. \end{DoxyCompactList}\item 
+static std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_i_option_pricer}{IOption\+Pricer}} $>$ \mbox{\hyperlink{class_pricer_factory_a40cb129746b09cb431e18c834fe5723f}{create\+Pricer}} (\mbox{\hyperlink{_pricer_factory_8hpp_a6e3c4698785c67dc4caf497092b45250}{Pricer\+Type}} type, const \mbox{\hyperlink{struct_pricing_configuration}{Pricing\+Configuration}} \&config)
+\begin{DoxyCompactList}\small\item\em Creates a pricing engine with a specified configuration. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Factory for creating pricing engine instances. 
+
+The \doxylink{class_pricer_factory}{Pricer\+Factory} class provides static methods to create instances of pricing engines (implementations of \doxylink{class_i_option_pricer}{IOption\+Pricer}) based on the specified pricer type and configuration. This design pattern promotes flexibility and scalability in the option pricing system. 
+
+Definition at line \mbox{\hyperlink{_pricer_factory_8hpp_source_l00040}{40}} of file \mbox{\hyperlink{_pricer_factory_8hpp_source}{Pricer\+Factory.\+hpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_pricer_factory_a5a3f668dea3141b12a71e6812787b570}\label{class_pricer_factory_a5a3f668dea3141b12a71e6812787b570} 
+\index{PricerFactory@{PricerFactory}!createPricer@{createPricer}}
+\index{createPricer@{createPricer}!PricerFactory@{PricerFactory}}
+\doxysubsubsection{\texorpdfstring{createPricer()}{createPricer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_i_option_pricer}{IOption\+Pricer}} $>$ Pricer\+Factory\+::create\+Pricer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_pricer_factory_8hpp_a6e3c4698785c67dc4caf497092b45250}{Pricer\+Type}}}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Creates a pricing engine according to the specified type. 
+
+Creates a pricing engine based on the specified type.
+
+This static method instantiates and returns a unique pointer to a pricing engine based solely on the pricer type provided.
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & The type of pricing engine to create, as defined in the Pricer\+Type enumeration. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A std\+::unique\+\_\+ptr$<$\+IOption\+Pricer$>$ pointing to the newly created pricing engine instance.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Use the returned object to compute option prices and \doxylink{struct_greeks}{Greeks} using the selected pricing model.
+\end{DoxyNote}
+
+
+Depending on the enumeration passed as a parameter, this method returns a unique pointer to a concrete instance of \doxylink{class_i_option_pricer}{IOption\+Pricer}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & The type of pricer to create (Black\+Scholes, Binomial, Crank\+Nicolson, Monte\+Carlo). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A std\+::unique\+\_\+ptr$<$\+IOption\+Pricer$>$ pointing to the created instance. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & if the pricer type is not recognized. \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line \mbox{\hyperlink{_pricer_factory_8cpp_source_l00029}{29}} of file \mbox{\hyperlink{_pricer_factory_8cpp_source}{Pricer\+Factory.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordflow}{switch}\ (type)\ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{_pricer_factory_8hpp_a6e3c4698785c67dc4caf497092b45250ac40bd32b046f27c90a6a0d2aebc48d8c}{PricerType::BlackScholes}}:}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::make\_unique<BlackScholesPricer>();}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{_pricer_factory_8hpp_a6e3c4698785c67dc4caf497092b45250af0dc57106e362cb815789ed45ed989ad}{PricerType::Binomial}}:}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::make\_unique<BinomialPricer>();}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{_pricer_factory_8hpp_a6e3c4698785c67dc4caf497092b45250a8c12763e7ca8639982cbb121e19a52a1}{PricerType::CrankNicolson}}:}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::make\_unique<CrankNicolsonPricer>();}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{_pricer_factory_8hpp_a6e3c4698785c67dc4caf497092b45250aedd652c19d7dbbfb3d242aa14b2fec8c}{PricerType::MonteCarlo}}:}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::make\_unique<MonteCarloPricer>();}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}Unknown\ pricer\ type."{}});}
+\DoxyCodeLine{00041\ \ \ \ \ \}}
+\DoxyCodeLine{00042\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_pricer_factory_a40cb129746b09cb431e18c834fe5723f}\label{class_pricer_factory_a40cb129746b09cb431e18c834fe5723f} 
+\index{PricerFactory@{PricerFactory}!createPricer@{createPricer}}
+\index{createPricer@{createPricer}!PricerFactory@{PricerFactory}}
+\doxysubsubsection{\texorpdfstring{createPricer()}{createPricer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_i_option_pricer}{IOption\+Pricer}} $>$ Pricer\+Factory\+::create\+Pricer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_pricer_factory_8hpp_a6e3c4698785c67dc4caf497092b45250}{Pricer\+Type}}}]{type,  }\item[{const \mbox{\hyperlink{struct_pricing_configuration}{Pricing\+Configuration}} \&}]{config }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Creates a pricing engine with a specified configuration. 
+
+Creates a pricing engine with a specific configuration.
+
+This overload allows the caller to provide additional configuration parameters via a \doxylink{struct_pricing_configuration}{Pricing\+Configuration} object. This enables customization of the pricing engine, such as specifying maturity, risk-\/free rate, discretization settings, and other relevant parameters.
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & The type of pricing engine to create (Black\+Scholes, Binomial, Crank\+Nicolson, Monte\+Carlo). \\
+\hline
+{\em config} & A \doxylink{struct_pricing_configuration}{Pricing\+Configuration} object containing additional parameters for customizing the engine. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A std\+::unique\+\_\+ptr$<$\+IOption\+Pricer$>$ pointing to the newly created pricing engine instance.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & if the pricer type is unknown.\\
+\hline
+\end{DoxyExceptions}
+
+
+This overload allows the user to specify additional configuration parameters via a \doxylink{struct_pricing_configuration}{Pricing\+Configuration} object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & The type of pricer to create (Black\+Scholes, Binomial, Crank\+Nicolson, Monte\+Carlo). \\
+\hline
+{\em config} & A \doxylink{struct_pricing_configuration}{Pricing\+Configuration} object containing additional parameters. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A std\+::unique\+\_\+ptr$<$\+IOption\+Pricer$>$ pointing to the created instance. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & if the pricer type is not recognized. \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line \mbox{\hyperlink{_pricer_factory_8cpp_source_l00055}{55}} of file \mbox{\hyperlink{_pricer_factory_8cpp_source}{Pricer\+Factory.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordflow}{switch}\ (type)\ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{_pricer_factory_8hpp_a6e3c4698785c67dc4caf497092b45250ac40bd32b046f27c90a6a0d2aebc48d8c}{PricerType::BlackScholes}}:}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::make\_unique<BlackScholesPricer>(config);}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{_pricer_factory_8hpp_a6e3c4698785c67dc4caf497092b45250af0dc57106e362cb815789ed45ed989ad}{PricerType::Binomial}}:}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::make\_unique<BinomialPricer>(config);}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{_pricer_factory_8hpp_a6e3c4698785c67dc4caf497092b45250a8c12763e7ca8639982cbb121e19a52a1}{PricerType::CrankNicolson}}:}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::make\_unique<CrankNicolsonPricer>(config);}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{_pricer_factory_8hpp_a6e3c4698785c67dc4caf497092b45250aedd652c19d7dbbfb3d242aa14b2fec8c}{PricerType::MonteCarlo}}:}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::make\_unique<MonteCarloPricer>(config);}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}Unknown\ pricer\ type."{}});}
+\DoxyCodeLine{00067\ \ \ \ \ \}}
+\DoxyCodeLine{00068\ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_pricer_factory_8hpp}{Pricer\+Factory.\+hpp}}\item 
+\mbox{\hyperlink{_pricer_factory_8cpp}{Pricer\+Factory.\+cpp}}\end{DoxyCompactItemize}

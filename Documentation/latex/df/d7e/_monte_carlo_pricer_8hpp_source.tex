@@ -1,0 +1,29 @@
+\doxysection{Monte\+Carlo\+Pricer.\+hpp}
+\hypertarget{_monte_carlo_pricer_8hpp_source}{}\label{_monte_carlo_pricer_8hpp_source}\mbox{\hyperlink{_monte_carlo_pricer_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_monte_carlo_pricer_8hpp_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ MONTECARLOPRICER\_HPP}}
+\DoxyCodeLine{\Hypertarget{_monte_carlo_pricer_8hpp_source_l00002}00002\ \textcolor{preprocessor}{\#define\ MONTECARLOPRICER\_HPP}}
+\DoxyCodeLine{\Hypertarget{_monte_carlo_pricer_8hpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_monte_carlo_pricer_8hpp_source_l00020}00020\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{pch_8h}{pch.h}}"{}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Precompiled\ header\ for\ common\ system\ and\ project\ includes.}}
+\DoxyCodeLine{\Hypertarget{_monte_carlo_pricer_8hpp_source_l00021}00021\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_interface_option_pricer_8hpp}{InterfaceOptionPricer.hpp}}"{}}\ \ \textcolor{comment}{//\ Interface\ definition\ for\ option\ pricing\ engines.}}
+\DoxyCodeLine{\Hypertarget{_monte_carlo_pricer_8hpp_source_l00022}00022\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_pricing_configuration_8hpp}{PricingConfiguration.hpp}}"{}}\ \ \ \textcolor{comment}{//\ Contains\ configuration\ parameters\ for\ pricing\ models.}}
+\DoxyCodeLine{\Hypertarget{_monte_carlo_pricer_8hpp_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_monte_carlo_pricer_8hpp_source_l00038}\mbox{\hyperlink{class_monte_carlo_pricer}{00038}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_monte_carlo_pricer}{MonteCarloPricer}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_i_option_pricer}{IOptionPricer}}\ \{}
+\DoxyCodeLine{\Hypertarget{_monte_carlo_pricer_8hpp_source_l00039}00039\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_monte_carlo_pricer_8hpp_source_l00048}00048\ \ \ \ \ \mbox{\hyperlink{class_monte_carlo_pricer_a0ccb5d50908f7a7f693239f414011672}{MonteCarloPricer}}();}
+\DoxyCodeLine{\Hypertarget{_monte_carlo_pricer_8hpp_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{_monte_carlo_pricer_8hpp_source_l00058}00058\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_monte_carlo_pricer_a9f1e66e21831c8b436b64e879cf17d1e}{\string~MonteCarloPricer}}();}
+\DoxyCodeLine{\Hypertarget{_monte_carlo_pricer_8hpp_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{_monte_carlo_pricer_8hpp_source_l00073}00073\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_monte_carlo_pricer_a90b5b22a15176584584226ec5ec92978}{price}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_option}{Option}}\&\ opt)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{\Hypertarget{_monte_carlo_pricer_8hpp_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{_monte_carlo_pricer_8hpp_source_l00087}00087\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{struct_greeks}{Greeks}}\ \mbox{\hyperlink{class_monte_carlo_pricer_a10253f55e3e5f4618dd7dce5a83b6503}{computeGreeks}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_option}{Option}}\&\ opt)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{\Hypertarget{_monte_carlo_pricer_8hpp_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{_monte_carlo_pricer_8hpp_source_l00101}00101\ \ \ \ \ \mbox{\hyperlink{class_monte_carlo_pricer_a0ccb5d50908f7a7f693239f414011672}{MonteCarloPricer}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_pricing_configuration}{PricingConfiguration}}\&\ config);}
+\DoxyCodeLine{\Hypertarget{_monte_carlo_pricer_8hpp_source_l00102}00102\ }
+\DoxyCodeLine{\Hypertarget{_monte_carlo_pricer_8hpp_source_l00103}00103\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_monte_carlo_pricer_8hpp_source_l00113}\mbox{\hyperlink{class_monte_carlo_pricer_a023d51667b6051aed3316d7047eed65a}{00113}}\ \ \ \ \ \mbox{\hyperlink{struct_pricing_configuration}{PricingConfiguration}}\ \mbox{\hyperlink{class_monte_carlo_pricer_a023d51667b6051aed3316d7047eed65a}{config\_}};}
+\DoxyCodeLine{\Hypertarget{_monte_carlo_pricer_8hpp_source_l00114}00114\ \};}
+\DoxyCodeLine{\Hypertarget{_monte_carlo_pricer_8hpp_source_l00115}00115\ }
+\DoxyCodeLine{\Hypertarget{_monte_carlo_pricer_8hpp_source_l00116}00116\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ MONTECARLOPRICER\_HPP}}
+
+\end{DoxyCode}

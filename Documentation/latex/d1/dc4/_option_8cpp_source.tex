@@ -1,0 +1,76 @@
+\doxysection{Option.\+cpp}
+\hypertarget{_option_8cpp_source}{}\label{_option_8cpp_source}\mbox{\hyperlink{_option_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_option_8cpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{_option_8cpp_source_l00010}00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{pch_8h}{pch.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_option_8cpp_source_l00011}00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_option_8hpp}{Option.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{_option_8cpp_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{_option_8cpp_source_l00024}\mbox{\hyperlink{class_option_af517613005312013c576eb9099a50464}{00024}}\ \mbox{\hyperlink{class_option_af517613005312013c576eb9099a50464}{Option::Option}}()}
+\DoxyCodeLine{\Hypertarget{_option_8cpp_source_l00025}00025\ \ \ \ \ :\ underlying\_(0.0),\ strike\_(0.0),\ volatility\_(0.0),\ dividend\_(0.0),}
+\DoxyCodeLine{\Hypertarget{_option_8cpp_source_l00026}00026\ \ \ \ \ type\_(\mbox{\hyperlink{class_option_ad3a2defb450b67b3d8d4c0d06b475b3b}{OptionType}}::Call),\ style\_(\mbox{\hyperlink{class_option_a9f88b2cb28c4d271515fe52d6332ab9f}{OptionStyle}}::European)}
+\DoxyCodeLine{\Hypertarget{_option_8cpp_source_l00027}00027\ \{}
+\DoxyCodeLine{\Hypertarget{_option_8cpp_source_l00028}00028\ \ \ \ \ \textcolor{comment}{//\ Constructeur\ par\ defaut\ :\ aucune\ action\ supplementaire\ requise.}}
+\DoxyCodeLine{\Hypertarget{_option_8cpp_source_l00029}00029\ \}}
+\DoxyCodeLine{\Hypertarget{_option_8cpp_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{_option_8cpp_source_l00043}\mbox{\hyperlink{class_option_a271dcbf017ed1ede1cc12093306c3ad1}{00043}}\ \mbox{\hyperlink{class_option_af517613005312013c576eb9099a50464}{Option::Option}}(\textcolor{keywordtype}{double}\ underlying,\ \textcolor{keywordtype}{double}\ strike,\ \textcolor{keywordtype}{double}\ volatility,\ \textcolor{keywordtype}{double}\ dividend,}
+\DoxyCodeLine{\Hypertarget{_option_8cpp_source_l00044}00044\ \ \ \ \ \mbox{\hyperlink{class_option_ad3a2defb450b67b3d8d4c0d06b475b3b}{OptionType}}\ \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_ababfbfb37e9a9a294f2fbc0c514abade}{optionType}},\ \mbox{\hyperlink{class_option_a9f88b2cb28c4d271515fe52d6332ab9f}{OptionStyle}}\ \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_ad00273f7d7912cf5b399a84b6ec595ef}{optionStyle}})}
+\DoxyCodeLine{\Hypertarget{_option_8cpp_source_l00045}00045\ \ \ \ \ :\ underlying\_(underlying),\ strike\_(strike),\ volatility\_(volatility),\ dividend\_(dividend),}
+\DoxyCodeLine{\Hypertarget{_option_8cpp_source_l00046}00046\ \ \ \ \ type\_(\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_ababfbfb37e9a9a294f2fbc0c514abade}{optionType}}),\ style\_(\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_ad00273f7d7912cf5b399a84b6ec595ef}{optionStyle}})}
+\DoxyCodeLine{\Hypertarget{_option_8cpp_source_l00047}00047\ \{}
+\DoxyCodeLine{\Hypertarget{_option_8cpp_source_l00048}00048\ \ \ \ \ \textcolor{comment}{//\ Initialisation\ avec\ les\ parametres\ fournis.}}
+\DoxyCodeLine{\Hypertarget{_option_8cpp_source_l00049}00049\ \}}
+\DoxyCodeLine{\Hypertarget{_option_8cpp_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{_option_8cpp_source_l00056}\mbox{\hyperlink{class_option_a04b908a0ba9b1909ae378ca2a07fda61}{00056}}\ \mbox{\hyperlink{class_option_a04b908a0ba9b1909ae378ca2a07fda61}{Option::\string~Option}}()}
+\DoxyCodeLine{\Hypertarget{_option_8cpp_source_l00057}00057\ \{}
+\DoxyCodeLine{\Hypertarget{_option_8cpp_source_l00058}00058\ \ \ \ \ \textcolor{comment}{//\ Destructeur\ :\ rien\ a\ liberer.}}
+\DoxyCodeLine{\Hypertarget{_option_8cpp_source_l00059}00059\ \}}
+\DoxyCodeLine{\Hypertarget{_option_8cpp_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{_option_8cpp_source_l00065}\mbox{\hyperlink{class_option_a41a6ff2b75b514ac305e4c51672fc036}{00065}}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_option_a41a6ff2b75b514ac305e4c51672fc036}{Option::getUnderlying}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{_option_8cpp_source_l00066}00066\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_option_a437f2ca89881dffb741372470c893592}{underlying\_}};}
+\DoxyCodeLine{\Hypertarget{_option_8cpp_source_l00067}00067\ \}}
+\DoxyCodeLine{\Hypertarget{_option_8cpp_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{_option_8cpp_source_l00073}\mbox{\hyperlink{class_option_ab450179f0902408f40cfa4794b1eb3a8}{00073}}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_option_ab450179f0902408f40cfa4794b1eb3a8}{Option::getStrike}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{_option_8cpp_source_l00074}00074\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_option_a8ae9430bf703947eec6af0dfcc6c4b00}{strike\_}};}
+\DoxyCodeLine{\Hypertarget{_option_8cpp_source_l00075}00075\ \}}
+\DoxyCodeLine{\Hypertarget{_option_8cpp_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{_option_8cpp_source_l00081}\mbox{\hyperlink{class_option_a319afe4b0bc9b559af422cc6ecb96540}{00081}}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_option_a319afe4b0bc9b559af422cc6ecb96540}{Option::getVolatility}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{_option_8cpp_source_l00082}00082\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_option_a7c0370f95d5171b4944a60193c3d1a2b}{volatility\_}};}
+\DoxyCodeLine{\Hypertarget{_option_8cpp_source_l00083}00083\ \}}
+\DoxyCodeLine{\Hypertarget{_option_8cpp_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{_option_8cpp_source_l00089}\mbox{\hyperlink{class_option_a263779c6777253ce6158266076593733}{00089}}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_option_a263779c6777253ce6158266076593733}{Option::getDividend}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{_option_8cpp_source_l00090}00090\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_option_a8f1035bb069f2cb33eaab39d46bab1c7}{dividend\_}};}
+\DoxyCodeLine{\Hypertarget{_option_8cpp_source_l00091}00091\ \}}
+\DoxyCodeLine{\Hypertarget{_option_8cpp_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{_option_8cpp_source_l00097}\mbox{\hyperlink{class_option_a4a5d06180aa0e449d49a836906383463}{00097}}\ \mbox{\hyperlink{class_option_ad3a2defb450b67b3d8d4c0d06b475b3b}{Option::OptionType}}\ \mbox{\hyperlink{class_option_a4a5d06180aa0e449d49a836906383463}{Option::getOptionType}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{_option_8cpp_source_l00098}00098\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_option_a99f11d0ee4d4de6cef4eb86fab3f687c}{type\_}};}
+\DoxyCodeLine{\Hypertarget{_option_8cpp_source_l00099}00099\ \}}
+\DoxyCodeLine{\Hypertarget{_option_8cpp_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{_option_8cpp_source_l00105}\mbox{\hyperlink{class_option_aa0359256d21a97f5a280f60e0b088ad3}{00105}}\ \mbox{\hyperlink{class_option_a9f88b2cb28c4d271515fe52d6332ab9f}{Option::OptionStyle}}\ \mbox{\hyperlink{class_option_aa0359256d21a97f5a280f60e0b088ad3}{Option::getOptionStyle}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{_option_8cpp_source_l00106}00106\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_option_a718f4474b08fe627df127e3b4e183030}{style\_}};}
+\DoxyCodeLine{\Hypertarget{_option_8cpp_source_l00107}00107\ \}}
+\DoxyCodeLine{\Hypertarget{_option_8cpp_source_l00108}00108\ }
+\DoxyCodeLine{\Hypertarget{_option_8cpp_source_l00113}\mbox{\hyperlink{class_option_ab74d0a7bac479971d711486ff2643e2f}{00113}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_option_ab74d0a7bac479971d711486ff2643e2f}{Option::setUnderlying}}(\textcolor{keywordtype}{double}\ underlying)\ \{}
+\DoxyCodeLine{\Hypertarget{_option_8cpp_source_l00114}00114\ \ \ \ \ \mbox{\hyperlink{class_option_a437f2ca89881dffb741372470c893592}{underlying\_}}\ =\ underlying;}
+\DoxyCodeLine{\Hypertarget{_option_8cpp_source_l00115}00115\ \}}
+\DoxyCodeLine{\Hypertarget{_option_8cpp_source_l00116}00116\ }
+\DoxyCodeLine{\Hypertarget{_option_8cpp_source_l00121}\mbox{\hyperlink{class_option_a048ba77c65bd378160ec218ef710f4e2}{00121}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_option_a048ba77c65bd378160ec218ef710f4e2}{Option::setStrike}}(\textcolor{keywordtype}{double}\ strike)\ \{}
+\DoxyCodeLine{\Hypertarget{_option_8cpp_source_l00122}00122\ \ \ \ \ \mbox{\hyperlink{class_option_a8ae9430bf703947eec6af0dfcc6c4b00}{strike\_}}\ =\ strike;}
+\DoxyCodeLine{\Hypertarget{_option_8cpp_source_l00123}00123\ \}}
+\DoxyCodeLine{\Hypertarget{_option_8cpp_source_l00124}00124\ }
+\DoxyCodeLine{\Hypertarget{_option_8cpp_source_l00129}\mbox{\hyperlink{class_option_a88809b5a8e576737b25448761ac4a16c}{00129}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_option_a88809b5a8e576737b25448761ac4a16c}{Option::setVolatility}}(\textcolor{keywordtype}{double}\ volatility)\ \{}
+\DoxyCodeLine{\Hypertarget{_option_8cpp_source_l00130}00130\ \ \ \ \ \mbox{\hyperlink{class_option_a7c0370f95d5171b4944a60193c3d1a2b}{volatility\_}}\ =\ volatility;}
+\DoxyCodeLine{\Hypertarget{_option_8cpp_source_l00131}00131\ \}}
+\DoxyCodeLine{\Hypertarget{_option_8cpp_source_l00132}00132\ }
+\DoxyCodeLine{\Hypertarget{_option_8cpp_source_l00137}\mbox{\hyperlink{class_option_a4a1c842336970845737908741e4e3d3a}{00137}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_option_a4a1c842336970845737908741e4e3d3a}{Option::setDividend}}(\textcolor{keywordtype}{double}\ dividend)\ \{}
+\DoxyCodeLine{\Hypertarget{_option_8cpp_source_l00138}00138\ \ \ \ \ \mbox{\hyperlink{class_option_a8f1035bb069f2cb33eaab39d46bab1c7}{dividend\_}}\ =\ dividend;}
+\DoxyCodeLine{\Hypertarget{_option_8cpp_source_l00139}00139\ \}}
+\DoxyCodeLine{\Hypertarget{_option_8cpp_source_l00140}00140\ }
+\DoxyCodeLine{\Hypertarget{_option_8cpp_source_l00145}\mbox{\hyperlink{class_option_ac4cc12364e338a686823af8bf20ec37f}{00145}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_option_ac4cc12364e338a686823af8bf20ec37f}{Option::setOptionType}}(\mbox{\hyperlink{class_option_ad3a2defb450b67b3d8d4c0d06b475b3b}{OptionType}}\ \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_ababfbfb37e9a9a294f2fbc0c514abade}{optionType}})\ \{}
+\DoxyCodeLine{\Hypertarget{_option_8cpp_source_l00146}00146\ \ \ \ \ \mbox{\hyperlink{class_option_a99f11d0ee4d4de6cef4eb86fab3f687c}{type\_}}\ =\ \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_ababfbfb37e9a9a294f2fbc0c514abade}{optionType}};}
+\DoxyCodeLine{\Hypertarget{_option_8cpp_source_l00147}00147\ \}}
+\DoxyCodeLine{\Hypertarget{_option_8cpp_source_l00148}00148\ }
+\DoxyCodeLine{\Hypertarget{_option_8cpp_source_l00153}\mbox{\hyperlink{class_option_a4e4f23cab6894c03ad7c487f439bfe79}{00153}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_option_a4e4f23cab6894c03ad7c487f439bfe79}{Option::setOptionStyle}}(\mbox{\hyperlink{class_option_a9f88b2cb28c4d271515fe52d6332ab9f}{OptionStyle}}\ \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_ad00273f7d7912cf5b399a84b6ec595ef}{optionStyle}})\ \{}
+\DoxyCodeLine{\Hypertarget{_option_8cpp_source_l00154}00154\ \ \ \ \ \mbox{\hyperlink{class_option_a718f4474b08fe627df127e3b4e183030}{style\_}}\ =\ \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_ad00273f7d7912cf5b399a84b6ec595ef}{optionStyle}};}
+\DoxyCodeLine{\Hypertarget{_option_8cpp_source_l00155}00155\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,114 @@
+\doxysection{IOption\+Pricer Class Reference}
+\hypertarget{class_i_option_pricer}{}\label{class_i_option_pricer}\index{IOptionPricer@{IOptionPricer}}
+
+
+Interface for an option pricing engine.  
+
+
+
+
+{\ttfamily \#include $<$Interface\+Option\+Pricer.\+hpp$>$}
+
+
+
+Inheritance diagram for IOption\+Pricer\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d95/class_i_option_pricer__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{struct_greeks}{Greeks}} \mbox{\hyperlink{class_i_option_pricer_a81a689339e44b1a224c44c84756b8d76}{compute\+Greeks}} (const \mbox{\hyperlink{class_option}{Option}} \&opt) const =0
+\begin{DoxyCompactList}\small\item\em Computes the \doxylink{struct_greeks}{Greeks} of the option. \end{DoxyCompactList}\item 
+virtual double \mbox{\hyperlink{class_i_option_pricer_a579dcf7f5ee091f88682d43766226a9b}{price}} (const \mbox{\hyperlink{class_option}{Option}} \&opt) const =0
+\begin{DoxyCompactList}\small\item\em Computes the price of the option. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_i_option_pricer_a54b4bf6ac6f8164479d1b4c7ef009469}{\texorpdfstring{$\sim$}{\string~}\+IOption\+Pricer}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Interface for an option pricing engine. 
+
+The \doxylink{class_i_option_pricer}{IOption\+Pricer} interface specifies the necessary methods for pricing options and computing their associated \doxylink{struct_greeks}{Greeks}. Any pricing engine that derives from this interface must implement these methods to allow for consistent integration within the pricing system.
+
+\begin{DoxyNote}{Note}
+The interface uses pure virtual functions to enforce implementation in derived classes. 
+\end{DoxyNote}
+
+
+Definition at line \mbox{\hyperlink{_interface_option_pricer_8hpp_source_l00030}{30}} of file \mbox{\hyperlink{_interface_option_pricer_8hpp_source}{Interface\+Option\+Pricer.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_i_option_pricer_a54b4bf6ac6f8164479d1b4c7ef009469}\label{class_i_option_pricer_a54b4bf6ac6f8164479d1b4c7ef009469} 
+\index{IOptionPricer@{IOptionPricer}!````~IOptionPricer@{\texorpdfstring{$\sim$}{\string~}IOptionPricer}}
+\index{````~IOptionPricer@{\texorpdfstring{$\sim$}{\string~}IOptionPricer}!IOptionPricer@{IOptionPricer}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}IOptionPricer()}{\string~IOptionPricer()}}
+{\footnotesize\ttfamily virtual IOption\+Pricer\+::\texorpdfstring{$\sim$}{\string~}\+IOption\+Pricer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Virtual destructor. 
+
+Ensures that derived classes can clean up resources appropriately when an object is deleted through a pointer to \doxylink{class_i_option_pricer}{IOption\+Pricer}.
+
+Declaring the destructor as virtual is essential in a polymorphic base class to prevent resource leaks and undefined behavior during object destruction. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_i_option_pricer_a81a689339e44b1a224c44c84756b8d76}\label{class_i_option_pricer_a81a689339e44b1a224c44c84756b8d76} 
+\index{IOptionPricer@{IOptionPricer}!computeGreeks@{computeGreeks}}
+\index{computeGreeks@{computeGreeks}!IOptionPricer@{IOptionPricer}}
+\doxysubsubsection{\texorpdfstring{computeGreeks()}{computeGreeks()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{struct_greeks}{Greeks}} IOption\+Pricer\+::compute\+Greeks (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_option}{Option}} \&}]{opt }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Computes the \doxylink{struct_greeks}{Greeks} of the option. 
+
+This pure virtual function calculates the sensitivity measures (\doxylink{struct_greeks}{Greeks}) of an option. The \doxylink{struct_greeks}{Greeks} include Delta, Gamma, Vega, Theta, and Rho, which quantify the option\textquotesingle{}s responsiveness to changes in underlying parameters.
+
+
+\begin{DoxyParams}{Parameters}
+{\em opt} & A constant reference to an \doxylink{class_option}{Option} object containing the necessary parameters for evaluation. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{struct_greeks}{Greeks} structure containing the calculated values for each sensitivity measure.
+\end{DoxyReturn}
+The computation of \doxylink{struct_greeks}{Greeks} is vital for risk management and hedging strategies. Implementations should use appropriate numerical or analytical methods to accurately estimate these derivatives. 
+
+Implemented in \mbox{\hyperlink{class_binomial_pricer_a13f7c3ea8814b0d0a070341f3e945180}{Binomial\+Pricer}}, \mbox{\hyperlink{class_black_scholes_pricer_abd9a2826b0592e7229d06444cd22c6df}{Black\+Scholes\+Pricer}}, \mbox{\hyperlink{class_crank_nicolson_pricer_addb3858ae0f703d17a35d1ed80c6dad9}{Crank\+Nicolson\+Pricer}}, and \mbox{\hyperlink{class_monte_carlo_pricer_a10253f55e3e5f4618dd7dce5a83b6503}{Monte\+Carlo\+Pricer}}.
+
+\Hypertarget{class_i_option_pricer_a579dcf7f5ee091f88682d43766226a9b}\label{class_i_option_pricer_a579dcf7f5ee091f88682d43766226a9b} 
+\index{IOptionPricer@{IOptionPricer}!price@{price}}
+\index{price@{price}!IOptionPricer@{IOptionPricer}}
+\doxysubsubsection{\texorpdfstring{price()}{price()}}
+{\footnotesize\ttfamily virtual double IOption\+Pricer\+::price (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_option}{Option}} \&}]{opt }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Computes the price of the option. 
+
+This pure virtual function calculates the theoretical price of a given option. The implementation must use the relevant pricing model to derive a numerical value based on the option\textquotesingle{}s parameters.
+
+
+\begin{DoxyParams}{Parameters}
+{\em opt} & A constant reference to an \doxylink{class_option}{Option} object that contains all necessary data (such as underlying price, strike, volatility, dividend yield, and maturity). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The calculated price of the option as a double.
+\end{DoxyReturn}
+The pricing method should consider the specific model assumptions and may involve numerical methods such as finite differences, binomial trees, or closed-\/form solutions. 
+
+Implemented in \mbox{\hyperlink{class_binomial_pricer_a7c9b655e4cf43b8a18f367588e8e58bf}{Binomial\+Pricer}}, \mbox{\hyperlink{class_black_scholes_pricer_a35afc68932ea489cf505e73a21fb64c7}{Black\+Scholes\+Pricer}}, \mbox{\hyperlink{class_crank_nicolson_pricer_a5cdd3d767a3512887e921f9b170460d2}{Crank\+Nicolson\+Pricer}}, and \mbox{\hyperlink{class_monte_carlo_pricer_a90b5b22a15176584584226ec5ec92978}{Monte\+Carlo\+Pricer}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_interface_option_pricer_8hpp}{Interface\+Option\+Pricer.\+hpp}}\end{DoxyCompactItemize}

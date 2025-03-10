@@ -1,0 +1,141 @@
+\doxysection{Crank\+Nicolson\+Pricer\+DLL.\+cpp File Reference}
+\hypertarget{_crank_nicolson_pricer_d_l_l_8cpp}{}\label{_crank_nicolson_pricer_d_l_l_8cpp}\index{CrankNicolsonPricerDLL.cpp@{CrankNicolsonPricerDLL.cpp}}
+{\ttfamily \#include \"{}pch.\+h\"{}}\newline
+{\ttfamily \#include \"{}Crank\+Nicolson\+Pricer\+DLL.\+hpp\"{}}\newline
+{\ttfamily \#include \"{}Crank\+Nicolson\+Pricer.\+hpp\"{}}\newline
+{\ttfamily \#include \"{}Option.\+hpp\"{}}\newline
+{\ttfamily \#include \"{}Pricing\+Configuration.\+hpp\"{}}\newline
+{\ttfamily \#include \"{}Date\+Converter.\+hpp\"{}}\newline
+{\ttfamily \#include $<$stdexcept$>$}\newline
+{\ttfamily \#include $<$cstring$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+Include dependency graph for Crank\+Nicolson\+Pricer\+DLL.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/db2/_crank_nicolson_pricer_d_l_l_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \+\_\+\+\_\+stdcall \mbox{\hyperlink{_crank_nicolson_pricer_d_l_l_8cpp_aa39d73a291805f6b044b2b4f04f83d5c}{Compute\+Option\+Greeks\+Crank\+Nicolson}} (double S, double \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_a74b45da7676e23dd8ec974cfc04c0137}{K}}, double \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_a9e64a35af6ea2c4e18a21ae6ab8f4b4a}{T}}, double \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_a7058482f32dc92202725725112678538}{r}}, double \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_acc82fd456cac0384d2075ece3102201a}{sigma}}, double \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_ae1370efc3e7cbcccb16c9f9725d95188}{q}}, int \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_ababfbfb37e9a9a294f2fbc0c514abade}{option\+Type}}, int \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_ad00273f7d7912cf5b399a84b6ec595ef}{option\+Style}}, const char \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_aad3e2b2887bd0dff4456a8d86ef843f1}{calculation\+Date}}, int \mbox{\hyperlink{_crank_nicolson_pricer_d_l_l_8hpp_a5f24a6ef15e6711b24fb8ee76207b021}{crank\+Time\+Steps}}, int \mbox{\hyperlink{_crank_nicolson_pricer_d_l_l_8hpp_a0dfa8218facbba917838e704b1d0afb7}{crank\+Spot\+Steps}}, double \mbox{\hyperlink{_crank_nicolson_pricer_d_l_l_8hpp_aad073857970cd5e2641cf2560c1d71a3}{S\+\_\+max}}, double \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_afa2fbffc32c40cd7b32c909eb4dea3d7}{delta}}, double \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_a95751aa2ef97efecade491f32c5cde50}{gamma}}, double \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_adbefd4a93bf3d8656cf6e1e089063723}{vega}}, double \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_ae01bf602516416e5bdf198ad18c5c567}{theta}}, double \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_a6e5bcb5da44ba87aeb933c99a674c6af}{rho}})
+\begin{DoxyCompactList}\small\item\em Computes the \doxylink{struct_greeks}{Greeks} of the option using the Crank-\/\+Nicolson model. \end{DoxyCompactList}\item 
+double \+\_\+\+\_\+stdcall \mbox{\hyperlink{_crank_nicolson_pricer_d_l_l_8cpp_a8df8fc439c1bfda5e698bb7c9db528d9}{Price\+Option\+Crank\+Nicolson}} (double S, double \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_a74b45da7676e23dd8ec974cfc04c0137}{K}}, double \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_a9e64a35af6ea2c4e18a21ae6ab8f4b4a}{T}}, double \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_a7058482f32dc92202725725112678538}{r}}, double \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_acc82fd456cac0384d2075ece3102201a}{sigma}}, double \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_ae1370efc3e7cbcccb16c9f9725d95188}{q}}, int \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_ababfbfb37e9a9a294f2fbc0c514abade}{option\+Type}}, int \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_ad00273f7d7912cf5b399a84b6ec595ef}{option\+Style}}, const char \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_aad3e2b2887bd0dff4456a8d86ef843f1}{calculation\+Date}}, int \mbox{\hyperlink{_crank_nicolson_pricer_d_l_l_8hpp_a5f24a6ef15e6711b24fb8ee76207b021}{crank\+Time\+Steps}}, int \mbox{\hyperlink{_crank_nicolson_pricer_d_l_l_8hpp_a0dfa8218facbba917838e704b1d0afb7}{crank\+Spot\+Steps}}, double \mbox{\hyperlink{_crank_nicolson_pricer_d_l_l_8hpp_aad073857970cd5e2641cf2560c1d71a3}{S\+\_\+max}})
+\begin{DoxyCompactList}\small\item\em Computes the option price using the Crank-\/\+Nicolson model. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_crank_nicolson_pricer_d_l_l_8cpp_aa39d73a291805f6b044b2b4f04f83d5c}\label{_crank_nicolson_pricer_d_l_l_8cpp_aa39d73a291805f6b044b2b4f04f83d5c} 
+\index{CrankNicolsonPricerDLL.cpp@{CrankNicolsonPricerDLL.cpp}!ComputeOptionGreeksCrankNicolson@{ComputeOptionGreeksCrankNicolson}}
+\index{ComputeOptionGreeksCrankNicolson@{ComputeOptionGreeksCrankNicolson}!CrankNicolsonPricerDLL.cpp@{CrankNicolsonPricerDLL.cpp}}
+\doxysubsubsection{\texorpdfstring{ComputeOptionGreeksCrankNicolson()}{ComputeOptionGreeksCrankNicolson()}}
+{\footnotesize\ttfamily void \+\_\+\+\_\+stdcall Compute\+Option\+Greeks\+Crank\+Nicolson (\begin{DoxyParamCaption}\item[{double}]{S,  }\item[{double}]{K,  }\item[{double}]{T,  }\item[{double}]{r,  }\item[{double}]{sigma,  }\item[{double}]{q,  }\item[{int}]{option\+Type,  }\item[{int}]{option\+Style,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{calculation\+Date,  }\item[{int}]{crank\+Time\+Steps,  }\item[{int}]{crank\+Spot\+Steps,  }\item[{double}]{S\+\_\+max,  }\item[{double \texorpdfstring{$\ast$}{*}}]{delta,  }\item[{double \texorpdfstring{$\ast$}{*}}]{gamma,  }\item[{double \texorpdfstring{$\ast$}{*}}]{vega,  }\item[{double \texorpdfstring{$\ast$}{*}}]{theta,  }\item[{double \texorpdfstring{$\ast$}{*}}]{rho }\end{DoxyParamCaption})}
+
+
+
+Computes the \doxylink{struct_greeks}{Greeks} of the option using the Crank-\/\+Nicolson model. 
+
+This function sets up the pricing configuration, reloads the yield curve data, and creates a \doxylink{class_crank_nicolson_pricer}{Crank\+Nicolson\+Pricer} instance to compute the \doxylink{struct_greeks}{Greeks}. The computed values are written to the pointers provided.
+
+Parameters\+: S -\/ Underlying price. K -\/ Strike price. T -\/ Maturity (in years). r -\/ Risk-\/free rate (constant). sigma -\/ Volatility. q -\/ Dividend yield. option\+Type -\/ 0 for Call, 1 for Put. option\+Style -\/ 0 for European, 1 for American. calculation\+Date -\/ A null-\/terminated string (YYYY-\/\+MM-\/\+DD). If empty, today\textquotesingle{}s date is used. crank\+Time\+Steps -\/ Number of time steps for discretization. crank\+Spot\+Steps -\/ Number of spatial steps for discretization. S\+\_\+max -\/ Maximum underlying price (if zero, it is computed from S and K). delta, gamma, vega, theta, rho -\/ Pointers to store the computed \doxylink{struct_greeks}{Greeks}. 
+
+Definition at line \mbox{\hyperlink{_crank_nicolson_pricer_d_l_l_8cpp_source_l00093}{93}} of file \mbox{\hyperlink{_crank_nicolson_pricer_d_l_l_8cpp_source}{Crank\+Nicolson\+Pricer\+DLL.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00098\ \ \ \ \ \{}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_pricing_configuration}{PricingConfiguration}}\ config;}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_aad3e2b2887bd0dff4456a8d86ef843f1}{calculationDate}}\ ==\ \textcolor{keyword}{nullptr}\ ||\ strlen(\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_aad3e2b2887bd0dff4456a8d86ef843f1}{calculationDate}})\ ==\ 0)}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ config.\mbox{\hyperlink{struct_pricing_configuration_a86654268cc7202dec16251f02873a629}{calculationDate}}\ =\ \mbox{\hyperlink{class_date_converter_a054a4504080ed36c068868cc2d975fa6}{DateConverter::getTodayDate}}();}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ config.\mbox{\hyperlink{struct_pricing_configuration_a86654268cc7202dec16251f02873a629}{calculationDate}}\ =\ \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_aad3e2b2887bd0dff4456a8d86ef843f1}{calculationDate}};}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ config.\mbox{\hyperlink{struct_pricing_configuration_a9ae4efdabf701f28b5c15dbc54ac3a7a}{maturity}}\ =\ \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_a9e64a35af6ea2c4e18a21ae6ab8f4b4a}{T}};}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ config.\mbox{\hyperlink{struct_pricing_configuration_a77ee8c896b9a6ddd04437a7489b21c91}{riskFreeRate}}\ =\ \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_a7058482f32dc92202725725112678538}{r}};}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Reload\ the\ yield\ curve\ on\ each\ call:}}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ config.\mbox{\hyperlink{struct_pricing_configuration_a8564f465b2656557af9eba82722e5e19}{yieldCurve}}.\mbox{\hyperlink{class_yield_curve_ae4a92baa1385c3d7766ad376197dc6a5}{loadFromFile}}(\textcolor{stringliteral}{"{}C:\(\backslash\)\(\backslash\)Users\(\backslash\)\(\backslash\)shaki\(\backslash\)\(\backslash\)OneDrive\(\backslash\)\(\backslash\)Bureau\(\backslash\)\(\backslash\)YieldCurveData.txt"{}});}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ config.\mbox{\hyperlink{struct_pricing_configuration_a19af78dfee60063e83346cb99710dcf7}{crankTimeSteps}}\ =\ \mbox{\hyperlink{_crank_nicolson_pricer_d_l_l_8hpp_a5f24a6ef15e6711b24fb8ee76207b021}{crankTimeSteps}};}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ config.\mbox{\hyperlink{struct_pricing_configuration_a3b7221633527d9b1d758f2a5ab7eaf29}{crankSpotSteps}}\ =\ \mbox{\hyperlink{_crank_nicolson_pricer_d_l_l_8hpp_a0dfa8218facbba917838e704b1d0afb7}{crankSpotSteps}};}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ config.\mbox{\hyperlink{struct_pricing_configuration_a0252e37ed36dce2e03317c5715081a9d}{S\_max}}\ =\ \mbox{\hyperlink{_crank_nicolson_pricer_d_l_l_8hpp_aad073857970cd5e2641cf2560c1d71a3}{S\_max}};}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_crank_nicolson_pricer}{CrankNicolsonPricer}}\ pricer(config);}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_option}{Option}}\ opt(S,\ \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_a74b45da7676e23dd8ec974cfc04c0137}{K}},\ \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_acc82fd456cac0384d2075ece3102201a}{sigma}},\ \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_ae1370efc3e7cbcccb16c9f9725d95188}{q}},}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_ababfbfb37e9a9a294f2fbc0c514abade}{optionType}}\ ==\ 0\ ?\ \mbox{\hyperlink{class_option_ad3a2defb450b67b3d8d4c0d06b475b3bac3755e61202abd74da5885d2e9c9160e}{Option::OptionType::Call}}\ :\ \mbox{\hyperlink{class_option}{Option}}::OptionType::Put),}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_ad00273f7d7912cf5b399a84b6ec595ef}{optionStyle}}\ ==\ 0\ ?\ \mbox{\hyperlink{class_option}{Option}}::OptionStyle::European\ :\ \mbox{\hyperlink{class_option}{Option}}::OptionStyle::American));}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_greeks}{Greeks}}\ g\ =\ pricer.computeGreeks(opt);}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_afa2fbffc32c40cd7b32c909eb4dea3d7}{delta}})\ *\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_afa2fbffc32c40cd7b32c909eb4dea3d7}{delta}}\ =\ g.\mbox{\hyperlink{struct_greeks_a9d16140323f20876507a2d5453696b1a}{delta}};}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_a95751aa2ef97efecade491f32c5cde50}{gamma}})\ *\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_a95751aa2ef97efecade491f32c5cde50}{gamma}}\ =\ g.\mbox{\hyperlink{struct_greeks_afcef8fafe28ec46b041eda551aefac76}{gamma}};}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_adbefd4a93bf3d8656cf6e1e089063723}{vega}})\ \ *\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_adbefd4a93bf3d8656cf6e1e089063723}{vega}}\ =\ g.\mbox{\hyperlink{struct_greeks_a87709cf35763c458f36a6935f7d7ce25}{vega}};}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_ae01bf602516416e5bdf198ad18c5c567}{theta}})\ *\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_ae01bf602516416e5bdf198ad18c5c567}{theta}}\ =\ g.\mbox{\hyperlink{struct_greeks_a82fcb8b4f18e8afc91ab23df69ae6f17}{theta}};}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_a6e5bcb5da44ba87aeb933c99a674c6af}{rho}})\ \ \ *\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_a6e5bcb5da44ba87aeb933c99a674c6af}{rho}}\ =\ g.\mbox{\hyperlink{struct_greeks_afaa454ff183cfa3d58902d49e4f363db}{rho}};}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ std::exception\&\ ex)\ \{}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_afa2fbffc32c40cd7b32c909eb4dea3d7}{delta}})\ *\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_afa2fbffc32c40cd7b32c909eb4dea3d7}{delta}}\ =\ NAN;}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_a95751aa2ef97efecade491f32c5cde50}{gamma}})\ *\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_a95751aa2ef97efecade491f32c5cde50}{gamma}}\ =\ NAN;}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_adbefd4a93bf3d8656cf6e1e089063723}{vega}})\ \ *\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_adbefd4a93bf3d8656cf6e1e089063723}{vega}}\ =\ NAN;}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_ae01bf602516416e5bdf198ad18c5c567}{theta}})\ *\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_ae01bf602516416e5bdf198ad18c5c567}{theta}}\ =\ NAN;}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_a6e5bcb5da44ba87aeb933c99a674c6af}{rho}})\ \ \ *\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_a6e5bcb5da44ba87aeb933c99a674c6af}{rho}}\ =\ NAN;}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00134\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{_crank_nicolson_pricer_d_l_l_8cpp_a8df8fc439c1bfda5e698bb7c9db528d9}\label{_crank_nicolson_pricer_d_l_l_8cpp_a8df8fc439c1bfda5e698bb7c9db528d9} 
+\index{CrankNicolsonPricerDLL.cpp@{CrankNicolsonPricerDLL.cpp}!PriceOptionCrankNicolson@{PriceOptionCrankNicolson}}
+\index{PriceOptionCrankNicolson@{PriceOptionCrankNicolson}!CrankNicolsonPricerDLL.cpp@{CrankNicolsonPricerDLL.cpp}}
+\doxysubsubsection{\texorpdfstring{PriceOptionCrankNicolson()}{PriceOptionCrankNicolson()}}
+{\footnotesize\ttfamily double \+\_\+\+\_\+stdcall Price\+Option\+Crank\+Nicolson (\begin{DoxyParamCaption}\item[{double}]{S,  }\item[{double}]{K,  }\item[{double}]{T,  }\item[{double}]{r,  }\item[{double}]{sigma,  }\item[{double}]{q,  }\item[{int}]{option\+Type,  }\item[{int}]{option\+Style,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{calculation\+Date,  }\item[{int}]{crank\+Time\+Steps,  }\item[{int}]{crank\+Spot\+Steps,  }\item[{double}]{S\+\_\+max }\end{DoxyParamCaption})}
+
+
+
+Computes the option price using the Crank-\/\+Nicolson model. 
+
+This function sets up the pricing configuration, reloads the yield curve data, and creates a \doxylink{class_crank_nicolson_pricer}{Crank\+Nicolson\+Pricer} instance to compute the option price.
+
+Parameters\+: S -\/ Underlying price. K -\/ Strike price. T -\/ Maturity (in years). r -\/ Risk-\/free rate (constant). sigma -\/ Volatility. q -\/ Dividend yield. option\+Type -\/ 0 for Call, 1 for Put. option\+Style -\/ 0 for European, 1 for American. calculation\+Date -\/ A null-\/terminated string (YYYY-\/\+MM-\/\+DD). If empty, today\textquotesingle{}s date is used. crank\+Time\+Steps -\/ Number of time steps for discretization. crank\+Spot\+Steps -\/ Number of spatial steps for discretization. S\+\_\+max -\/ Maximum underlying price (if zero, it is computed from S and K).
+
+\begin{DoxyReturn}{Returns}
+The computed option price, or -\/1.\+0 if an error occurs. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_crank_nicolson_pricer_d_l_l_8cpp_source_l00035}{35}} of file \mbox{\hyperlink{_crank_nicolson_pricer_d_l_l_8cpp_source}{Crank\+Nicolson\+Pricer\+DLL.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00039\ \ \ \ \ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_pricing_configuration}{PricingConfiguration}}\ config;}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ If\ calculationDate\ is\ empty,\ use\ today's\ date.}}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_aad3e2b2887bd0dff4456a8d86ef843f1}{calculationDate}}\ ==\ \textcolor{keyword}{nullptr}\ ||\ strlen(\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_aad3e2b2887bd0dff4456a8d86ef843f1}{calculationDate}})\ ==\ 0)}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ config.\mbox{\hyperlink{struct_pricing_configuration_a86654268cc7202dec16251f02873a629}{calculationDate}}\ =\ \mbox{\hyperlink{class_date_converter_a054a4504080ed36c068868cc2d975fa6}{DateConverter::getTodayDate}}();}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ config.\mbox{\hyperlink{struct_pricing_configuration_a86654268cc7202dec16251f02873a629}{calculationDate}}\ =\ \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_aad3e2b2887bd0dff4456a8d86ef843f1}{calculationDate}};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ config.\mbox{\hyperlink{struct_pricing_configuration_a9ae4efdabf701f28b5c15dbc54ac3a7a}{maturity}}\ =\ \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_a9e64a35af6ea2c4e18a21ae6ab8f4b4a}{T}};}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ config.\mbox{\hyperlink{struct_pricing_configuration_a77ee8c896b9a6ddd04437a7489b21c91}{riskFreeRate}}\ =\ \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_a7058482f32dc92202725725112678538}{r}};}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Reload\ the\ yield\ curve\ on\ each\ call:}}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ config.\mbox{\hyperlink{struct_pricing_configuration_a8564f465b2656557af9eba82722e5e19}{yieldCurve}}.\mbox{\hyperlink{class_yield_curve_ae4a92baa1385c3d7766ad376197dc6a5}{loadFromFile}}(\textcolor{stringliteral}{"{}C:\(\backslash\)\(\backslash\)Users\(\backslash\)\(\backslash\)shaki\(\backslash\)\(\backslash\)OneDrive\(\backslash\)\(\backslash\)Bureau\(\backslash\)\(\backslash\)YieldCurveData.txt"{}});}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ config.\mbox{\hyperlink{struct_pricing_configuration_a19af78dfee60063e83346cb99710dcf7}{crankTimeSteps}}\ =\ \mbox{\hyperlink{_crank_nicolson_pricer_d_l_l_8hpp_a5f24a6ef15e6711b24fb8ee76207b021}{crankTimeSteps}};}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ config.\mbox{\hyperlink{struct_pricing_configuration_a3b7221633527d9b1d758f2a5ab7eaf29}{crankSpotSteps}}\ =\ \mbox{\hyperlink{_crank_nicolson_pricer_d_l_l_8hpp_a0dfa8218facbba917838e704b1d0afb7}{crankSpotSteps}};}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ config.\mbox{\hyperlink{struct_pricing_configuration_a0252e37ed36dce2e03317c5715081a9d}{S\_max}}\ =\ \mbox{\hyperlink{_crank_nicolson_pricer_d_l_l_8hpp_aad073857970cd5e2641cf2560c1d71a3}{S\_max}};}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_crank_nicolson_pricer}{CrankNicolsonPricer}}\ pricer(config);}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_option}{Option}}\ opt(S,\ \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_a74b45da7676e23dd8ec974cfc04c0137}{K}},\ \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_acc82fd456cac0384d2075ece3102201a}{sigma}},\ \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_ae1370efc3e7cbcccb16c9f9725d95188}{q}},}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_ababfbfb37e9a9a294f2fbc0c514abade}{optionType}}\ ==\ 0\ ?\ \mbox{\hyperlink{class_option_ad3a2defb450b67b3d8d4c0d06b475b3bac3755e61202abd74da5885d2e9c9160e}{Option::OptionType::Call}}\ :\ \mbox{\hyperlink{class_option}{Option}}::OptionType::Put),}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_ad00273f7d7912cf5b399a84b6ec595ef}{optionStyle}}\ ==\ 0\ ?\ \mbox{\hyperlink{class_option}{Option}}::OptionStyle::European\ :\ \mbox{\hyperlink{class_option}{Option}}::OptionStyle::American));}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ price\ =\ pricer.price(opt);}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ price;}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ std::exception\&\ ex)\ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1.0;}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00069\ \ \ \ \ \}}
+
+\end{DoxyCode}

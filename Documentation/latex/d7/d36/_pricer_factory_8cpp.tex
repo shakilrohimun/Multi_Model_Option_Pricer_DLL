@@ -1,0 +1,31 @@
+\doxysection{Pricer\+Factory.\+cpp File Reference}
+\hypertarget{_pricer_factory_8cpp}{}\label{_pricer_factory_8cpp}\index{PricerFactory.cpp@{PricerFactory.cpp}}
+
+
+Implementation of the factory for creating pricing engines.  
+
+
+{\ttfamily \#include \"{}pch.\+h\"{}}\newline
+{\ttfamily \#include \"{}Pricer\+Factory.\+hpp\"{}}\newline
+{\ttfamily \#include \"{}Black\+Scholes\+Pricer.\+hpp\"{}}\newline
+{\ttfamily \#include \"{}Binomial\+Pricer.\+hpp\"{}}\newline
+{\ttfamily \#include \"{}Crank\+Nicolson\+Pricer.\+hpp\"{}}\newline
+{\ttfamily \#include \"{}Monte\+Carlo\+Pricer.\+hpp\"{}}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$stdexcept$>$}\newline
+Include dependency graph for Pricer\+Factory.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d5a/_pricer_factory_8cpp__incl}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Detailed Description}
+Implementation of the factory for creating pricing engines. 
+
+This file contains the complete implementation of the \doxylink{class_pricer_factory}{Pricer\+Factory} class which provides a static method to dynamically create an instance of a pricing engine based on the specified type (Black\+Scholes, Binomial, Crank\+Nicolson, or Monte\+Carlo). 
+
+Definition in file \mbox{\hyperlink{_pricer_factory_8cpp_source}{Pricer\+Factory.\+cpp}}.
+

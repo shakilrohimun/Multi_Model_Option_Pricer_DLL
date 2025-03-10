@@ -1,0 +1,5 @@
+<map id="MonteCarloPricer" name="MonteCarloPricer">
+<area shape="rect" id="Node000001" title="Class implementing the Monte Carlo pricing model." alt="" coords="5,80,128,107"/>
+<area shape="rect" id="Node000002" href="$d9/dec/class_i_option_pricer.html" title="Interface for an option pricing engine." alt="" coords="18,5,115,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="69,48,69,80,64,80,64,48"/>
+</map>

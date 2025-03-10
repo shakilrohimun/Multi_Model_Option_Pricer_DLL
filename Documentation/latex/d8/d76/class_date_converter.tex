@@ -1,0 +1,218 @@
+\doxysection{Date\+Converter Class Reference}
+\hypertarget{class_date_converter}{}\label{class_date_converter}\index{DateConverter@{DateConverter}}
+
+
+A utility class for performing date conversions and calculations.  
+
+
+
+
+{\ttfamily \#include $<$Date\+Converter.\+hpp$>$}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::string \mbox{\hyperlink{class_date_converter_a054a4504080ed36c068868cc2d975fa6}{get\+Today\+Date}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the current system date. \end{DoxyCompactList}\item 
+static std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point \mbox{\hyperlink{class_date_converter_a4e6942fe4c9ec505d14223fe86c45c6e}{parse\+Date}} (const std\+::string \&date\+Str)
+\begin{DoxyCompactList}\small\item\em Converts an ISO 8601 formatted date string to a time point. \end{DoxyCompactList}\item 
+static double \mbox{\hyperlink{class_date_converter_a7b86ecd9e814d45c359e489c02b9f17a}{years\+Between}} (const std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point \&start, const std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point \&end)
+\begin{DoxyCompactList}\small\item\em Calculates the time difference between two dates in years. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A utility class for performing date conversions and calculations. 
+
+This class provides static methods to convert between date strings and std\+::chrono time points, as well as to compute time differences expressed in years. The functions in this class are designed to handle dates in the ISO 8601 format (\"{}\+YYYY-\/\+MM-\/\+DD\"{}) and leverage the C++ standard library\textquotesingle{}s $<$chrono$>$ facilities to represent and manipulate time.
+
+\begin{DoxyNote}{Note}
+All methods in this class are static and can be used without instantiating an object.
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+std\+::chrono\+::system\+\_\+clock, std\+::string 
+\end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{_date_converter_8hpp_source_l00020}{20}} of file \mbox{\hyperlink{_date_converter_8hpp_source}{Date\+Converter.\+hpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_date_converter_a054a4504080ed36c068868cc2d975fa6}\label{class_date_converter_a054a4504080ed36c068868cc2d975fa6} 
+\index{DateConverter@{DateConverter}!getTodayDate@{getTodayDate}}
+\index{getTodayDate@{getTodayDate}!DateConverter@{DateConverter}}
+\doxysubsubsection{\texorpdfstring{getTodayDate()}{getTodayDate()}}
+{\footnotesize\ttfamily std\+::string Date\+Converter\+::get\+Today\+Date (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Retrieves the current system date. 
+
+Retrieves today\textquotesingle{}s date as a string in the format \"{}\+YYYY-\/\+MM-\/\+DD\"{}.
+
+This function obtains the current date from the system clock and returns it as a string formatted according to the ISO 8601 standard (\"{}\+YYYY-\/\+MM-\/\+DD\"{}). It uses the facilities provided by the C++ standard library to convert the current time to a human-\/readable format.
+
+\begin{DoxyReturn}{Returns}
+A std\+::string representing today\textquotesingle{}s date in the format \"{}\+YYYY-\/\+MM-\/\+DD\"{}.
+\end{DoxyReturn}
+\begin{DoxyRemark}{Remarks}
+Useful for timestamping, logging, or as a default value for date-\/related calculations.
+\end{DoxyRemark}
+
+
+This function obtains the current system time, converts it to local time, and formats it as a string.
+
+\begin{DoxyReturn}{Returns}
+A string representing today\textquotesingle{}s date. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_date_converter_8cpp_source_l00017}{17}} of file \mbox{\hyperlink{_date_converter_8cpp_source}{Date\+Converter.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{comment}{//\ Get\ the\ current\ time\ point\ from\ the\ system\ clock.}}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{auto}\ now\ =\ std::chrono::system\_clock::now();}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{comment}{//\ Convert\ the\ time\ point\ to\ a\ time\_t\ object.}}
+\DoxyCodeLine{00021\ \ \ \ \ std::time\_t\ now\_time\ =\ std::chrono::system\_clock::to\_time\_t(now);}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{comment}{//\ Convert\ time\_t\ to\ a\ tm\ struct\ representing\ local\ time.}}
+\DoxyCodeLine{00023\ \ \ \ \ std::tm\ local\_tm;}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#if\ defined(\_MSC\_VER)\ ||\ defined(\_\_MINGW32\_\_) }}
+\DoxyCodeLine{00025\ \ \ \ \ localtime\_s(\&local\_tm,\ \&now\_time);}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#else }}
+\DoxyCodeLine{00027\ \ \ \ \ localtime\_r(\&now\_time,\ \&local\_tm);}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#endif }}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{comment}{//\ Format\ the\ time\ using\ an\ ostringstream.}}
+\DoxyCodeLine{00030\ \ \ \ \ std::ostringstream\ oss;}
+\DoxyCodeLine{00031\ \ \ \ \ oss\ <<\ std::put\_time(\&local\_tm,\ \textcolor{stringliteral}{"{}\%Y-\/\%m-\/\%d"{}});}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordflow}{return}\ oss.str();}
+\DoxyCodeLine{00033\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_date_converter_a4e6942fe4c9ec505d14223fe86c45c6e}\label{class_date_converter_a4e6942fe4c9ec505d14223fe86c45c6e} 
+\index{DateConverter@{DateConverter}!parseDate@{parseDate}}
+\index{parseDate@{parseDate}!DateConverter@{DateConverter}}
+\doxysubsubsection{\texorpdfstring{parseDate()}{parseDate()}}
+{\footnotesize\ttfamily std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point Date\+Converter\+::parse\+Date (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{date\+Str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Converts an ISO 8601 formatted date string to a time point. 
+
+Parses an ISO 8601 date string into a time\+\_\+point.
+
+This function parses a date string provided in the ISO 8601 format (\"{}\+YYYY-\/\+MM-\/\+DD\"{}) and converts it into a std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point. This time point can then be used for further date and time calculations within the application.
+
+
+\begin{DoxyParams}{Parameters}
+{\em date\+Str} & A std\+::string containing the date in the format \"{}\+YYYY-\/\+MM-\/\+DD\"{}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point corresponding to the parsed date.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & If the input date string is invalid or does not conform to the \"{}\+YYYY-\/\+MM-\/\+DD\"{} format.\\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyNote}{Note}
+The use of ISO 8601 format ensures consistency and avoids ambiguity, particularly in international contexts.
+\end{DoxyNote}
+
+
+This function converts a date string in the \"{}\+YYYY-\/\+MM-\/\+DD\"{} format into a std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point.
+
+
+\begin{DoxyParams}{Parameters}
+{\em date\+Str} & The date string to parse. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A time\+\_\+point corresponding to the parsed date. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if parsing fails. \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line \mbox{\hyperlink{_date_converter_8cpp_source_l00045}{45}} of file \mbox{\hyperlink{_date_converter_8cpp_source}{Date\+Converter.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00046\ \ \ \ \ std::tm\ tm\ =\ \{\};}
+\DoxyCodeLine{00047\ \ \ \ \ std::istringstream\ ss(dateStr);}
+\DoxyCodeLine{00048\ \ \ \ \ ss\ >>\ std::get\_time(\&tm,\ \textcolor{stringliteral}{"{}\%Y-\/\%m-\/\%d"{}});}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordflow}{if}\ (ss.fail())\ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Failed\ to\ parse\ date:\ "{}}\ +\ dateStr);}
+\DoxyCodeLine{00051\ \ \ \ \ \}}
+\DoxyCodeLine{00052\ \ \ \ \ std::time\_t\ time\ =\ std::mktime(\&tm);}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordflow}{return}\ std::chrono::system\_clock::from\_time\_t(time);}
+\DoxyCodeLine{00054\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_date_converter_a7b86ecd9e814d45c359e489c02b9f17a}\label{class_date_converter_a7b86ecd9e814d45c359e489c02b9f17a} 
+\index{DateConverter@{DateConverter}!yearsBetween@{yearsBetween}}
+\index{yearsBetween@{yearsBetween}!DateConverter@{DateConverter}}
+\doxysubsubsection{\texorpdfstring{yearsBetween()}{yearsBetween()}}
+{\footnotesize\ttfamily double Date\+Converter\+::years\+Between (\begin{DoxyParamCaption}\item[{const std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point \&}]{start,  }\item[{const std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point \&}]{end }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Calculates the time difference between two dates in years. 
+
+Computes the difference in years between two time points.
+
+This function computes the difference between two std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point values and returns the result as a double representing the number of years between them. The calculation is based on the exact difference in days, converting that difference into fractional years.
+
+
+\begin{DoxyParams}{Parameters}
+{\em start} & A std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point representing the start date. \\
+\hline
+{\em end} & A std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point representing the end date. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A double indicating the time difference in years.
+\end{DoxyReturn}
+\begin{DoxyRemark}{Remarks}
+The result may include fractional years to accurately represent partial year differences, which is particularly useful in financial or scientific applications where precise time intervals are critical.
+\end{DoxyRemark}
+
+
+This function calculates the number of years between the start and end time points. It first converts the time difference to days and then divides by 365.\+25.
+
+
+\begin{DoxyParams}{Parameters}
+{\em start} & The start time point. \\
+\hline
+{\em end} & The end time point. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The difference in years. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_date_converter_8cpp_source_l00066}{66}} of file \mbox{\hyperlink{_date_converter_8cpp_source}{Date\+Converter.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keyword}{auto}\ diff\ =\ end\ -\/\ start;}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{comment}{//\ Convert\ duration\ to\ days\ (using\ 24\ hours\ per\ day)}}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keyword}{auto}\ days\ =\ std::chrono::duration\_cast<std::chrono::hours>(diff).count()\ /\ 24.0;}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordflow}{return}\ days\ /\ 365.25;}
+\DoxyCodeLine{00072\ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_date_converter_8hpp}{Date\+Converter.\+hpp}}\item 
+\mbox{\hyperlink{_date_converter_8cpp}{Date\+Converter.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,44 @@
+\doxysection{Pricer\+Factory.\+cpp}
+\hypertarget{_pricer_factory_8cpp_source}{}\label{_pricer_factory_8cpp_source}\mbox{\hyperlink{_pricer_factory_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_pricer_factory_8cpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{_pricer_factory_8cpp_source_l00010}00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{pch_8h}{pch.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_pricer_factory_8cpp_source_l00011}00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_pricer_factory_8hpp}{PricerFactory.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{_pricer_factory_8cpp_source_l00012}00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_black_scholes_pricer_8hpp}{BlackScholesPricer.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{_pricer_factory_8cpp_source_l00013}00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_binomial_pricer_8hpp}{BinomialPricer.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{_pricer_factory_8cpp_source_l00014}00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_crank_nicolson_pricer_8hpp}{CrankNicolsonPricer.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{_pricer_factory_8cpp_source_l00015}00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_monte_carlo_pricer_8hpp}{MonteCarloPricer.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{_pricer_factory_8cpp_source_l00016}00016\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{\Hypertarget{_pricer_factory_8cpp_source_l00017}00017\ \textcolor{preprocessor}{\#include\ <stdexcept>}}
+\DoxyCodeLine{\Hypertarget{_pricer_factory_8cpp_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{_pricer_factory_8cpp_source_l00029}\mbox{\hyperlink{class_pricer_factory_a5a3f668dea3141b12a71e6812787b570}{00029}}\ std::unique\_ptr<IOptionPricer>\ \mbox{\hyperlink{class_pricer_factory_a5a3f668dea3141b12a71e6812787b570}{PricerFactory::createPricer}}(\mbox{\hyperlink{_pricer_factory_8hpp_a6e3c4698785c67dc4caf497092b45250}{PricerType}}\ type)\ \{}
+\DoxyCodeLine{\Hypertarget{_pricer_factory_8cpp_source_l00030}00030\ \ \ \ \ \textcolor{keywordflow}{switch}\ (type)\ \{}
+\DoxyCodeLine{\Hypertarget{_pricer_factory_8cpp_source_l00031}00031\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{_pricer_factory_8hpp_a6e3c4698785c67dc4caf497092b45250ac40bd32b046f27c90a6a0d2aebc48d8c}{PricerType::BlackScholes}}:}
+\DoxyCodeLine{\Hypertarget{_pricer_factory_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::make\_unique<BlackScholesPricer>();}
+\DoxyCodeLine{\Hypertarget{_pricer_factory_8cpp_source_l00033}00033\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{_pricer_factory_8hpp_a6e3c4698785c67dc4caf497092b45250af0dc57106e362cb815789ed45ed989ad}{PricerType::Binomial}}:}
+\DoxyCodeLine{\Hypertarget{_pricer_factory_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::make\_unique<BinomialPricer>();}
+\DoxyCodeLine{\Hypertarget{_pricer_factory_8cpp_source_l00035}00035\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{_pricer_factory_8hpp_a6e3c4698785c67dc4caf497092b45250a8c12763e7ca8639982cbb121e19a52a1}{PricerType::CrankNicolson}}:}
+\DoxyCodeLine{\Hypertarget{_pricer_factory_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::make\_unique<CrankNicolsonPricer>();}
+\DoxyCodeLine{\Hypertarget{_pricer_factory_8cpp_source_l00037}00037\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{_pricer_factory_8hpp_a6e3c4698785c67dc4caf497092b45250aedd652c19d7dbbfb3d242aa14b2fec8c}{PricerType::MonteCarlo}}:}
+\DoxyCodeLine{\Hypertarget{_pricer_factory_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::make\_unique<MonteCarloPricer>();}
+\DoxyCodeLine{\Hypertarget{_pricer_factory_8cpp_source_l00039}00039\ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{_pricer_factory_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}Unknown\ pricer\ type."{}});}
+\DoxyCodeLine{\Hypertarget{_pricer_factory_8cpp_source_l00041}00041\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_pricer_factory_8cpp_source_l00042}00042\ \}}
+\DoxyCodeLine{\Hypertarget{_pricer_factory_8cpp_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{_pricer_factory_8cpp_source_l00055}\mbox{\hyperlink{class_pricer_factory_a40cb129746b09cb431e18c834fe5723f}{00055}}\ std::unique\_ptr<IOptionPricer>\ \mbox{\hyperlink{class_pricer_factory_a5a3f668dea3141b12a71e6812787b570}{PricerFactory::createPricer}}(\mbox{\hyperlink{_pricer_factory_8hpp_a6e3c4698785c67dc4caf497092b45250}{PricerType}}\ type,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_pricing_configuration}{PricingConfiguration}}\&\ config)\ \{}
+\DoxyCodeLine{\Hypertarget{_pricer_factory_8cpp_source_l00056}00056\ \ \ \ \ \textcolor{keywordflow}{switch}\ (type)\ \{}
+\DoxyCodeLine{\Hypertarget{_pricer_factory_8cpp_source_l00057}00057\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{_pricer_factory_8hpp_a6e3c4698785c67dc4caf497092b45250ac40bd32b046f27c90a6a0d2aebc48d8c}{PricerType::BlackScholes}}:}
+\DoxyCodeLine{\Hypertarget{_pricer_factory_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::make\_unique<BlackScholesPricer>(config);}
+\DoxyCodeLine{\Hypertarget{_pricer_factory_8cpp_source_l00059}00059\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{_pricer_factory_8hpp_a6e3c4698785c67dc4caf497092b45250af0dc57106e362cb815789ed45ed989ad}{PricerType::Binomial}}:}
+\DoxyCodeLine{\Hypertarget{_pricer_factory_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::make\_unique<BinomialPricer>(config);}
+\DoxyCodeLine{\Hypertarget{_pricer_factory_8cpp_source_l00061}00061\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{_pricer_factory_8hpp_a6e3c4698785c67dc4caf497092b45250a8c12763e7ca8639982cbb121e19a52a1}{PricerType::CrankNicolson}}:}
+\DoxyCodeLine{\Hypertarget{_pricer_factory_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::make\_unique<CrankNicolsonPricer>(config);}
+\DoxyCodeLine{\Hypertarget{_pricer_factory_8cpp_source_l00063}00063\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{_pricer_factory_8hpp_a6e3c4698785c67dc4caf497092b45250aedd652c19d7dbbfb3d242aa14b2fec8c}{PricerType::MonteCarlo}}:}
+\DoxyCodeLine{\Hypertarget{_pricer_factory_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::make\_unique<MonteCarloPricer>(config);}
+\DoxyCodeLine{\Hypertarget{_pricer_factory_8cpp_source_l00065}00065\ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{_pricer_factory_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}Unknown\ pricer\ type."{}});}
+\DoxyCodeLine{\Hypertarget{_pricer_factory_8cpp_source_l00067}00067\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_pricer_factory_8cpp_source_l00068}00068\ \}}
+
+\end{DoxyCode}

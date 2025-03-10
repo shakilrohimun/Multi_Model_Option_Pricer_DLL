@@ -1,0 +1,700 @@
+\doxysection{Option Class Reference}
+\hypertarget{class_option}{}\label{class_option}\index{Option@{Option}}
+
+
+Class representing a financial option.  
+
+
+
+
+{\ttfamily \#include $<$Option.\+hpp$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{class_option_a9f88b2cb28c4d271515fe52d6332ab9f}{Option\+Style}} \{ \mbox{\hyperlink{class_option_a9f88b2cb28c4d271515fe52d6332ab9fadfa6ea1d1696cebf5f8e0722812f7bbb}{European}}
+, \mbox{\hyperlink{class_option_a9f88b2cb28c4d271515fe52d6332ab9fac6c6f067a3ead9ce67a1c67a790fa26b}{American}}
+ \}
+\begin{DoxyCompactList}\small\item\em Enumeration for the style of the option. \end{DoxyCompactList}\item 
+enum class \mbox{\hyperlink{class_option_ad3a2defb450b67b3d8d4c0d06b475b3b}{Option\+Type}} \{ \mbox{\hyperlink{class_option_ad3a2defb450b67b3d8d4c0d06b475b3bac3755e61202abd74da5885d2e9c9160e}{Call}}
+, \mbox{\hyperlink{class_option_ad3a2defb450b67b3d8d4c0d06b475b3bad0bf1810982e9728fcf3ac444a015373}{Put}}
+ \}
+\begin{DoxyCompactList}\small\item\em Enumeration for the type of option. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{class_option_a263779c6777253ce6158266076593733}{get\+Dividend}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the dividend yield. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_option_a9f88b2cb28c4d271515fe52d6332ab9f}{Option\+Style}} \mbox{\hyperlink{class_option_aa0359256d21a97f5a280f60e0b088ad3}{get\+Option\+Style}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the style of the option. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_option_ad3a2defb450b67b3d8d4c0d06b475b3b}{Option\+Type}} \mbox{\hyperlink{class_option_a4a5d06180aa0e449d49a836906383463}{get\+Option\+Type}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the type of the option. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_option_ab450179f0902408f40cfa4794b1eb3a8}{get\+Strike}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the strike price of the option. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_option_a41a6ff2b75b514ac305e4c51672fc036}{get\+Underlying}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the price of the underlying asset. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_option_a319afe4b0bc9b559af422cc6ecb96540}{get\+Volatility}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the volatility of the underlying asset. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_option_af517613005312013c576eb9099a50464}{Option}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_option_a271dcbf017ed1ede1cc12093306c3ad1}{Option}} (double underlying, double strike, double volatility, double dividend, \mbox{\hyperlink{class_option_ad3a2defb450b67b3d8d4c0d06b475b3b}{Option\+Type}} \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_ababfbfb37e9a9a294f2fbc0c514abade}{option\+Type}}, \mbox{\hyperlink{class_option_a9f88b2cb28c4d271515fe52d6332ab9f}{Option\+Style}} \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_ad00273f7d7912cf5b399a84b6ec595ef}{option\+Style}})
+\begin{DoxyCompactList}\small\item\em Parameterized constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_option_a4a1c842336970845737908741e4e3d3a}{set\+Dividend}} (double dividend)
+\begin{DoxyCompactList}\small\item\em Sets the dividend yield. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_option_a4e4f23cab6894c03ad7c487f439bfe79}{set\+Option\+Style}} (\mbox{\hyperlink{class_option_a9f88b2cb28c4d271515fe52d6332ab9f}{Option\+Style}} \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_ad00273f7d7912cf5b399a84b6ec595ef}{option\+Style}})
+\begin{DoxyCompactList}\small\item\em Sets the style of the option. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_option_ac4cc12364e338a686823af8bf20ec37f}{set\+Option\+Type}} (\mbox{\hyperlink{class_option_ad3a2defb450b67b3d8d4c0d06b475b3b}{Option\+Type}} \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_ababfbfb37e9a9a294f2fbc0c514abade}{option\+Type}})
+\begin{DoxyCompactList}\small\item\em Sets the type of the option. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_option_a048ba77c65bd378160ec218ef710f4e2}{set\+Strike}} (double strike)
+\begin{DoxyCompactList}\small\item\em Sets the strike price of the option. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_option_ab74d0a7bac479971d711486ff2643e2f}{set\+Underlying}} (double underlying)
+\begin{DoxyCompactList}\small\item\em Sets the price of the underlying asset. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_option_a88809b5a8e576737b25448761ac4a16c}{set\+Volatility}} (double volatility)
+\begin{DoxyCompactList}\small\item\em Sets the volatility of the underlying asset. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_option_a04b908a0ba9b1909ae378ca2a07fda61}{\texorpdfstring{$\sim$}{\string~}\+Option}} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{class_option_a8f1035bb069f2cb33eaab39d46bab1c7}{dividend\+\_\+}}
+\item 
+double \mbox{\hyperlink{class_option_a8ae9430bf703947eec6af0dfcc6c4b00}{strike\+\_\+}}
+\item 
+\mbox{\hyperlink{class_option_a9f88b2cb28c4d271515fe52d6332ab9f}{Option\+Style}} \mbox{\hyperlink{class_option_a718f4474b08fe627df127e3b4e183030}{style\+\_\+}}
+\item 
+\mbox{\hyperlink{class_option_ad3a2defb450b67b3d8d4c0d06b475b3b}{Option\+Type}} \mbox{\hyperlink{class_option_a99f11d0ee4d4de6cef4eb86fab3f687c}{type\+\_\+}}
+\item 
+double \mbox{\hyperlink{class_option_a437f2ca89881dffb741372470c893592}{underlying\+\_\+}}
+\item 
+double \mbox{\hyperlink{class_option_a7c0370f95d5171b4944a60193c3d1a2b}{volatility\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class representing a financial option. 
+
+The \doxylink{class_option}{Option} class encapsulates the essential parameters needed for option pricing, including the underlying asset\textquotesingle{}s price, strike price, volatility, dividend yield (if any), option type (Call or Put), and option style (European or American).
+
+It provides methods to access (getters) and modify (setters) these parameters, enabling flexibility in option pricing calculations. 
+
+Definition at line \mbox{\hyperlink{_option_8hpp_source_l00044}{44}} of file \mbox{\hyperlink{_option_8hpp_source}{Option.\+hpp}}.
+
+
+
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{class_option_a9f88b2cb28c4d271515fe52d6332ab9f}\label{class_option_a9f88b2cb28c4d271515fe52d6332ab9f} 
+\index{Option@{Option}!OptionStyle@{OptionStyle}}
+\index{OptionStyle@{OptionStyle}!Option@{Option}}
+\doxysubsubsection{\texorpdfstring{OptionStyle}{OptionStyle}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{class_option_a9f88b2cb28c4d271515fe52d6332ab9f}{Option\+::\+Option\+Style}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Enumeration for the style of the option. 
+
+Specifies whether an option is European or American\+:
+\begin{DoxyItemize}
+\item European\+: Can only be exercised at maturity.
+\item American\+: Can be exercised at any time up to maturity. 
+\end{DoxyItemize}\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{European@{European}!Option@{Option}}\index{Option@{Option}!European@{European}}}\Hypertarget{class_option_a9f88b2cb28c4d271515fe52d6332ab9fadfa6ea1d1696cebf5f8e0722812f7bbb}\label{class_option_a9f88b2cb28c4d271515fe52d6332ab9fadfa6ea1d1696cebf5f8e0722812f7bbb} 
+European&European option\+: exercise is allowed only at expiration. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{American@{American}!Option@{Option}}\index{Option@{Option}!American@{American}}}\Hypertarget{class_option_a9f88b2cb28c4d271515fe52d6332ab9fac6c6f067a3ead9ce67a1c67a790fa26b}\label{class_option_a9f88b2cb28c4d271515fe52d6332ab9fac6c6f067a3ead9ce67a1c67a790fa26b} 
+American&American option\+: exercise is allowed at any time before expiration. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{_option_8hpp_source_l00065}{65}} of file \mbox{\hyperlink{_option_8hpp_source}{Option.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_option_a9f88b2cb28c4d271515fe52d6332ab9fadfa6ea1d1696cebf5f8e0722812f7bbb}{European}},\ }
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_option_a9f88b2cb28c4d271515fe52d6332ab9fac6c6f067a3ead9ce67a1c67a790fa26b}{American}}\ \ }
+\DoxyCodeLine{00068\ \ \ \ \ \};}
+
+\end{DoxyCode}
+\Hypertarget{class_option_ad3a2defb450b67b3d8d4c0d06b475b3b}\label{class_option_ad3a2defb450b67b3d8d4c0d06b475b3b} 
+\index{Option@{Option}!OptionType@{OptionType}}
+\index{OptionType@{OptionType}!Option@{Option}}
+\doxysubsubsection{\texorpdfstring{OptionType}{OptionType}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{class_option_ad3a2defb450b67b3d8d4c0d06b475b3b}{Option\+::\+Option\+Type}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Enumeration for the type of option. 
+
+Defines the possible types of options\+:
+\begin{DoxyItemize}
+\item Call\+: \doxylink{class_option}{Option} to buy the underlying asset.
+\item Put\+: \doxylink{class_option}{Option} to sell the underlying asset. 
+\end{DoxyItemize}\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Call@{Call}!Option@{Option}}\index{Option@{Option}!Call@{Call}}}\Hypertarget{class_option_ad3a2defb450b67b3d8d4c0d06b475b3bac3755e61202abd74da5885d2e9c9160e}\label{class_option_ad3a2defb450b67b3d8d4c0d06b475b3bac3755e61202abd74da5885d2e9c9160e} 
+Call&Call option\+: grants the right to buy the underlying asset. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Put@{Put}!Option@{Option}}\index{Option@{Option}!Put@{Put}}}\Hypertarget{class_option_ad3a2defb450b67b3d8d4c0d06b475b3bad0bf1810982e9728fcf3ac444a015373}\label{class_option_ad3a2defb450b67b3d8d4c0d06b475b3bad0bf1810982e9728fcf3ac444a015373} 
+Put&Put option\+: grants the right to sell the underlying asset. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{_option_8hpp_source_l00053}{53}} of file \mbox{\hyperlink{_option_8hpp_source}{Option.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_option_ad3a2defb450b67b3d8d4c0d06b475b3bac3755e61202abd74da5885d2e9c9160e}{Call}},\ }
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_option_ad3a2defb450b67b3d8d4c0d06b475b3bad0bf1810982e9728fcf3ac444a015373}{Put}}\ \ \ }
+\DoxyCodeLine{00056\ \ \ \ \ \};}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_option_af517613005312013c576eb9099a50464}\label{class_option_af517613005312013c576eb9099a50464} 
+\index{Option@{Option}!Option@{Option}}
+\index{Option@{Option}!Option@{Option}}
+\doxysubsubsection{\texorpdfstring{Option()}{Option()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Option\+::\+Option (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+Constructeur par defaut.
+
+Constructs an \doxylink{class_option}{Option} object with default parameters. The default values are typically set to zero or other appropriate defaults as determined by the implementation.
+
+Initialise l\textquotesingle{}option avec des valeurs par defaut \+:
+\begin{DoxyItemize}
+\item sous-\/jacent = 0.\+0
+\item strike = 0.\+0
+\item volatilite = 0.\+0
+\item dividende = 0.\+0
+\item type = Call
+\item style = European 
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{_option_8cpp_source_l00024}{24}} of file \mbox{\hyperlink{_option_8cpp_source}{Option.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00025\ \ \ \ \ :\ \mbox{\hyperlink{class_option_a437f2ca89881dffb741372470c893592}{underlying\_}}(0.0),\ \mbox{\hyperlink{class_option_a8ae9430bf703947eec6af0dfcc6c4b00}{strike\_}}(0.0),\ \mbox{\hyperlink{class_option_a7c0370f95d5171b4944a60193c3d1a2b}{volatility\_}}(0.0),\ \mbox{\hyperlink{class_option_a8f1035bb069f2cb33eaab39d46bab1c7}{dividend\_}}(0.0),}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{class_option_a99f11d0ee4d4de6cef4eb86fab3f687c}{type\_}}(\mbox{\hyperlink{class_option_ad3a2defb450b67b3d8d4c0d06b475b3bac3755e61202abd74da5885d2e9c9160e}{OptionType::Call}}),\ \mbox{\hyperlink{class_option_a718f4474b08fe627df127e3b4e183030}{style\_}}(\mbox{\hyperlink{class_option_a9f88b2cb28c4d271515fe52d6332ab9fadfa6ea1d1696cebf5f8e0722812f7bbb}{OptionStyle::European}}) }
+\DoxyCodeLine{00027\ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{comment}{//\ Constructeur\ par\ defaut\ :\ aucune\ action\ supplementaire\ requise.}}
+\DoxyCodeLine{00029\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_option_a271dcbf017ed1ede1cc12093306c3ad1}\label{class_option_a271dcbf017ed1ede1cc12093306c3ad1} 
+\index{Option@{Option}!Option@{Option}}
+\index{Option@{Option}!Option@{Option}}
+\doxysubsubsection{\texorpdfstring{Option()}{Option()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Option\+::\+Option (\begin{DoxyParamCaption}\item[{double}]{underlying,  }\item[{double}]{strike,  }\item[{double}]{volatility,  }\item[{double}]{dividend,  }\item[{\mbox{\hyperlink{class_option_ad3a2defb450b67b3d8d4c0d06b475b3b}{Option\+Type}}}]{option\+Type,  }\item[{\mbox{\hyperlink{class_option_a9f88b2cb28c4d271515fe52d6332ab9f}{Option\+Style}}}]{option\+Style }\end{DoxyParamCaption})}
+
+
+
+Parameterized constructor. 
+
+Constructeur parametre.
+
+Constructs an \doxylink{class_option}{Option} object with the specified parameters.
+
+
+\begin{DoxyParams}{Parameters}
+{\em underlying} & The price of the underlying asset. \\
+\hline
+{\em strike} & The strike price of the option. \\
+\hline
+{\em volatility} & The volatility of the underlying asset. \\
+\hline
+{\em dividend} & The dividend yield (if applicable) of the underlying asset. \\
+\hline
+{\em option\+Type} & The type of the option (Call or Put). \\
+\hline
+{\em option\+Style} & The style of the option (European or American).\\
+\hline
+\end{DoxyParams}
+
+
+Initialise l\textquotesingle{}option avec les parametres fournis.
+
+
+\begin{DoxyParams}{Parameters}
+{\em underlying} & Prix du sous-\/jacent. \\
+\hline
+{\em strike} & Prix d\textquotesingle{}exercice. \\
+\hline
+{\em volatility} & Volatilite du sous-\/jacent. \\
+\hline
+{\em dividend} & Dividende eventuel. \\
+\hline
+{\em option\+Type} & Type de l\textquotesingle{}option (Call ou Put). \\
+\hline
+{\em option\+Style} & Style de l\textquotesingle{}option (European ou American). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_option_8cpp_source_l00043}{43}} of file \mbox{\hyperlink{_option_8cpp_source}{Option.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00045\ \ \ \ \ :\ \mbox{\hyperlink{class_option_a437f2ca89881dffb741372470c893592}{underlying\_}}(underlying),\ \mbox{\hyperlink{class_option_a8ae9430bf703947eec6af0dfcc6c4b00}{strike\_}}(strike),\ \mbox{\hyperlink{class_option_a7c0370f95d5171b4944a60193c3d1a2b}{volatility\_}}(volatility),\ \mbox{\hyperlink{class_option_a8f1035bb069f2cb33eaab39d46bab1c7}{dividend\_}}(dividend),}
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{class_option_a99f11d0ee4d4de6cef4eb86fab3f687c}{type\_}}(\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_ababfbfb37e9a9a294f2fbc0c514abade}{optionType}}),\ \mbox{\hyperlink{class_option_a718f4474b08fe627df127e3b4e183030}{style\_}}(\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_ad00273f7d7912cf5b399a84b6ec595ef}{optionStyle}}) }
+\DoxyCodeLine{00047\ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{comment}{//\ Initialisation\ avec\ les\ parametres\ fournis.}}
+\DoxyCodeLine{00049\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_option_a04b908a0ba9b1909ae378ca2a07fda61}\label{class_option_a04b908a0ba9b1909ae378ca2a07fda61} 
+\index{Option@{Option}!````~Option@{\texorpdfstring{$\sim$}{\string~}Option}}
+\index{````~Option@{\texorpdfstring{$\sim$}{\string~}Option}!Option@{Option}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Option()}{\string~Option()}}
+{\footnotesize\ttfamily Option\+::\texorpdfstring{$\sim$}{\string~}\+Option (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Virtual destructor. 
+
+Destructeur virtuel.
+
+Ensures that resources are properly released when an \doxylink{class_option}{Option} object is destroyed.
+
+Aucun nettoyage specifique n\textquotesingle{}est requis car aucune allocation dynamique n\textquotesingle{}est utilisee. 
+
+Definition at line \mbox{\hyperlink{_option_8cpp_source_l00056}{56}} of file \mbox{\hyperlink{_option_8cpp_source}{Option.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00057\ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{comment}{//\ Destructeur\ :\ rien\ a\ liberer.}}
+\DoxyCodeLine{00059\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_option_a263779c6777253ce6158266076593733}\label{class_option_a263779c6777253ce6158266076593733} 
+\index{Option@{Option}!getDividend@{getDividend}}
+\index{getDividend@{getDividend}!Option@{Option}}
+\doxysubsubsection{\texorpdfstring{getDividend()}{getDividend()}}
+{\footnotesize\ttfamily double Option\+::get\+Dividend (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Retrieves the dividend yield. 
+
+Obtient le dividende eventuel de l\textquotesingle{}option.
+
+\begin{DoxyReturn}{Returns}
+The dividend yield.
+
+Le dividende. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_option_8cpp_source_l00089}{89}} of file \mbox{\hyperlink{_option_8cpp_source}{Option.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_option_a8f1035bb069f2cb33eaab39d46bab1c7}{dividend\_}};}
+\DoxyCodeLine{00091\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_option_aa0359256d21a97f5a280f60e0b088ad3}\label{class_option_aa0359256d21a97f5a280f60e0b088ad3} 
+\index{Option@{Option}!getOptionStyle@{getOptionStyle}}
+\index{getOptionStyle@{getOptionStyle}!Option@{Option}}
+\doxysubsubsection{\texorpdfstring{getOptionStyle()}{getOptionStyle()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_option_a9f88b2cb28c4d271515fe52d6332ab9f}{Option\+::\+Option\+Style}} Option\+::get\+Option\+Style (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Retrieves the style of the option. 
+
+Obtient le style de l\textquotesingle{}option (European ou American).
+
+\begin{DoxyReturn}{Returns}
+The option style (European or American).
+
+Le style de l\textquotesingle{}option. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_option_8cpp_source_l00105}{105}} of file \mbox{\hyperlink{_option_8cpp_source}{Option.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_option_a718f4474b08fe627df127e3b4e183030}{style\_}};}
+\DoxyCodeLine{00107\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_option_a4a5d06180aa0e449d49a836906383463}\label{class_option_a4a5d06180aa0e449d49a836906383463} 
+\index{Option@{Option}!getOptionType@{getOptionType}}
+\index{getOptionType@{getOptionType}!Option@{Option}}
+\doxysubsubsection{\texorpdfstring{getOptionType()}{getOptionType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_option_ad3a2defb450b67b3d8d4c0d06b475b3b}{Option\+::\+Option\+Type}} Option\+::get\+Option\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Retrieves the type of the option. 
+
+Obtient le type de l\textquotesingle{}option (Call ou Put).
+
+\begin{DoxyReturn}{Returns}
+The option type (Call or Put).
+
+Le type de l\textquotesingle{}option. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_option_8cpp_source_l00097}{97}} of file \mbox{\hyperlink{_option_8cpp_source}{Option.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_option_a99f11d0ee4d4de6cef4eb86fab3f687c}{type\_}};}
+\DoxyCodeLine{00099\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_option_ab450179f0902408f40cfa4794b1eb3a8}\label{class_option_ab450179f0902408f40cfa4794b1eb3a8} 
+\index{Option@{Option}!getStrike@{getStrike}}
+\index{getStrike@{getStrike}!Option@{Option}}
+\doxysubsubsection{\texorpdfstring{getStrike()}{getStrike()}}
+{\footnotesize\ttfamily double Option\+::get\+Strike (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Retrieves the strike price of the option. 
+
+Obtient le prix d\textquotesingle{}exercice (strike) de l\textquotesingle{}option.
+
+\begin{DoxyReturn}{Returns}
+The strike price.
+
+Le strike de l\textquotesingle{}option. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_option_8cpp_source_l00073}{73}} of file \mbox{\hyperlink{_option_8cpp_source}{Option.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_option_a8ae9430bf703947eec6af0dfcc6c4b00}{strike\_}};}
+\DoxyCodeLine{00075\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_option_a41a6ff2b75b514ac305e4c51672fc036}\label{class_option_a41a6ff2b75b514ac305e4c51672fc036} 
+\index{Option@{Option}!getUnderlying@{getUnderlying}}
+\index{getUnderlying@{getUnderlying}!Option@{Option}}
+\doxysubsubsection{\texorpdfstring{getUnderlying()}{getUnderlying()}}
+{\footnotesize\ttfamily double Option\+::get\+Underlying (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Retrieves the price of the underlying asset. 
+
+Obtient le prix du sous-\/jacent.
+
+\begin{DoxyReturn}{Returns}
+The current price of the underlying asset.
+
+La valeur du sous-\/jacent. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_option_8cpp_source_l00065}{65}} of file \mbox{\hyperlink{_option_8cpp_source}{Option.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_option_a437f2ca89881dffb741372470c893592}{underlying\_}};}
+\DoxyCodeLine{00067\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_option_a319afe4b0bc9b559af422cc6ecb96540}\label{class_option_a319afe4b0bc9b559af422cc6ecb96540} 
+\index{Option@{Option}!getVolatility@{getVolatility}}
+\index{getVolatility@{getVolatility}!Option@{Option}}
+\doxysubsubsection{\texorpdfstring{getVolatility()}{getVolatility()}}
+{\footnotesize\ttfamily double Option\+::get\+Volatility (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Retrieves the volatility of the underlying asset. 
+
+Obtient la volatilite du sous-\/jacent.
+
+\begin{DoxyReturn}{Returns}
+The volatility.
+
+La volatilite. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_option_8cpp_source_l00081}{81}} of file \mbox{\hyperlink{_option_8cpp_source}{Option.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_option_a7c0370f95d5171b4944a60193c3d1a2b}{volatility\_}};}
+\DoxyCodeLine{00083\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_option_a4a1c842336970845737908741e4e3d3a}\label{class_option_a4a1c842336970845737908741e4e3d3a} 
+\index{Option@{Option}!setDividend@{setDividend}}
+\index{setDividend@{setDividend}!Option@{Option}}
+\doxysubsubsection{\texorpdfstring{setDividend()}{setDividend()}}
+{\footnotesize\ttfamily void Option\+::set\+Dividend (\begin{DoxyParamCaption}\item[{double}]{dividend }\end{DoxyParamCaption})}
+
+
+
+Sets the dividend yield. 
+
+Modifie le dividende de l\textquotesingle{}option.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dividend} & The new dividend yield.\\
+\hline
+{\em dividend} & Nouveau dividende. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_option_8cpp_source_l00137}{137}} of file \mbox{\hyperlink{_option_8cpp_source}{Option.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00138\ \ \ \ \ \mbox{\hyperlink{class_option_a8f1035bb069f2cb33eaab39d46bab1c7}{dividend\_}}\ =\ dividend;}
+\DoxyCodeLine{00139\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_option_a4e4f23cab6894c03ad7c487f439bfe79}\label{class_option_a4e4f23cab6894c03ad7c487f439bfe79} 
+\index{Option@{Option}!setOptionStyle@{setOptionStyle}}
+\index{setOptionStyle@{setOptionStyle}!Option@{Option}}
+\doxysubsubsection{\texorpdfstring{setOptionStyle()}{setOptionStyle()}}
+{\footnotesize\ttfamily void Option\+::set\+Option\+Style (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_option_a9f88b2cb28c4d271515fe52d6332ab9f}{Option\+Style}}}]{option\+Style }\end{DoxyParamCaption})}
+
+
+
+Sets the style of the option. 
+
+Modifie le style de l\textquotesingle{}option.
+
+
+\begin{DoxyParams}{Parameters}
+{\em option\+Style} & The new option style (European or American).\\
+\hline
+{\em option\+Style} & Nouveau style (European ou American). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_option_8cpp_source_l00153}{153}} of file \mbox{\hyperlink{_option_8cpp_source}{Option.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00154\ \ \ \ \ \mbox{\hyperlink{class_option_a718f4474b08fe627df127e3b4e183030}{style\_}}\ =\ \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_ad00273f7d7912cf5b399a84b6ec595ef}{optionStyle}};}
+\DoxyCodeLine{00155\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_option_ac4cc12364e338a686823af8bf20ec37f}\label{class_option_ac4cc12364e338a686823af8bf20ec37f} 
+\index{Option@{Option}!setOptionType@{setOptionType}}
+\index{setOptionType@{setOptionType}!Option@{Option}}
+\doxysubsubsection{\texorpdfstring{setOptionType()}{setOptionType()}}
+{\footnotesize\ttfamily void Option\+::set\+Option\+Type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_option_ad3a2defb450b67b3d8d4c0d06b475b3b}{Option\+Type}}}]{option\+Type }\end{DoxyParamCaption})}
+
+
+
+Sets the type of the option. 
+
+Modifie le type de l\textquotesingle{}option.
+
+
+\begin{DoxyParams}{Parameters}
+{\em option\+Type} & The new option type (Call or Put).\\
+\hline
+{\em option\+Type} & Nouveau type (Call ou Put). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_option_8cpp_source_l00145}{145}} of file \mbox{\hyperlink{_option_8cpp_source}{Option.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00146\ \ \ \ \ \mbox{\hyperlink{class_option_a99f11d0ee4d4de6cef4eb86fab3f687c}{type\_}}\ =\ \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_ababfbfb37e9a9a294f2fbc0c514abade}{optionType}};}
+\DoxyCodeLine{00147\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_option_a048ba77c65bd378160ec218ef710f4e2}\label{class_option_a048ba77c65bd378160ec218ef710f4e2} 
+\index{Option@{Option}!setStrike@{setStrike}}
+\index{setStrike@{setStrike}!Option@{Option}}
+\doxysubsubsection{\texorpdfstring{setStrike()}{setStrike()}}
+{\footnotesize\ttfamily void Option\+::set\+Strike (\begin{DoxyParamCaption}\item[{double}]{strike }\end{DoxyParamCaption})}
+
+
+
+Sets the strike price of the option. 
+
+Modifie le prix d\textquotesingle{}exercice (strike) de l\textquotesingle{}option.
+
+
+\begin{DoxyParams}{Parameters}
+{\em strike} & The new strike price.\\
+\hline
+{\em strike} & Nouveau strike. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_option_8cpp_source_l00121}{121}} of file \mbox{\hyperlink{_option_8cpp_source}{Option.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00122\ \ \ \ \ \mbox{\hyperlink{class_option_a8ae9430bf703947eec6af0dfcc6c4b00}{strike\_}}\ =\ strike;}
+\DoxyCodeLine{00123\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_option_ab74d0a7bac479971d711486ff2643e2f}\label{class_option_ab74d0a7bac479971d711486ff2643e2f} 
+\index{Option@{Option}!setUnderlying@{setUnderlying}}
+\index{setUnderlying@{setUnderlying}!Option@{Option}}
+\doxysubsubsection{\texorpdfstring{setUnderlying()}{setUnderlying()}}
+{\footnotesize\ttfamily void Option\+::set\+Underlying (\begin{DoxyParamCaption}\item[{double}]{underlying }\end{DoxyParamCaption})}
+
+
+
+Sets the price of the underlying asset. 
+
+Modifie le prix du sous-\/jacent.
+
+
+\begin{DoxyParams}{Parameters}
+{\em underlying} & The new price of the underlying asset.\\
+\hline
+{\em underlying} & Nouveau prix du sous-\/jacent. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_option_8cpp_source_l00113}{113}} of file \mbox{\hyperlink{_option_8cpp_source}{Option.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00114\ \ \ \ \ \mbox{\hyperlink{class_option_a437f2ca89881dffb741372470c893592}{underlying\_}}\ =\ underlying;}
+\DoxyCodeLine{00115\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_option_a88809b5a8e576737b25448761ac4a16c}\label{class_option_a88809b5a8e576737b25448761ac4a16c} 
+\index{Option@{Option}!setVolatility@{setVolatility}}
+\index{setVolatility@{setVolatility}!Option@{Option}}
+\doxysubsubsection{\texorpdfstring{setVolatility()}{setVolatility()}}
+{\footnotesize\ttfamily void Option\+::set\+Volatility (\begin{DoxyParamCaption}\item[{double}]{volatility }\end{DoxyParamCaption})}
+
+
+
+Sets the volatility of the underlying asset. 
+
+Modifie la volatilite du sous-\/jacent.
+
+
+\begin{DoxyParams}{Parameters}
+{\em volatility} & The new volatility.\\
+\hline
+{\em volatility} & Nouvelle volatilite. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_option_8cpp_source_l00129}{129}} of file \mbox{\hyperlink{_option_8cpp_source}{Option.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00130\ \ \ \ \ \mbox{\hyperlink{class_option_a7c0370f95d5171b4944a60193c3d1a2b}{volatility\_}}\ =\ volatility;}
+\DoxyCodeLine{00131\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_option_a8f1035bb069f2cb33eaab39d46bab1c7}\label{class_option_a8f1035bb069f2cb33eaab39d46bab1c7} 
+\index{Option@{Option}!dividend\_@{dividend\_}}
+\index{dividend\_@{dividend\_}!Option@{Option}}
+\doxysubsubsection{\texorpdfstring{dividend\_}{dividend\_}}
+{\footnotesize\ttfamily double Option\+::dividend\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+The dividend yield, if applicable. 
+
+Definition at line \mbox{\hyperlink{_option_8hpp_source_l00188}{188}} of file \mbox{\hyperlink{_option_8hpp_source}{Option.\+hpp}}.
+
+\Hypertarget{class_option_a8ae9430bf703947eec6af0dfcc6c4b00}\label{class_option_a8ae9430bf703947eec6af0dfcc6c4b00} 
+\index{Option@{Option}!strike\_@{strike\_}}
+\index{strike\_@{strike\_}!Option@{Option}}
+\doxysubsubsection{\texorpdfstring{strike\_}{strike\_}}
+{\footnotesize\ttfamily double Option\+::strike\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+The strike price of the option. 
+
+Definition at line \mbox{\hyperlink{_option_8hpp_source_l00186}{186}} of file \mbox{\hyperlink{_option_8hpp_source}{Option.\+hpp}}.
+
+\Hypertarget{class_option_a718f4474b08fe627df127e3b4e183030}\label{class_option_a718f4474b08fe627df127e3b4e183030} 
+\index{Option@{Option}!style\_@{style\_}}
+\index{style\_@{style\_}!Option@{Option}}
+\doxysubsubsection{\texorpdfstring{style\_}{style\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_option_a9f88b2cb28c4d271515fe52d6332ab9f}{Option\+Style}} Option\+::style\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+The style of the option (European or American). 
+
+Definition at line \mbox{\hyperlink{_option_8hpp_source_l00190}{190}} of file \mbox{\hyperlink{_option_8hpp_source}{Option.\+hpp}}.
+
+\Hypertarget{class_option_a99f11d0ee4d4de6cef4eb86fab3f687c}\label{class_option_a99f11d0ee4d4de6cef4eb86fab3f687c} 
+\index{Option@{Option}!type\_@{type\_}}
+\index{type\_@{type\_}!Option@{Option}}
+\doxysubsubsection{\texorpdfstring{type\_}{type\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_option_ad3a2defb450b67b3d8d4c0d06b475b3b}{Option\+Type}} Option\+::type\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+The type of the option (Call or Put). 
+
+Definition at line \mbox{\hyperlink{_option_8hpp_source_l00189}{189}} of file \mbox{\hyperlink{_option_8hpp_source}{Option.\+hpp}}.
+
+\Hypertarget{class_option_a437f2ca89881dffb741372470c893592}\label{class_option_a437f2ca89881dffb741372470c893592} 
+\index{Option@{Option}!underlying\_@{underlying\_}}
+\index{underlying\_@{underlying\_}!Option@{Option}}
+\doxysubsubsection{\texorpdfstring{underlying\_}{underlying\_}}
+{\footnotesize\ttfamily double Option\+::underlying\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+The price of the underlying asset. 
+
+Definition at line \mbox{\hyperlink{_option_8hpp_source_l00185}{185}} of file \mbox{\hyperlink{_option_8hpp_source}{Option.\+hpp}}.
+
+\Hypertarget{class_option_a7c0370f95d5171b4944a60193c3d1a2b}\label{class_option_a7c0370f95d5171b4944a60193c3d1a2b} 
+\index{Option@{Option}!volatility\_@{volatility\_}}
+\index{volatility\_@{volatility\_}!Option@{Option}}
+\doxysubsubsection{\texorpdfstring{volatility\_}{volatility\_}}
+{\footnotesize\ttfamily double Option\+::volatility\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+The volatility of the underlying asset. 
+
+Definition at line \mbox{\hyperlink{_option_8hpp_source_l00187}{187}} of file \mbox{\hyperlink{_option_8hpp_source}{Option.\+hpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_option_8hpp}{Option.\+hpp}}\item 
+\mbox{\hyperlink{_option_8cpp}{Option.\+cpp}}\end{DoxyCompactItemize}

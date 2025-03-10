@@ -1,0 +1,42 @@
+\doxysection{Black\+Scholes\+Pricer.\+hpp File Reference}
+\hypertarget{_black_scholes_pricer_8hpp}{}\label{_black_scholes_pricer_8hpp}\index{BlackScholesPricer.hpp@{BlackScholesPricer.hpp}}
+
+
+Declaration and comprehensive documentation of the \doxylink{class_black_scholes_pricer}{Black\+Scholes\+Pricer} class.  
+
+
+{\ttfamily \#include \"{}pch.\+h\"{}}\newline
+{\ttfamily \#include \"{}Interface\+Option\+Pricer.\+hpp\"{}}\newline
+{\ttfamily \#include \"{}Pricing\+Configuration.\+hpp\"{}}\newline
+Include dependency graph for Black\+Scholes\+Pricer.\+hpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d09/_black_scholes_pricer_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/dc3/_black_scholes_pricer_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_black_scholes_pricer}{Black\+Scholes\+Pricer}}
+\begin{DoxyCompactList}\small\item\em A class that implements the Black-\/\+Scholes pricing model for European options. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Declaration and comprehensive documentation of the \doxylink{class_black_scholes_pricer}{Black\+Scholes\+Pricer} class. 
+
+This header file declares the \doxylink{class_black_scholes_pricer}{Black\+Scholes\+Pricer} class, which implements the analytical pricing model for European options using the Black-\/\+Scholes formula. The class provides methods for computing both the option price and its sensitivity measures (\doxylink{struct_greeks}{Greeks}) such as Delta, Gamma, Vega, Theta, and Rho.
+
+The Black-\/\+Scholes formula is a widely recognized model in quantitative finance, relying on the assumption of a log-\/normal distribution of the underlying asset\textquotesingle{}s returns with constant volatility and interest rates. It is applicable exclusively to European style options.
+
+The class integrates with a \doxylink{struct_pricing_configuration}{Pricing\+Configuration} object to allow for flexible specification of market parameters, including but not limited to the risk-\/free interest rate, the option maturity, and the calculation date. This facilitates easy adaptation to different market scenarios and risk management strategies. 
+
+Definition in file \mbox{\hyperlink{_black_scholes_pricer_8hpp_source}{Black\+Scholes\+Pricer.\+hpp}}.
+

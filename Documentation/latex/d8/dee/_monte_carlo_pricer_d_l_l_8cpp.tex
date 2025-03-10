@@ -1,0 +1,141 @@
+\doxysection{Monte\+Carlo\+Pricer\+DLL.\+cpp File Reference}
+\hypertarget{_monte_carlo_pricer_d_l_l_8cpp}{}\label{_monte_carlo_pricer_d_l_l_8cpp}\index{MonteCarloPricerDLL.cpp@{MonteCarloPricerDLL.cpp}}
+{\ttfamily \#include \"{}pch.\+h\"{}}\newline
+{\ttfamily \#include \"{}Monte\+Carlo\+Pricer\+DLL.\+hpp\"{}}\newline
+{\ttfamily \#include \"{}Monte\+Carlo\+Pricer.\+hpp\"{}}\newline
+{\ttfamily \#include \"{}Option.\+hpp\"{}}\newline
+{\ttfamily \#include \"{}Pricing\+Configuration.\+hpp\"{}}\newline
+{\ttfamily \#include \"{}Date\+Converter.\+hpp\"{}}\newline
+{\ttfamily \#include $<$stdexcept$>$}\newline
+{\ttfamily \#include $<$cstring$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+Include dependency graph for Monte\+Carlo\+Pricer\+DLL.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/dcb/_monte_carlo_pricer_d_l_l_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \+\_\+\+\_\+stdcall \mbox{\hyperlink{_monte_carlo_pricer_d_l_l_8cpp_af8316a1287bc7cbdd564669bc16be576}{Compute\+Option\+Greeks\+Monte\+Carlo}} (double S, double \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_a74b45da7676e23dd8ec974cfc04c0137}{K}}, double \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_a9e64a35af6ea2c4e18a21ae6ab8f4b4a}{T}}, double \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_a7058482f32dc92202725725112678538}{r}}, double \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_acc82fd456cac0384d2075ece3102201a}{sigma}}, double \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_ae1370efc3e7cbcccb16c9f9725d95188}{q}}, int \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_ababfbfb37e9a9a294f2fbc0c514abade}{option\+Type}}, int \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_ad00273f7d7912cf5b399a84b6ec595ef}{option\+Style}}, const char \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_aad3e2b2887bd0dff4456a8d86ef843f1}{calculation\+Date}}, int \mbox{\hyperlink{_monte_carlo_pricer_d_l_l_8hpp_ad365be0209e68e2078ea9ad98db40f9c}{mc\+Num\+Paths}}, int \mbox{\hyperlink{_monte_carlo_pricer_d_l_l_8hpp_a2c5836d9f47eddd76022dceb98b0e059}{mc\+Time\+Steps\+Per\+Path}}, double \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_afa2fbffc32c40cd7b32c909eb4dea3d7}{delta}}, double \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_a95751aa2ef97efecade491f32c5cde50}{gamma}}, double \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_adbefd4a93bf3d8656cf6e1e089063723}{vega}}, double \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_ae01bf602516416e5bdf198ad18c5c567}{theta}}, double \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_a6e5bcb5da44ba87aeb933c99a674c6af}{rho}})
+\begin{DoxyCompactList}\small\item\em Computes the \doxylink{struct_greeks}{Greeks} of the option using the Monte Carlo simulation model. \end{DoxyCompactList}\item 
+double \+\_\+\+\_\+stdcall \mbox{\hyperlink{_monte_carlo_pricer_d_l_l_8cpp_a6f2ee68a72a212859830b4ef27add321}{Price\+Option\+Monte\+Carlo}} (double S, double \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_a74b45da7676e23dd8ec974cfc04c0137}{K}}, double \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_a9e64a35af6ea2c4e18a21ae6ab8f4b4a}{T}}, double \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_a7058482f32dc92202725725112678538}{r}}, double \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_acc82fd456cac0384d2075ece3102201a}{sigma}}, double \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_ae1370efc3e7cbcccb16c9f9725d95188}{q}}, int \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_ababfbfb37e9a9a294f2fbc0c514abade}{option\+Type}}, int \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_ad00273f7d7912cf5b399a84b6ec595ef}{option\+Style}}, const char \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_aad3e2b2887bd0dff4456a8d86ef843f1}{calculation\+Date}}, int \mbox{\hyperlink{_monte_carlo_pricer_d_l_l_8hpp_ad365be0209e68e2078ea9ad98db40f9c}{mc\+Num\+Paths}}, int \mbox{\hyperlink{_monte_carlo_pricer_d_l_l_8hpp_a2c5836d9f47eddd76022dceb98b0e059}{mc\+Time\+Steps\+Per\+Path}})
+\begin{DoxyCompactList}\small\item\em Computes the option price using the Monte Carlo simulation model. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_monte_carlo_pricer_d_l_l_8cpp_af8316a1287bc7cbdd564669bc16be576}\label{_monte_carlo_pricer_d_l_l_8cpp_af8316a1287bc7cbdd564669bc16be576} 
+\index{MonteCarloPricerDLL.cpp@{MonteCarloPricerDLL.cpp}!ComputeOptionGreeksMonteCarlo@{ComputeOptionGreeksMonteCarlo}}
+\index{ComputeOptionGreeksMonteCarlo@{ComputeOptionGreeksMonteCarlo}!MonteCarloPricerDLL.cpp@{MonteCarloPricerDLL.cpp}}
+\doxysubsubsection{\texorpdfstring{ComputeOptionGreeksMonteCarlo()}{ComputeOptionGreeksMonteCarlo()}}
+{\footnotesize\ttfamily void \+\_\+\+\_\+stdcall Compute\+Option\+Greeks\+Monte\+Carlo (\begin{DoxyParamCaption}\item[{double}]{S,  }\item[{double}]{K,  }\item[{double}]{T,  }\item[{double}]{r,  }\item[{double}]{sigma,  }\item[{double}]{q,  }\item[{int}]{option\+Type,  }\item[{int}]{option\+Style,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{calculation\+Date,  }\item[{int}]{mc\+Num\+Paths,  }\item[{int}]{mc\+Time\+Steps\+Per\+Path,  }\item[{double \texorpdfstring{$\ast$}{*}}]{delta,  }\item[{double \texorpdfstring{$\ast$}{*}}]{gamma,  }\item[{double \texorpdfstring{$\ast$}{*}}]{vega,  }\item[{double \texorpdfstring{$\ast$}{*}}]{theta,  }\item[{double \texorpdfstring{$\ast$}{*}}]{rho }\end{DoxyParamCaption})}
+
+
+
+Computes the \doxylink{struct_greeks}{Greeks} of the option using the Monte Carlo simulation model. 
+
+This function sets up the pricing configuration, reloads the yield curve data, and creates a \doxylink{class_monte_carlo_pricer}{Monte\+Carlo\+Pricer} instance to compute the \doxylink{struct_greeks}{Greeks}. The computed values are written to the pointers provided.
+
+Parameters\+: S -\/ Underlying price. K -\/ Strike price. T -\/ Maturity (in years). r -\/ Risk-\/free rate (constant). sigma -\/ Volatility. q -\/ Dividend yield. option\+Type -\/ 0 for Call, 1 for Put. option\+Style -\/ 0 for European, 1 for American. calculation\+Date -\/ A null-\/terminated string (YYYY-\/\+MM-\/\+DD). If empty, today\textquotesingle{}s date is used. mc\+Num\+Paths -\/ Number of simulation paths. mc\+Time\+Steps\+Per\+Path -\/ Number of time steps per simulation path. delta, gamma, vega, theta, rho -\/ Pointers to store the computed \doxylink{struct_greeks}{Greeks}. 
+
+Definition at line \mbox{\hyperlink{_monte_carlo_pricer_d_l_l_8cpp_source_l00091}{91}} of file \mbox{\hyperlink{_monte_carlo_pricer_d_l_l_8cpp_source}{Monte\+Carlo\+Pricer\+DLL.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00096\ \ \ \ \ \{}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_pricing_configuration}{PricingConfiguration}}\ config;}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_aad3e2b2887bd0dff4456a8d86ef843f1}{calculationDate}}\ ==\ \textcolor{keyword}{nullptr}\ ||\ strlen(\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_aad3e2b2887bd0dff4456a8d86ef843f1}{calculationDate}})\ ==\ 0)}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ config.\mbox{\hyperlink{struct_pricing_configuration_a86654268cc7202dec16251f02873a629}{calculationDate}}\ =\ \mbox{\hyperlink{class_date_converter_a054a4504080ed36c068868cc2d975fa6}{DateConverter::getTodayDate}}();}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ config.\mbox{\hyperlink{struct_pricing_configuration_a86654268cc7202dec16251f02873a629}{calculationDate}}\ =\ \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_aad3e2b2887bd0dff4456a8d86ef843f1}{calculationDate}};}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ config.\mbox{\hyperlink{struct_pricing_configuration_a9ae4efdabf701f28b5c15dbc54ac3a7a}{maturity}}\ =\ \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_a9e64a35af6ea2c4e18a21ae6ab8f4b4a}{T}};}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ config.\mbox{\hyperlink{struct_pricing_configuration_a77ee8c896b9a6ddd04437a7489b21c91}{riskFreeRate}}\ =\ \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_a7058482f32dc92202725725112678538}{r}};}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Reload\ the\ yield\ curve\ at\ each\ call\ (adjust\ the\ path\ if\ necessary)}}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ config.\mbox{\hyperlink{struct_pricing_configuration_a8564f465b2656557af9eba82722e5e19}{yieldCurve}}.\mbox{\hyperlink{class_yield_curve_ae4a92baa1385c3d7766ad376197dc6a5}{loadFromFile}}(\textcolor{stringliteral}{"{}C:\(\backslash\)\(\backslash\)Users\(\backslash\)\(\backslash\)shaki\(\backslash\)\(\backslash\)OneDrive\(\backslash\)\(\backslash\)Bureau\(\backslash\)\(\backslash\)YieldCurveData.txt"{}});}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ config.\mbox{\hyperlink{struct_pricing_configuration_ae6c8a854a8cae03c47e20e199885e1db}{mcNumPaths}}\ =\ \mbox{\hyperlink{_monte_carlo_pricer_d_l_l_8hpp_ad365be0209e68e2078ea9ad98db40f9c}{mcNumPaths}};}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ config.\mbox{\hyperlink{struct_pricing_configuration_a6f1d5c5506012916fff9974f820a4b23}{mcTimeStepsPerPath}}\ =\ \mbox{\hyperlink{_monte_carlo_pricer_d_l_l_8hpp_a2c5836d9f47eddd76022dceb98b0e059}{mcTimeStepsPerPath}};}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_monte_carlo_pricer}{MonteCarloPricer}}\ pricer(config);}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_option}{Option}}\ opt(S,\ \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_a74b45da7676e23dd8ec974cfc04c0137}{K}},\ \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_acc82fd456cac0384d2075ece3102201a}{sigma}},\ \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_ae1370efc3e7cbcccb16c9f9725d95188}{q}},}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_ababfbfb37e9a9a294f2fbc0c514abade}{optionType}}\ ==\ 0\ ?\ \mbox{\hyperlink{class_option_ad3a2defb450b67b3d8d4c0d06b475b3bac3755e61202abd74da5885d2e9c9160e}{Option::OptionType::Call}}\ :\ \mbox{\hyperlink{class_option}{Option}}::OptionType::Put),}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_ad00273f7d7912cf5b399a84b6ec595ef}{optionStyle}}\ ==\ 0\ ?\ \mbox{\hyperlink{class_option}{Option}}::OptionStyle::European\ :\ \mbox{\hyperlink{class_option}{Option}}::OptionStyle::American));}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_greeks}{Greeks}}\ g\ =\ pricer.computeGreeks(opt);}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_afa2fbffc32c40cd7b32c909eb4dea3d7}{delta}})\ *\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_afa2fbffc32c40cd7b32c909eb4dea3d7}{delta}}\ =\ g.\mbox{\hyperlink{struct_greeks_a9d16140323f20876507a2d5453696b1a}{delta}};}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_a95751aa2ef97efecade491f32c5cde50}{gamma}})\ *\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_a95751aa2ef97efecade491f32c5cde50}{gamma}}\ =\ g.\mbox{\hyperlink{struct_greeks_afcef8fafe28ec46b041eda551aefac76}{gamma}};}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_adbefd4a93bf3d8656cf6e1e089063723}{vega}})\ \ *\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_adbefd4a93bf3d8656cf6e1e089063723}{vega}}\ =\ g.\mbox{\hyperlink{struct_greeks_a87709cf35763c458f36a6935f7d7ce25}{vega}};}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_ae01bf602516416e5bdf198ad18c5c567}{theta}})\ *\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_ae01bf602516416e5bdf198ad18c5c567}{theta}}\ =\ g.\mbox{\hyperlink{struct_greeks_a82fcb8b4f18e8afc91ab23df69ae6f17}{theta}};}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_a6e5bcb5da44ba87aeb933c99a674c6af}{rho}})\ \ \ *\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_a6e5bcb5da44ba87aeb933c99a674c6af}{rho}}\ =\ g.\mbox{\hyperlink{struct_greeks_afaa454ff183cfa3d58902d49e4f363db}{rho}};}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ std::exception\&\ ex)\ \{}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_afa2fbffc32c40cd7b32c909eb4dea3d7}{delta}})\ *\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_afa2fbffc32c40cd7b32c909eb4dea3d7}{delta}}\ =\ NAN;}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_a95751aa2ef97efecade491f32c5cde50}{gamma}})\ *\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_a95751aa2ef97efecade491f32c5cde50}{gamma}}\ =\ NAN;}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_adbefd4a93bf3d8656cf6e1e089063723}{vega}})\ \ *\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_adbefd4a93bf3d8656cf6e1e089063723}{vega}}\ =\ NAN;}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_ae01bf602516416e5bdf198ad18c5c567}{theta}})\ *\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_ae01bf602516416e5bdf198ad18c5c567}{theta}}\ =\ NAN;}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_a6e5bcb5da44ba87aeb933c99a674c6af}{rho}})\ \ \ *\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_a6e5bcb5da44ba87aeb933c99a674c6af}{rho}}\ =\ NAN;}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00132\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{_monte_carlo_pricer_d_l_l_8cpp_a6f2ee68a72a212859830b4ef27add321}\label{_monte_carlo_pricer_d_l_l_8cpp_a6f2ee68a72a212859830b4ef27add321} 
+\index{MonteCarloPricerDLL.cpp@{MonteCarloPricerDLL.cpp}!PriceOptionMonteCarlo@{PriceOptionMonteCarlo}}
+\index{PriceOptionMonteCarlo@{PriceOptionMonteCarlo}!MonteCarloPricerDLL.cpp@{MonteCarloPricerDLL.cpp}}
+\doxysubsubsection{\texorpdfstring{PriceOptionMonteCarlo()}{PriceOptionMonteCarlo()}}
+{\footnotesize\ttfamily double \+\_\+\+\_\+stdcall Price\+Option\+Monte\+Carlo (\begin{DoxyParamCaption}\item[{double}]{S,  }\item[{double}]{K,  }\item[{double}]{T,  }\item[{double}]{r,  }\item[{double}]{sigma,  }\item[{double}]{q,  }\item[{int}]{option\+Type,  }\item[{int}]{option\+Style,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{calculation\+Date,  }\item[{int}]{mc\+Num\+Paths,  }\item[{int}]{mc\+Time\+Steps\+Per\+Path }\end{DoxyParamCaption})}
+
+
+
+Computes the option price using the Monte Carlo simulation model. 
+
+This function sets up the pricing configuration, reloads the yield curve data, and creates a \doxylink{class_monte_carlo_pricer}{Monte\+Carlo\+Pricer} instance to compute the option price.
+
+Parameters\+: S -\/ Underlying price. K -\/ Strike price. T -\/ Maturity (in years). r -\/ Risk-\/free rate (constant). sigma -\/ Volatility. q -\/ Dividend yield. option\+Type -\/ 0 for Call, 1 for Put. option\+Style -\/ 0 for European, 1 for American. calculation\+Date -\/ A null-\/terminated string (YYYY-\/\+MM-\/\+DD). If empty, today\textquotesingle{}s date is used. mc\+Num\+Paths -\/ Number of simulation paths. mc\+Time\+Steps\+Per\+Path -\/ Number of time steps per simulation path.
+
+\begin{DoxyReturn}{Returns}
+The computed option price, or -\/1.\+0 if an error occurs. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_monte_carlo_pricer_d_l_l_8cpp_source_l00034}{34}} of file \mbox{\hyperlink{_monte_carlo_pricer_d_l_l_8cpp_source}{Monte\+Carlo\+Pricer\+DLL.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00038\ \ \ \ \ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_pricing_configuration}{PricingConfiguration}}\ config;}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ If\ no\ date\ is\ specified,\ use\ today's\ date.}}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_aad3e2b2887bd0dff4456a8d86ef843f1}{calculationDate}}\ ==\ \textcolor{keyword}{nullptr}\ ||\ strlen(\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_aad3e2b2887bd0dff4456a8d86ef843f1}{calculationDate}})\ ==\ 0)}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ config.\mbox{\hyperlink{struct_pricing_configuration_a86654268cc7202dec16251f02873a629}{calculationDate}}\ =\ \mbox{\hyperlink{class_date_converter_a054a4504080ed36c068868cc2d975fa6}{DateConverter::getTodayDate}}();}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ config.\mbox{\hyperlink{struct_pricing_configuration_a86654268cc7202dec16251f02873a629}{calculationDate}}\ =\ \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_aad3e2b2887bd0dff4456a8d86ef843f1}{calculationDate}};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ config.\mbox{\hyperlink{struct_pricing_configuration_a9ae4efdabf701f28b5c15dbc54ac3a7a}{maturity}}\ =\ \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_a9e64a35af6ea2c4e18a21ae6ab8f4b4a}{T}};}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ config.\mbox{\hyperlink{struct_pricing_configuration_a77ee8c896b9a6ddd04437a7489b21c91}{riskFreeRate}}\ =\ \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_a7058482f32dc92202725725112678538}{r}};}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Reload\ the\ yield\ curve\ at\ each\ call\ (adjust\ the\ path\ if\ necessary)}}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ config.\mbox{\hyperlink{struct_pricing_configuration_a8564f465b2656557af9eba82722e5e19}{yieldCurve}}.\mbox{\hyperlink{class_yield_curve_ae4a92baa1385c3d7766ad376197dc6a5}{loadFromFile}}(\textcolor{stringliteral}{"{}C:\(\backslash\)\(\backslash\)Users\(\backslash\)\(\backslash\)shaki\(\backslash\)\(\backslash\)OneDrive\(\backslash\)\(\backslash\)Bureau\(\backslash\)\(\backslash\)YieldCurveData.txt"{}});}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Monte\ Carlo\ specific\ parameters.}}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ config.\mbox{\hyperlink{struct_pricing_configuration_ae6c8a854a8cae03c47e20e199885e1db}{mcNumPaths}}\ =\ \mbox{\hyperlink{_monte_carlo_pricer_d_l_l_8hpp_ad365be0209e68e2078ea9ad98db40f9c}{mcNumPaths}};}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ config.\mbox{\hyperlink{struct_pricing_configuration_a6f1d5c5506012916fff9974f820a4b23}{mcTimeStepsPerPath}}\ =\ \mbox{\hyperlink{_monte_carlo_pricer_d_l_l_8hpp_a2c5836d9f47eddd76022dceb98b0e059}{mcTimeStepsPerPath}};}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_monte_carlo_pricer}{MonteCarloPricer}}\ pricer(config);}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_option}{Option}}\ opt(S,\ \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_a74b45da7676e23dd8ec974cfc04c0137}{K}},\ \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_acc82fd456cac0384d2075ece3102201a}{sigma}},\ \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_ae1370efc3e7cbcccb16c9f9725d95188}{q}},}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_ababfbfb37e9a9a294f2fbc0c514abade}{optionType}}\ ==\ 0\ ?\ \mbox{\hyperlink{class_option_ad3a2defb450b67b3d8d4c0d06b475b3bac3755e61202abd74da5885d2e9c9160e}{Option::OptionType::Call}}\ :\ \mbox{\hyperlink{class_option}{Option}}::OptionType::Put),}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_ad00273f7d7912cf5b399a84b6ec595ef}{optionStyle}}\ ==\ 0\ ?\ \mbox{\hyperlink{class_option}{Option}}::OptionStyle::European\ :\ \mbox{\hyperlink{class_option}{Option}}::OptionStyle::American));}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ price\ =\ pricer.price(opt);}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ price;}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ std::exception\&\ ex)\ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1.0;}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00068\ \ \ \ \ \}}
+
+\end{DoxyCode}

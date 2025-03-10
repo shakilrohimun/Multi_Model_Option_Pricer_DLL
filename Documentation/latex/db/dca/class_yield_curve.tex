@@ -1,0 +1,275 @@
+\doxysection{Yield\+Curve Class Reference}
+\hypertarget{class_yield_curve}{}\label{class_yield_curve}\index{YieldCurve@{YieldCurve}}
+
+
+Class for managing the interest rate curve.  
+
+
+
+
+{\ttfamily \#include $<$Yield\+Curve.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_yield_curve_aea0767dec486d82d23cd8fbf3d4ba676}{add\+Rate\+Point}} (double maturity, double rate)
+\begin{DoxyCompactList}\small\item\em Adds a rate point to the yield curve. \end{DoxyCompactList}\item 
+const std\+::vector$<$ \mbox{\hyperlink{struct_rate_point}{Rate\+Point}} $>$ \& \mbox{\hyperlink{class_yield_curve_ab32badc44c840501ac012466672654b7}{get\+Data}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the underlying rate point data. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_yield_curve_aa3257efcdbad0d984764fd63a8563899}{get\+Rate}} (double t) const
+\begin{DoxyCompactList}\small\item\em Interpolates and returns the interest rate for a given maturity. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_yield_curve_ae4a92baa1385c3d7766ad376197dc6a5}{load\+From\+File}} (const std\+::string \&filename)
+\begin{DoxyCompactList}\small\item\em Loads rate data from a text file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{struct_rate_point}{Rate\+Point}} $>$ \mbox{\hyperlink{class_yield_curve_a1f38a70be36c8b608b82d8f602649aa7}{data\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class for managing the interest rate curve. 
+
+The \doxylink{class_yield_curve}{Yield\+Curve} class manages a collection of \doxylink{struct_rate_point}{Rate\+Point} objects, which together form an interest rate curve. It provides methods to add new rate points, interpolate the interest rate for a specified maturity, access the underlying data, and load rate data from a file. This is essential for financial models that require variable interest rates, such as when discounting cash flows or pricing interest rate-\/sensitive derivatives.
+
+The interpolation is typically performed using linear interpolation between the nearest known rate points. The load\+From\+File function expects a text file where each line contains two numbers separated by whitespace\+: the maturity (as a fraction between 0 and 1) and the corresponding interest rate. 
+
+Definition at line \mbox{\hyperlink{_yield_curve_8hpp_source_l00040}{40}} of file \mbox{\hyperlink{_yield_curve_8hpp_source}{Yield\+Curve.\+hpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_yield_curve_aea0767dec486d82d23cd8fbf3d4ba676}\label{class_yield_curve_aea0767dec486d82d23cd8fbf3d4ba676} 
+\index{YieldCurve@{YieldCurve}!addRatePoint@{addRatePoint}}
+\index{addRatePoint@{addRatePoint}!YieldCurve@{YieldCurve}}
+\doxysubsubsection{\texorpdfstring{addRatePoint()}{addRatePoint()}}
+{\footnotesize\ttfamily void Yield\+Curve\+::add\+Rate\+Point (\begin{DoxyParamCaption}\item[{double}]{maturity,  }\item[{double}]{rate }\end{DoxyParamCaption})}
+
+
+
+Adds a rate point to the yield curve. 
+
+This method appends a new \doxylink{struct_rate_point}{Rate\+Point} to the internal storage, thereby extending the yield curve with additional data.
+
+
+\begin{DoxyParams}{Parameters}
+{\em maturity} & The maturity fraction (between 0 and 1) representing the time to maturity in years. \\
+\hline
+{\em rate} & The interest rate associated with the given maturity.\\
+\hline
+\end{DoxyParams}
+
+
+This method appends a new \doxylink{struct_rate_point}{Rate\+Point} to the internal vector.
+
+
+\begin{DoxyParams}{Parameters}
+{\em maturity} & The maturity fraction. \\
+\hline
+{\em rate} & The interest rate associated with the given maturity. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_yield_curve_8cpp_source_l00024}{24}} of file \mbox{\hyperlink{_yield_curve_8cpp_source}{Yield\+Curve.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{class_yield_curve_a1f38a70be36c8b608b82d8f602649aa7}{data\_}}.push\_back(\{\ maturity,\ rate\ \});}
+\DoxyCodeLine{00026\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_yield_curve_ab32badc44c840501ac012466672654b7}\label{class_yield_curve_ab32badc44c840501ac012466672654b7} 
+\index{YieldCurve@{YieldCurve}!getData@{getData}}
+\index{getData@{getData}!YieldCurve@{YieldCurve}}
+\doxysubsubsection{\texorpdfstring{getData()}{getData()}}
+{\footnotesize\ttfamily const std\+::vector$<$ \mbox{\hyperlink{struct_rate_point}{Rate\+Point}} $>$ \& Yield\+Curve\+::get\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Retrieves the underlying rate point data. 
+
+Returns the underlying data of the yield curve.
+
+This method provides read-\/only access to the vector that stores all the rate points of the yield curve.
+
+\begin{DoxyReturn}{Returns}
+A constant reference to the vector of \doxylink{struct_rate_point}{Rate\+Point} objects.
+\end{DoxyReturn}
+
+
+\begin{DoxyReturn}{Returns}
+A constant reference to the vector of \doxylink{struct_rate_point}{Rate\+Point}. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_yield_curve_8cpp_source_l00072}{72}} of file \mbox{\hyperlink{_yield_curve_8cpp_source}{Yield\+Curve.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_yield_curve_a1f38a70be36c8b608b82d8f602649aa7}{data\_}};}
+\DoxyCodeLine{00074\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_yield_curve_aa3257efcdbad0d984764fd63a8563899}\label{class_yield_curve_aa3257efcdbad0d984764fd63a8563899} 
+\index{YieldCurve@{YieldCurve}!getRate@{getRate}}
+\index{getRate@{getRate}!YieldCurve@{YieldCurve}}
+\doxysubsubsection{\texorpdfstring{getRate()}{getRate()}}
+{\footnotesize\ttfamily double Yield\+Curve\+::get\+Rate (\begin{DoxyParamCaption}\item[{double}]{t }\end{DoxyParamCaption}) const}
+
+
+
+Interpolates and returns the interest rate for a given maturity. 
+
+Returns the interpolated interest rate for a given time.
+
+This method computes the interest rate corresponding to a specified maturity by performing interpolation on the stored rate points.
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & The desired maturity (between 0 and 1) for which the interest rate is requested. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The interpolated interest rate as a double. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if the yield curve is empty.\\
+\hline
+\end{DoxyExceptions}
+
+
+This method uses linear interpolation between rate points to determine the interest rate corresponding to time t.
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & The time for which the interest rate is requested. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The interpolated interest rate. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if the yield curve is empty. \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line \mbox{\hyperlink{_yield_curve_8cpp_source_l00038}{38}} of file \mbox{\hyperlink{_yield_curve_8cpp_source}{Yield\+Curve.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_yield_curve_a1f38a70be36c8b608b82d8f602649aa7}{data\_}}.empty())\ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}YieldCurve\ is\ empty"{}});}
+\DoxyCodeLine{00041\ \ \ \ \ \}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{comment}{//\ If\ t\ is\ less\ than\ or\ equal\ to\ the\ first\ point,\ return\ its\ rate.}}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordflow}{if}\ (t\ <=\ \mbox{\hyperlink{class_yield_curve_a1f38a70be36c8b608b82d8f602649aa7}{data\_}}.front().maturity)\ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_yield_curve_a1f38a70be36c8b608b82d8f602649aa7}{data\_}}.front().rate;}
+\DoxyCodeLine{00046\ \ \ \ \ \}}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{comment}{//\ If\ t\ is\ greater\ than\ or\ equal\ to\ the\ last\ point,\ return\ its\ rate.}}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordflow}{if}\ (t\ >=\ \mbox{\hyperlink{class_yield_curve_a1f38a70be36c8b608b82d8f602649aa7}{data\_}}.back().maturity)\ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_yield_curve_a1f38a70be36c8b608b82d8f602649aa7}{data\_}}.back().rate;}
+\DoxyCodeLine{00050\ \ \ \ \ \}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{comment}{//\ Traverse\ the\ vector\ to\ find\ the\ interval\ containing\ t.}}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 1;\ i\ <\ \mbox{\hyperlink{class_yield_curve_a1f38a70be36c8b608b82d8f602649aa7}{data\_}}.size();\ ++i)\ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (t\ <\ \mbox{\hyperlink{class_yield_curve_a1f38a70be36c8b608b82d8f602649aa7}{data\_}}[i].maturity)\ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_rate_point}{RatePoint}}\&\ p0\ =\ \mbox{\hyperlink{class_yield_curve_a1f38a70be36c8b608b82d8f602649aa7}{data\_}}[i\ -\/\ 1];}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_rate_point}{RatePoint}}\&\ p1\ =\ \mbox{\hyperlink{class_yield_curve_a1f38a70be36c8b608b82d8f602649aa7}{data\_}}[i];}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Compute\ the\ linear\ interpolation\ factor.}}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ factor\ =\ (t\ -\/\ p0.\mbox{\hyperlink{struct_rate_point_a16de333af27d481db5f4c11eb28d5e77}{maturity}})\ /\ (p1.\mbox{\hyperlink{struct_rate_point_a16de333af27d481db5f4c11eb28d5e77}{maturity}}\ -\/\ p0.\mbox{\hyperlink{struct_rate_point_a16de333af27d481db5f4c11eb28d5e77}{maturity}});}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ p0.\mbox{\hyperlink{struct_rate_point_a03798677fe1ac5d6c7024fbfc963db25}{rate}}\ +\ factor\ *\ (p1.\mbox{\hyperlink{struct_rate_point_a03798677fe1ac5d6c7024fbfc963db25}{rate}}\ -\/\ p0.\mbox{\hyperlink{struct_rate_point_a03798677fe1ac5d6c7024fbfc963db25}{rate}});}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00061\ \ \ \ \ \}}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{comment}{//\ Default\ return\ (should\ not\ be\ reached).}}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_yield_curve_a1f38a70be36c8b608b82d8f602649aa7}{data\_}}.back().rate;}
+\DoxyCodeLine{00065\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_yield_curve_ae4a92baa1385c3d7766ad376197dc6a5}\label{class_yield_curve_ae4a92baa1385c3d7766ad376197dc6a5} 
+\index{YieldCurve@{YieldCurve}!loadFromFile@{loadFromFile}}
+\index{loadFromFile@{loadFromFile}!YieldCurve@{YieldCurve}}
+\doxysubsubsection{\texorpdfstring{loadFromFile()}{loadFromFile()}}
+{\footnotesize\ttfamily void Yield\+Curve\+::load\+From\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption})}
+
+
+
+Loads rate data from a text file. 
+
+This method reads rate points from a file, where each line should contain two numbers separated by whitespace\+: the maturity (a fraction between 0 and 1) and the associated interest rate. The loaded rate points are then added to the yield curve.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The path to the text file containing the rate data. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if the file cannot be opened or if the file format is invalid.\\
+\hline
+\end{DoxyExceptions}
+
+
+This method reads a text file containing rate data. Each line should contain two numbers\+: the maturity and the corresponding interest rate. Empty lines are skipped.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The path to the text file. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if the file cannot be opened or if the file format is invalid. \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line \mbox{\hyperlink{_yield_curve_8cpp_source_l00085}{85}} of file \mbox{\hyperlink{_yield_curve_8cpp_source}{Yield\+Curve.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00086\ \ \ \ \ std::ifstream\ infile(filename);}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordflow}{if}\ (!infile)\ \{}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Cannot\ open\ file:\ "{}}\ +\ filename);}
+\DoxyCodeLine{00089\ \ \ \ \ \}}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \ \ \ \ std::string\ line;}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordflow}{while}\ (std::getline(infile,\ line))\ \{}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (line.empty())\ \textcolor{keywordflow}{continue};\ \ \textcolor{comment}{//\ Skip\ empty\ lines.}}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ std::istringstream\ iss(line);}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ maturity,\ rate;}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!(iss\ >>\ maturity\ >>\ rate))\ \{}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Invalid\ format\ in\ file:\ "{}}\ +\ line);}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_yield_curve_aea0767dec486d82d23cd8fbf3d4ba676}{addRatePoint}}(maturity,\ rate);}
+\DoxyCodeLine{00100\ \ \ \ \ \}}
+\DoxyCodeLine{00101\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_yield_curve_a1f38a70be36c8b608b82d8f602649aa7}\label{class_yield_curve_a1f38a70be36c8b608b82d8f602649aa7} 
+\index{YieldCurve@{YieldCurve}!data\_@{data\_}}
+\index{data\_@{data\_}!YieldCurve@{YieldCurve}}
+\doxysubsubsection{\texorpdfstring{data\_}{data\_}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{struct_rate_point}{Rate\+Point}}$>$ Yield\+Curve\+::data\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+Internal storage for the rate points that form the yield curve. 
+
+Definition at line \mbox{\hyperlink{_yield_curve_8hpp_source_l00085}{85}} of file \mbox{\hyperlink{_yield_curve_8hpp_source}{Yield\+Curve.\+hpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_yield_curve_8hpp}{Yield\+Curve.\+hpp}}\item 
+\mbox{\hyperlink{_yield_curve_8cpp}{Yield\+Curve.\+cpp}}\end{DoxyCompactItemize}

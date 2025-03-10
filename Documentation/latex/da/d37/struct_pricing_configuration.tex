@@ -1,0 +1,206 @@
+\doxysection{Pricing\+Configuration Struct Reference}
+\hypertarget{struct_pricing_configuration}{}\label{struct_pricing_configuration}\index{PricingConfiguration@{PricingConfiguration}}
+
+
+Structure holding pricing configuration parameters.  
+
+
+
+
+{\ttfamily \#include $<$Pricing\+Configuration.\+hpp$>$}
+
+
+
+Collaboration diagram for Pricing\+Configuration\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=184pt]{d9/d85/struct_pricing_configuration__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_pricing_configuration_a2bec29b456d4e0f45582d0a22a983ad0}{Pricing\+Configuration}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor with default parameter values. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{struct_pricing_configuration_ae75cb39110c5afd84c593a8b945158fb}{binomial\+Steps}}
+\item 
+std\+::string \mbox{\hyperlink{struct_pricing_configuration_a86654268cc7202dec16251f02873a629}{calculation\+Date}}
+\item 
+int \mbox{\hyperlink{struct_pricing_configuration_a3b7221633527d9b1d758f2a5ab7eaf29}{crank\+Spot\+Steps}}
+\item 
+int \mbox{\hyperlink{struct_pricing_configuration_a19af78dfee60063e83346cb99710dcf7}{crank\+Time\+Steps}}
+\item 
+double \mbox{\hyperlink{struct_pricing_configuration_a9ae4efdabf701f28b5c15dbc54ac3a7a}{maturity}}
+\begin{DoxyCompactList}\small\item\em The time to maturity of the option in years (default value\+: 1.\+0). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{struct_pricing_configuration_ae6c8a854a8cae03c47e20e199885e1db}{mc\+Num\+Paths}}
+\item 
+int \mbox{\hyperlink{struct_pricing_configuration_a6f1d5c5506012916fff9974f820a4b23}{mc\+Time\+Steps\+Per\+Path}}
+\item 
+double \mbox{\hyperlink{struct_pricing_configuration_a77ee8c896b9a6ddd04437a7489b21c91}{risk\+Free\+Rate}}
+\begin{DoxyCompactList}\small\item\em This value is used when yield curve data is not available or loaded. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{struct_pricing_configuration_a0252e37ed36dce2e03317c5715081a9d}{S\+\_\+max}}
+\item 
+\mbox{\hyperlink{class_yield_curve}{Yield\+Curve}} \mbox{\hyperlink{struct_pricing_configuration_a8564f465b2656557af9eba82722e5e19}{yield\+Curve}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Structure holding pricing configuration parameters. 
+
+This structure is used to store additional input parameters for the pricing models. It offers flexibility by allowing customization of numerical discretization, simulation settings, and even variable interest rates via a yield curve. The parameters defined here are used across different pricing models, such as Black-\/\+Scholes, Binomial, Crank-\/\+Nicolson, and Monte Carlo, to control aspects like maturity, risk-\/free rate, discretization steps, and simulation paths. 
+
+Definition at line \mbox{\hyperlink{_pricing_configuration_8hpp_source_l00027}{27}} of file \mbox{\hyperlink{_pricing_configuration_8hpp_source}{Pricing\+Configuration.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{struct_pricing_configuration_a2bec29b456d4e0f45582d0a22a983ad0}\label{struct_pricing_configuration_a2bec29b456d4e0f45582d0a22a983ad0} 
+\index{PricingConfiguration@{PricingConfiguration}!PricingConfiguration@{PricingConfiguration}}
+\index{PricingConfiguration@{PricingConfiguration}!PricingConfiguration@{PricingConfiguration}}
+\doxysubsubsection{\texorpdfstring{PricingConfiguration()}{PricingConfiguration()}}
+{\footnotesize\ttfamily Pricing\+Configuration\+::\+Pricing\+Configuration (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Default constructor with default parameter values. 
+
+The default values are chosen to provide a reasonable starting configuration for option pricing models. For example, if the calculation date is not specified, an empty string is used to indicate that the current date should be applied. The default maturity is set to 1.\+0 year, and the default risk-\/free rate is set to 2.\+0.
+
+Other model-\/specific parameters, such as the number of binomial steps, Crank-\/\+Nicolson time and spatial steps, and Monte Carlo simulation settings, are also initialized to typical default values. 
+
+Definition at line \mbox{\hyperlink{_pricing_configuration_8hpp_source_l00074}{74}} of file \mbox{\hyperlink{_pricing_configuration_8hpp_source}{Pricing\+Configuration.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{struct_pricing_configuration_a86654268cc7202dec16251f02873a629}{calculationDate}}(\textcolor{stringliteral}{"{}"{}}),\ \textcolor{comment}{//\ An\ empty\ string\ indicates\ that\ the\ current\ date\ should\ be\ used.}}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_pricing_configuration_a9ae4efdabf701f28b5c15dbc54ac3a7a}{maturity}}(1.0),}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_pricing_configuration_a77ee8c896b9a6ddd04437a7489b21c91}{riskFreeRate}}(2.0),}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_pricing_configuration_ae75cb39110c5afd84c593a8b945158fb}{binomialSteps}}(100),}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_pricing_configuration_a19af78dfee60063e83346cb99710dcf7}{crankTimeSteps}}(100),}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_pricing_configuration_a3b7221633527d9b1d758f2a5ab7eaf29}{crankSpotSteps}}(100),}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_pricing_configuration_a0252e37ed36dce2e03317c5715081a9d}{S\_max}}(0.0),\ \textcolor{comment}{//\ A\ value\ of\ 0.0\ signals\ that\ S\_max\ should\ be\ computed\ automatically\ if\ necessary.}}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_pricing_configuration_ae6c8a854a8cae03c47e20e199885e1db}{mcNumPaths}}(10000),}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_pricing_configuration_a6f1d5c5506012916fff9974f820a4b23}{mcTimeStepsPerPath}}(100) }
+\DoxyCodeLine{00084\ \ \ \ \ \{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{struct_pricing_configuration_ae75cb39110c5afd84c593a8b945158fb}\label{struct_pricing_configuration_ae75cb39110c5afd84c593a8b945158fb} 
+\index{PricingConfiguration@{PricingConfiguration}!binomialSteps@{binomialSteps}}
+\index{binomialSteps@{binomialSteps}!PricingConfiguration@{PricingConfiguration}}
+\doxysubsubsection{\texorpdfstring{binomialSteps}{binomialSteps}}
+{\footnotesize\ttfamily int Pricing\+Configuration\+::binomial\+Steps}
+
+
+
+Definition at line \mbox{\hyperlink{_pricing_configuration_8hpp_source_l00047}{47}} of file \mbox{\hyperlink{_pricing_configuration_8hpp_source}{Pricing\+Configuration.\+hpp}}.
+
+\Hypertarget{struct_pricing_configuration_a86654268cc7202dec16251f02873a629}\label{struct_pricing_configuration_a86654268cc7202dec16251f02873a629} 
+\index{PricingConfiguration@{PricingConfiguration}!calculationDate@{calculationDate}}
+\index{calculationDate@{calculationDate}!PricingConfiguration@{PricingConfiguration}}
+\doxysubsubsection{\texorpdfstring{calculationDate}{calculationDate}}
+{\footnotesize\ttfamily std\+::string Pricing\+Configuration\+::calculation\+Date}
+
+
+
+Definition at line \mbox{\hyperlink{_pricing_configuration_8hpp_source_l00030}{30}} of file \mbox{\hyperlink{_pricing_configuration_8hpp_source}{Pricing\+Configuration.\+hpp}}.
+
+\Hypertarget{struct_pricing_configuration_a3b7221633527d9b1d758f2a5ab7eaf29}\label{struct_pricing_configuration_a3b7221633527d9b1d758f2a5ab7eaf29} 
+\index{PricingConfiguration@{PricingConfiguration}!crankSpotSteps@{crankSpotSteps}}
+\index{crankSpotSteps@{crankSpotSteps}!PricingConfiguration@{PricingConfiguration}}
+\doxysubsubsection{\texorpdfstring{crankSpotSteps}{crankSpotSteps}}
+{\footnotesize\ttfamily int Pricing\+Configuration\+::crank\+Spot\+Steps}
+
+
+
+Definition at line \mbox{\hyperlink{_pricing_configuration_8hpp_source_l00053}{53}} of file \mbox{\hyperlink{_pricing_configuration_8hpp_source}{Pricing\+Configuration.\+hpp}}.
+
+\Hypertarget{struct_pricing_configuration_a19af78dfee60063e83346cb99710dcf7}\label{struct_pricing_configuration_a19af78dfee60063e83346cb99710dcf7} 
+\index{PricingConfiguration@{PricingConfiguration}!crankTimeSteps@{crankTimeSteps}}
+\index{crankTimeSteps@{crankTimeSteps}!PricingConfiguration@{PricingConfiguration}}
+\doxysubsubsection{\texorpdfstring{crankTimeSteps}{crankTimeSteps}}
+{\footnotesize\ttfamily int Pricing\+Configuration\+::crank\+Time\+Steps}
+
+
+
+Definition at line \mbox{\hyperlink{_pricing_configuration_8hpp_source_l00051}{51}} of file \mbox{\hyperlink{_pricing_configuration_8hpp_source}{Pricing\+Configuration.\+hpp}}.
+
+\Hypertarget{struct_pricing_configuration_a9ae4efdabf701f28b5c15dbc54ac3a7a}\label{struct_pricing_configuration_a9ae4efdabf701f28b5c15dbc54ac3a7a} 
+\index{PricingConfiguration@{PricingConfiguration}!maturity@{maturity}}
+\index{maturity@{maturity}!PricingConfiguration@{PricingConfiguration}}
+\doxysubsubsection{\texorpdfstring{maturity}{maturity}}
+{\footnotesize\ttfamily double Pricing\+Configuration\+::maturity}
+
+
+
+The time to maturity of the option in years (default value\+: 1.\+0). 
+
+
+
+Definition at line \mbox{\hyperlink{_pricing_configuration_8hpp_source_l00033}{33}} of file \mbox{\hyperlink{_pricing_configuration_8hpp_source}{Pricing\+Configuration.\+hpp}}.
+
+\Hypertarget{struct_pricing_configuration_ae6c8a854a8cae03c47e20e199885e1db}\label{struct_pricing_configuration_ae6c8a854a8cae03c47e20e199885e1db} 
+\index{PricingConfiguration@{PricingConfiguration}!mcNumPaths@{mcNumPaths}}
+\index{mcNumPaths@{mcNumPaths}!PricingConfiguration@{PricingConfiguration}}
+\doxysubsubsection{\texorpdfstring{mcNumPaths}{mcNumPaths}}
+{\footnotesize\ttfamily int Pricing\+Configuration\+::mc\+Num\+Paths}
+
+
+
+Definition at line \mbox{\hyperlink{_pricing_configuration_8hpp_source_l00060}{60}} of file \mbox{\hyperlink{_pricing_configuration_8hpp_source}{Pricing\+Configuration.\+hpp}}.
+
+\Hypertarget{struct_pricing_configuration_a6f1d5c5506012916fff9974f820a4b23}\label{struct_pricing_configuration_a6f1d5c5506012916fff9974f820a4b23} 
+\index{PricingConfiguration@{PricingConfiguration}!mcTimeStepsPerPath@{mcTimeStepsPerPath}}
+\index{mcTimeStepsPerPath@{mcTimeStepsPerPath}!PricingConfiguration@{PricingConfiguration}}
+\doxysubsubsection{\texorpdfstring{mcTimeStepsPerPath}{mcTimeStepsPerPath}}
+{\footnotesize\ttfamily int Pricing\+Configuration\+::mc\+Time\+Steps\+Per\+Path}
+
+
+
+Definition at line \mbox{\hyperlink{_pricing_configuration_8hpp_source_l00062}{62}} of file \mbox{\hyperlink{_pricing_configuration_8hpp_source}{Pricing\+Configuration.\+hpp}}.
+
+\Hypertarget{struct_pricing_configuration_a77ee8c896b9a6ddd04437a7489b21c91}\label{struct_pricing_configuration_a77ee8c896b9a6ddd04437a7489b21c91} 
+\index{PricingConfiguration@{PricingConfiguration}!riskFreeRate@{riskFreeRate}}
+\index{riskFreeRate@{riskFreeRate}!PricingConfiguration@{PricingConfiguration}}
+\doxysubsubsection{\texorpdfstring{riskFreeRate}{riskFreeRate}}
+{\footnotesize\ttfamily double Pricing\+Configuration\+::risk\+Free\+Rate}
+
+
+
+This value is used when yield curve data is not available or loaded. 
+
+The default risk-\/free interest rate used for discounting (default value\+: 2.\+0). 
+
+Definition at line \mbox{\hyperlink{_pricing_configuration_8hpp_source_l00034}{34}} of file \mbox{\hyperlink{_pricing_configuration_8hpp_source}{Pricing\+Configuration.\+hpp}}.
+
+\Hypertarget{struct_pricing_configuration_a0252e37ed36dce2e03317c5715081a9d}\label{struct_pricing_configuration_a0252e37ed36dce2e03317c5715081a9d} 
+\index{PricingConfiguration@{PricingConfiguration}!S\_max@{S\_max}}
+\index{S\_max@{S\_max}!PricingConfiguration@{PricingConfiguration}}
+\doxysubsubsection{\texorpdfstring{S\_max}{S\_max}}
+{\footnotesize\ttfamily double Pricing\+Configuration\+::\+S\+\_\+max}
+
+
+
+Definition at line \mbox{\hyperlink{_pricing_configuration_8hpp_source_l00056}{56}} of file \mbox{\hyperlink{_pricing_configuration_8hpp_source}{Pricing\+Configuration.\+hpp}}.
+
+\Hypertarget{struct_pricing_configuration_a8564f465b2656557af9eba82722e5e19}\label{struct_pricing_configuration_a8564f465b2656557af9eba82722e5e19} 
+\index{PricingConfiguration@{PricingConfiguration}!yieldCurve@{yieldCurve}}
+\index{yieldCurve@{yieldCurve}!PricingConfiguration@{PricingConfiguration}}
+\doxysubsubsection{\texorpdfstring{yieldCurve}{yieldCurve}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_yield_curve}{Yield\+Curve}} Pricing\+Configuration\+::yield\+Curve}
+
+
+
+Definition at line \mbox{\hyperlink{_pricing_configuration_8hpp_source_l00040}{40}} of file \mbox{\hyperlink{_pricing_configuration_8hpp_source}{Pricing\+Configuration.\+hpp}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_pricing_configuration_8hpp}{Pricing\+Configuration.\+hpp}}\end{DoxyCompactItemize}

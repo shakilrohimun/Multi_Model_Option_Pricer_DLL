@@ -1,0 +1,32 @@
+\doxysection{Yield\+Curve.\+hpp}
+\hypertarget{_yield_curve_8hpp_source}{}\label{_yield_curve_8hpp_source}\mbox{\hyperlink{_yield_curve_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_yield_curve_8hpp_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ YIELDCURVE\_HPP}}
+\DoxyCodeLine{\Hypertarget{_yield_curve_8hpp_source_l00002}00002\ \textcolor{preprocessor}{\#define\ YIELDCURVE\_HPP}}
+\DoxyCodeLine{\Hypertarget{_yield_curve_8hpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_yield_curve_8hpp_source_l00013}00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{pch_8h}{pch.h}}"{}}\ \ \ \ \ \ \textcolor{comment}{//\ Precompiled\ header\ for\ improved\ compilation\ performance.}}
+\DoxyCodeLine{\Hypertarget{_yield_curve_8hpp_source_l00014}00014\ \textcolor{preprocessor}{\#include\ <vector>}\ \ \ \ \ \textcolor{comment}{//\ Standard\ vector\ container\ used\ for\ storing\ rate\ points.}}
+\DoxyCodeLine{\Hypertarget{_yield_curve_8hpp_source_l00015}00015\ \textcolor{preprocessor}{\#include\ <string>}\ \ \ \ \ \textcolor{comment}{//\ Provides\ std::string\ for\ handling\ text\ data,\ such\ as\ filenames.}}
+\DoxyCodeLine{\Hypertarget{_yield_curve_8hpp_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_yield_curve_8hpp_source_l00023}\mbox{\hyperlink{struct_rate_point}{00023}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_rate_point}{RatePoint}}\ \{}
+\DoxyCodeLine{\Hypertarget{_yield_curve_8hpp_source_l00024}\mbox{\hyperlink{struct_rate_point_a16de333af27d481db5f4c11eb28d5e77}{00024}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_rate_point_a16de333af27d481db5f4c11eb28d5e77}{maturity}};\ }
+\DoxyCodeLine{\Hypertarget{_yield_curve_8hpp_source_l00025}\mbox{\hyperlink{struct_rate_point_a03798677fe1ac5d6c7024fbfc963db25}{00025}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_rate_point_a03798677fe1ac5d6c7024fbfc963db25}{rate}};\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_yield_curve_8hpp_source_l00026}00026\ \};}
+\DoxyCodeLine{\Hypertarget{_yield_curve_8hpp_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{_yield_curve_8hpp_source_l00040}\mbox{\hyperlink{class_yield_curve}{00040}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_yield_curve}{YieldCurve}}\ \{}
+\DoxyCodeLine{\Hypertarget{_yield_curve_8hpp_source_l00041}00041\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_yield_curve_8hpp_source_l00050}00050\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_yield_curve_aea0767dec486d82d23cd8fbf3d4ba676}{addRatePoint}}(\textcolor{keywordtype}{double}\ maturity,\ \textcolor{keywordtype}{double}\ rate);}
+\DoxyCodeLine{\Hypertarget{_yield_curve_8hpp_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{_yield_curve_8hpp_source_l00061}00061\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_yield_curve_aa3257efcdbad0d984764fd63a8563899}{getRate}}(\textcolor{keywordtype}{double}\ t)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_yield_curve_8hpp_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{_yield_curve_8hpp_source_l00070}00070\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<RatePoint>\&\ \mbox{\hyperlink{class_yield_curve_ab32badc44c840501ac012466672654b7}{getData}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_yield_curve_8hpp_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{_yield_curve_8hpp_source_l00082}00082\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_yield_curve_ae4a92baa1385c3d7766ad376197dc6a5}{loadFromFile}}(\textcolor{keyword}{const}\ std::string\&\ filename);}
+\DoxyCodeLine{\Hypertarget{_yield_curve_8hpp_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{_yield_curve_8hpp_source_l00084}00084\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_yield_curve_8hpp_source_l00085}\mbox{\hyperlink{class_yield_curve_a1f38a70be36c8b608b82d8f602649aa7}{00085}}\ \ \ \ \ std::vector<RatePoint>\ \mbox{\hyperlink{class_yield_curve_a1f38a70be36c8b608b82d8f602649aa7}{data\_}};\ }
+\DoxyCodeLine{\Hypertarget{_yield_curve_8hpp_source_l00086}00086\ \};}
+\DoxyCodeLine{\Hypertarget{_yield_curve_8hpp_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{_yield_curve_8hpp_source_l00088}00088\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ YIELDCURVE\_HPP}}
+
+\end{DoxyCode}

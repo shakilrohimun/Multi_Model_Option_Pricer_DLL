@@ -1,0 +1,98 @@
+\doxysection{Greeks Struct Reference}
+\hypertarget{struct_greeks}{}\label{struct_greeks}\index{Greeks@{Greeks}}
+
+
+Structure grouping the \doxylink{struct_greeks}{Greeks} of an option.  
+
+
+
+
+{\ttfamily \#include $<$Option.\+hpp$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{struct_greeks_a9d16140323f20876507a2d5453696b1a}{delta}}
+\item 
+double \mbox{\hyperlink{struct_greeks_afcef8fafe28ec46b041eda551aefac76}{gamma}}
+\item 
+double \mbox{\hyperlink{struct_greeks_afaa454ff183cfa3d58902d49e4f363db}{rho}}
+\item 
+double \mbox{\hyperlink{struct_greeks_a82fcb8b4f18e8afc91ab23df69ae6f17}{theta}}
+\item 
+double \mbox{\hyperlink{struct_greeks_a87709cf35763c458f36a6935f7d7ce25}{vega}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Structure grouping the \doxylink{struct_greeks}{Greeks} of an option. 
+
+The \doxylink{struct_greeks}{Greeks} quantify the sensitivity of the option\textquotesingle{}s price to changes in different market parameters\+:
+\begin{DoxyItemize}
+\item Delta\+: Sensitivity to changes in the underlying asset\textquotesingle{}s price.
+\item Gamma\+: Rate of change of Delta with respect to the underlying asset\textquotesingle{}s price.
+\item Vega\+: Sensitivity to changes in the underlying asset\textquotesingle{}s volatility.
+\item Theta\+: Sensitivity to the passage of time (time decay).
+\item Rho\+: Sensitivity to changes in the risk-\/free interest rate. 
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{_option_8hpp_source_l00026}{26}} of file \mbox{\hyperlink{_option_8hpp_source}{Option.\+hpp}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{struct_greeks_a9d16140323f20876507a2d5453696b1a}\label{struct_greeks_a9d16140323f20876507a2d5453696b1a} 
+\index{Greeks@{Greeks}!delta@{delta}}
+\index{delta@{delta}!Greeks@{Greeks}}
+\doxysubsubsection{\texorpdfstring{delta}{delta}}
+{\footnotesize\ttfamily double Greeks\+::delta}
+
+Sensitivity of the option\textquotesingle{}s price with respect to the underlying asset\textquotesingle{}s price. 
+
+Definition at line \mbox{\hyperlink{_option_8hpp_source_l00027}{27}} of file \mbox{\hyperlink{_option_8hpp_source}{Option.\+hpp}}.
+
+\Hypertarget{struct_greeks_afcef8fafe28ec46b041eda551aefac76}\label{struct_greeks_afcef8fafe28ec46b041eda551aefac76} 
+\index{Greeks@{Greeks}!gamma@{gamma}}
+\index{gamma@{gamma}!Greeks@{Greeks}}
+\doxysubsubsection{\texorpdfstring{gamma}{gamma}}
+{\footnotesize\ttfamily double Greeks\+::gamma}
+
+Sensitivity of Delta with respect to changes in the underlying asset\textquotesingle{}s price. 
+
+Definition at line \mbox{\hyperlink{_option_8hpp_source_l00028}{28}} of file \mbox{\hyperlink{_option_8hpp_source}{Option.\+hpp}}.
+
+\Hypertarget{struct_greeks_afaa454ff183cfa3d58902d49e4f363db}\label{struct_greeks_afaa454ff183cfa3d58902d49e4f363db} 
+\index{Greeks@{Greeks}!rho@{rho}}
+\index{rho@{rho}!Greeks@{Greeks}}
+\doxysubsubsection{\texorpdfstring{rho}{rho}}
+{\footnotesize\ttfamily double Greeks\+::rho}
+
+Sensitivity of the option\textquotesingle{}s price with respect to changes in the risk-\/free interest rate. 
+
+Definition at line \mbox{\hyperlink{_option_8hpp_source_l00031}{31}} of file \mbox{\hyperlink{_option_8hpp_source}{Option.\+hpp}}.
+
+\Hypertarget{struct_greeks_a82fcb8b4f18e8afc91ab23df69ae6f17}\label{struct_greeks_a82fcb8b4f18e8afc91ab23df69ae6f17} 
+\index{Greeks@{Greeks}!theta@{theta}}
+\index{theta@{theta}!Greeks@{Greeks}}
+\doxysubsubsection{\texorpdfstring{theta}{theta}}
+{\footnotesize\ttfamily double Greeks\+::theta}
+
+Sensitivity of the option\textquotesingle{}s price with respect to time decay. 
+
+Definition at line \mbox{\hyperlink{_option_8hpp_source_l00030}{30}} of file \mbox{\hyperlink{_option_8hpp_source}{Option.\+hpp}}.
+
+\Hypertarget{struct_greeks_a87709cf35763c458f36a6935f7d7ce25}\label{struct_greeks_a87709cf35763c458f36a6935f7d7ce25} 
+\index{Greeks@{Greeks}!vega@{vega}}
+\index{vega@{vega}!Greeks@{Greeks}}
+\doxysubsubsection{\texorpdfstring{vega}{vega}}
+{\footnotesize\ttfamily double Greeks\+::vega}
+
+Sensitivity of the option\textquotesingle{}s price to changes in volatility. 
+
+Definition at line \mbox{\hyperlink{_option_8hpp_source_l00029}{29}} of file \mbox{\hyperlink{_option_8hpp_source}{Option.\+hpp}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_option_8hpp}{Option.\+hpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,5 @@
+<map id="BinomialPricer" name="BinomialPricer">
+<area shape="rect" id="Node000001" title="A concrete implementation of the IOptionPricer interface using the binomial CRR model." alt="" coords="5,80,111,107"/>
+<area shape="rect" id="Node000002" href="$d9/dec/class_i_option_pricer.html" title="Interface for an option pricing engine." alt="" coords="9,5,107,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="61,48,61,80,55,80,55,48"/>
+</map>

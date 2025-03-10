@@ -1,0 +1,94 @@
+\doxysection{Pricer\+Factory.\+hpp File Reference}
+\hypertarget{_pricer_factory_8hpp}{}\label{_pricer_factory_8hpp}\index{PricerFactory.hpp@{PricerFactory.hpp}}
+
+
+Declaration of the factory for creating pricing engines.  
+
+
+{\ttfamily \#include \"{}pch.\+h\"{}}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include \"{}Interface\+Option\+Pricer.\+hpp\"{}}\newline
+{\ttfamily \#include \"{}Pricing\+Configuration.\+hpp\"{}}\newline
+Include dependency graph for Pricer\+Factory.\+hpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d6b/_pricer_factory_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=173pt]{de/db3/_pricer_factory_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_pricer_factory}{Pricer\+Factory}}
+\begin{DoxyCompactList}\small\item\em Factory for creating pricing engine instances. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{_pricer_factory_8hpp_a6e3c4698785c67dc4caf497092b45250}{Pricer\+Type}} \{ \mbox{\hyperlink{_pricer_factory_8hpp_a6e3c4698785c67dc4caf497092b45250ac40bd32b046f27c90a6a0d2aebc48d8c}{Black\+Scholes}}
+, \mbox{\hyperlink{_pricer_factory_8hpp_a6e3c4698785c67dc4caf497092b45250af0dc57106e362cb815789ed45ed989ad}{Binomial}}
+, \mbox{\hyperlink{_pricer_factory_8hpp_a6e3c4698785c67dc4caf497092b45250a8c12763e7ca8639982cbb121e19a52a1}{Crank\+Nicolson}}
+, \mbox{\hyperlink{_pricer_factory_8hpp_a6e3c4698785c67dc4caf497092b45250aedd652c19d7dbbfb3d242aa14b2fec8c}{Monte\+Carlo}}
+ \}
+\begin{DoxyCompactList}\small\item\em Enumeration of pricer types. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Declaration of the factory for creating pricing engines. 
+
+This header defines the \doxylink{class_pricer_factory}{Pricer\+Factory} class, which provides static methods to dynamically instantiate different types of option pricing engines based on the specified pricer type. The factory encapsulates the creation logic, thereby promoting a clean separation of concerns and ease of extension. 
+
+Definition in file \mbox{\hyperlink{_pricer_factory_8hpp_source}{Pricer\+Factory.\+hpp}}.
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{_pricer_factory_8hpp_a6e3c4698785c67dc4caf497092b45250}\label{_pricer_factory_8hpp_a6e3c4698785c67dc4caf497092b45250} 
+\index{PricerFactory.hpp@{PricerFactory.hpp}!PricerType@{PricerType}}
+\index{PricerType@{PricerType}!PricerFactory.hpp@{PricerFactory.hpp}}
+\doxysubsubsection{\texorpdfstring{PricerType}{PricerType}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{_pricer_factory_8hpp_a6e3c4698785c67dc4caf497092b45250}{Pricer\+Type}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Enumeration of pricer types. 
+
+The Pricer\+Type enumeration defines the various pricing engine implementations that are supported. Each enumerated value corresponds to a specific pricing model used to compute option prices and \doxylink{struct_greeks}{Greeks}. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BlackScholes@{BlackScholes}!PricerFactory.hpp@{PricerFactory.hpp}}\index{PricerFactory.hpp@{PricerFactory.hpp}!BlackScholes@{BlackScholes}}}\Hypertarget{_pricer_factory_8hpp_a6e3c4698785c67dc4caf497092b45250ac40bd32b046f27c90a6a0d2aebc48d8c}\label{_pricer_factory_8hpp_a6e3c4698785c67dc4caf497092b45250ac40bd32b046f27c90a6a0d2aebc48d8c} 
+Black\+Scholes&Pricing engine using the Black-\/\+Scholes formula. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Binomial@{Binomial}!PricerFactory.hpp@{PricerFactory.hpp}}\index{PricerFactory.hpp@{PricerFactory.hpp}!Binomial@{Binomial}}}\Hypertarget{_pricer_factory_8hpp_a6e3c4698785c67dc4caf497092b45250af0dc57106e362cb815789ed45ed989ad}\label{_pricer_factory_8hpp_a6e3c4698785c67dc4caf497092b45250af0dc57106e362cb815789ed45ed989ad} 
+Binomial&Pricing engine based on the binomial method. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CrankNicolson@{CrankNicolson}!PricerFactory.hpp@{PricerFactory.hpp}}\index{PricerFactory.hpp@{PricerFactory.hpp}!CrankNicolson@{CrankNicolson}}}\Hypertarget{_pricer_factory_8hpp_a6e3c4698785c67dc4caf497092b45250a8c12763e7ca8639982cbb121e19a52a1}\label{_pricer_factory_8hpp_a6e3c4698785c67dc4caf497092b45250a8c12763e7ca8639982cbb121e19a52a1} 
+Crank\+Nicolson&Pricing engine using the Crank-\/\+Nicolson finite difference method. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MonteCarlo@{MonteCarlo}!PricerFactory.hpp@{PricerFactory.hpp}}\index{PricerFactory.hpp@{PricerFactory.hpp}!MonteCarlo@{MonteCarlo}}}\Hypertarget{_pricer_factory_8hpp_a6e3c4698785c67dc4caf497092b45250aedd652c19d7dbbfb3d242aa14b2fec8c}\label{_pricer_factory_8hpp_a6e3c4698785c67dc4caf497092b45250aedd652c19d7dbbfb3d242aa14b2fec8c} 
+Monte\+Carlo&Pricing engine based on Monte Carlo simulation. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{_pricer_factory_8hpp_source_l00026}{26}} of file \mbox{\hyperlink{_pricer_factory_8hpp_source}{Pricer\+Factory.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{_pricer_factory_8hpp_a6e3c4698785c67dc4caf497092b45250ac40bd32b046f27c90a6a0d2aebc48d8c}{BlackScholes}},\ }
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{_pricer_factory_8hpp_a6e3c4698785c67dc4caf497092b45250af0dc57106e362cb815789ed45ed989ad}{Binomial}},\ \ \ \ \ }
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{_pricer_factory_8hpp_a6e3c4698785c67dc4caf497092b45250a8c12763e7ca8639982cbb121e19a52a1}{CrankNicolson}},}
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{_pricer_factory_8hpp_a6e3c4698785c67dc4caf497092b45250aedd652c19d7dbbfb3d242aa14b2fec8c}{MonteCarlo}}\ \ \ \ }
+\DoxyCodeLine{00031\ \};}
+
+\end{DoxyCode}

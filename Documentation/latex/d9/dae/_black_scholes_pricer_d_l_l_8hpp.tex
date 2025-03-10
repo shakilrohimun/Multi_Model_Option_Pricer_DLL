@@ -1,0 +1,288 @@
+\doxysection{Black\+Scholes\+Pricer\+DLL.\+hpp File Reference}
+\hypertarget{_black_scholes_pricer_d_l_l_8hpp}{}\label{_black_scholes_pricer_d_l_l_8hpp}\index{BlackScholesPricerDLL.hpp@{BlackScholesPricerDLL.hpp}}
+{\ttfamily \#include \"{}pch.\+h\"{}}\newline
+Include dependency graph for Black\+Scholes\+Pricer\+DLL.\+hpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d30/_black_scholes_pricer_d_l_l_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{de/dce/_black_scholes_pricer_d_l_l_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_black_scholes_pricer_d_l_l_8hpp_ad61108bcd8975386d7bf172bbac33340}{BLACK\+\_\+\+SCHOLES\+\_\+\+API}}~\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_aca39f81cef0bb138d8564df27d112e73}{\+\_\+\+\_\+declspec}}(dllimport)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_black_scholes_pricer_d_l_l_8hpp_aff61f93319905e051e361350d2c61201}{\+\_\+\+\_\+declspec}} (dllimport) double \+\_\+\+\_\+stdcall \mbox{\hyperlink{_black_scholes_pricer_d_l_l_8cpp_acc7e996da69e07dcc752e85751e5c612}{Price\+Option}}(double S
+\begin{DoxyCompactList}\small\item\em Calculates the price of an option using the Black-\/\+Scholes formula. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+double double double double double int int const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_black_scholes_pricer_d_l_l_8hpp_ae6606220b8d132830580513905d76263}{calculation\+Date}}
+\item 
+double double double double double int int const char double \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_black_scholes_pricer_d_l_l_8hpp_ae4a9bd42202a12b6961b4aafeae5b5d1}{delta}}
+\item 
+double double double double double int int const char double double \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_black_scholes_pricer_d_l_l_8hpp_afbc37af80aa120e3d9b335844d66feb5}{gamma}}
+\item 
+double \mbox{\hyperlink{_black_scholes_pricer_d_l_l_8hpp_a74b45da7676e23dd8ec974cfc04c0137}{K}}
+\item 
+double double double double double int int \mbox{\hyperlink{_black_scholes_pricer_d_l_l_8hpp_ad00273f7d7912cf5b399a84b6ec595ef}{option\+Style}}
+\item 
+double double double double double int \mbox{\hyperlink{_black_scholes_pricer_d_l_l_8hpp_ababfbfb37e9a9a294f2fbc0c514abade}{option\+Type}}
+\item 
+double double double double double \mbox{\hyperlink{_black_scholes_pricer_d_l_l_8hpp_ae1370efc3e7cbcccb16c9f9725d95188}{q}}
+\item 
+double double double \mbox{\hyperlink{_black_scholes_pricer_d_l_l_8hpp_a7058482f32dc92202725725112678538}{r}}
+\item 
+double double double double double int int const char double double double double double \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_black_scholes_pricer_d_l_l_8hpp_a3e80422888eda56f0a47b7e1dd4d8db8}{rho}}
+\item 
+double double double double \mbox{\hyperlink{_black_scholes_pricer_d_l_l_8hpp_acc82fd456cac0384d2075ece3102201a}{sigma}}
+\item 
+double double \mbox{\hyperlink{_black_scholes_pricer_d_l_l_8hpp_a9e64a35af6ea2c4e18a21ae6ab8f4b4a}{T}}
+\item 
+double double double double double int int const char double double double double \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_black_scholes_pricer_d_l_l_8hpp_a2003c3f33dff38a97f132969a06d0dcb}{theta}}
+\item 
+double double double double double int int const char double double double \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_black_scholes_pricer_d_l_l_8hpp_aedec39dd361a745499dcefcbadaad517}{vega}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_black_scholes_pricer_d_l_l_8hpp_ad61108bcd8975386d7bf172bbac33340}\label{_black_scholes_pricer_d_l_l_8hpp_ad61108bcd8975386d7bf172bbac33340} 
+\index{BlackScholesPricerDLL.hpp@{BlackScholesPricerDLL.hpp}!BLACK\_SCHOLES\_API@{BLACK\_SCHOLES\_API}}
+\index{BLACK\_SCHOLES\_API@{BLACK\_SCHOLES\_API}!BlackScholesPricerDLL.hpp@{BlackScholesPricerDLL.hpp}}
+\doxysubsubsection{\texorpdfstring{BLACK\_SCHOLES\_API}{BLACK\_SCHOLES\_API}}
+{\footnotesize\ttfamily \#define BLACK\+\_\+\+SCHOLES\+\_\+\+API~\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_aca39f81cef0bb138d8564df27d112e73}{\+\_\+\+\_\+declspec}}(dllimport)}
+
+
+
+Definition at line \mbox{\hyperlink{_black_scholes_pricer_d_l_l_8hpp_source_l00007}{7}} of file \mbox{\hyperlink{_black_scholes_pricer_d_l_l_8hpp_source}{Black\+Scholes\+Pricer\+DLL.\+hpp}}.
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_black_scholes_pricer_d_l_l_8hpp_aff61f93319905e051e361350d2c61201}\label{_black_scholes_pricer_d_l_l_8hpp_aff61f93319905e051e361350d2c61201} 
+\index{BlackScholesPricerDLL.hpp@{BlackScholesPricerDLL.hpp}!\_\_declspec@{\_\_declspec}}
+\index{\_\_declspec@{\_\_declspec}!BlackScholesPricerDLL.hpp@{BlackScholesPricerDLL.hpp}}
+\doxysubsubsection{\texorpdfstring{\_\_declspec()}{\_\_declspec()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+declspec (\begin{DoxyParamCaption}\item[{dllimport}]{ }\end{DoxyParamCaption})}
+
+
+
+Calculates the price of an option using the Black-\/\+Scholes formula. 
+
+Computes the \doxylink{struct_greeks}{Greeks} of an option using the Black-\/\+Scholes model.
+
+This function computes the theoretical price of a European option based on the Black-\/\+Scholes model. It evaluates the necessary parameters using cumulative distribution functions for the standard normal distribution.
+
+
+\begin{DoxyParams}{Parameters}
+{\em S} & The current price of the underlying asset. \\
+\hline
+{\em K} & The strike price of the option. \\
+\hline
+{\em T} & The time to maturity in years. \\
+\hline
+{\em r} & The annualized risk-\/free interest rate. \\
+\hline
+{\em sigma} & The annualized volatility of the underlying asset. \\
+\hline
+{\em q} & The dividend yield of the underlying asset. \\
+\hline
+{\em option\+Type} & An integer indicating the type of option (0 for Call, 1 for Put). \\
+\hline
+{\em option\+Style} & An integer representing the style of the option (0 for European; note that the Black-\/\+Scholes model is applicable only to European options). \\
+\hline
+{\em calculation\+Date} & A string representing the calculation date in \"{}\+YYYY-\/\+MM-\/\+DD\"{} format. If an empty string is provided, the current date is assumed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The computed option price as a double.
+\end{DoxyReturn}
+The Black-\/\+Scholes model is based on several assumptions including constant volatility and interest rates, as well as a log-\/normal distribution of returns. It is widely used for pricing European options where early exercise is not permitted.
+
+This function calculates the sensitivity measures (\doxylink{struct_greeks}{Greeks}) that describe how the price of an option responds to changes in various underlying parameters. The \doxylink{struct_greeks}{Greeks} provided include\+:
+\begin{DoxyItemize}
+\item Delta\+: Sensitivity of the option price to changes in the underlying asset\textquotesingle{}s price.
+\item Gamma\+: Sensitivity of Delta with respect to changes in the underlying asset\textquotesingle{}s price.
+\item Vega\+: Sensitivity of the option price to changes in volatility.
+\item Theta\+: Sensitivity of the option price to the passage of time.
+\item Rho\+: Sensitivity of the option price to changes in the risk-\/free interest rate.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em S} & The current price of the underlying asset. \\
+\hline
+{\em K} & The strike price of the option. \\
+\hline
+{\em T} & The time to maturity in years. \\
+\hline
+{\em r} & The risk-\/free interest rate. \\
+\hline
+{\em sigma} & The volatility of the underlying asset. \\
+\hline
+{\em q} & The dividend yield of the underlying asset. \\
+\hline
+{\em option\+Type} & An integer indicating the type of option (0 for Call, 1 for Put). \\
+\hline
+{\em option\+Style} & An integer representing the option style (0 for European, as the Black-\/\+Scholes model is only valid for European options). \\
+\hline
+{\em calculation\+Date} & A string representing the calculation date in \"{}\+YYYY-\/\+MM-\/\+DD\"{} format. If empty, the current date is used. \\
+\hline
+{\em delta} & Pointer to a double where the computed Delta will be stored. \\
+\hline
+{\em gamma} & Pointer to a double where the computed Gamma will be stored. \\
+\hline
+{\em vega} & Pointer to a double where the computed Vega will be stored. \\
+\hline
+{\em theta} & Pointer to a double where the computed Theta will be stored. \\
+\hline
+{\em rho} & Pointer to a double where the computed Rho will be stored.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This function does not return a value; the computed \doxylink{struct_greeks}{Greeks} are output through the pointer parameters.
+\end{DoxyReturn}
+The function uses analytical derivatives of the Black-\/\+Scholes formula to compute the \doxylink{struct_greeks}{Greeks}. These measures are critical for traders and risk managers to evaluate the risk exposure of an option position. 
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{_black_scholes_pricer_d_l_l_8hpp_ae6606220b8d132830580513905d76263}\label{_black_scholes_pricer_d_l_l_8hpp_ae6606220b8d132830580513905d76263} 
+\index{BlackScholesPricerDLL.hpp@{BlackScholesPricerDLL.hpp}!calculationDate@{calculationDate}}
+\index{calculationDate@{calculationDate}!BlackScholesPricerDLL.hpp@{BlackScholesPricerDLL.hpp}}
+\doxysubsubsection{\texorpdfstring{calculationDate}{calculationDate}}
+{\footnotesize\ttfamily double double double double double int int const char\texorpdfstring{$\ast$}{*} calculation\+Date}
+
+
+
+Definition at line \mbox{\hyperlink{_black_scholes_pricer_d_l_l_8hpp_source_l00036}{36}} of file \mbox{\hyperlink{_black_scholes_pricer_d_l_l_8hpp_source}{Black\+Scholes\+Pricer\+DLL.\+hpp}}.
+
+\Hypertarget{_black_scholes_pricer_d_l_l_8hpp_ae4a9bd42202a12b6961b4aafeae5b5d1}\label{_black_scholes_pricer_d_l_l_8hpp_ae4a9bd42202a12b6961b4aafeae5b5d1} 
+\index{BlackScholesPricerDLL.hpp@{BlackScholesPricerDLL.hpp}!delta@{delta}}
+\index{delta@{delta}!BlackScholesPricerDLL.hpp@{BlackScholesPricerDLL.hpp}}
+\doxysubsubsection{\texorpdfstring{delta}{delta}}
+{\footnotesize\ttfamily double double double double double int int const char double\texorpdfstring{$\ast$}{*} delta}
+
+
+
+Definition at line \mbox{\hyperlink{_black_scholes_pricer_d_l_l_8hpp_source_l00072}{72}} of file \mbox{\hyperlink{_black_scholes_pricer_d_l_l_8hpp_source}{Black\+Scholes\+Pricer\+DLL.\+hpp}}.
+
+\Hypertarget{_black_scholes_pricer_d_l_l_8hpp_afbc37af80aa120e3d9b335844d66feb5}\label{_black_scholes_pricer_d_l_l_8hpp_afbc37af80aa120e3d9b335844d66feb5} 
+\index{BlackScholesPricerDLL.hpp@{BlackScholesPricerDLL.hpp}!gamma@{gamma}}
+\index{gamma@{gamma}!BlackScholesPricerDLL.hpp@{BlackScholesPricerDLL.hpp}}
+\doxysubsubsection{\texorpdfstring{gamma}{gamma}}
+{\footnotesize\ttfamily double double double double double int int const char double double\texorpdfstring{$\ast$}{*} gamma}
+
+
+
+Definition at line \mbox{\hyperlink{_black_scholes_pricer_d_l_l_8hpp_source_l00072}{72}} of file \mbox{\hyperlink{_black_scholes_pricer_d_l_l_8hpp_source}{Black\+Scholes\+Pricer\+DLL.\+hpp}}.
+
+\Hypertarget{_black_scholes_pricer_d_l_l_8hpp_a74b45da7676e23dd8ec974cfc04c0137}\label{_black_scholes_pricer_d_l_l_8hpp_a74b45da7676e23dd8ec974cfc04c0137} 
+\index{BlackScholesPricerDLL.hpp@{BlackScholesPricerDLL.hpp}!K@{K}}
+\index{K@{K}!BlackScholesPricerDLL.hpp@{BlackScholesPricerDLL.hpp}}
+\doxysubsubsection{\texorpdfstring{K}{K}}
+{\footnotesize\ttfamily double K}
+
+
+
+Definition at line \mbox{\hyperlink{_black_scholes_pricer_d_l_l_8hpp_source_l00035}{35}} of file \mbox{\hyperlink{_black_scholes_pricer_d_l_l_8hpp_source}{Black\+Scholes\+Pricer\+DLL.\+hpp}}.
+
+\Hypertarget{_black_scholes_pricer_d_l_l_8hpp_ad00273f7d7912cf5b399a84b6ec595ef}\label{_black_scholes_pricer_d_l_l_8hpp_ad00273f7d7912cf5b399a84b6ec595ef} 
+\index{BlackScholesPricerDLL.hpp@{BlackScholesPricerDLL.hpp}!optionStyle@{optionStyle}}
+\index{optionStyle@{optionStyle}!BlackScholesPricerDLL.hpp@{BlackScholesPricerDLL.hpp}}
+\doxysubsubsection{\texorpdfstring{optionStyle}{optionStyle}}
+{\footnotesize\ttfamily double double double double double int int option\+Style}
+
+
+
+Definition at line \mbox{\hyperlink{_black_scholes_pricer_d_l_l_8hpp_source_l00036}{36}} of file \mbox{\hyperlink{_black_scholes_pricer_d_l_l_8hpp_source}{Black\+Scholes\+Pricer\+DLL.\+hpp}}.
+
+\Hypertarget{_black_scholes_pricer_d_l_l_8hpp_ababfbfb37e9a9a294f2fbc0c514abade}\label{_black_scholes_pricer_d_l_l_8hpp_ababfbfb37e9a9a294f2fbc0c514abade} 
+\index{BlackScholesPricerDLL.hpp@{BlackScholesPricerDLL.hpp}!optionType@{optionType}}
+\index{optionType@{optionType}!BlackScholesPricerDLL.hpp@{BlackScholesPricerDLL.hpp}}
+\doxysubsubsection{\texorpdfstring{optionType}{optionType}}
+{\footnotesize\ttfamily double double double double double int option\+Type}
+
+
+
+Definition at line \mbox{\hyperlink{_black_scholes_pricer_d_l_l_8hpp_source_l00036}{36}} of file \mbox{\hyperlink{_black_scholes_pricer_d_l_l_8hpp_source}{Black\+Scholes\+Pricer\+DLL.\+hpp}}.
+
+\Hypertarget{_black_scholes_pricer_d_l_l_8hpp_ae1370efc3e7cbcccb16c9f9725d95188}\label{_black_scholes_pricer_d_l_l_8hpp_ae1370efc3e7cbcccb16c9f9725d95188} 
+\index{BlackScholesPricerDLL.hpp@{BlackScholesPricerDLL.hpp}!q@{q}}
+\index{q@{q}!BlackScholesPricerDLL.hpp@{BlackScholesPricerDLL.hpp}}
+\doxysubsubsection{\texorpdfstring{q}{q}}
+{\footnotesize\ttfamily double double double double double q}
+
+
+
+Definition at line \mbox{\hyperlink{_black_scholes_pricer_d_l_l_8hpp_source_l00035}{35}} of file \mbox{\hyperlink{_black_scholes_pricer_d_l_l_8hpp_source}{Black\+Scholes\+Pricer\+DLL.\+hpp}}.
+
+\Hypertarget{_black_scholes_pricer_d_l_l_8hpp_a7058482f32dc92202725725112678538}\label{_black_scholes_pricer_d_l_l_8hpp_a7058482f32dc92202725725112678538} 
+\index{BlackScholesPricerDLL.hpp@{BlackScholesPricerDLL.hpp}!r@{r}}
+\index{r@{r}!BlackScholesPricerDLL.hpp@{BlackScholesPricerDLL.hpp}}
+\doxysubsubsection{\texorpdfstring{r}{r}}
+{\footnotesize\ttfamily double double double r}
+
+
+
+Definition at line \mbox{\hyperlink{_black_scholes_pricer_d_l_l_8hpp_source_l00035}{35}} of file \mbox{\hyperlink{_black_scholes_pricer_d_l_l_8hpp_source}{Black\+Scholes\+Pricer\+DLL.\+hpp}}.
+
+\Hypertarget{_black_scholes_pricer_d_l_l_8hpp_a3e80422888eda56f0a47b7e1dd4d8db8}\label{_black_scholes_pricer_d_l_l_8hpp_a3e80422888eda56f0a47b7e1dd4d8db8} 
+\index{BlackScholesPricerDLL.hpp@{BlackScholesPricerDLL.hpp}!rho@{rho}}
+\index{rho@{rho}!BlackScholesPricerDLL.hpp@{BlackScholesPricerDLL.hpp}}
+\doxysubsubsection{\texorpdfstring{rho}{rho}}
+{\footnotesize\ttfamily double double double double double int int const char double double double double double\texorpdfstring{$\ast$}{*} rho}
+
+
+
+Definition at line \mbox{\hyperlink{_black_scholes_pricer_d_l_l_8hpp_source_l00072}{72}} of file \mbox{\hyperlink{_black_scholes_pricer_d_l_l_8hpp_source}{Black\+Scholes\+Pricer\+DLL.\+hpp}}.
+
+\Hypertarget{_black_scholes_pricer_d_l_l_8hpp_acc82fd456cac0384d2075ece3102201a}\label{_black_scholes_pricer_d_l_l_8hpp_acc82fd456cac0384d2075ece3102201a} 
+\index{BlackScholesPricerDLL.hpp@{BlackScholesPricerDLL.hpp}!sigma@{sigma}}
+\index{sigma@{sigma}!BlackScholesPricerDLL.hpp@{BlackScholesPricerDLL.hpp}}
+\doxysubsubsection{\texorpdfstring{sigma}{sigma}}
+{\footnotesize\ttfamily double double double double sigma}
+
+
+
+Definition at line \mbox{\hyperlink{_black_scholes_pricer_d_l_l_8hpp_source_l00035}{35}} of file \mbox{\hyperlink{_black_scholes_pricer_d_l_l_8hpp_source}{Black\+Scholes\+Pricer\+DLL.\+hpp}}.
+
+\Hypertarget{_black_scholes_pricer_d_l_l_8hpp_a9e64a35af6ea2c4e18a21ae6ab8f4b4a}\label{_black_scholes_pricer_d_l_l_8hpp_a9e64a35af6ea2c4e18a21ae6ab8f4b4a} 
+\index{BlackScholesPricerDLL.hpp@{BlackScholesPricerDLL.hpp}!T@{T}}
+\index{T@{T}!BlackScholesPricerDLL.hpp@{BlackScholesPricerDLL.hpp}}
+\doxysubsubsection{\texorpdfstring{T}{T}}
+{\footnotesize\ttfamily double double T}
+
+
+
+Definition at line \mbox{\hyperlink{_black_scholes_pricer_d_l_l_8hpp_source_l00035}{35}} of file \mbox{\hyperlink{_black_scholes_pricer_d_l_l_8hpp_source}{Black\+Scholes\+Pricer\+DLL.\+hpp}}.
+
+\Hypertarget{_black_scholes_pricer_d_l_l_8hpp_a2003c3f33dff38a97f132969a06d0dcb}\label{_black_scholes_pricer_d_l_l_8hpp_a2003c3f33dff38a97f132969a06d0dcb} 
+\index{BlackScholesPricerDLL.hpp@{BlackScholesPricerDLL.hpp}!theta@{theta}}
+\index{theta@{theta}!BlackScholesPricerDLL.hpp@{BlackScholesPricerDLL.hpp}}
+\doxysubsubsection{\texorpdfstring{theta}{theta}}
+{\footnotesize\ttfamily double double double double double int int const char double double double double\texorpdfstring{$\ast$}{*} theta}
+
+
+
+Definition at line \mbox{\hyperlink{_black_scholes_pricer_d_l_l_8hpp_source_l00072}{72}} of file \mbox{\hyperlink{_black_scholes_pricer_d_l_l_8hpp_source}{Black\+Scholes\+Pricer\+DLL.\+hpp}}.
+
+\Hypertarget{_black_scholes_pricer_d_l_l_8hpp_aedec39dd361a745499dcefcbadaad517}\label{_black_scholes_pricer_d_l_l_8hpp_aedec39dd361a745499dcefcbadaad517} 
+\index{BlackScholesPricerDLL.hpp@{BlackScholesPricerDLL.hpp}!vega@{vega}}
+\index{vega@{vega}!BlackScholesPricerDLL.hpp@{BlackScholesPricerDLL.hpp}}
+\doxysubsubsection{\texorpdfstring{vega}{vega}}
+{\footnotesize\ttfamily double double double double double int int const char double double double\texorpdfstring{$\ast$}{*} vega}
+
+
+
+Definition at line \mbox{\hyperlink{_black_scholes_pricer_d_l_l_8hpp_source_l00072}{72}} of file \mbox{\hyperlink{_black_scholes_pricer_d_l_l_8hpp_source}{Black\+Scholes\+Pricer\+DLL.\+hpp}}.
+

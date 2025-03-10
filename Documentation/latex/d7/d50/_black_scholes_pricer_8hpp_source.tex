@@ -1,0 +1,29 @@
+\doxysection{Black\+Scholes\+Pricer.\+hpp}
+\hypertarget{_black_scholes_pricer_8hpp_source}{}\label{_black_scholes_pricer_8hpp_source}\mbox{\hyperlink{_black_scholes_pricer_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_black_scholes_pricer_8hpp_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ BLACKSCHOLESPRICER\_HPP}}
+\DoxyCodeLine{\Hypertarget{_black_scholes_pricer_8hpp_source_l00002}00002\ \textcolor{preprocessor}{\#define\ BLACKSCHOLESPRICER\_HPP}}
+\DoxyCodeLine{\Hypertarget{_black_scholes_pricer_8hpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_black_scholes_pricer_8hpp_source_l00022}00022\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{pch_8h}{pch.h}}"{}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Precompiled\ header\ for\ speeding\ up\ compilation.}}
+\DoxyCodeLine{\Hypertarget{_black_scholes_pricer_8hpp_source_l00023}00023\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_interface_option_pricer_8hpp}{InterfaceOptionPricer.hpp}}"{}}\ \textcolor{comment}{//\ Interface\ ensuring\ consistency\ among\ different\ pricing\ models.}}
+\DoxyCodeLine{\Hypertarget{_black_scholes_pricer_8hpp_source_l00024}00024\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_pricing_configuration_8hpp}{PricingConfiguration.hpp}}"{}}\ \ \textcolor{comment}{//\ Provides\ the\ structure\ to\ configure\ pricing\ parameters.}}
+\DoxyCodeLine{\Hypertarget{_black_scholes_pricer_8hpp_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{_black_scholes_pricer_8hpp_source_l00038}\mbox{\hyperlink{class_black_scholes_pricer}{00038}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_black_scholes_pricer}{BlackScholesPricer}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_i_option_pricer}{IOptionPricer}}\ \{}
+\DoxyCodeLine{\Hypertarget{_black_scholes_pricer_8hpp_source_l00039}00039\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_black_scholes_pricer_8hpp_source_l00049}00049\ \ \ \ \ \mbox{\hyperlink{class_black_scholes_pricer_a44fa2237bc179b762fe26feeaafd94e7}{BlackScholesPricer}}();}
+\DoxyCodeLine{\Hypertarget{_black_scholes_pricer_8hpp_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{_black_scholes_pricer_8hpp_source_l00063}00063\ \ \ \ \ \mbox{\hyperlink{class_black_scholes_pricer_a44fa2237bc179b762fe26feeaafd94e7}{BlackScholesPricer}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_pricing_configuration}{PricingConfiguration}}\&\ config);}
+\DoxyCodeLine{\Hypertarget{_black_scholes_pricer_8hpp_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{_black_scholes_pricer_8hpp_source_l00074}00074\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_black_scholes_pricer_ae298e83cd2505628a53f515c29326176}{\string~BlackScholesPricer}}();}
+\DoxyCodeLine{\Hypertarget{_black_scholes_pricer_8hpp_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{_black_scholes_pricer_8hpp_source_l00092}00092\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_black_scholes_pricer_a35afc68932ea489cf505e73a21fb64c7}{price}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_option}{Option}}\&\ opt)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{\Hypertarget{_black_scholes_pricer_8hpp_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{_black_scholes_pricer_8hpp_source_l00115}00115\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{struct_greeks}{Greeks}}\ \mbox{\hyperlink{class_black_scholes_pricer_abd9a2826b0592e7229d06444cd22c6df}{computeGreeks}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_option}{Option}}\&\ opt)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{\Hypertarget{_black_scholes_pricer_8hpp_source_l00116}00116\ }
+\DoxyCodeLine{\Hypertarget{_black_scholes_pricer_8hpp_source_l00117}00117\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_black_scholes_pricer_8hpp_source_l00130}\mbox{\hyperlink{class_black_scholes_pricer_aa5065d575a355cb3ff1317ccfdd7bdfd}{00130}}\ \ \ \ \ \mbox{\hyperlink{struct_pricing_configuration}{PricingConfiguration}}\ \mbox{\hyperlink{class_black_scholes_pricer_aa5065d575a355cb3ff1317ccfdd7bdfd}{config\_}};}
+\DoxyCodeLine{\Hypertarget{_black_scholes_pricer_8hpp_source_l00131}00131\ \};}
+\DoxyCodeLine{\Hypertarget{_black_scholes_pricer_8hpp_source_l00132}00132\ }
+\DoxyCodeLine{\Hypertarget{_black_scholes_pricer_8hpp_source_l00133}00133\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ BLACKSCHOLESPRICER\_HPP}}
+
+\end{DoxyCode}

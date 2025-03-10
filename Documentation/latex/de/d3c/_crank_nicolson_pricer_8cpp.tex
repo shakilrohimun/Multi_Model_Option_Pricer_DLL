@@ -1,0 +1,31 @@
+\doxysection{Crank\+Nicolson\+Pricer.\+cpp File Reference}
+\hypertarget{_crank_nicolson_pricer_8cpp}{}\label{_crank_nicolson_pricer_8cpp}\index{CrankNicolsonPricer.cpp@{CrankNicolsonPricer.cpp}}
+
+
+Implementation of the \doxylink{class_crank_nicolson_pricer}{Crank\+Nicolson\+Pricer} class using the Crank-\/\+Nicolson method.  
+
+
+{\ttfamily \#include \"{}pch.\+h\"{}}\newline
+{\ttfamily \#include \"{}Crank\+Nicolson\+Pricer.\+hpp\"{}}\newline
+{\ttfamily \#include \"{}Option.\+hpp\"{}}\newline
+{\ttfamily \#include \"{}Date\+Converter.\+hpp\"{}}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$stdexcept$>$}\newline
+Include dependency graph for Crank\+Nicolson\+Pricer.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/db7/_crank_nicolson_pricer_8cpp__incl}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Detailed Description}
+Implementation of the \doxylink{class_crank_nicolson_pricer}{Crank\+Nicolson\+Pricer} class using the Crank-\/\+Nicolson method. 
+
+This file implements the \doxylink{class_crank_nicolson_pricer}{Crank\+Nicolson\+Pricer} class which derives from the \doxylink{class_i_option_pricer}{IOption\+Pricer} interface. It solves the Black-\/\+Scholes partial differential equation by discretizing time and the underlying asset price. The method supports both European and American options (with a projection step for early exercise). It uses additional configuration parameters (maturity, risk-\/free rate, discretization settings, S\+\_\+max, and calculation\+Date) provided via a \doxylink{struct_pricing_configuration}{Pricing\+Configuration} object. The effective time to maturity is adjusted by subtracting the time offset (in years) computed from the calculation\+Date using \doxylink{class_date_converter}{Date\+Converter}. 
+
+Definition in file \mbox{\hyperlink{_crank_nicolson_pricer_8cpp_source}{Crank\+Nicolson\+Pricer.\+cpp}}.
+

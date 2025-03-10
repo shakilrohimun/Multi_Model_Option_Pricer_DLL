@@ -1,0 +1,37 @@
+\doxysection{pch.\+h}
+\hypertarget{pch_8h_source}{}\label{pch_8h_source}\mbox{\hyperlink{pch_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{pch_8h_source_l00001}00001\ \textcolor{comment}{//\ pch.h\ :\ This\ is\ a\ precompiled\ header\ file.}}
+\DoxyCodeLine{\Hypertarget{pch_8h_source_l00002}00002\ \textcolor{comment}{//\ The\ files\ listed\ below\ are\ compiled\ only\ once,\ which\ improves\ build\ performance\ for\ subsequent\ builds.}}
+\DoxyCodeLine{\Hypertarget{pch_8h_source_l00003}00003\ \textcolor{comment}{//\ This\ also\ enhances\ IntelliSense\ performance,\ including\ code\ completion\ and\ various\ navigation\ features.}}
+\DoxyCodeLine{\Hypertarget{pch_8h_source_l00004}00004\ \textcolor{comment}{//\ However,\ all\ files\ listed\ here\ will\ be\ recompiled\ if\ any\ one\ of\ them\ is\ updated\ between\ builds.}}
+\DoxyCodeLine{\Hypertarget{pch_8h_source_l00005}00005\ \textcolor{comment}{//\ Do\ not\ add\ frequently\ modified\ files\ here,\ as\ that\ will\ negate\ the\ performance\ benefits.}}
+\DoxyCodeLine{\Hypertarget{pch_8h_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{pch_8h_source_l00007}00007\ \textcolor{preprocessor}{\#ifndef\ PCH\_HPP}}
+\DoxyCodeLine{\Hypertarget{pch_8h_source_l00008}00008\ \textcolor{preprocessor}{\#define\ PCH\_HPP}}
+\DoxyCodeLine{\Hypertarget{pch_8h_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{pch_8h_source_l00010}00010\ \textcolor{comment}{//\ Include\ the\ framework\ header.}}
+\DoxyCodeLine{\Hypertarget{pch_8h_source_l00011}00011\ \textcolor{comment}{//\ This\ header\ typically\ includes\ fundamental\ definitions\ and\ libraries\ required\ by\ the\ project.}}
+\DoxyCodeLine{\Hypertarget{pch_8h_source_l00012}00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{framework_8h}{framework.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{pch_8h_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{pch_8h_source_l00014}00014\ \textcolor{comment}{//\ Standard\ library\ headers\ that\ are\ frequently\ used\ throughout\ the\ project.}}
+\DoxyCodeLine{\Hypertarget{pch_8h_source_l00015}00015\ \textcolor{comment}{//\ Including\ these\ in\ the\ precompiled\ header\ speeds\ up\ compilation\ by\ compiling\ them\ only\ once.}}
+\DoxyCodeLine{\Hypertarget{pch_8h_source_l00016}00016\ \textcolor{preprocessor}{\#include\ <iostream>}\ \ \ \textcolor{comment}{//\ Provides\ input/output\ stream\ functionality.}}
+\DoxyCodeLine{\Hypertarget{pch_8h_source_l00017}00017\ \textcolor{preprocessor}{\#include\ <string>}\ \ \ \ \ \textcolor{comment}{//\ Supports\ usage\ of\ std::string\ for\ string\ manipulation.}}
+\DoxyCodeLine{\Hypertarget{pch_8h_source_l00018}00018\ \textcolor{preprocessor}{\#include\ <vector>}\ \ \ \ \ \textcolor{comment}{//\ Enables\ the\ use\ of\ the\ std::vector\ container.}}
+\DoxyCodeLine{\Hypertarget{pch_8h_source_l00019}00019\ \textcolor{preprocessor}{\#include\ <memory>}\ \ \ \ \ \textcolor{comment}{//\ Contains\ utilities\ for\ dynamic\ memory\ management\ (e.g.,\ smart\ pointers).}}
+\DoxyCodeLine{\Hypertarget{pch_8h_source_l00020}00020\ \textcolor{preprocessor}{\#include\ <chrono>}\ \ \ \ \ \textcolor{comment}{//\ Provides\ facilities\ for\ time\ manipulation\ and\ measurement.}}
+\DoxyCodeLine{\Hypertarget{pch_8h_source_l00021}00021\ \textcolor{preprocessor}{\#include\ <stdexcept>}\ \ \textcolor{comment}{//\ Includes\ standard\ exception\ types.}}
+\DoxyCodeLine{\Hypertarget{pch_8h_source_l00022}00022\ \textcolor{preprocessor}{\#include\ <cmath>}\ \ \ \ \ \ \textcolor{comment}{//\ Provides\ common\ mathematical\ functions.}}
+\DoxyCodeLine{\Hypertarget{pch_8h_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{pch_8h_source_l00024}00024\ \textcolor{comment}{//\ Common\ project\ headers\ used\ in\ option\ pricing\ modules.}}
+\DoxyCodeLine{\Hypertarget{pch_8h_source_l00025}00025\ \textcolor{comment}{//\ These\ headers\ contain\ declarations\ for\ classes\ and\ functions\ critical\ to\ the\ pricing\ application.}}
+\DoxyCodeLine{\Hypertarget{pch_8h_source_l00026}00026\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_option_8hpp}{Option.hpp}}"{}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Defines\ the\ Option\ class\ and\ associated\ structures.}}
+\DoxyCodeLine{\Hypertarget{pch_8h_source_l00027}00027\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_pricing_configuration_8hpp}{PricingConfiguration.hpp}}"{}}\ \textcolor{comment}{//\ Contains\ configuration\ parameters\ for\ pricing\ models.}}
+\DoxyCodeLine{\Hypertarget{pch_8h_source_l00028}00028\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_yield_curve_8hpp}{YieldCurve.hpp}}"{}}\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Provides\ classes\ and\ functions\ to\ manage\ yield\ curves.}}
+\DoxyCodeLine{\Hypertarget{pch_8h_source_l00029}00029\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_date_converter_8hpp}{DateConverter.hpp}}"{}}\ \ \ \ \ \ \ \ \textcolor{comment}{//\ Offers\ utility\ functions\ for\ converting\ and\ handling\ dates.}}
+\DoxyCodeLine{\Hypertarget{pch_8h_source_l00030}00030\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_interface_option_pricer_8hpp}{InterfaceOptionPricer.hpp}}"{}}\textcolor{comment}{//\ Declares\ the\ interface\ for\ option\ pricing\ engines.}}
+\DoxyCodeLine{\Hypertarget{pch_8h_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{pch_8h_source_l00032}00032\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ PCH\_HPP}}
+
+\end{DoxyCode}

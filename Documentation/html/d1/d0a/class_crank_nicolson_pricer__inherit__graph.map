@@ -1,0 +1,5 @@
+<map id="CrankNicolsonPricer" name="CrankNicolsonPricer">
+<area shape="rect" id="Node000001" title="&lt; Contains configuration parameters used for pricing models." alt="" coords="5,80,147,107"/>
+<area shape="rect" id="Node000002" href="$d9/dec/class_i_option_pricer.html" title="Interface for an option pricing engine." alt="" coords="27,5,125,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="79,48,79,80,73,80,73,48"/>
+</map>

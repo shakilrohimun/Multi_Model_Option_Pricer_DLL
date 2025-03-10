@@ -1,0 +1,508 @@
+\doxysection{Crank\+Nicolson\+Pricer Class Reference}
+\hypertarget{class_crank_nicolson_pricer}{}\label{class_crank_nicolson_pricer}\index{CrankNicolsonPricer@{CrankNicolsonPricer}}
+
+
+\texorpdfstring{$<$}{<} Contains configuration parameters used for pricing models.  
+
+
+
+
+{\ttfamily \#include $<$Crank\+Nicolson\+Pricer.\+hpp$>$}
+
+
+
+Inheritance diagram for Crank\+Nicolson\+Pricer\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{d1/d0a/class_crank_nicolson_pricer__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Crank\+Nicolson\+Pricer\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=274pt]{df/dc2/class_crank_nicolson_pricer__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{struct_greeks}{Greeks}} \mbox{\hyperlink{class_crank_nicolson_pricer_addb3858ae0f703d17a35d1ed80c6dad9}{compute\+Greeks}} (const \mbox{\hyperlink{class_option}{Option}} \&opt) const override
+\begin{DoxyCompactList}\small\item\em Computes the \doxylink{struct_greeks}{Greeks} of the option using the Crank-\/\+Nicolson method. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_crank_nicolson_pricer_a540f3cef3e3759e5ea97838a367a483f}{Crank\+Nicolson\+Pricer}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for \doxylink{class_crank_nicolson_pricer}{Crank\+Nicolson\+Pricer}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_crank_nicolson_pricer_a344ba2afe260b58d295331207ac6190b}{Crank\+Nicolson\+Pricer}} (const \mbox{\hyperlink{struct_pricing_configuration}{Pricing\+Configuration}} \&config)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_crank_nicolson_pricer}{Crank\+Nicolson\+Pricer} with a custom pricing configuration. \end{DoxyCompactList}\item 
+virtual double \mbox{\hyperlink{class_crank_nicolson_pricer_a5cdd3d767a3512887e921f9b170460d2}{price}} (const \mbox{\hyperlink{class_option}{Option}} \&opt) const override
+\begin{DoxyCompactList}\small\item\em Computes the price of an option using the Crank-\/\+Nicolson finite difference method. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_crank_nicolson_pricer_a42f952df2608342a1a5b23db1e32d11e}{\texorpdfstring{$\sim$}{\string~}\+Crank\+Nicolson\+Pricer}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for \doxylink{class_crank_nicolson_pricer}{Crank\+Nicolson\+Pricer}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_i_option_pricer}{IOption\+Pricer}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{struct_greeks}{Greeks}} \mbox{\hyperlink{class_i_option_pricer_a81a689339e44b1a224c44c84756b8d76}{compute\+Greeks}} (const \mbox{\hyperlink{class_option}{Option}} \&opt) const =0
+\begin{DoxyCompactList}\small\item\em Computes the \doxylink{struct_greeks}{Greeks} of the option. \end{DoxyCompactList}\item 
+virtual double \mbox{\hyperlink{class_i_option_pricer_a579dcf7f5ee091f88682d43766226a9b}{price}} (const \mbox{\hyperlink{class_option}{Option}} \&opt) const =0
+\begin{DoxyCompactList}\small\item\em Computes the price of the option. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_i_option_pricer_a54b4bf6ac6f8164479d1b4c7ef009469}{\texorpdfstring{$\sim$}{\string~}\+IOption\+Pricer}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_pricing_configuration}{Pricing\+Configuration}} \mbox{\hyperlink{class_crank_nicolson_pricer_a78f7627876cebf682cb55d1b27ae77b9}{config\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Holds additional configuration parameters for the Crank-\/\+Nicolson model. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\texorpdfstring{$<$}{<} Contains configuration parameters used for pricing models. 
+
+\texorpdfstring{$<$}{<} Precompiled header for faster compilation. \texorpdfstring{$<$}{<} Interface defining the contract for option pricing models.
+
+A class that implements the Crank-\/\+Nicolson finite difference pricing model.
+
+The \doxylink{class_crank_nicolson_pricer}{Crank\+Nicolson\+Pricer} class inherits from the \doxylink{class_i_option_pricer}{IOption\+Pricer} interface and provides methods to compute the price of an option as well as its \doxylink{struct_greeks}{Greeks} using the Crank-\/\+Nicolson method. This numerical method is used to approximate the solution of the Black-\/\+Scholes PDE by constructing a finite difference grid over both time and the underlying asset price.
+
+The Crank-\/\+Nicolson method is known for its stability and accuracy, making it a popular choice for numerical option pricing. By leveraging a configurable grid defined through the \doxylink{struct_pricing_configuration}{Pricing\+Configuration} object, the pricer can be tailored to a variety of market conditions and computational requirements. 
+
+Definition at line \mbox{\hyperlink{_crank_nicolson_pricer_8hpp_source_l00035}{35}} of file \mbox{\hyperlink{_crank_nicolson_pricer_8hpp_source}{Crank\+Nicolson\+Pricer.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_crank_nicolson_pricer_a540f3cef3e3759e5ea97838a367a483f}\label{class_crank_nicolson_pricer_a540f3cef3e3759e5ea97838a367a483f} 
+\index{CrankNicolsonPricer@{CrankNicolsonPricer}!CrankNicolsonPricer@{CrankNicolsonPricer}}
+\index{CrankNicolsonPricer@{CrankNicolsonPricer}!CrankNicolsonPricer@{CrankNicolsonPricer}}
+\doxysubsubsection{\texorpdfstring{CrankNicolsonPricer()}{CrankNicolsonPricer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Crank\+Nicolson\+Pricer\+::\+Crank\+Nicolson\+Pricer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor for \doxylink{class_crank_nicolson_pricer}{Crank\+Nicolson\+Pricer}. 
+
+Default constructor of \doxylink{class_crank_nicolson_pricer}{Crank\+Nicolson\+Pricer}.
+
+Constructs an instance of the \doxylink{class_crank_nicolson_pricer}{Crank\+Nicolson\+Pricer} using default configuration parameters. This allows for immediate usage with a standard set of parameters that are defined internally or via the default constructor of the \doxylink{struct_pricing_configuration}{Pricing\+Configuration} class.
+
+The default configuration ensures that the model is set up with reasonable defaults for general pricing scenarios, reducing the need for explicit parameter specification in common cases. 
+
+Definition at line \mbox{\hyperlink{_crank_nicolson_pricer_8cpp_source_l00025}{25}} of file \mbox{\hyperlink{_crank_nicolson_pricer_8cpp_source}{Crank\+Nicolson\+Pricer.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{comment}{//\ No\ explicit\ configuration\ provided;\ default\ configuration\ is\ assumed.}}
+\DoxyCodeLine{00027\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crank_nicolson_pricer_a42f952df2608342a1a5b23db1e32d11e}\label{class_crank_nicolson_pricer_a42f952df2608342a1a5b23db1e32d11e} 
+\index{CrankNicolsonPricer@{CrankNicolsonPricer}!````~CrankNicolsonPricer@{\texorpdfstring{$\sim$}{\string~}CrankNicolsonPricer}}
+\index{````~CrankNicolsonPricer@{\texorpdfstring{$\sim$}{\string~}CrankNicolsonPricer}!CrankNicolsonPricer@{CrankNicolsonPricer}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}CrankNicolsonPricer()}{\string~CrankNicolsonPricer()}}
+{\footnotesize\ttfamily Crank\+Nicolson\+Pricer\+::\texorpdfstring{$\sim$}{\string~}\+Crank\+Nicolson\+Pricer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destructor for \doxylink{class_crank_nicolson_pricer}{Crank\+Nicolson\+Pricer}. 
+
+Destructor of \doxylink{class_crank_nicolson_pricer}{Crank\+Nicolson\+Pricer}.
+
+Ensures that all resources allocated by an instance of \doxylink{class_crank_nicolson_pricer}{Crank\+Nicolson\+Pricer} are properly released upon destruction.
+
+The destructor is declared virtual to facilitate proper cleanup in scenarios where the class might be inherited. This conforms to C++ best practices for managing dynamic resources and avoiding memory leaks. 
+
+Definition at line \mbox{\hyperlink{_crank_nicolson_pricer_8cpp_source_l00032}{32}} of file \mbox{\hyperlink{_crank_nicolson_pricer_8cpp_source}{Crank\+Nicolson\+Pricer.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{comment}{//\ No\ dynamic\ cleanup\ required.}}
+\DoxyCodeLine{00034\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crank_nicolson_pricer_a344ba2afe260b58d295331207ac6190b}\label{class_crank_nicolson_pricer_a344ba2afe260b58d295331207ac6190b} 
+\index{CrankNicolsonPricer@{CrankNicolsonPricer}!CrankNicolsonPricer@{CrankNicolsonPricer}}
+\index{CrankNicolsonPricer@{CrankNicolsonPricer}!CrankNicolsonPricer@{CrankNicolsonPricer}}
+\doxysubsubsection{\texorpdfstring{CrankNicolsonPricer()}{CrankNicolsonPricer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Crank\+Nicolson\+Pricer\+::\+Crank\+Nicolson\+Pricer (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_pricing_configuration}{Pricing\+Configuration}} \&}]{config }\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{class_crank_nicolson_pricer}{Crank\+Nicolson\+Pricer} with a custom pricing configuration. 
+
+This constructor allows for the initialization of a \doxylink{class_crank_nicolson_pricer}{Crank\+Nicolson\+Pricer} object with a user-\/specified \doxylink{struct_pricing_configuration}{Pricing\+Configuration}. This configuration can include parameters such as the calculation date, option maturity, risk-\/free rate, number of time steps, spot steps, and the maximum underlying asset price (S\+\_\+max).
+
+
+\begin{DoxyParams}{Parameters}
+{\em config} & A \doxylink{struct_pricing_configuration}{Pricing\+Configuration} structure containing the custom configuration parameters for the pricing model.\\
+\hline
+\end{DoxyParams}
+Using a custom configuration enables the pricer to be adapted to different market conditions and numerical accuracy requirements. This flexibility is particularly valuable when high precision is needed or when exploring various scenario analyses.
+
+This constructor initializes the \doxylink{class_crank_nicolson_pricer}{Crank\+Nicolson\+Pricer} using the provided \doxylink{struct_pricing_configuration}{Pricing\+Configuration} object. The configuration parameters (such as calculation\+Date, maturity, risk-\/free rate, time discretization, spatial discretization, and S\+\_\+max) are stored internally and used in the pricing calculations.
+
+
+\begin{DoxyParams}{Parameters}
+{\em config} & A \doxylink{struct_pricing_configuration}{Pricing\+Configuration} object containing custom parameters. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_crank_nicolson_pricer_8cpp_source_l00045}{45}} of file \mbox{\hyperlink{_crank_nicolson_pricer_8cpp_source}{Crank\+Nicolson\+Pricer.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00046\ \ \ \ \ :\ \mbox{\hyperlink{class_crank_nicolson_pricer_a78f7627876cebf682cb55d1b27ae77b9}{config\_}}(config) }
+\DoxyCodeLine{00047\ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{comment}{//\ Configuration\ parameters\ are\ now\ stored\ in\ config\_}}
+\DoxyCodeLine{00049\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crank_nicolson_pricer_addb3858ae0f703d17a35d1ed80c6dad9}\label{class_crank_nicolson_pricer_addb3858ae0f703d17a35d1ed80c6dad9} 
+\index{CrankNicolsonPricer@{CrankNicolsonPricer}!computeGreeks@{computeGreeks}}
+\index{computeGreeks@{computeGreeks}!CrankNicolsonPricer@{CrankNicolsonPricer}}
+\doxysubsubsection{\texorpdfstring{computeGreeks()}{computeGreeks()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_greeks}{Greeks}} Crank\+Nicolson\+Pricer\+::compute\+Greeks (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_option}{Option}} \&}]{opt }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Computes the \doxylink{struct_greeks}{Greeks} of the option using the Crank-\/\+Nicolson method. 
+
+Computes the \doxylink{struct_greeks}{Greeks} of the option using finite differences applied to the Crank-\/\+Nicolson pricer.
+
+This method calculates the sensitivity measures, known as the \doxylink{struct_greeks}{Greeks} (Delta, Gamma, Vega, Theta, and Rho), by applying finite difference approximations to the numerical solution obtained via the Crank-\/\+Nicolson method.
+
+
+\begin{DoxyParams}{Parameters}
+{\em opt} & A constant reference to an \doxylink{class_option}{Option} object containing the details required for pricing. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{struct_greeks}{Greeks} structure containing the calculated sensitivity measures.
+\end{DoxyReturn}
+The calculation of the \doxylink{struct_greeks}{Greeks} involves perturbing the input parameters slightly and re-\/solving the finite difference equations. The differences in the computed option prices are then used to estimate the partial derivatives with respect to the underlying variables. These values are essential for risk management and for constructing hedging strategies.
+
+The \doxylink{struct_greeks}{Greeks} (Delta, Gamma, Vega, Theta, and Rho) are estimated by perturbing the input parameters and recalculating the option price.
+
+
+\begin{DoxyParams}{Parameters}
+{\em opt} & The option to evaluate. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{struct_greeks}{Greeks} structure containing the calculated values. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_option_pricer_a81a689339e44b1a224c44c84756b8d76}{IOption\+Pricer}}.
+
+
+
+Definition at line \mbox{\hyperlink{_crank_nicolson_pricer_8cpp_source_l00228}{228}} of file \mbox{\hyperlink{_crank_nicolson_pricer_8cpp_source}{Crank\+Nicolson\+Pricer.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00229\ \ \ \ \ \textcolor{keywordtype}{double}\ h\ =\ 0.01\ *\ opt.\mbox{\hyperlink{class_option_a41a6ff2b75b514ac305e4c51672fc036}{getUnderlying}}();}
+\DoxyCodeLine{00230\ \ \ \ \ \textcolor{keywordtype}{double}\ volStep\ =\ 0.01;}
+\DoxyCodeLine{00231\ \ \ \ \ \textcolor{keywordtype}{double}\ rStep\ =\ 0.001;}
+\DoxyCodeLine{00232\ \ \ \ \ \textcolor{keywordtype}{double}\ timeStep\ =\ 1.0\ /\ 365.0;\ \textcolor{comment}{//\ One\ day}}
+\DoxyCodeLine{00233\ }
+\DoxyCodeLine{00234\ \ \ \ \ \textcolor{keywordtype}{double}\ basePrice\ =\ \mbox{\hyperlink{class_crank_nicolson_pricer_a5cdd3d767a3512887e921f9b170460d2}{price}}(opt);}
+\DoxyCodeLine{00235\ }
+\DoxyCodeLine{00236\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Delta\ -\/-\/-\/}}
+\DoxyCodeLine{00237\ \ \ \ \ \mbox{\hyperlink{class_option}{Option}}\ opt\_up\ =\ opt;}
+\DoxyCodeLine{00238\ \ \ \ \ \mbox{\hyperlink{class_option}{Option}}\ opt\_down\ =\ opt;}
+\DoxyCodeLine{00239\ \ \ \ \ opt\_up.\mbox{\hyperlink{class_option_ab74d0a7bac479971d711486ff2643e2f}{setUnderlying}}(opt.\mbox{\hyperlink{class_option_a41a6ff2b75b514ac305e4c51672fc036}{getUnderlying}}()\ +\ h);}
+\DoxyCodeLine{00240\ \ \ \ \ opt\_down.\mbox{\hyperlink{class_option_ab74d0a7bac479971d711486ff2643e2f}{setUnderlying}}(opt.\mbox{\hyperlink{class_option_a41a6ff2b75b514ac305e4c51672fc036}{getUnderlying}}()\ -\/\ h);}
+\DoxyCodeLine{00241\ \ \ \ \ \textcolor{keywordtype}{double}\ price\_up\ =\ \mbox{\hyperlink{class_crank_nicolson_pricer_a5cdd3d767a3512887e921f9b170460d2}{price}}(opt\_up);}
+\DoxyCodeLine{00242\ \ \ \ \ \textcolor{keywordtype}{double}\ price\_down\ =\ \mbox{\hyperlink{class_crank_nicolson_pricer_a5cdd3d767a3512887e921f9b170460d2}{price}}(opt\_down);}
+\DoxyCodeLine{00243\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_afa2fbffc32c40cd7b32c909eb4dea3d7}{delta}}\ =\ (price\_up\ -\/\ price\_down)\ /\ (2\ *\ h);}
+\DoxyCodeLine{00244\ }
+\DoxyCodeLine{00245\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Gamma\ -\/-\/-\/}}
+\DoxyCodeLine{00246\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_a95751aa2ef97efecade491f32c5cde50}{gamma}}\ =\ (price\_up\ -\/\ 2\ *\ basePrice\ +\ price\_down)\ /\ (h\ *\ h);}
+\DoxyCodeLine{00247\ }
+\DoxyCodeLine{00248\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Vega\ -\/-\/-\/}}
+\DoxyCodeLine{00249\ \ \ \ \ \mbox{\hyperlink{class_option}{Option}}\ opt\_vol\_up\ =\ opt;}
+\DoxyCodeLine{00250\ \ \ \ \ \mbox{\hyperlink{class_option}{Option}}\ opt\_vol\_down\ =\ opt;}
+\DoxyCodeLine{00251\ \ \ \ \ opt\_vol\_up.\mbox{\hyperlink{class_option_a88809b5a8e576737b25448761ac4a16c}{setVolatility}}(opt.\mbox{\hyperlink{class_option_a319afe4b0bc9b559af422cc6ecb96540}{getVolatility}}()\ +\ volStep);}
+\DoxyCodeLine{00252\ \ \ \ \ opt\_vol\_down.\mbox{\hyperlink{class_option_a88809b5a8e576737b25448761ac4a16c}{setVolatility}}(opt.\mbox{\hyperlink{class_option_a319afe4b0bc9b559af422cc6ecb96540}{getVolatility}}()\ -\/\ volStep);}
+\DoxyCodeLine{00253\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_adbefd4a93bf3d8656cf6e1e089063723}{vega}}\ =\ (\mbox{\hyperlink{class_crank_nicolson_pricer_a5cdd3d767a3512887e921f9b170460d2}{price}}(opt\_vol\_up)\ -\/\ \mbox{\hyperlink{class_crank_nicolson_pricer_a5cdd3d767a3512887e921f9b170460d2}{price}}(opt\_vol\_down))\ /\ (2\ *\ volStep);}
+\DoxyCodeLine{00254\ }
+\DoxyCodeLine{00255\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Theta\ -\/-\/-\/}}
+\DoxyCodeLine{00256\ \ \ \ \ \textcolor{comment}{//\ Use\ a\ time\ step\ of\ one\ day\ (in\ years)}}
+\DoxyCodeLine{00257\ \ \ \ \ \textcolor{keywordtype}{double}\ CranktimeStep\ =\ 1.0\ /\ 365.0;}
+\DoxyCodeLine{00258\ \ \ \ \ \textcolor{comment}{//\ Create\ a\ new\ configuration\ with\ maturity\ reduced\ by\ timeStep}}
+\DoxyCodeLine{00259\ \ \ \ \ \mbox{\hyperlink{struct_pricing_configuration}{PricingConfiguration}}\ config\_T\_down\ =\ \mbox{\hyperlink{class_crank_nicolson_pricer_a78f7627876cebf682cb55d1b27ae77b9}{config\_}};}
+\DoxyCodeLine{00260\ \ \ \ \ config\_T\_down.\mbox{\hyperlink{struct_pricing_configuration_a9ae4efdabf701f28b5c15dbc54ac3a7a}{maturity}}\ =\ \mbox{\hyperlink{class_crank_nicolson_pricer_a78f7627876cebf682cb55d1b27ae77b9}{config\_}}.\mbox{\hyperlink{struct_pricing_configuration_a9ae4efdabf701f28b5c15dbc54ac3a7a}{maturity}}\ -\/\ CranktimeStep;}
+\DoxyCodeLine{00261\ \ \ \ \ \textcolor{comment}{//\ Recalculate\ price\ with\ the\ modified\ configuration}}
+\DoxyCodeLine{00262\ \ \ \ \ \mbox{\hyperlink{class_crank_nicolson_pricer}{CrankNicolsonPricer}}\ pricer\_T\_down(config\_T\_down);}
+\DoxyCodeLine{00263\ \ \ \ \ \textcolor{keywordtype}{double}\ price\_T\_down\ =\ pricer\_T\_down.price(opt);}
+\DoxyCodeLine{00264\ \ \ \ \ \textcolor{comment}{//\ Calculate\ Theta\ using\ a\ backward\ finite\ difference}}
+\DoxyCodeLine{00265\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_ae01bf602516416e5bdf198ad18c5c567}{theta}}\ =\ (price\_T\_down\ -\/\ basePrice)\ /\ (-\/CranktimeStep);}
+\DoxyCodeLine{00266\ }
+\DoxyCodeLine{00267\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Rho\ -\/-\/-\/}}
+\DoxyCodeLine{00268\ \ \ \ \ \mbox{\hyperlink{struct_pricing_configuration}{PricingConfiguration}}\ config\_r\_up\ =\ \mbox{\hyperlink{class_crank_nicolson_pricer_a78f7627876cebf682cb55d1b27ae77b9}{config\_}};}
+\DoxyCodeLine{00269\ \ \ \ \ \mbox{\hyperlink{struct_pricing_configuration}{PricingConfiguration}}\ config\_r\_down\ =\ \mbox{\hyperlink{class_crank_nicolson_pricer_a78f7627876cebf682cb55d1b27ae77b9}{config\_}};}
+\DoxyCodeLine{00270\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_crank_nicolson_pricer_a78f7627876cebf682cb55d1b27ae77b9}{config\_}}.\mbox{\hyperlink{struct_pricing_configuration_a8564f465b2656557af9eba82722e5e19}{yieldCurve}}.\mbox{\hyperlink{class_yield_curve_ab32badc44c840501ac012466672654b7}{getData}}().empty())\ \{}
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_yield_curve}{YieldCurve}}\ yc\_up;}
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_yield_curve}{YieldCurve}}\ yc\_down;}
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ pt\ :\ \mbox{\hyperlink{class_crank_nicolson_pricer_a78f7627876cebf682cb55d1b27ae77b9}{config\_}}.yieldCurve.getData())\ \{}
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ \ \ \ \ yc\_up.\mbox{\hyperlink{class_yield_curve_aea0767dec486d82d23cd8fbf3d4ba676}{addRatePoint}}(pt.maturity,\ pt.rate\ +\ rStep);}
+\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ \ \ \ \ yc\_down.\mbox{\hyperlink{class_yield_curve_aea0767dec486d82d23cd8fbf3d4ba676}{addRatePoint}}(pt.maturity,\ pt.rate\ -\/\ rStep);}
+\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00277\ \ \ \ \ \ \ \ \ config\_r\_up.\mbox{\hyperlink{struct_pricing_configuration_a8564f465b2656557af9eba82722e5e19}{yieldCurve}}\ =\ yc\_up;}
+\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ config\_r\_down.\mbox{\hyperlink{struct_pricing_configuration_a8564f465b2656557af9eba82722e5e19}{yieldCurve}}\ =\ yc\_down;}
+\DoxyCodeLine{00279\ \ \ \ \ \}}
+\DoxyCodeLine{00280\ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ config\_r\_up.\mbox{\hyperlink{struct_pricing_configuration_a77ee8c896b9a6ddd04437a7489b21c91}{riskFreeRate}}\ =\ \mbox{\hyperlink{class_crank_nicolson_pricer_a78f7627876cebf682cb55d1b27ae77b9}{config\_}}.\mbox{\hyperlink{struct_pricing_configuration_a77ee8c896b9a6ddd04437a7489b21c91}{riskFreeRate}}\ +\ rStep;}
+\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ config\_r\_down.\mbox{\hyperlink{struct_pricing_configuration_a77ee8c896b9a6ddd04437a7489b21c91}{riskFreeRate}}\ =\ \mbox{\hyperlink{class_crank_nicolson_pricer_a78f7627876cebf682cb55d1b27ae77b9}{config\_}}.\mbox{\hyperlink{struct_pricing_configuration_a77ee8c896b9a6ddd04437a7489b21c91}{riskFreeRate}}\ -\/\ rStep;}
+\DoxyCodeLine{00283\ \ \ \ \ \}}
+\DoxyCodeLine{00284\ \ \ \ \ \mbox{\hyperlink{class_crank_nicolson_pricer}{CrankNicolsonPricer}}\ pricer\_r\_up(config\_r\_up);}
+\DoxyCodeLine{00285\ \ \ \ \ \mbox{\hyperlink{class_crank_nicolson_pricer}{CrankNicolsonPricer}}\ pricer\_r\_down(config\_r\_down);}
+\DoxyCodeLine{00286\ \ \ \ \ \textcolor{keywordtype}{double}\ price\_r\_up\ =\ pricer\_r\_up.price(opt);}
+\DoxyCodeLine{00287\ \ \ \ \ \textcolor{keywordtype}{double}\ price\_r\_down\ =\ pricer\_r\_down.price(opt);}
+\DoxyCodeLine{00288\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_a6e5bcb5da44ba87aeb933c99a674c6af}{rho}}\ =\ (price\_r\_up\ -\/\ price\_r\_down)\ /\ (2\ *\ rStep);}
+\DoxyCodeLine{00289\ }
+\DoxyCodeLine{00290\ \ \ \ \ \mbox{\hyperlink{struct_greeks}{Greeks}}\ greeks;}
+\DoxyCodeLine{00291\ \ \ \ \ greeks.\mbox{\hyperlink{struct_greeks_a9d16140323f20876507a2d5453696b1a}{delta}}\ =\ \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_afa2fbffc32c40cd7b32c909eb4dea3d7}{delta}};}
+\DoxyCodeLine{00292\ \ \ \ \ greeks.\mbox{\hyperlink{struct_greeks_afcef8fafe28ec46b041eda551aefac76}{gamma}}\ =\ \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_a95751aa2ef97efecade491f32c5cde50}{gamma}};}
+\DoxyCodeLine{00293\ \ \ \ \ greeks.\mbox{\hyperlink{struct_greeks_a87709cf35763c458f36a6935f7d7ce25}{vega}}\ =\ \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_adbefd4a93bf3d8656cf6e1e089063723}{vega}};}
+\DoxyCodeLine{00294\ \ \ \ \ greeks.\mbox{\hyperlink{struct_greeks_a82fcb8b4f18e8afc91ab23df69ae6f17}{theta}}\ =\ \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_ae01bf602516416e5bdf198ad18c5c567}{theta}};}
+\DoxyCodeLine{00295\ \ \ \ \ greeks.\mbox{\hyperlink{struct_greeks_afaa454ff183cfa3d58902d49e4f363db}{rho}}\ =\ \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_a6e5bcb5da44ba87aeb933c99a674c6af}{rho}};}
+\DoxyCodeLine{00296\ \ \ \ \ \textcolor{keywordflow}{return}\ greeks;}
+\DoxyCodeLine{00297\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crank_nicolson_pricer_a5cdd3d767a3512887e921f9b170460d2}\label{class_crank_nicolson_pricer_a5cdd3d767a3512887e921f9b170460d2} 
+\index{CrankNicolsonPricer@{CrankNicolsonPricer}!price@{price}}
+\index{price@{price}!CrankNicolsonPricer@{CrankNicolsonPricer}}
+\doxysubsubsection{\texorpdfstring{price()}{price()}}
+{\footnotesize\ttfamily double Crank\+Nicolson\+Pricer\+::price (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_option}{Option}} \&}]{opt }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Computes the price of an option using the Crank-\/\+Nicolson finite difference method. 
+
+Computes the option price using the Crank-\/\+Nicolson method.
+
+This method calculates the theoretical price of an option by discretizing the time to maturity and the underlying asset price into a grid and then solving the Black-\/\+Scholes PDE numerically using the Crank-\/\+Nicolson scheme.
+
+
+\begin{DoxyParams}{Parameters}
+{\em opt} & A constant reference to an \doxylink{class_option}{Option} object that contains all necessary parameters (such as strike price, underlying price, volatility, dividend yield, and maturity) required for pricing. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A double representing the computed option price.
+\end{DoxyReturn}
+The Crank-\/\+Nicolson method applies an implicit finite difference technique that averages the explicit and implicit discretizations, thereby enhancing numerical stability and accuracy. This is particularly useful for handling the boundary conditions and ensuring convergence of the solution.
+
+This method solves the Black-\/\+Scholes PDE by discretizing time and the underlying asset price. It uses configuration parameters for maturity, risk-\/free rate, and discretization. If a calculation\+Date is provided, the effective time to maturity is computed as\+:
+
+T\+\_\+effective = T -\/ offset,
+
+where offset is the number of years between config\+\_\+.\+calculation\+Date and today.
+
+Moreover, at each time step the local risk-\/free rate is determined by interpolating the yield curve. If the yield curve is empty, the default risk-\/free rate from config\+\_\+ is used.
+
+
+\begin{DoxyParams}{Parameters}
+{\em opt} & The option to be priced. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The computed option price. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_option_pricer_a579dcf7f5ee091f88682d43766226a9b}{IOption\+Pricer}}.
+
+
+
+Definition at line \mbox{\hyperlink{_crank_nicolson_pricer_8cpp_source_l00068}{68}} of file \mbox{\hyperlink{_crank_nicolson_pricer_8cpp_source}{Crank\+Nicolson\+Pricer.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{comment}{//\ Option\ parameters}}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{double}\ S0\ =\ opt.\mbox{\hyperlink{class_option_a41a6ff2b75b514ac305e4c51672fc036}{getUnderlying}}();\ \ \ \ \textcolor{comment}{//\ Underlying\ price}}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_a74b45da7676e23dd8ec974cfc04c0137}{K}}\ =\ opt.\mbox{\hyperlink{class_option_ab450179f0902408f40cfa4794b1eb3a8}{getStrike}}();\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Strike\ price}}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_acc82fd456cac0384d2075ece3102201a}{sigma}}\ =\ opt.\mbox{\hyperlink{class_option_a319afe4b0bc9b559af422cc6ecb96540}{getVolatility}}();\ \textcolor{comment}{//\ Volatility}}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_ae1370efc3e7cbcccb16c9f9725d95188}{q}}\ =\ opt.\mbox{\hyperlink{class_option_a263779c6777253ce6158266076593733}{getDividend}}();\ \ \ \ \ \ \ \textcolor{comment}{//\ Continuous\ dividend\ yield}}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{comment}{//\ Retrieve\ maturity\ and\ default\ risk-\/free\ rate\ from\ configuration.}}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_a9e64a35af6ea2c4e18a21ae6ab8f4b4a}{T}}\ =\ \mbox{\hyperlink{class_crank_nicolson_pricer_a78f7627876cebf682cb55d1b27ae77b9}{config\_}}.\mbox{\hyperlink{struct_pricing_configuration_a9ae4efdabf701f28b5c15dbc54ac3a7a}{maturity}};}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{double}\ r\_default\ =\ \mbox{\hyperlink{class_crank_nicolson_pricer_a78f7627876cebf682cb55d1b27ae77b9}{config\_}}.\mbox{\hyperlink{struct_pricing_configuration_a77ee8c896b9a6ddd04437a7489b21c91}{riskFreeRate}};}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{comment}{//\ Adjust\ effective\ time\ to\ maturity\ using\ calculationDate\ if\ provided.}}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{double}\ T\_effective\ =\ \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_a9e64a35af6ea2c4e18a21ae6ab8f4b4a}{T}};}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_crank_nicolson_pricer_a78f7627876cebf682cb55d1b27ae77b9}{config\_}}.\mbox{\hyperlink{struct_pricing_configuration_a86654268cc7202dec16251f02873a629}{calculationDate}}.empty())\ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ calcDate\ =\ \mbox{\hyperlink{class_date_converter_a4e6942fe4c9ec505d14223fe86c45c6e}{DateConverter::parseDate}}(\mbox{\hyperlink{class_crank_nicolson_pricer_a78f7627876cebf682cb55d1b27ae77b9}{config\_}}.\mbox{\hyperlink{struct_pricing_configuration_a86654268cc7202dec16251f02873a629}{calculationDate}});}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ today\ =\ std::chrono::system\_clock::now();}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ offset\ =\ \mbox{\hyperlink{class_date_converter_a7b86ecd9e814d45c359e489c02b9f17a}{DateConverter::yearsBetween}}(calcDate,\ today);}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ T\_effective\ =\ \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_a9e64a35af6ea2c4e18a21ae6ab8f4b4a}{T}}\ -\/\ offset;}
+\DoxyCodeLine{00086\ \ \ \ \ \}}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{comment}{//\ Retrieve\ discretization\ parameters.}}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ M\ =\ \mbox{\hyperlink{class_crank_nicolson_pricer_a78f7627876cebf682cb55d1b27ae77b9}{config\_}}.\mbox{\hyperlink{struct_pricing_configuration_a3b7221633527d9b1d758f2a5ab7eaf29}{crankSpotSteps}};\ \ \textcolor{comment}{//\ Number\ of\ spatial\ steps}}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ N\ =\ \mbox{\hyperlink{class_crank_nicolson_pricer_a78f7627876cebf682cb55d1b27ae77b9}{config\_}}.\mbox{\hyperlink{struct_pricing_configuration_a19af78dfee60063e83346cb99710dcf7}{crankTimeSteps}};\ \ \ \ \textcolor{comment}{//\ Number\ of\ time\ steps}}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{double}\ Smax\ =\ (\mbox{\hyperlink{class_crank_nicolson_pricer_a78f7627876cebf682cb55d1b27ae77b9}{config\_}}.\mbox{\hyperlink{struct_pricing_configuration_a0252e37ed36dce2e03317c5715081a9d}{S\_max}}\ >\ 0.0)\ ?\ \mbox{\hyperlink{class_crank_nicolson_pricer_a78f7627876cebf682cb55d1b27ae77b9}{config\_}}.\mbox{\hyperlink{struct_pricing_configuration_a0252e37ed36dce2e03317c5715081a9d}{S\_max}}\ :\ std::max(3.0\ *\ \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_a74b45da7676e23dd8ec974cfc04c0137}{K}},\ 3.0\ *\ S0);}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordtype}{double}\ dS\ =\ Smax\ /\ M;}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{double}\ dt\ =\ T\_effective\ /\ N;\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Use\ effective\ time\ here}}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{comment}{//\ Build\ spatial\ grid.}}
+\DoxyCodeLine{00096\ \ \ \ \ std::vector<double>\ S(M\ +\ 1);}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <=\ M;\ ++j)\ \{}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ S[j]\ =\ j\ *\ dS;}
+\DoxyCodeLine{00099\ \ \ \ \ \}}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{comment}{//\ Terminal\ condition:\ payoff\ at\ maturity.}}
+\DoxyCodeLine{00102\ \ \ \ \ std::vector<double>\ V(M\ +\ 1,\ 0.0);}
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordflow}{if}\ (opt.\mbox{\hyperlink{class_option_a4a5d06180aa0e449d49a836906383463}{getOptionType}}()\ ==\ \mbox{\hyperlink{class_option_ad3a2defb450b67b3d8d4c0d06b475b3bac3755e61202abd74da5885d2e9c9160e}{Option::OptionType::Call}})\ \{}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <=\ M;\ ++j)\ \{}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ V[j]\ =\ std::max(S[j]\ -\/\ \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_a74b45da7676e23dd8ec974cfc04c0137}{K}},\ 0.0);}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00107\ \ \ \ \ \}}
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordflow}{else}\ \{\ \textcolor{comment}{//\ Put\ option}}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <=\ M;\ ++j)\ \{}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ V[j]\ =\ std::max(\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_a74b45da7676e23dd8ec974cfc04c0137}{K}}\ -\/\ S[j],\ 0.0);}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00112\ \ \ \ \ \}}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{comment}{//\ Temporary\ vector\ for\ current\ time\ step.}}
+\DoxyCodeLine{00115\ \ \ \ \ std::vector<double>\ newV(M\ +\ 1,\ 0.0);}
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{comment}{//\ Vectors\ for\ the\ tridiagonal\ system.}}
+\DoxyCodeLine{00117\ \ \ \ \ std::vector<double>\ a(M\ -\/\ 1,\ 0.0);\ \textcolor{comment}{//\ Coefficient\ for\ V\_\{j-\/1\}\string^\{n+1\}}}
+\DoxyCodeLine{00118\ \ \ \ \ std::vector<double>\ b(M\ -\/\ 1,\ 0.0);\ \textcolor{comment}{//\ Coefficient\ for\ V\_\{j\}\string^\{n+1\}}}
+\DoxyCodeLine{00119\ \ \ \ \ std::vector<double>\ c(M\ -\/\ 1,\ 0.0);\ \textcolor{comment}{//\ Coefficient\ for\ V\_\{j+1\}\string^\{n+1\}}}
+\DoxyCodeLine{00120\ \ \ \ \ std::vector<double>\ d\_vec(M\ -\/\ 1,\ 0.0);\ \textcolor{comment}{//\ Right-\/hand\ side}}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{comment}{//\ Backward\ induction\ loop\ (n\ from\ N-\/1\ to\ 0)}}
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ n\ =\ N\ -\/\ 1;\ n\ >=\ 0;\ -\/-\/n)\ \{}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ t\ =\ n\ *\ dt;}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Compute\ normalized\ time\ (for\ yield\ curve\ interpolation).}}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Here,\ we\ define\ normTime\ such\ that\ normTime\ =\ 1\ at\ t\ =\ 0\ (start)\ and\ 0\ at\ t\ =\ T\_effective\ (maturity)}}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ normTime\ =\ (T\_effective\ -\/\ t)\ /\ T\_effective;}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Obtain\ local\ risk-\/free\ rate\ from\ yield\ curve\ (if\ available);\ otherwise,\ use\ default.}}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ r\_local\ =\ (!\mbox{\hyperlink{class_crank_nicolson_pricer_a78f7627876cebf682cb55d1b27ae77b9}{config\_}}.\mbox{\hyperlink{struct_pricing_configuration_a8564f465b2656557af9eba82722e5e19}{yieldCurve}}.\mbox{\hyperlink{class_yield_curve_ab32badc44c840501ac012466672654b7}{getData}}().empty())\ ?\ \mbox{\hyperlink{class_crank_nicolson_pricer_a78f7627876cebf682cb55d1b27ae77b9}{config\_}}.\mbox{\hyperlink{struct_pricing_configuration_a8564f465b2656557af9eba82722e5e19}{yieldCurve}}.\mbox{\hyperlink{class_yield_curve_aa3257efcdbad0d984764fd63a8563899}{getRate}}(normTime)\ :\ r\_default;}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Boundary\ conditions\ at\ time\ t.}}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (opt.\mbox{\hyperlink{class_option_a4a5d06180aa0e449d49a836906383463}{getOptionType}}()\ ==\ \mbox{\hyperlink{class_option_ad3a2defb450b67b3d8d4c0d06b475b3bac3755e61202abd74da5885d2e9c9160e}{Option::OptionType::Call}})\ \{}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ newV[0]\ =\ 0.0;}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ newV[M]\ =\ Smax\ -\/\ \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_a74b45da7676e23dd8ec974cfc04c0137}{K}}\ *\ std::exp(-\/r\_local\ *\ (T\_effective\ -\/\ t));}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ newV[0]\ =\ \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_a74b45da7676e23dd8ec974cfc04c0137}{K}}\ *\ std::exp(-\/r\_local\ *\ (T\_effective\ -\/\ t));}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ newV[M]\ =\ 0.0;}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Form\ the\ tridiagonal\ system\ for\ interior\ nodes\ j\ =\ 1\ to\ M-\/1.}}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 1;\ j\ <\ M;\ ++j)\ \{}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ S\_j\ =\ S[j];}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Use\ local\ risk-\/free\ rate\ in\ coefficients.}}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ A\ =\ 0.5\ *\ dt\ *\ (0.5\ *\ \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_acc82fd456cac0384d2075ece3102201a}{sigma}}\ *\ \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_acc82fd456cac0384d2075ece3102201a}{sigma}}\ *\ S\_j\ *\ S\_j\ /\ (dS\ *\ dS)\ -\/\ (r\_local\ -\/\ \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_ae1370efc3e7cbcccb16c9f9725d95188}{q}})\ *\ S\_j\ /\ (2\ *\ dS));}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ B\ =\ 1.0\ +\ 0.5\ *\ dt\ *\ (\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_acc82fd456cac0384d2075ece3102201a}{sigma}}\ *\ \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_acc82fd456cac0384d2075ece3102201a}{sigma}}\ *\ S\_j\ *\ S\_j\ /\ (dS\ *\ dS)\ +\ r\_local);}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ C\ =\ 0.5\ *\ dt\ *\ (0.5\ *\ \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_acc82fd456cac0384d2075ece3102201a}{sigma}}\ *\ \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_acc82fd456cac0384d2075ece3102201a}{sigma}}\ *\ S\_j\ *\ S\_j\ /\ (dS\ *\ dS)\ +\ (r\_local\ -\/\ \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_ae1370efc3e7cbcccb16c9f9725d95188}{q}})\ *\ S\_j\ /\ (2\ *\ dS));}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Explicit\ part\ coefficients.}}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ D\_coef\ =\ A;}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ E\_coef\ =\ 1.0\ -\/\ 0.5\ *\ dt\ *\ (\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_acc82fd456cac0384d2075ece3102201a}{sigma}}\ *\ \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_acc82fd456cac0384d2075ece3102201a}{sigma}}\ *\ S\_j\ *\ S\_j\ /\ (dS\ *\ dS)\ +\ r\_local);}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ F\ =\ C;}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ a[j\ -\/\ 1]\ =\ -\/A;}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ b[j\ -\/\ 1]\ =\ B;}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ c[j\ -\/\ 1]\ =\ -\/C;}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ d\_vec[j\ -\/\ 1]\ =\ D\_coef\ *\ V[j\ -\/\ 1]\ +\ E\_coef\ *\ V[j]\ +\ F\ *\ V[j\ +\ 1];}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Adjust\ right-\/hand\ side\ for\ boundary\ conditions.}}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ d\_vec[0]\ -\/=\ (-\/a[0])\ *\ newV[0];}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ d\_vec[M\ -\/\ 2]\ -\/=\ (-\/c[M\ -\/\ 2])\ *\ newV[M];}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Solve\ the\ tridiagonal\ system\ using\ the\ Thomas\ algorithm.}}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ std::vector<double>\ c\_prime(M\ -\/\ 1,\ 0.0);}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ std::vector<double>\ d\_prime(M\ -\/\ 1,\ 0.0);}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ c\_prime[0]\ =\ c[0]\ /\ b[0];}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ d\_prime[0]\ =\ d\_vec[0]\ /\ b[0];}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 1;\ j\ <\ M\ -\/\ 1;\ ++j)\ \{}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ m\ =\ b[j]\ -\/\ a[j]\ *\ c\_prime[j\ -\/\ 1];}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ c\_prime[j]\ =\ c[j]\ /\ m;}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ d\_prime[j]\ =\ (d\_vec[j]\ -\/\ a[j]\ *\ d\_prime[j\ -\/\ 1])\ /\ m;}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ newV[M\ -\/\ 1]\ =\ d\_prime[M\ -\/\ 2];}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ M\ -\/\ 2;\ j\ >=\ 1;\ -\/-\/j)\ \{}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \ \ \ \ newV[j]\ =\ d\_prime[j\ -\/\ 1]\ -\/\ c\_prime[j\ -\/\ 1]\ *\ newV[j\ +\ 1];}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00181\ }
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Update\ V\ for\ the\ next\ time\ step.}}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <=\ M;\ ++j)\ \{}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \ \ \ \ V[j]\ =\ newV[j];}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00186\ }
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Projection\ step\ for\ American\ options:\ update\ value\ with\ intrinsic\ payoff.}}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (opt.\mbox{\hyperlink{class_option_aa0359256d21a97f5a280f60e0b088ad3}{getOptionStyle}}()\ ==\ \mbox{\hyperlink{class_option_a9f88b2cb28c4d271515fe52d6332ab9fac6c6f067a3ead9ce67a1c67a790fa26b}{Option::OptionStyle::American}})\ \{}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <=\ M;\ ++j)\ \{}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ payoff\ =\ 0.0;}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (opt.\mbox{\hyperlink{class_option_a4a5d06180aa0e449d49a836906383463}{getOptionType}}()\ ==\ \mbox{\hyperlink{class_option_ad3a2defb450b67b3d8d4c0d06b475b3bac3755e61202abd74da5885d2e9c9160e}{Option::OptionType::Call}})\ \{}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ payoff\ =\ std::max(S[j]\ -\/\ \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_a74b45da7676e23dd8ec974cfc04c0137}{K}},\ 0.0);}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ payoff\ =\ std::max(\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_a74b45da7676e23dd8ec974cfc04c0137}{K}}\ -\/\ S[j],\ 0.0);}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ V[j]\ =\ std::max(V[j],\ payoff);}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00200\ \ \ \ \ \}}
+\DoxyCodeLine{00201\ }
+\DoxyCodeLine{00202\ \ \ \ \ \textcolor{comment}{//\ Linear\ interpolation\ to\ obtain\ the\ option\ price\ at\ S0.}}
+\DoxyCodeLine{00203\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_crank_nicolson_pricer_a5cdd3d767a3512887e921f9b170460d2}{price}}\ =\ 0.0;}
+\DoxyCodeLine{00204\ \ \ \ \ \textcolor{keywordflow}{if}\ (S0\ <=\ 0)\ \{}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_crank_nicolson_pricer_a5cdd3d767a3512887e921f9b170460d2}{price}}\ =\ V[0];}
+\DoxyCodeLine{00206\ \ \ \ \ \}}
+\DoxyCodeLine{00207\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (S0\ >=\ Smax)\ \{}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_crank_nicolson_pricer_a5cdd3d767a3512887e921f9b170460d2}{price}}\ =\ V[M];}
+\DoxyCodeLine{00209\ \ \ \ \ \}}
+\DoxyCodeLine{00210\ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ j\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(S0\ /\ dS);}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ weight\ =\ (S0\ -\/\ S[j])\ /\ dS;}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_crank_nicolson_pricer_a5cdd3d767a3512887e921f9b170460d2}{price}}\ =\ V[j]\ *\ (1.0\ -\/\ weight)\ +\ V[j\ +\ 1]\ *\ weight;}
+\DoxyCodeLine{00214\ \ \ \ \ \}}
+\DoxyCodeLine{00215\ }
+\DoxyCodeLine{00216\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_crank_nicolson_pricer_a5cdd3d767a3512887e921f9b170460d2}{price}};}
+\DoxyCodeLine{00217\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_crank_nicolson_pricer_a78f7627876cebf682cb55d1b27ae77b9}\label{class_crank_nicolson_pricer_a78f7627876cebf682cb55d1b27ae77b9} 
+\index{CrankNicolsonPricer@{CrankNicolsonPricer}!config\_@{config\_}}
+\index{config\_@{config\_}!CrankNicolsonPricer@{CrankNicolsonPricer}}
+\doxysubsubsection{\texorpdfstring{config\_}{config\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_pricing_configuration}{Pricing\+Configuration}} Crank\+Nicolson\+Pricer\+::config\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Holds additional configuration parameters for the Crank-\/\+Nicolson model. 
+
+This private member variable stores a \doxylink{struct_pricing_configuration}{Pricing\+Configuration} object that encapsulates the key parameters affecting the numerical solution of the Black-\/\+Scholes PDE. These parameters include the calculation date, option maturity, risk-\/free rate, and the grid settings such as time steps, spot steps, and S\+\_\+max.
+
+The configuration parameters directly influence the resolution and accuracy of the finite difference grid, and therefore the resulting option pricing and \doxylink{struct_greeks}{Greeks} calculations. Adjusting these parameters allows for a trade-\/off between computational cost and precision. 
+
+Definition at line \mbox{\hyperlink{_crank_nicolson_pricer_8hpp_source_l00116}{116}} of file \mbox{\hyperlink{_crank_nicolson_pricer_8hpp_source}{Crank\+Nicolson\+Pricer.\+hpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_crank_nicolson_pricer_8hpp}{Crank\+Nicolson\+Pricer.\+hpp}}\item 
+\mbox{\hyperlink{_crank_nicolson_pricer_8cpp}{Crank\+Nicolson\+Pricer.\+cpp}}\end{DoxyCompactItemize}

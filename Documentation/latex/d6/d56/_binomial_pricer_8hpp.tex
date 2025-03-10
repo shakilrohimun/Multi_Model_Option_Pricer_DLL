@@ -1,0 +1,50 @@
+\doxysection{Binomial\+Pricer.\+hpp File Reference}
+\hypertarget{_binomial_pricer_8hpp}{}\label{_binomial_pricer_8hpp}\index{BinomialPricer.hpp@{BinomialPricer.hpp}}
+
+
+Declaration and detailed documentation of the \doxylink{class_binomial_pricer}{Binomial\+Pricer} class.  
+
+
+{\ttfamily \#include \"{}pch.\+h\"{}}\newline
+{\ttfamily \#include \"{}Interface\+Option\+Pricer.\+hpp\"{}}\newline
+{\ttfamily \#include \"{}Pricing\+Configuration.\+hpp\"{}}\newline
+Include dependency graph for Binomial\+Pricer.\+hpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d00/_binomial_pricer_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d7a/_binomial_pricer_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_binomial_pricer}{Binomial\+Pricer}}
+\begin{DoxyCompactList}\small\item\em A concrete implementation of the \doxylink{class_i_option_pricer}{IOption\+Pricer} interface using the binomial CRR model. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Declaration and detailed documentation of the \doxylink{class_binomial_pricer}{Binomial\+Pricer} class. 
+
+This file defines the \doxylink{class_binomial_pricer}{Binomial\+Pricer} class, which implements the option pricing model using the binomial Cox-\/\+Ross-\/\+Rubinstein (CRR) method. The class is designed to price both European and American style options.
+
+The pricing model leverages a binomial tree approach that discretizes the underlying asset\textquotesingle{}s price evolution over a finite number of time steps. This method provides an efficient and flexible framework for option pricing, particularly when dealing with early exercise features (in the case of American options) or when a high degree of accuracy is required.
+
+Additional configuration parameters can be supplied via a \doxylink{struct_pricing_configuration}{Pricing\+Configuration} structure. These parameters include, but are not limited to\+:
+\begin{DoxyItemize}
+\item Calculation date\+: If not explicitly provided, the current date is assumed.
+\item Number of steps (N)\+: Determines the granularity of the binomial tree; more steps generally yield a more accurate pricing result at the cost of additional computational effort.
+\end{DoxyItemize}
+
+The overall design emphasizes flexibility and separation of concerns by isolating configuration details from the core pricing logic. This makes it easier to adjust model parameters and to extend the class functionality if needed.
+
+Detailed documentation for each method is provided below, ensuring that users of this class have a comprehensive understanding of its functionality and usage. 
+
+Definition in file \mbox{\hyperlink{_binomial_pricer_8hpp_source}{Binomial\+Pricer.\+hpp}}.
+

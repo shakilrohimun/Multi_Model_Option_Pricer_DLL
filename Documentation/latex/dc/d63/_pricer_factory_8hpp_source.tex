@@ -1,0 +1,29 @@
+\doxysection{Pricer\+Factory.\+hpp}
+\hypertarget{_pricer_factory_8hpp_source}{}\label{_pricer_factory_8hpp_source}\mbox{\hyperlink{_pricer_factory_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_pricer_factory_8hpp_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ PRICERFACTORY\_HPP}}
+\DoxyCodeLine{\Hypertarget{_pricer_factory_8hpp_source_l00002}00002\ \textcolor{preprocessor}{\#define\ PRICERFACTORY\_HPP}}
+\DoxyCodeLine{\Hypertarget{_pricer_factory_8hpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_pricer_factory_8hpp_source_l00014}00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{pch_8h}{pch.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_pricer_factory_8hpp_source_l00015}00015\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{\Hypertarget{_pricer_factory_8hpp_source_l00016}00016\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{_pricer_factory_8hpp_source_l00017}00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_interface_option_pricer_8hpp}{InterfaceOptionPricer.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{_pricer_factory_8hpp_source_l00018}00018\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_pricing_configuration_8hpp}{PricingConfiguration.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{_pricer_factory_8hpp_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{_pricer_factory_8hpp_source_l00026}\mbox{\hyperlink{_pricer_factory_8hpp_a6e3c4698785c67dc4caf497092b45250}{00026}}\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{_pricer_factory_8hpp_a6e3c4698785c67dc4caf497092b45250}{PricerType}}\ \{}
+\DoxyCodeLine{\Hypertarget{_pricer_factory_8hpp_source_l00027}00027\ \ \ \ \ \mbox{\hyperlink{_pricer_factory_8hpp_a6e3c4698785c67dc4caf497092b45250ac40bd32b046f27c90a6a0d2aebc48d8c}{BlackScholes}},\ }
+\DoxyCodeLine{\Hypertarget{_pricer_factory_8hpp_source_l00028}00028\ \ \ \ \ \mbox{\hyperlink{_pricer_factory_8hpp_a6e3c4698785c67dc4caf497092b45250af0dc57106e362cb815789ed45ed989ad}{Binomial}},\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_pricer_factory_8hpp_source_l00029}00029\ \ \ \ \ \mbox{\hyperlink{_pricer_factory_8hpp_a6e3c4698785c67dc4caf497092b45250a8c12763e7ca8639982cbb121e19a52a1}{CrankNicolson}},}
+\DoxyCodeLine{\Hypertarget{_pricer_factory_8hpp_source_l00030}00030\ \ \ \ \ \mbox{\hyperlink{_pricer_factory_8hpp_a6e3c4698785c67dc4caf497092b45250aedd652c19d7dbbfb3d242aa14b2fec8c}{MonteCarlo}}\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_pricer_factory_8hpp_source_l00031}00031\ \};}
+\DoxyCodeLine{\Hypertarget{_pricer_factory_8hpp_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{_pricer_factory_8hpp_source_l00040}\mbox{\hyperlink{class_pricer_factory}{00040}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_pricer_factory}{PricerFactory}}\ \{}
+\DoxyCodeLine{\Hypertarget{_pricer_factory_8hpp_source_l00041}00041\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_pricer_factory_8hpp_source_l00053}00053\ \ \ \ \ \textcolor{keyword}{static}\ std::unique\_ptr<IOptionPricer>\ \mbox{\hyperlink{class_pricer_factory_a5a3f668dea3141b12a71e6812787b570}{createPricer}}(\mbox{\hyperlink{_pricer_factory_8hpp_a6e3c4698785c67dc4caf497092b45250}{PricerType}}\ type);}
+\DoxyCodeLine{\Hypertarget{_pricer_factory_8hpp_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{_pricer_factory_8hpp_source_l00068}00068\ \ \ \ \ \textcolor{keyword}{static}\ std::unique\_ptr<IOptionPricer>\ \mbox{\hyperlink{class_pricer_factory_a5a3f668dea3141b12a71e6812787b570}{createPricer}}(\mbox{\hyperlink{_pricer_factory_8hpp_a6e3c4698785c67dc4caf497092b45250}{PricerType}}\ type,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_pricing_configuration}{PricingConfiguration}}\&\ config);}
+\DoxyCodeLine{\Hypertarget{_pricer_factory_8hpp_source_l00069}00069\ \};}
+\DoxyCodeLine{\Hypertarget{_pricer_factory_8hpp_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{_pricer_factory_8hpp_source_l00071}00071\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ PRICERFACTORY\_HPP}}
+
+\end{DoxyCode}

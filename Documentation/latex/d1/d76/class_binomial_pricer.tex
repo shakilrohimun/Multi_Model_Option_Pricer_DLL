@@ -1,0 +1,538 @@
+\doxysection{Binomial\+Pricer Class Reference}
+\hypertarget{class_binomial_pricer}{}\label{class_binomial_pricer}\index{BinomialPricer@{BinomialPricer}}
+
+
+A concrete implementation of the \doxylink{class_i_option_pricer}{IOption\+Pricer} interface using the binomial CRR model.  
+
+
+
+
+{\ttfamily \#include $<$Binomial\+Pricer.\+hpp$>$}
+
+
+
+Inheritance diagram for Binomial\+Pricer\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=159pt]{d9/d94/class_binomial_pricer__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Binomial\+Pricer\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=274pt]{dd/def/class_binomial_pricer__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_binomial_pricer_a84a007046a4fa06c1e354cf6c84e56f4}{Binomial\+Pricer}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_binomial_pricer_a5b4596049ba5f1648c33ba231957ccfa}{Binomial\+Pricer}} (const \mbox{\hyperlink{struct_pricing_configuration}{Pricing\+Configuration}} \&config)
+\begin{DoxyCompactList}\small\item\em Constructor with pricing configuration. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{struct_greeks}{Greeks}} \mbox{\hyperlink{class_binomial_pricer_a13f7c3ea8814b0d0a070341f3e945180}{compute\+Greeks}} (const \mbox{\hyperlink{class_option}{Option}} \&opt) const override
+\begin{DoxyCompactList}\small\item\em Computes the option \doxylink{struct_greeks}{Greeks} using finite difference approximations. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_pricing_configuration}{Pricing\+Configuration}} \mbox{\hyperlink{class_binomial_pricer_a5189aac1be85c6e77ff4c56700d231df}{get\+Configuration}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the current pricing configuration. \end{DoxyCompactList}\item 
+virtual double \mbox{\hyperlink{class_binomial_pricer_a7c9b655e4cf43b8a18f367588e8e58bf}{price}} (const \mbox{\hyperlink{class_option}{Option}} \&opt) const override
+\begin{DoxyCompactList}\small\item\em Computes the option price using the binomial CRR model. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_binomial_pricer_a1876e1080d7d7bc1fd55bf26f38a7029}{set\+Configuration}} (const \mbox{\hyperlink{struct_pricing_configuration}{Pricing\+Configuration}} \&config)
+\begin{DoxyCompactList}\small\item\em Sets or updates the pricing configuration for the pricer. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_binomial_pricer_ac43462463aca3c650edaad1cac4792be}{\texorpdfstring{$\sim$}{\string~}\+Binomial\+Pricer}} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_i_option_pricer}{IOption\+Pricer}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{struct_greeks}{Greeks}} \mbox{\hyperlink{class_i_option_pricer_a81a689339e44b1a224c44c84756b8d76}{compute\+Greeks}} (const \mbox{\hyperlink{class_option}{Option}} \&opt) const =0
+\begin{DoxyCompactList}\small\item\em Computes the \doxylink{struct_greeks}{Greeks} of the option. \end{DoxyCompactList}\item 
+virtual double \mbox{\hyperlink{class_i_option_pricer_a579dcf7f5ee091f88682d43766226a9b}{price}} (const \mbox{\hyperlink{class_option}{Option}} \&opt) const =0
+\begin{DoxyCompactList}\small\item\em Computes the price of the option. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_i_option_pricer_a54b4bf6ac6f8164479d1b4c7ef009469}{\texorpdfstring{$\sim$}{\string~}\+IOption\+Pricer}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_pricing_configuration}{Pricing\+Configuration}} \mbox{\hyperlink{class_binomial_pricer_a9b71a5035d71c0ef7154361ff95ff83f}{config\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Internal storage for the pricing configuration. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A concrete implementation of the \doxylink{class_i_option_pricer}{IOption\+Pricer} interface using the binomial CRR model. 
+
+The \doxylink{class_binomial_pricer}{Binomial\+Pricer} class offers functionality for pricing options by constructing a recombining binomial tree. It supports the pricing of various option types and styles, and also provides methods for calculating option sensitivities (\doxylink{struct_greeks}{Greeks}) using finite difference approximations.
+
+The class inherits from the \doxylink{class_i_option_pricer}{IOption\+Pricer} interface, ensuring that it conforms to a standard contract for option pricing engines within the DLL pricing project. 
+
+Definition at line \mbox{\hyperlink{_binomial_pricer_8hpp_source_l00046}{46}} of file \mbox{\hyperlink{_binomial_pricer_8hpp_source}{Binomial\+Pricer.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_binomial_pricer_a84a007046a4fa06c1e354cf6c84e56f4}\label{class_binomial_pricer_a84a007046a4fa06c1e354cf6c84e56f4} 
+\index{BinomialPricer@{BinomialPricer}!BinomialPricer@{BinomialPricer}}
+\index{BinomialPricer@{BinomialPricer}!BinomialPricer@{BinomialPricer}}
+\doxysubsubsection{\texorpdfstring{BinomialPricer()}{BinomialPricer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Binomial\+Pricer\+::\+Binomial\+Pricer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+Default constructor, using default configuration values.
+
+Constructs a \doxylink{class_binomial_pricer}{Binomial\+Pricer} instance using default configuration values. This constructor sets up the pricer with a standard configuration that is suitable for most basic pricing scenarios without the need for user-\/specified parameters.
+
+The default configuration is typically determined by either internal constants or by the default constructor of the \doxylink{struct_pricing_configuration}{Pricing\+Configuration} class. This ensures that even without explicit configuration, the pricer is immediately ready for use.
+
+Constructs a \doxylink{class_binomial_pricer}{Binomial\+Pricer} instance with default configuration parameters. The default configuration is obtained from the \doxylink{struct_pricing_configuration}{Pricing\+Configuration}\textquotesingle{}s default constructor. 
+
+Definition at line \mbox{\hyperlink{_binomial_pricer_8cpp_source_l00030}{30}} of file \mbox{\hyperlink{_binomial_pricer_8cpp_source}{Binomial\+Pricer.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00031\ \ \ \ \ :\ \mbox{\hyperlink{class_binomial_pricer_a9b71a5035d71c0ef7154361ff95ff83f}{config\_}}()\ \textcolor{comment}{//\ Default\ configuration\ from\ PricingConfiguration's\ default\ constructor}}
+\DoxyCodeLine{00032\ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{comment}{//\ No\ additional\ initialization\ required.}}
+\DoxyCodeLine{00034\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_binomial_pricer_a5b4596049ba5f1648c33ba231957ccfa}\label{class_binomial_pricer_a5b4596049ba5f1648c33ba231957ccfa} 
+\index{BinomialPricer@{BinomialPricer}!BinomialPricer@{BinomialPricer}}
+\index{BinomialPricer@{BinomialPricer}!BinomialPricer@{BinomialPricer}}
+\doxysubsubsection{\texorpdfstring{BinomialPricer()}{BinomialPricer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Binomial\+Pricer\+::\+Binomial\+Pricer (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_pricing_configuration}{Pricing\+Configuration}} \&}]{config }\end{DoxyParamCaption})}
+
+
+
+Constructor with pricing configuration. 
+
+Creates a \doxylink{class_binomial_pricer}{Binomial\+Pricer} instance with a user-\/specified pricing configuration.
+
+
+\begin{DoxyParams}{Parameters}
+{\em config} & A \doxylink{struct_pricing_configuration}{Pricing\+Configuration} structure containing additional parameters, such as\+:
+\begin{DoxyItemize}
+\item Calculation date\+: The specific date at which the option pricing should be evaluated.
+\item Number of steps (N)\+: The number of time steps in the binomial tree.
+
+This constructor is particularly useful when different market conditions or experimental configurations are required. By allowing the injection of a custom configuration, it offers flexibility to tailor the binomial tree construction and subsequent pricing results.
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+
+
+Constructs a \doxylink{class_binomial_pricer}{Binomial\+Pricer} instance using the provided \doxylink{struct_pricing_configuration}{Pricing\+Configuration} object. The configuration parameters (e.\+g., calculation date, number of steps, maturity, etc.) are stored internally and used in subsequent pricing computations.
+
+
+\begin{DoxyParams}{Parameters}
+{\em config} & A \doxylink{struct_pricing_configuration}{Pricing\+Configuration} object containing custom pricing parameters. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_binomial_pricer_8cpp_source_l00045}{45}} of file \mbox{\hyperlink{_binomial_pricer_8cpp_source}{Binomial\+Pricer.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00046\ \ \ \ \ :\ \mbox{\hyperlink{class_binomial_pricer_a9b71a5035d71c0ef7154361ff95ff83f}{config\_}}(config) }
+\DoxyCodeLine{00047\ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{comment}{//\ The\ configuration\ parameters\ are\ now\ stored\ in\ config\_.}}
+\DoxyCodeLine{00049\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_binomial_pricer_ac43462463aca3c650edaad1cac4792be}\label{class_binomial_pricer_ac43462463aca3c650edaad1cac4792be} 
+\index{BinomialPricer@{BinomialPricer}!````~BinomialPricer@{\texorpdfstring{$\sim$}{\string~}BinomialPricer}}
+\index{````~BinomialPricer@{\texorpdfstring{$\sim$}{\string~}BinomialPricer}!BinomialPricer@{BinomialPricer}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}BinomialPricer()}{\string~BinomialPricer()}}
+{\footnotesize\ttfamily Binomial\+Pricer\+::\texorpdfstring{$\sim$}{\string~}\+Binomial\+Pricer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Virtual destructor. 
+
+Destructor.
+
+Ensures proper cleanup of resources when a \doxylink{class_binomial_pricer}{Binomial\+Pricer} object is destroyed.
+
+Although the current implementation may not allocate dynamic resources explicitly, the destructor is declared virtual to guarantee that derived classes can override it if necessary. This follows best practices in C++ for inheritance and polymorphism.
+
+Destroys the \doxylink{class_binomial_pricer}{Binomial\+Pricer} instance. No explicit dynamic memory cleanup is required. 
+
+Definition at line \mbox{\hyperlink{_binomial_pricer_8cpp_source_l00056}{56}} of file \mbox{\hyperlink{_binomial_pricer_8cpp_source}{Binomial\+Pricer.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{comment}{//\ No\ dynamic\ cleanup\ is\ required.}}
+\DoxyCodeLine{00058\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_binomial_pricer_a13f7c3ea8814b0d0a070341f3e945180}\label{class_binomial_pricer_a13f7c3ea8814b0d0a070341f3e945180} 
+\index{BinomialPricer@{BinomialPricer}!computeGreeks@{computeGreeks}}
+\index{computeGreeks@{computeGreeks}!BinomialPricer@{BinomialPricer}}
+\doxysubsubsection{\texorpdfstring{computeGreeks()}{computeGreeks()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_greeks}{Greeks}} Binomial\+Pricer\+::compute\+Greeks (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_option}{Option}} \&}]{opt }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Computes the option \doxylink{struct_greeks}{Greeks} using finite difference approximations. 
+
+Computes the \doxylink{struct_greeks}{Greeks} of the option using finite differences applied to the binomial model.
+
+This method calculates the sensitivity measures (\doxylink{struct_greeks}{Greeks}) for the given option by perturbing the underlying parameters and recomputing the option price. The \doxylink{struct_greeks}{Greeks} typically computed include\+:
+\begin{DoxyItemize}
+\item Delta\+: Sensitivity to changes in the underlying asset price.
+\item Gamma\+: Sensitivity of Delta with respect to changes in the underlying asset price.
+\item Vega\+: Sensitivity to changes in volatility.
+\item Theta\+: Sensitivity to changes in time to maturity.
+\item Rho\+: Sensitivity to changes in the risk-\/free interest rate.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em opt} & The option for which the \doxylink{struct_greeks}{Greeks} are to be computed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{struct_greeks}{Greeks} structure containing the computed values for each sensitivity measure.
+\end{DoxyReturn}
+Finite difference methods are used by slightly adjusting one parameter at a time while keeping the others constant. The difference in the computed option prices is then used to approximate the derivative with respect to that parameter. This method is crucial for risk management and for understanding how small changes in market conditions can impact the option price.
+
+This function estimates the sensitivity measures (\doxylink{struct_greeks}{Greeks}) by perturbing the input parameters and recalculating the option price. Finite difference approximations are used as follows\+:
+\begin{DoxyItemize}
+\item Delta and Gamma are computed by perturbing the underlying price.
+\item Vega is computed by perturbing the volatility.
+\item Theta is computed by reducing the maturity by one day.
+\item Rho is computed by perturbing the risk-\/free rate (or yield curve).
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em opt} & The \doxylink{class_option}{Option} object to be evaluated. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{struct_greeks}{Greeks} structure containing the calculated values for Delta, Gamma, Vega, Theta, and Rho. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_option_pricer_a81a689339e44b1a224c44c84756b8d76}{IOption\+Pricer}}.
+
+
+
+Definition at line \mbox{\hyperlink{_binomial_pricer_8cpp_source_l00164}{164}} of file \mbox{\hyperlink{_binomial_pricer_8cpp_source}{Binomial\+Pricer.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00165\ \ \ \ \ \textcolor{keywordtype}{double}\ h\ =\ 0.01\ *\ opt.\mbox{\hyperlink{class_option_a41a6ff2b75b514ac305e4c51672fc036}{getUnderlying}}();}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00167\ \ \ \ \ \textcolor{comment}{//\ Compute\ Delta\ and\ Gamma\ by\ perturbing\ the\ underlying\ asset\ price.}}
+\DoxyCodeLine{00168\ \ \ \ \ \mbox{\hyperlink{class_option}{Option}}\ opt\_up\ =\ opt;}
+\DoxyCodeLine{00169\ \ \ \ \ \mbox{\hyperlink{class_option}{Option}}\ opt\_down\ =\ opt;}
+\DoxyCodeLine{00170\ \ \ \ \ opt\_up.\mbox{\hyperlink{class_option_ab74d0a7bac479971d711486ff2643e2f}{setUnderlying}}(opt.\mbox{\hyperlink{class_option_a41a6ff2b75b514ac305e4c51672fc036}{getUnderlying}}()\ +\ h);}
+\DoxyCodeLine{00171\ \ \ \ \ opt\_down.\mbox{\hyperlink{class_option_ab74d0a7bac479971d711486ff2643e2f}{setUnderlying}}(opt.\mbox{\hyperlink{class_option_a41a6ff2b75b514ac305e4c51672fc036}{getUnderlying}}()\ -\/\ h);}
+\DoxyCodeLine{00172\ \ \ \ \ \textcolor{keywordtype}{double}\ price\_up\ =\ \mbox{\hyperlink{class_binomial_pricer_a7c9b655e4cf43b8a18f367588e8e58bf}{price}}(opt\_up);}
+\DoxyCodeLine{00173\ \ \ \ \ \textcolor{keywordtype}{double}\ price\_down\ =\ \mbox{\hyperlink{class_binomial_pricer_a7c9b655e4cf43b8a18f367588e8e58bf}{price}}(opt\_down);}
+\DoxyCodeLine{00174\ \ \ \ \ \textcolor{keywordtype}{double}\ basePrice\ =\ \mbox{\hyperlink{class_binomial_pricer_a7c9b655e4cf43b8a18f367588e8e58bf}{price}}(opt);}
+\DoxyCodeLine{00175\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_afa2fbffc32c40cd7b32c909eb4dea3d7}{delta}}\ =\ (price\_up\ -\/\ price\_down)\ /\ (2\ *\ h);}
+\DoxyCodeLine{00176\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_a95751aa2ef97efecade491f32c5cde50}{gamma}}\ =\ (price\_up\ -\/\ 2\ *\ basePrice\ +\ price\_down)\ /\ (h\ *\ h);}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00178\ \ \ \ \ \textcolor{comment}{//\ Compute\ Vega\ by\ perturbing\ the\ volatility.}}
+\DoxyCodeLine{00179\ \ \ \ \ \textcolor{keywordtype}{double}\ volStep\ =\ 0.01;}
+\DoxyCodeLine{00180\ \ \ \ \ \mbox{\hyperlink{class_option}{Option}}\ opt\_vol\_up\ =\ opt;}
+\DoxyCodeLine{00181\ \ \ \ \ \mbox{\hyperlink{class_option}{Option}}\ opt\_vol\_down\ =\ opt;}
+\DoxyCodeLine{00182\ \ \ \ \ opt\_vol\_up.\mbox{\hyperlink{class_option_a88809b5a8e576737b25448761ac4a16c}{setVolatility}}(opt.\mbox{\hyperlink{class_option_a319afe4b0bc9b559af422cc6ecb96540}{getVolatility}}()\ +\ volStep);}
+\DoxyCodeLine{00183\ \ \ \ \ opt\_vol\_down.\mbox{\hyperlink{class_option_a88809b5a8e576737b25448761ac4a16c}{setVolatility}}(opt.\mbox{\hyperlink{class_option_a319afe4b0bc9b559af422cc6ecb96540}{getVolatility}}()\ -\/\ volStep);}
+\DoxyCodeLine{00184\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_adbefd4a93bf3d8656cf6e1e089063723}{vega}}\ =\ (\mbox{\hyperlink{class_binomial_pricer_a7c9b655e4cf43b8a18f367588e8e58bf}{price}}(opt\_vol\_up)\ -\/\ \mbox{\hyperlink{class_binomial_pricer_a7c9b655e4cf43b8a18f367588e8e58bf}{price}}(opt\_vol\_down))\ /\ (2\ *\ volStep);}
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00186\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Theta\ Implementation\ -\/-\/-\/}}
+\DoxyCodeLine{00187\ \ \ \ \ \textcolor{comment}{//\ Estimate\ Theta\ by\ reducing\ the\ maturity\ by\ one\ day\ (converted\ to\ years).}}
+\DoxyCodeLine{00188\ \ \ \ \ \textcolor{keywordtype}{double}\ dt\_small\ =\ 1.0\ /\ 365.0;\ \textcolor{comment}{//\ One\ day\ in\ years}}
+\DoxyCodeLine{00189\ \ \ \ \ \mbox{\hyperlink{struct_pricing_configuration}{PricingConfiguration}}\ config\_time\ =\ \mbox{\hyperlink{class_binomial_pricer_a9b71a5035d71c0ef7154361ff95ff83f}{config\_}};}
+\DoxyCodeLine{00190\ \ \ \ \ config\_time.\mbox{\hyperlink{struct_pricing_configuration_a9ae4efdabf701f28b5c15dbc54ac3a7a}{maturity}}\ =\ \mbox{\hyperlink{class_binomial_pricer_a9b71a5035d71c0ef7154361ff95ff83f}{config\_}}.\mbox{\hyperlink{struct_pricing_configuration_a9ae4efdabf701f28b5c15dbc54ac3a7a}{maturity}}\ -\/\ dt\_small;}
+\DoxyCodeLine{00191\ \ \ \ \ \mbox{\hyperlink{class_binomial_pricer}{BinomialPricer}}\ pricer\_time(config\_time);}
+\DoxyCodeLine{00192\ \ \ \ \ \textcolor{keywordtype}{double}\ price\_T\_down\ =\ pricer\_time.price(opt);}
+\DoxyCodeLine{00193\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_ae01bf602516416e5bdf198ad18c5c567}{theta}}\ =\ (basePrice\ -\/\ price\_T\_down)\ /\ dt\_small;}
+\DoxyCodeLine{00194\ }
+\DoxyCodeLine{00195\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Modified\ Implementation\ of\ Rho\ -\/-\/-\/}}
+\DoxyCodeLine{00196\ \ \ \ \ \textcolor{comment}{//\ Estimate\ Rho\ by\ perturbing\ the\ risk-\/free\ rate\ or\ the\ yield\ curve\ uniformly.}}
+\DoxyCodeLine{00197\ \ \ \ \ \textcolor{keywordtype}{double}\ rStep\ =\ 0.001;}
+\DoxyCodeLine{00198\ \ \ \ \ \mbox{\hyperlink{struct_pricing_configuration}{PricingConfiguration}}\ config\_r\_up\ =\ \mbox{\hyperlink{class_binomial_pricer_a9b71a5035d71c0ef7154361ff95ff83f}{config\_}};}
+\DoxyCodeLine{00199\ \ \ \ \ \mbox{\hyperlink{struct_pricing_configuration}{PricingConfiguration}}\ config\_r\_down\ =\ \mbox{\hyperlink{class_binomial_pricer_a9b71a5035d71c0ef7154361ff95ff83f}{config\_}};}
+\DoxyCodeLine{00200\ }
+\DoxyCodeLine{00201\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_binomial_pricer_a9b71a5035d71c0ef7154361ff95ff83f}{config\_}}.\mbox{\hyperlink{struct_pricing_configuration_a8564f465b2656557af9eba82722e5e19}{yieldCurve}}.\mbox{\hyperlink{class_yield_curve_ab32badc44c840501ac012466672654b7}{getData}}().empty())\ \{}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Shift\ all\ rates\ in\ the\ yield\ curve\ uniformly\ by\ rStep.}}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_yield_curve}{YieldCurve}}\ yc\_up;}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_yield_curve}{YieldCurve}}\ yc\_down;}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ pt\ :\ \mbox{\hyperlink{class_binomial_pricer_a9b71a5035d71c0ef7154361ff95ff83f}{config\_}}.yieldCurve.getData())\ \{}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \ \ \ \ yc\_up.\mbox{\hyperlink{class_yield_curve_aea0767dec486d82d23cd8fbf3d4ba676}{addRatePoint}}(pt.maturity,\ pt.rate\ +\ rStep);}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \ \ \ \ yc\_down.\mbox{\hyperlink{class_yield_curve_aea0767dec486d82d23cd8fbf3d4ba676}{addRatePoint}}(pt.maturity,\ pt.rate\ -\/\ rStep);}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ config\_r\_up.\mbox{\hyperlink{struct_pricing_configuration_a8564f465b2656557af9eba82722e5e19}{yieldCurve}}\ =\ yc\_up;}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ config\_r\_down.\mbox{\hyperlink{struct_pricing_configuration_a8564f465b2656557af9eba82722e5e19}{yieldCurve}}\ =\ yc\_down;}
+\DoxyCodeLine{00211\ \ \ \ \ \}}
+\DoxyCodeLine{00212\ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ If\ no\ yield\ curve\ data\ is\ available,\ adjust\ the\ constant\ risk-\/free\ rate.}}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ config\_r\_up.\mbox{\hyperlink{struct_pricing_configuration_a77ee8c896b9a6ddd04437a7489b21c91}{riskFreeRate}}\ =\ \mbox{\hyperlink{class_binomial_pricer_a9b71a5035d71c0ef7154361ff95ff83f}{config\_}}.\mbox{\hyperlink{struct_pricing_configuration_a77ee8c896b9a6ddd04437a7489b21c91}{riskFreeRate}}\ +\ rStep;}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ config\_r\_down.\mbox{\hyperlink{struct_pricing_configuration_a77ee8c896b9a6ddd04437a7489b21c91}{riskFreeRate}}\ =\ \mbox{\hyperlink{class_binomial_pricer_a9b71a5035d71c0ef7154361ff95ff83f}{config\_}}.\mbox{\hyperlink{struct_pricing_configuration_a77ee8c896b9a6ddd04437a7489b21c91}{riskFreeRate}}\ -\/\ rStep;}
+\DoxyCodeLine{00216\ \ \ \ \ \}}
+\DoxyCodeLine{00217\ }
+\DoxyCodeLine{00218\ \ \ \ \ \mbox{\hyperlink{class_binomial_pricer}{BinomialPricer}}\ pricer\_r\_up(config\_r\_up);}
+\DoxyCodeLine{00219\ \ \ \ \ \mbox{\hyperlink{class_binomial_pricer}{BinomialPricer}}\ pricer\_r\_down(config\_r\_down);}
+\DoxyCodeLine{00220\ \ \ \ \ \textcolor{keywordtype}{double}\ price\_r\_up\ =\ pricer\_r\_up.price(opt);}
+\DoxyCodeLine{00221\ \ \ \ \ \textcolor{keywordtype}{double}\ price\_r\_down\ =\ pricer\_r\_down.price(opt);}
+\DoxyCodeLine{00222\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_a6e5bcb5da44ba87aeb933c99a674c6af}{rho}}\ =\ (price\_r\_up\ -\/\ price\_r\_down)\ /\ (2\ *\ rStep);}
+\DoxyCodeLine{00223\ }
+\DoxyCodeLine{00224\ \ \ \ \ \textcolor{comment}{//\ Populate\ the\ Greeks\ structure\ with\ the\ computed\ values.}}
+\DoxyCodeLine{00225\ \ \ \ \ \mbox{\hyperlink{struct_greeks}{Greeks}}\ g;}
+\DoxyCodeLine{00226\ \ \ \ \ g.\mbox{\hyperlink{struct_greeks_a9d16140323f20876507a2d5453696b1a}{delta}}\ =\ \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_afa2fbffc32c40cd7b32c909eb4dea3d7}{delta}};}
+\DoxyCodeLine{00227\ \ \ \ \ g.\mbox{\hyperlink{struct_greeks_afcef8fafe28ec46b041eda551aefac76}{gamma}}\ =\ \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_a95751aa2ef97efecade491f32c5cde50}{gamma}};}
+\DoxyCodeLine{00228\ \ \ \ \ g.\mbox{\hyperlink{struct_greeks_a87709cf35763c458f36a6935f7d7ce25}{vega}}\ =\ \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_adbefd4a93bf3d8656cf6e1e089063723}{vega}};}
+\DoxyCodeLine{00229\ \ \ \ \ g.\mbox{\hyperlink{struct_greeks_a82fcb8b4f18e8afc91ab23df69ae6f17}{theta}}\ =\ \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_ae01bf602516416e5bdf198ad18c5c567}{theta}};}
+\DoxyCodeLine{00230\ \ \ \ \ g.\mbox{\hyperlink{struct_greeks_afaa454ff183cfa3d58902d49e4f363db}{rho}}\ =\ \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_a6e5bcb5da44ba87aeb933c99a674c6af}{rho}};}
+\DoxyCodeLine{00231\ \ \ \ \ \textcolor{keywordflow}{return}\ g;}
+\DoxyCodeLine{00232\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_binomial_pricer_a5189aac1be85c6e77ff4c56700d231df}\label{class_binomial_pricer_a5189aac1be85c6e77ff4c56700d231df} 
+\index{BinomialPricer@{BinomialPricer}!getConfiguration@{getConfiguration}}
+\index{getConfiguration@{getConfiguration}!BinomialPricer@{BinomialPricer}}
+\doxysubsubsection{\texorpdfstring{getConfiguration()}{getConfiguration()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_pricing_configuration}{Pricing\+Configuration}} Binomial\+Pricer\+::get\+Configuration (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Retrieves the current pricing configuration. 
+
+Gets the current pricing configuration.
+
+Returns the \doxylink{struct_pricing_configuration}{Pricing\+Configuration} structure that is currently in use by the pricer.
+
+\begin{DoxyReturn}{Returns}
+The current \doxylink{struct_pricing_configuration}{Pricing\+Configuration}.
+\end{DoxyReturn}
+This method is useful for verifying the pricer\textquotesingle{}s current state and for debugging purposes. It allows external components or users to inspect the parameters that will be used in subsequent pricing computations.
+
+Retrieves the \doxylink{struct_pricing_configuration}{Pricing\+Configuration} object currently stored in the \doxylink{class_binomial_pricer}{Binomial\+Pricer}. This function is useful for verifying the active configuration and for debugging purposes.
+
+\begin{DoxyReturn}{Returns}
+A copy of the current \doxylink{struct_pricing_configuration}{Pricing\+Configuration}. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_binomial_pricer_8cpp_source_l00255}{255}} of file \mbox{\hyperlink{_binomial_pricer_8cpp_source}{Binomial\+Pricer.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00256\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_binomial_pricer_a9b71a5035d71c0ef7154361ff95ff83f}{config\_}};}
+\DoxyCodeLine{00257\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_binomial_pricer_a7c9b655e4cf43b8a18f367588e8e58bf}\label{class_binomial_pricer_a7c9b655e4cf43b8a18f367588e8e58bf} 
+\index{BinomialPricer@{BinomialPricer}!price@{price}}
+\index{price@{price}!BinomialPricer@{BinomialPricer}}
+\doxysubsubsection{\texorpdfstring{price()}{price()}}
+{\footnotesize\ttfamily double Binomial\+Pricer\+::price (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_option}{Option}} \&}]{opt }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Computes the option price using the binomial CRR model. 
+
+This method implements the core pricing functionality by constructing a binomial tree based on the provided option parameters and the current pricing configuration. The tree is built according to the Cox-\/\+Ross-\/\+Rubinstein method, which ensures that the underlying asset\textquotesingle{}s price evolution is modeled accurately over discrete time intervals.
+
+
+\begin{DoxyParams}{Parameters}
+{\em opt} & The option to be priced, which contains essential data such as the strike price, underlying asset price, volatility, dividend yield, and maturity. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The computed option price as a double value.
+\end{DoxyReturn}
+The method performs the following high-\/level steps\+:
+\begin{DoxyItemize}
+\item Initializes the binomial tree parameters using the configuration settings (e.\+g., number of steps).
+\item Iteratively calculates the asset price at each node of the tree.
+\item Determines the option payoff at each final node and performs backward induction to compute the present value.
+\item For American options, the method includes a check for early exercise at each node.
+\end{DoxyItemize}
+
+This function calculates the price of an option using a binomial tree constructed according to the CRR method. The number of steps in the tree is determined by config\+\_\+.\+binomial\+Steps. For each time step, a local risk-\/free rate is obtained via interpolation from the yield curve, allowing for a variable rate across the tree.
+
+The procedure involves\+:
+\begin{DoxyItemize}
+\item Computing the up (u) and down (d) factors based on the volatility and time increment.
+\item Determining the risk-\/neutral probability (p) using a constant risk-\/free rate for the forward simulation.
+\item Calculating the terminal payoffs for each final node.
+\item Performing backward induction to discount the payoffs to present value, with adjustments for American options.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em opt} & The \doxylink{class_option}{Option} object to be priced, which contains parameters such as underlying price, strike, volatility, dividend yield, option type (Call/\+Put), and option style (European/\+American). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The computed option price as a double. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if the computed risk-\/neutral probability is invalid. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{class_i_option_pricer_a579dcf7f5ee091f88682d43766226a9b}{IOption\+Pricer}}.
+
+
+
+Definition at line \mbox{\hyperlink{_binomial_pricer_8cpp_source_l00078}{78}} of file \mbox{\hyperlink{_binomial_pricer_8cpp_source}{Binomial\+Pricer.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{comment}{//\ Retrieve\ basic\ option\ parameters.}}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{double}\ S\ =\ opt.\mbox{\hyperlink{class_option_a41a6ff2b75b514ac305e4c51672fc036}{getUnderlying}}();}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_a74b45da7676e23dd8ec974cfc04c0137}{K}}\ =\ opt.\mbox{\hyperlink{class_option_ab450179f0902408f40cfa4794b1eb3a8}{getStrike}}();}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_acc82fd456cac0384d2075ece3102201a}{sigma}}\ =\ opt.\mbox{\hyperlink{class_option_a319afe4b0bc9b559af422cc6ecb96540}{getVolatility}}();}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_ae1370efc3e7cbcccb16c9f9725d95188}{q}}\ =\ opt.\mbox{\hyperlink{class_option_a263779c6777253ce6158266076593733}{getDividend}}();}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{comment}{//\ Retrieve\ the\ maturity\ and\ the\ default\ risk-\/free\ rate\ from\ the\ pricing\ configuration.}}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_a9e64a35af6ea2c4e18a21ae6ab8f4b4a}{T}}\ =\ \mbox{\hyperlink{class_binomial_pricer_a9b71a5035d71c0ef7154361ff95ff83f}{config\_}}.\mbox{\hyperlink{struct_pricing_configuration_a9ae4efdabf701f28b5c15dbc54ac3a7a}{maturity}};}
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{double}\ r\_const\ =\ \mbox{\hyperlink{class_binomial_pricer_a9b71a5035d71c0ef7154361ff95ff83f}{config\_}}.\mbox{\hyperlink{struct_pricing_configuration_a77ee8c896b9a6ddd04437a7489b21c91}{riskFreeRate}};\ \textcolor{comment}{//\ fallback\ if\ yield\ curve\ is\ not\ loaded}}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{comment}{//\ Retrieve\ the\ number\ of\ steps\ from\ the\ configuration.}}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordtype}{int}\ N\ =\ \mbox{\hyperlink{class_binomial_pricer_a9b71a5035d71c0ef7154361ff95ff83f}{config\_}}.\mbox{\hyperlink{struct_pricing_configuration_ae75cb39110c5afd84c593a8b945158fb}{binomialSteps}};}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{double}\ dt\ =\ \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_a9e64a35af6ea2c4e18a21ae6ab8f4b4a}{T}}\ /\ N;}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{comment}{//\ Compute\ the\ up\ (u)\ and\ down\ (d)\ factors\ using\ the\ CRR\ model.}}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{double}\ u\ =\ std::exp(\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_acc82fd456cac0384d2075ece3102201a}{sigma}}\ *\ std::sqrt(dt));}
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordtype}{double}\ d\ =\ 1.0\ /\ u;}
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{comment}{//\ Calculate\ the\ risk-\/neutral\ probability\ using\ the\ constant\ risk-\/free\ rate.}}
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordtype}{double}\ p\ =\ (std::exp((r\_const\ -\/\ \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_ae1370efc3e7cbcccb16c9f9725d95188}{q}})\ *\ dt)\ -\/\ d)\ /\ (u\ -\/\ d);}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordflow}{if}\ (p\ <\ 0.0\ ||\ p\ >\ 1.0)\ \{}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Invalid\ risk-\/neutral\ probability\ in\ the\ binomial\ model."{}});}
+\DoxyCodeLine{00099\ \ \ \ \ \}}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{comment}{//\ Create\ a\ vector\ to\ store\ the\ terminal\ payoffs.}}
+\DoxyCodeLine{00102\ \ \ \ \ std::vector<double>\ prices(N\ +\ 1);}
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <=\ N;\ ++j)\ \{}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ S\_j\ =\ S\ *\ std::pow(u,\ j)\ *\ std::pow(d,\ N\ -\/\ j);}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (opt.\mbox{\hyperlink{class_option_a4a5d06180aa0e449d49a836906383463}{getOptionType}}()\ ==\ \mbox{\hyperlink{class_option_ad3a2defb450b67b3d8d4c0d06b475b3bac3755e61202abd74da5885d2e9c9160e}{Option::OptionType::Call}})\ \{}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ prices[j]\ =\ std::max(S\_j\ -\/\ \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_a74b45da7676e23dd8ec974cfc04c0137}{K}},\ 0.0);}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{\ \textcolor{comment}{//\ Put\ option}}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ prices[j]\ =\ std::max(\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_a74b45da7676e23dd8ec974cfc04c0137}{K}}\ -\/\ S\_j,\ 0.0);}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00111\ \ \ \ \ \}}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{comment}{//\ Backward\ induction\ through\ the\ binomial\ tree\ with\ a\ variable\ interest\ rate.}}
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ N\ -\/\ 1;\ i\ >=\ 0;\ -\/-\/i)\ \{}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Compute\ normalized\ time\ for\ the\ current\ step\ (i/N).}}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ t\_norm\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{double}\textcolor{keyword}{>}(i)\ /\ N;}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Obtain\ the\ local\ risk-\/free\ rate\ via\ the\ yield\ curve.}}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ If\ the\ yield\ curve\ is\ not\ loaded,\ it\ returns\ the\ default\ risk-\/free\ rate.}}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ r\_local\ =\ \mbox{\hyperlink{class_binomial_pricer_a9b71a5035d71c0ef7154361ff95ff83f}{config\_}}.\mbox{\hyperlink{struct_pricing_configuration_a8564f465b2656557af9eba82722e5e19}{yieldCurve}}.\mbox{\hyperlink{class_yield_curve_aa3257efcdbad0d984764fd63a8563899}{getRate}}(t\_norm);}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Compute\ the\ discount\ factor\ using\ the\ local\ rate.}}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ discountFactor\ =\ std::exp(-\/r\_local\ *\ dt);}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Compute\ the\ local\ risk-\/neutral\ probability\ using\ the\ local\ rate.}}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ p\_local\ =\ (std::exp((r\_local\ -\/\ \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_ae1370efc3e7cbcccb16c9f9725d95188}{q}})\ *\ dt)\ -\/\ d)\ /\ (u\ -\/\ d);}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <=\ i;\ ++j)\ \{}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Calculate\ the\ expected\ continuation\ value\ at\ the\ current\ node.}}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ continuation\ =\ discountFactor\ *\ (p\_local\ *\ prices[j\ +\ 1]\ +\ (1.0\ -\/\ p\_local)\ *\ prices[j]);}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (opt.\mbox{\hyperlink{class_option_aa0359256d21a97f5a280f60e0b088ad3}{getOptionStyle}}()\ ==\ \mbox{\hyperlink{class_option_a9f88b2cb28c4d271515fe52d6332ab9fac6c6f067a3ead9ce67a1c67a790fa26b}{Option::OptionStyle::American}})\ \{}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ For\ American\ options,\ compare\ the\ continuation\ value\ with\ the\ immediate\ exercise\ value.}}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ S\_i\ =\ S\ *\ std::pow(u,\ j)\ *\ std::pow(d,\ i\ -\/\ j);}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ intrinsic\ =\ 0.0;}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (opt.\mbox{\hyperlink{class_option_a4a5d06180aa0e449d49a836906383463}{getOptionType}}()\ ==\ \mbox{\hyperlink{class_option_ad3a2defb450b67b3d8d4c0d06b475b3bac3755e61202abd74da5885d2e9c9160e}{Option::OptionType::Call}})\ \{}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ intrinsic\ =\ std::max(S\_i\ -\/\ \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_a74b45da7676e23dd8ec974cfc04c0137}{K}},\ 0.0);}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ intrinsic\ =\ std::max(\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_a74b45da7676e23dd8ec974cfc04c0137}{K}}\ -\/\ S\_i,\ 0.0);}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ prices[j]\ =\ std::max(continuation,\ intrinsic);}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ For\ European\ options,\ only\ the\ continuation\ value\ is\ considered.}}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ prices[j]\ =\ continuation;}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00145\ \ \ \ \ \}}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00147\ \ \ \ \ \textcolor{comment}{//\ The\ price\ at\ the\ root\ of\ the\ tree\ is\ the\ computed\ option\ price.}}
+\DoxyCodeLine{00148\ \ \ \ \ \textcolor{keywordflow}{return}\ prices[0];}
+\DoxyCodeLine{00149\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_binomial_pricer_a1876e1080d7d7bc1fd55bf26f38a7029}\label{class_binomial_pricer_a1876e1080d7d7bc1fd55bf26f38a7029} 
+\index{BinomialPricer@{BinomialPricer}!setConfiguration@{setConfiguration}}
+\index{setConfiguration@{setConfiguration}!BinomialPricer@{BinomialPricer}}
+\doxysubsubsection{\texorpdfstring{setConfiguration()}{setConfiguration()}}
+{\footnotesize\ttfamily void Binomial\+Pricer\+::set\+Configuration (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_pricing_configuration}{Pricing\+Configuration}} \&}]{config }\end{DoxyParamCaption})}
+
+
+
+Sets or updates the pricing configuration for the pricer. 
+
+Sets the pricing configuration.
+
+This method allows the user to modify the configuration parameters that govern the behavior of the \doxylink{class_binomial_pricer}{Binomial\+Pricer}. By updating the configuration, the user can adapt the pricing engine to different market scenarios or testing conditions.
+
+
+\begin{DoxyParams}{Parameters}
+{\em config} & A \doxylink{struct_pricing_configuration}{Pricing\+Configuration} structure containing the new configuration values.\\
+\hline
+\end{DoxyParams}
+Upon invocation, the internal state of the pricer is updated with the new settings. This may include adjustments to the calculation date, number of steps in the binomial tree, and other parameters that affect the pricing algorithm.
+
+Updates the internal configuration parameters used by the \doxylink{class_binomial_pricer}{Binomial\+Pricer}. This method allows the user to modify settings such as the number of steps, maturity, risk-\/free rate, and yield curve data, which will affect subsequent pricing computations.
+
+
+\begin{DoxyParams}{Parameters}
+{\em config} & A \doxylink{struct_pricing_configuration}{Pricing\+Configuration} object containing the new configuration parameters. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_binomial_pricer_8cpp_source_l00243}{243}} of file \mbox{\hyperlink{_binomial_pricer_8cpp_source}{Binomial\+Pricer.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00244\ \ \ \ \ \mbox{\hyperlink{class_binomial_pricer_a9b71a5035d71c0ef7154361ff95ff83f}{config\_}}\ =\ config;}
+\DoxyCodeLine{00245\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_binomial_pricer_a9b71a5035d71c0ef7154361ff95ff83f}\label{class_binomial_pricer_a9b71a5035d71c0ef7154361ff95ff83f} 
+\index{BinomialPricer@{BinomialPricer}!config\_@{config\_}}
+\index{config\_@{config\_}!BinomialPricer@{BinomialPricer}}
+\doxysubsubsection{\texorpdfstring{config\_}{config\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_pricing_configuration}{Pricing\+Configuration}} Binomial\+Pricer\+::config\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Internal storage for the pricing configuration. 
+
+This member variable holds additional configuration parameters that are used by the binomial pricing algorithm. These include the calculation date, number of steps, and any other parameters encapsulated within the \doxylink{struct_pricing_configuration}{Pricing\+Configuration} structure.
+
+The configuration is critical for controlling the behavior of the pricing model. It ensures that the option pricing is consistent with the user\textquotesingle{}s expectations and the prevailing market conditions. Modifying this configuration directly impacts the results of both the option pricing and the \doxylink{struct_greeks}{Greeks} computations. 
+
+Definition at line \mbox{\hyperlink{_binomial_pricer_8hpp_source_l00170}{170}} of file \mbox{\hyperlink{_binomial_pricer_8hpp_source}{Binomial\+Pricer.\+hpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_binomial_pricer_8hpp}{Binomial\+Pricer.\+hpp}}\item 
+\mbox{\hyperlink{_binomial_pricer_8cpp}{Binomial\+Pricer.\+cpp}}\end{DoxyCompactItemize}

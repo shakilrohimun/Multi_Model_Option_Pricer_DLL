@@ -1,0 +1,52 @@
+\doxysection{dllmain.\+cpp File Reference}
+\hypertarget{dllmain_8cpp}{}\label{dllmain_8cpp}\index{dllmain.cpp@{dllmain.cpp}}
+{\ttfamily \#include \"{}pch.\+h\"{}}\newline
+Include dependency graph for dllmain.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/dd0/dllmain_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+BOOL APIENTRY \mbox{\hyperlink{dllmain_8cpp_a26e64fb39b69bcd9d1274d279f1561b9}{Dll\+Main}} (HMODULE h\+Module, DWORD ul\+\_\+reason\+\_\+for\+\_\+call, LPVOID lp\+Reserved)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{dllmain_8cpp_a26e64fb39b69bcd9d1274d279f1561b9}\label{dllmain_8cpp_a26e64fb39b69bcd9d1274d279f1561b9} 
+\index{dllmain.cpp@{dllmain.cpp}!DllMain@{DllMain}}
+\index{DllMain@{DllMain}!dllmain.cpp@{dllmain.cpp}}
+\doxysubsubsection{\texorpdfstring{DllMain()}{DllMain()}}
+{\footnotesize\ttfamily BOOL APIENTRY Dll\+Main (\begin{DoxyParamCaption}\item[{HMODULE}]{h\+Module,  }\item[{DWORD}]{ul\+\_\+reason\+\_\+for\+\_\+call,  }\item[{LPVOID}]{lp\+Reserved }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{dllmain_8cpp_source_l00006}{6}} of file \mbox{\hyperlink{dllmain_8cpp_source}{dllmain.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00010\ \{}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{comment}{//\ The\ ul\_reason\_for\_call\ parameter\ indicates\ why\ the\ DLL\ entry-\/point\ function\ is\ being\ called.}}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordflow}{switch}\ (ul\_reason\_for\_call)}
+\DoxyCodeLine{00013\ \ \ \ \ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordflow}{case}\ DLL\_PROCESS\_ATTACH:}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ A\ process\ is\ loading\ the\ DLL.}}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordflow}{case}\ DLL\_THREAD\_ATTACH:}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ A\ thread\ is\ being\ created\ in\ a\ process\ that\ has\ already\ loaded\ the\ DLL.}}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordflow}{case}\ DLL\_THREAD\_DETACH:}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ A\ thread\ is\ exiting\ cleanly.}}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordflow}{case}\ DLL\_PROCESS\_DETACH:}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ A\ process\ unloads\ the\ DLL.}}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00026\ \ \ \ \ \}}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{comment}{//\ Return\ TRUE\ to\ indicate\ successful\ initialization.}}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordflow}{return}\ TRUE;}
+\DoxyCodeLine{00029\ \}}
+
+\end{DoxyCode}

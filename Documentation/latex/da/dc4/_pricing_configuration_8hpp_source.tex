@@ -1,0 +1,62 @@
+\doxysection{Pricing\+Configuration.\+hpp}
+\hypertarget{_pricing_configuration_8hpp_source}{}\label{_pricing_configuration_8hpp_source}\mbox{\hyperlink{_pricing_configuration_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_pricing_configuration_8hpp_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ PRICINGCONFIGURATION\_HPP}}
+\DoxyCodeLine{\Hypertarget{_pricing_configuration_8hpp_source_l00002}00002\ \textcolor{preprocessor}{\#define\ PRICINGCONFIGURATION\_HPP}}
+\DoxyCodeLine{\Hypertarget{_pricing_configuration_8hpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_pricing_configuration_8hpp_source_l00014}00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{pch_8h}{pch.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_pricing_configuration_8hpp_source_l00015}00015\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{_pricing_configuration_8hpp_source_l00016}00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_yield_curve_8hpp}{YieldCurve.hpp}}"{}}\ \ \textcolor{comment}{//\ Include\ the\ header\ file\ that\ defines\ the\ YieldCurve\ class\ for\ handling\ variable\ interest\ rates.}}
+\DoxyCodeLine{\Hypertarget{_pricing_configuration_8hpp_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{_pricing_configuration_8hpp_source_l00027}\mbox{\hyperlink{struct_pricing_configuration}{00027}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_pricing_configuration}{PricingConfiguration}}\ \{}
+\DoxyCodeLine{\Hypertarget{_pricing_configuration_8hpp_source_l00028}00028\ \ \ \ \ \textcolor{comment}{//\ Common\ parameter:\ Calculation\ date\ provided\ in\ ISO\ 8601\ format\ (e.g.,\ "{}2025-\/02-\/19"{}).}}
+\DoxyCodeLine{\Hypertarget{_pricing_configuration_8hpp_source_l00029}00029\ \ \ \ \ \textcolor{comment}{//\ If\ this\ parameter\ is\ not\ specified\ (i.e.,\ an\ empty\ string),\ the\ current\ system\ date\ is\ assumed.}}
+\DoxyCodeLine{\Hypertarget{_pricing_configuration_8hpp_source_l00030}\mbox{\hyperlink{struct_pricing_configuration_a86654268cc7202dec16251f02873a629}{00030}}\ \ \ \ \ std::string\ \mbox{\hyperlink{struct_pricing_configuration_a86654268cc7202dec16251f02873a629}{calculationDate}};}
+\DoxyCodeLine{\Hypertarget{_pricing_configuration_8hpp_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{_pricing_configuration_8hpp_source_l00032}00032\ \ \ \ \ \textcolor{comment}{//\ Additional\ common\ parameters:}}
+\DoxyCodeLine{\Hypertarget{_pricing_configuration_8hpp_source_l00033}\mbox{\hyperlink{struct_pricing_configuration_a9ae4efdabf701f28b5c15dbc54ac3a7a}{00033}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_pricing_configuration_a9ae4efdabf701f28b5c15dbc54ac3a7a}{maturity}};\ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_pricing_configuration_8hpp_source_l00034}\mbox{\hyperlink{struct_pricing_configuration_a77ee8c896b9a6ddd04437a7489b21c91}{00034}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_pricing_configuration_a77ee8c896b9a6ddd04437a7489b21c91}{riskFreeRate}};\ \ }
+\DoxyCodeLine{\Hypertarget{_pricing_configuration_8hpp_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{_pricing_configuration_8hpp_source_l00037}00037\ \textcolor{comment}{//\ Yield\ curve\ for\ handling\ variable\ interest\ rates.}}
+\DoxyCodeLine{\Hypertarget{_pricing_configuration_8hpp_source_l00038}00038\ \textcolor{comment}{//\ If\ yield\ curve\ data\ is\ provided,\ it\ will\ be\ used\ to\ interpolate\ the\ risk-\/free\ rate\ dynamically.}}
+\DoxyCodeLine{\Hypertarget{_pricing_configuration_8hpp_source_l00039}00039\ \textcolor{comment}{//\ Otherwise,\ the\ static\ riskFreeRate\ value\ will\ be\ applied\ for\ pricing\ calculations.}}
+\DoxyCodeLine{\Hypertarget{_pricing_configuration_8hpp_source_l00040}\mbox{\hyperlink{struct_pricing_configuration_a8564f465b2656557af9eba82722e5e19}{00040}}\ \ \ \ \ \mbox{\hyperlink{class_yield_curve}{YieldCurve}}\ \mbox{\hyperlink{struct_pricing_configuration_a8564f465b2656557af9eba82722e5e19}{yieldCurve}};}
+\DoxyCodeLine{\Hypertarget{_pricing_configuration_8hpp_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{_pricing_configuration_8hpp_source_l00042}00042\ \ \ \ \ \textcolor{comment}{//\ Black-\/Scholes\ parameters:}}
+\DoxyCodeLine{\Hypertarget{_pricing_configuration_8hpp_source_l00043}00043\ \ \ \ \ \textcolor{comment}{//\ (No\ additional\ parameters\ beyond\ the\ common\ calculation\ date\ are\ required\ for\ Black-\/Scholes.)}}
+\DoxyCodeLine{\Hypertarget{_pricing_configuration_8hpp_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{_pricing_configuration_8hpp_source_l00045}00045\ \ \ \ \ \textcolor{comment}{//\ Binomial\ model\ parameters:}}
+\DoxyCodeLine{\Hypertarget{_pricing_configuration_8hpp_source_l00046}00046\ \ \ \ \ \textcolor{comment}{//\ Number\ of\ steps\ in\ the\ binomial\ tree\ used\ for\ discretizing\ the\ option's\ life.}}
+\DoxyCodeLine{\Hypertarget{_pricing_configuration_8hpp_source_l00047}\mbox{\hyperlink{struct_pricing_configuration_ae75cb39110c5afd84c593a8b945158fb}{00047}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_pricing_configuration_ae75cb39110c5afd84c593a8b945158fb}{binomialSteps}};}
+\DoxyCodeLine{\Hypertarget{_pricing_configuration_8hpp_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{_pricing_configuration_8hpp_source_l00049}00049\ \ \ \ \ \textcolor{comment}{//\ Crank-\/Nicolson\ model\ parameters:}}
+\DoxyCodeLine{\Hypertarget{_pricing_configuration_8hpp_source_l00050}00050\ \ \ \ \ \textcolor{comment}{//\ Number\ of\ time\ steps\ used\ to\ discretize\ the\ time\ dimension\ in\ the\ finite\ difference\ grid.}}
+\DoxyCodeLine{\Hypertarget{_pricing_configuration_8hpp_source_l00051}\mbox{\hyperlink{struct_pricing_configuration_a19af78dfee60063e83346cb99710dcf7}{00051}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_pricing_configuration_a19af78dfee60063e83346cb99710dcf7}{crankTimeSteps}};}
+\DoxyCodeLine{\Hypertarget{_pricing_configuration_8hpp_source_l00052}00052\ \ \ \ \ \textcolor{comment}{//\ Number\ of\ spatial\ (spot)\ steps\ used\ to\ discretize\ the\ underlying\ asset\ price\ in\ the\ grid.}}
+\DoxyCodeLine{\Hypertarget{_pricing_configuration_8hpp_source_l00053}\mbox{\hyperlink{struct_pricing_configuration_a3b7221633527d9b1d758f2a5ab7eaf29}{00053}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_pricing_configuration_a3b7221633527d9b1d758f2a5ab7eaf29}{crankSpotSteps}};}
+\DoxyCodeLine{\Hypertarget{_pricing_configuration_8hpp_source_l00054}00054\ \ \ \ \ \textcolor{comment}{//\ Upper\ limit\ for\ the\ underlying\ asset\ price\ (S\_max)\ considered\ in\ the\ finite\ difference\ grid.}}
+\DoxyCodeLine{\Hypertarget{_pricing_configuration_8hpp_source_l00055}00055\ \ \ \ \ \textcolor{comment}{//\ If\ set\ to\ 0.0,\ S\_max\ will\ be\ computed\ automatically\ based\ on\ the\ underlying\ asset\ price\ or\ strike\ price.}}
+\DoxyCodeLine{\Hypertarget{_pricing_configuration_8hpp_source_l00056}\mbox{\hyperlink{struct_pricing_configuration_a0252e37ed36dce2e03317c5715081a9d}{00056}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_pricing_configuration_a0252e37ed36dce2e03317c5715081a9d}{S\_max}};}
+\DoxyCodeLine{\Hypertarget{_pricing_configuration_8hpp_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{_pricing_configuration_8hpp_source_l00058}00058\ \ \ \ \ \textcolor{comment}{//\ Monte\ Carlo\ model\ parameters:}}
+\DoxyCodeLine{\Hypertarget{_pricing_configuration_8hpp_source_l00059}00059\ \ \ \ \ \textcolor{comment}{//\ Number\ of\ simulation\ paths\ to\ generate\ in\ the\ Monte\ Carlo\ simulation.}}
+\DoxyCodeLine{\Hypertarget{_pricing_configuration_8hpp_source_l00060}\mbox{\hyperlink{struct_pricing_configuration_ae6c8a854a8cae03c47e20e199885e1db}{00060}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_pricing_configuration_ae6c8a854a8cae03c47e20e199885e1db}{mcNumPaths}};}
+\DoxyCodeLine{\Hypertarget{_pricing_configuration_8hpp_source_l00061}00061\ \ \ \ \ \textcolor{comment}{//\ Number\ of\ time\ steps\ per\ simulation\ path,\ which\ determines\ the\ granularity\ of\ the\ simulation.}}
+\DoxyCodeLine{\Hypertarget{_pricing_configuration_8hpp_source_l00062}\mbox{\hyperlink{struct_pricing_configuration_a6f1d5c5506012916fff9974f820a4b23}{00062}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_pricing_configuration_a6f1d5c5506012916fff9974f820a4b23}{mcTimeStepsPerPath}};}
+\DoxyCodeLine{\Hypertarget{_pricing_configuration_8hpp_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{_pricing_configuration_8hpp_source_l00074}\mbox{\hyperlink{struct_pricing_configuration_a2bec29b456d4e0f45582d0a22a983ad0}{00074}}\ \ \ \ \ \mbox{\hyperlink{struct_pricing_configuration_a2bec29b456d4e0f45582d0a22a983ad0}{PricingConfiguration}}()}
+\DoxyCodeLine{\Hypertarget{_pricing_configuration_8hpp_source_l00075}00075\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{struct_pricing_configuration_a86654268cc7202dec16251f02873a629}{calculationDate}}(\textcolor{stringliteral}{"{}"{}}),\ \textcolor{comment}{//\ An\ empty\ string\ indicates\ that\ the\ current\ date\ should\ be\ used.}}
+\DoxyCodeLine{\Hypertarget{_pricing_configuration_8hpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_pricing_configuration_a9ae4efdabf701f28b5c15dbc54ac3a7a}{maturity}}(1.0),}
+\DoxyCodeLine{\Hypertarget{_pricing_configuration_8hpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_pricing_configuration_a77ee8c896b9a6ddd04437a7489b21c91}{riskFreeRate}}(2.0),}
+\DoxyCodeLine{\Hypertarget{_pricing_configuration_8hpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_pricing_configuration_ae75cb39110c5afd84c593a8b945158fb}{binomialSteps}}(100),}
+\DoxyCodeLine{\Hypertarget{_pricing_configuration_8hpp_source_l00079}00079\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_pricing_configuration_a19af78dfee60063e83346cb99710dcf7}{crankTimeSteps}}(100),}
+\DoxyCodeLine{\Hypertarget{_pricing_configuration_8hpp_source_l00080}00080\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_pricing_configuration_a3b7221633527d9b1d758f2a5ab7eaf29}{crankSpotSteps}}(100),}
+\DoxyCodeLine{\Hypertarget{_pricing_configuration_8hpp_source_l00081}00081\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_pricing_configuration_a0252e37ed36dce2e03317c5715081a9d}{S\_max}}(0.0),\ \textcolor{comment}{//\ A\ value\ of\ 0.0\ signals\ that\ S\_max\ should\ be\ computed\ automatically\ if\ necessary.}}
+\DoxyCodeLine{\Hypertarget{_pricing_configuration_8hpp_source_l00082}00082\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_pricing_configuration_ae6c8a854a8cae03c47e20e199885e1db}{mcNumPaths}}(10000),}
+\DoxyCodeLine{\Hypertarget{_pricing_configuration_8hpp_source_l00083}00083\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_pricing_configuration_a6f1d5c5506012916fff9974f820a4b23}{mcTimeStepsPerPath}}(100)}
+\DoxyCodeLine{\Hypertarget{_pricing_configuration_8hpp_source_l00084}00084\ \ \ \ \ \{\}}
+\DoxyCodeLine{\Hypertarget{_pricing_configuration_8hpp_source_l00085}00085\ \};}
+\DoxyCodeLine{\Hypertarget{_pricing_configuration_8hpp_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{_pricing_configuration_8hpp_source_l00087}00087\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ PRICINGCONFIGURATION\_HPP}}
+
+\end{DoxyCode}

@@ -1,0 +1,40 @@
+\doxysection{Crank\+Nicolson\+Pricer.\+hpp File Reference}
+\hypertarget{_crank_nicolson_pricer_8hpp}{}\label{_crank_nicolson_pricer_8hpp}\index{CrankNicolsonPricer.hpp@{CrankNicolsonPricer.hpp}}
+
+
+Declaration and detailed documentation of the \doxylink{class_crank_nicolson_pricer}{Crank\+Nicolson\+Pricer} class.  
+
+
+{\ttfamily \#include \"{}pch.\+h\"{}}\newline
+{\ttfamily \#include \"{}Interface\+Option\+Pricer.\+hpp\"{}}\newline
+{\ttfamily \#include \"{}Pricing\+Configuration.\+hpp\"{}}\newline
+Include dependency graph for Crank\+Nicolson\+Pricer.\+hpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/de9/_crank_nicolson_pricer_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d4f/_crank_nicolson_pricer_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_crank_nicolson_pricer}{Crank\+Nicolson\+Pricer}}
+\begin{DoxyCompactList}\small\item\em \texorpdfstring{$<$}{<} Contains configuration parameters used for pricing models. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Declaration and detailed documentation of the \doxylink{class_crank_nicolson_pricer}{Crank\+Nicolson\+Pricer} class. 
+
+This header file declares the \doxylink{class_crank_nicolson_pricer}{Crank\+Nicolson\+Pricer} class, which implements an option pricing model using the Crank-\/\+Nicolson finite difference method. This numerical technique solves the Black-\/\+Scholes partial differential equation (PDE) by discretizing both time and the underlying asset price. The method is particularly effective for pricing options when an analytical solution is either unavailable or impractical.
+
+The class supports the computation of both the option price and its sensitivity measures (\doxylink{struct_greeks}{Greeks}), which are vital for risk management and hedging strategies. Additional configuration parameters can be specified via a \doxylink{struct_pricing_configuration}{Pricing\+Configuration} object, which includes settings such as the calculation date, option maturity, risk-\/free rate, the number of time steps, spot steps, and the maximum asset price (S\+\_\+max) used in the finite difference grid. 
+
+Definition in file \mbox{\hyperlink{_crank_nicolson_pricer_8hpp_source}{Crank\+Nicolson\+Pricer.\+hpp}}.
+

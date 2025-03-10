@@ -1,0 +1,66 @@
+\doxysection{Yield\+Curve.\+cpp}
+\hypertarget{_yield_curve_8cpp_source}{}\label{_yield_curve_8cpp_source}\mbox{\hyperlink{_yield_curve_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_yield_curve_8cpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{_yield_curve_8cpp_source_l00010}00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{pch_8h}{pch.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_yield_curve_8cpp_source_l00011}00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_yield_curve_8hpp}{YieldCurve.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{_yield_curve_8cpp_source_l00012}00012\ \textcolor{preprocessor}{\#include\ <stdexcept>}}
+\DoxyCodeLine{\Hypertarget{_yield_curve_8cpp_source_l00013}00013\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{\Hypertarget{_yield_curve_8cpp_source_l00014}00014\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{\Hypertarget{_yield_curve_8cpp_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{_yield_curve_8cpp_source_l00024}\mbox{\hyperlink{class_yield_curve_aea0767dec486d82d23cd8fbf3d4ba676}{00024}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_yield_curve_aea0767dec486d82d23cd8fbf3d4ba676}{YieldCurve::addRatePoint}}(\textcolor{keywordtype}{double}\ maturity,\ \textcolor{keywordtype}{double}\ rate)\ \{}
+\DoxyCodeLine{\Hypertarget{_yield_curve_8cpp_source_l00025}00025\ \ \ \ \ \mbox{\hyperlink{class_yield_curve_a1f38a70be36c8b608b82d8f602649aa7}{data\_}}.push\_back(\{\ maturity,\ rate\ \});}
+\DoxyCodeLine{\Hypertarget{_yield_curve_8cpp_source_l00026}00026\ \}}
+\DoxyCodeLine{\Hypertarget{_yield_curve_8cpp_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{_yield_curve_8cpp_source_l00038}\mbox{\hyperlink{class_yield_curve_aa3257efcdbad0d984764fd63a8563899}{00038}}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_yield_curve_aa3257efcdbad0d984764fd63a8563899}{YieldCurve::getRate}}(\textcolor{keywordtype}{double}\ t)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{_yield_curve_8cpp_source_l00039}00039\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_yield_curve_a1f38a70be36c8b608b82d8f602649aa7}{data\_}}.empty())\ \{}
+\DoxyCodeLine{\Hypertarget{_yield_curve_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}YieldCurve\ is\ empty"{}});}
+\DoxyCodeLine{\Hypertarget{_yield_curve_8cpp_source_l00041}00041\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_yield_curve_8cpp_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{_yield_curve_8cpp_source_l00043}00043\ \ \ \ \ \textcolor{comment}{//\ If\ t\ is\ less\ than\ or\ equal\ to\ the\ first\ point,\ return\ its\ rate.}}
+\DoxyCodeLine{\Hypertarget{_yield_curve_8cpp_source_l00044}00044\ \ \ \ \ \textcolor{keywordflow}{if}\ (t\ <=\ \mbox{\hyperlink{class_yield_curve_a1f38a70be36c8b608b82d8f602649aa7}{data\_}}.front().maturity)\ \{}
+\DoxyCodeLine{\Hypertarget{_yield_curve_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_yield_curve_a1f38a70be36c8b608b82d8f602649aa7}{data\_}}.front().rate;}
+\DoxyCodeLine{\Hypertarget{_yield_curve_8cpp_source_l00046}00046\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_yield_curve_8cpp_source_l00047}00047\ \ \ \ \ \textcolor{comment}{//\ If\ t\ is\ greater\ than\ or\ equal\ to\ the\ last\ point,\ return\ its\ rate.}}
+\DoxyCodeLine{\Hypertarget{_yield_curve_8cpp_source_l00048}00048\ \ \ \ \ \textcolor{keywordflow}{if}\ (t\ >=\ \mbox{\hyperlink{class_yield_curve_a1f38a70be36c8b608b82d8f602649aa7}{data\_}}.back().maturity)\ \{}
+\DoxyCodeLine{\Hypertarget{_yield_curve_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_yield_curve_a1f38a70be36c8b608b82d8f602649aa7}{data\_}}.back().rate;}
+\DoxyCodeLine{\Hypertarget{_yield_curve_8cpp_source_l00050}00050\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_yield_curve_8cpp_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{_yield_curve_8cpp_source_l00052}00052\ \ \ \ \ \textcolor{comment}{//\ Traverse\ the\ vector\ to\ find\ the\ interval\ containing\ t.}}
+\DoxyCodeLine{\Hypertarget{_yield_curve_8cpp_source_l00053}00053\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 1;\ i\ <\ \mbox{\hyperlink{class_yield_curve_a1f38a70be36c8b608b82d8f602649aa7}{data\_}}.size();\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{_yield_curve_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (t\ <\ \mbox{\hyperlink{class_yield_curve_a1f38a70be36c8b608b82d8f602649aa7}{data\_}}[i].maturity)\ \{}
+\DoxyCodeLine{\Hypertarget{_yield_curve_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_rate_point}{RatePoint}}\&\ p0\ =\ \mbox{\hyperlink{class_yield_curve_a1f38a70be36c8b608b82d8f602649aa7}{data\_}}[i\ -\/\ 1];}
+\DoxyCodeLine{\Hypertarget{_yield_curve_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_rate_point}{RatePoint}}\&\ p1\ =\ \mbox{\hyperlink{class_yield_curve_a1f38a70be36c8b608b82d8f602649aa7}{data\_}}[i];}
+\DoxyCodeLine{\Hypertarget{_yield_curve_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Compute\ the\ linear\ interpolation\ factor.}}
+\DoxyCodeLine{\Hypertarget{_yield_curve_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ factor\ =\ (t\ -\/\ p0.\mbox{\hyperlink{struct_rate_point_a16de333af27d481db5f4c11eb28d5e77}{maturity}})\ /\ (p1.\mbox{\hyperlink{struct_rate_point_a16de333af27d481db5f4c11eb28d5e77}{maturity}}\ -\/\ p0.\mbox{\hyperlink{struct_rate_point_a16de333af27d481db5f4c11eb28d5e77}{maturity}});}
+\DoxyCodeLine{\Hypertarget{_yield_curve_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ p0.\mbox{\hyperlink{struct_rate_point_a03798677fe1ac5d6c7024fbfc963db25}{rate}}\ +\ factor\ *\ (p1.\mbox{\hyperlink{struct_rate_point_a03798677fe1ac5d6c7024fbfc963db25}{rate}}\ -\/\ p0.\mbox{\hyperlink{struct_rate_point_a03798677fe1ac5d6c7024fbfc963db25}{rate}});}
+\DoxyCodeLine{\Hypertarget{_yield_curve_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_yield_curve_8cpp_source_l00061}00061\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_yield_curve_8cpp_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{_yield_curve_8cpp_source_l00063}00063\ \ \ \ \ \textcolor{comment}{//\ Default\ return\ (should\ not\ be\ reached).}}
+\DoxyCodeLine{\Hypertarget{_yield_curve_8cpp_source_l00064}00064\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_yield_curve_a1f38a70be36c8b608b82d8f602649aa7}{data\_}}.back().rate;}
+\DoxyCodeLine{\Hypertarget{_yield_curve_8cpp_source_l00065}00065\ \}}
+\DoxyCodeLine{\Hypertarget{_yield_curve_8cpp_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{_yield_curve_8cpp_source_l00072}\mbox{\hyperlink{class_yield_curve_ab32badc44c840501ac012466672654b7}{00072}}\ \textcolor{keyword}{const}\ std::vector<RatePoint>\&\ \mbox{\hyperlink{class_yield_curve_ab32badc44c840501ac012466672654b7}{YieldCurve::getData}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{_yield_curve_8cpp_source_l00073}00073\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_yield_curve_a1f38a70be36c8b608b82d8f602649aa7}{data\_}};}
+\DoxyCodeLine{\Hypertarget{_yield_curve_8cpp_source_l00074}00074\ \}}
+\DoxyCodeLine{\Hypertarget{_yield_curve_8cpp_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{_yield_curve_8cpp_source_l00085}\mbox{\hyperlink{class_yield_curve_ae4a92baa1385c3d7766ad376197dc6a5}{00085}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_yield_curve_ae4a92baa1385c3d7766ad376197dc6a5}{YieldCurve::loadFromFile}}(\textcolor{keyword}{const}\ std::string\&\ filename)\ \{}
+\DoxyCodeLine{\Hypertarget{_yield_curve_8cpp_source_l00086}00086\ \ \ \ \ std::ifstream\ infile(filename);}
+\DoxyCodeLine{\Hypertarget{_yield_curve_8cpp_source_l00087}00087\ \ \ \ \ \textcolor{keywordflow}{if}\ (!infile)\ \{}
+\DoxyCodeLine{\Hypertarget{_yield_curve_8cpp_source_l00088}00088\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Cannot\ open\ file:\ "{}}\ +\ filename);}
+\DoxyCodeLine{\Hypertarget{_yield_curve_8cpp_source_l00089}00089\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_yield_curve_8cpp_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{_yield_curve_8cpp_source_l00091}00091\ \ \ \ \ std::string\ line;}
+\DoxyCodeLine{\Hypertarget{_yield_curve_8cpp_source_l00092}00092\ \ \ \ \ \textcolor{keywordflow}{while}\ (std::getline(infile,\ line))\ \{}
+\DoxyCodeLine{\Hypertarget{_yield_curve_8cpp_source_l00093}00093\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (line.empty())\ \textcolor{keywordflow}{continue};\ \ \textcolor{comment}{//\ Skip\ empty\ lines.}}
+\DoxyCodeLine{\Hypertarget{_yield_curve_8cpp_source_l00094}00094\ \ \ \ \ \ \ \ \ std::istringstream\ iss(line);}
+\DoxyCodeLine{\Hypertarget{_yield_curve_8cpp_source_l00095}00095\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ maturity,\ rate;}
+\DoxyCodeLine{\Hypertarget{_yield_curve_8cpp_source_l00096}00096\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!(iss\ >>\ maturity\ >>\ rate))\ \{}
+\DoxyCodeLine{\Hypertarget{_yield_curve_8cpp_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Invalid\ format\ in\ file:\ "{}}\ +\ line);}
+\DoxyCodeLine{\Hypertarget{_yield_curve_8cpp_source_l00098}00098\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_yield_curve_8cpp_source_l00099}00099\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_yield_curve_aea0767dec486d82d23cd8fbf3d4ba676}{addRatePoint}}(maturity,\ rate);}
+\DoxyCodeLine{\Hypertarget{_yield_curve_8cpp_source_l00100}00100\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_yield_curve_8cpp_source_l00101}00101\ \}}
+
+\end{DoxyCode}

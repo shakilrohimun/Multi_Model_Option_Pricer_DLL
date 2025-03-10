@@ -1,0 +1,42 @@
+\doxysection{Monte\+Carlo\+Pricer.\+hpp File Reference}
+\hypertarget{_monte_carlo_pricer_8hpp}{}\label{_monte_carlo_pricer_8hpp}\index{MonteCarloPricer.hpp@{MonteCarloPricer.hpp}}
+
+
+Declaration and detailed documentation of the \doxylink{class_monte_carlo_pricer}{Monte\+Carlo\+Pricer} class.  
+
+
+{\ttfamily \#include \"{}pch.\+h\"{}}\newline
+{\ttfamily \#include \"{}Interface\+Option\+Pricer.\+hpp\"{}}\newline
+{\ttfamily \#include \"{}Pricing\+Configuration.\+hpp\"{}}\newline
+Include dependency graph for Monte\+Carlo\+Pricer.\+hpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d92/_monte_carlo_pricer_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/dd1/_monte_carlo_pricer_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_monte_carlo_pricer}{Monte\+Carlo\+Pricer}}
+\begin{DoxyCompactList}\small\item\em Class implementing the Monte Carlo pricing model. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Declaration and detailed documentation of the \doxylink{class_monte_carlo_pricer}{Monte\+Carlo\+Pricer} class. 
+
+This header file declares the \doxylink{class_monte_carlo_pricer}{Monte\+Carlo\+Pricer} class, which implements option pricing using Monte Carlo simulation techniques. The class simulates numerous potential future price paths of the underlying asset to compute the expected payoff of the option.
+
+For European options, a standard Monte Carlo simulation is used. For American options, the Longstaff-\/\+Schwartz method (which employs least-\/squares regression) is utilized to determine the optimal early exercise strategy.
+
+This approach is particularly useful when closed-\/form solutions are not available, providing a flexible and robust method for pricing a variety of option types. 
+
+Definition in file \mbox{\hyperlink{_monte_carlo_pricer_8hpp_source}{Monte\+Carlo\+Pricer.\+hpp}}.
+

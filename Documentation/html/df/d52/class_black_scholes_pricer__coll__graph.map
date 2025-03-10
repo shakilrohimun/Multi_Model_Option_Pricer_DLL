@@ -1,0 +1,9 @@
+<map id="BlackScholesPricer" name="BlackScholesPricer">
+<area shape="rect" id="Node000001" title="A class that implements the Black&#45;Scholes pricing model for European options." alt="" coords="32,187,167,213"/>
+<area shape="rect" id="Node000002" href="$d9/dec/class_i_option_pricer.html" title="Interface for an option pricing engine." alt="" coords="5,96,103,123"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="70,136,95,185,90,187,65,138"/>
+<area shape="rect" id="Node000003" href="$da/d37/struct_pricing_configuration.html" title="Structure holding pricing configuration parameters." alt="" coords="126,96,264,123"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="172,135,115,188,111,184,169,131"/>
+<area shape="rect" id="Node000004" href="$db/dca/class_yield_curve.html" title="Class for managing the interest rate curve." alt="" coords="153,5,238,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="198,48,198,95,193,95,193,48"/>
+</map>

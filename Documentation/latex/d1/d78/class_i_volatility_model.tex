@@ -1,0 +1,63 @@
+\doxysection{IVolatility\+Model Class Reference}
+\hypertarget{class_i_volatility_model}{}\label{class_i_volatility_model}\index{IVolatilityModel@{IVolatilityModel}}
+
+
+{\ttfamily \#include $<$Interface\+Volatility\+Model.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual double \mbox{\hyperlink{class_i_volatility_model_af45ae3706583a5a195d893289c16827f}{get\+Volatility}} (double t) const =0
+\begin{DoxyCompactList}\small\item\em Calculates the volatility at a given time or maturity. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_i_volatility_model_ab48de0d7e4680164d37e7a857d1455cd}{\texorpdfstring{$\sim$}{\string~}\+IVolatility\+Model}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_interface_volatility_model_8hpp_source_l00019}{19}} of file \mbox{\hyperlink{_interface_volatility_model_8hpp_source}{Interface\+Volatility\+Model.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_i_volatility_model_ab48de0d7e4680164d37e7a857d1455cd}\label{class_i_volatility_model_ab48de0d7e4680164d37e7a857d1455cd} 
+\index{IVolatilityModel@{IVolatilityModel}!````~IVolatilityModel@{\texorpdfstring{$\sim$}{\string~}IVolatilityModel}}
+\index{````~IVolatilityModel@{\texorpdfstring{$\sim$}{\string~}IVolatilityModel}!IVolatilityModel@{IVolatilityModel}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}IVolatilityModel()}{\string~IVolatilityModel()}}
+{\footnotesize\ttfamily virtual IVolatility\+Model\+::\texorpdfstring{$\sim$}{\string~}\+IVolatility\+Model (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Virtual destructor. 
+
+Ensures proper cleanup of derived objects when deleted through a pointer to \doxylink{class_i_volatility_model}{IVolatility\+Model}.
+
+The virtual destructor is essential in a polymorphic interface to prevent resource leaks and undefined behavior during object destruction. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_i_volatility_model_af45ae3706583a5a195d893289c16827f}\label{class_i_volatility_model_af45ae3706583a5a195d893289c16827f} 
+\index{IVolatilityModel@{IVolatilityModel}!getVolatility@{getVolatility}}
+\index{getVolatility@{getVolatility}!IVolatilityModel@{IVolatilityModel}}
+\doxysubsubsection{\texorpdfstring{getVolatility()}{getVolatility()}}
+{\footnotesize\ttfamily virtual double IVolatility\+Model\+::get\+Volatility (\begin{DoxyParamCaption}\item[{double}]{t }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Calculates the volatility at a given time or maturity. 
+
+This pure virtual function must be implemented by any concrete volatility model. It computes the volatility based on the specific time (or maturity) provided, allowing for the evaluation of dynamic market conditions.
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & The time (or maturity) at which the volatility should be calculated. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The computed volatility as a double.
+\end{DoxyReturn}
+The parameter t can represent the time until an option\textquotesingle{}s maturity or any relevant time interval depending on the model\textquotesingle{}s design. The implementation might involve analytical formulas or numerical methods tailored to the characteristics of the specific volatility model. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_interface_volatility_model_8hpp}{Interface\+Volatility\+Model.\+hpp}}\end{DoxyCompactItemize}

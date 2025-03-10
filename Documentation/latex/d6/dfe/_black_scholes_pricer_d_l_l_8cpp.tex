@@ -1,0 +1,115 @@
+\doxysection{Black\+Scholes\+Pricer\+DLL.\+cpp File Reference}
+\hypertarget{_black_scholes_pricer_d_l_l_8cpp}{}\label{_black_scholes_pricer_d_l_l_8cpp}\index{BlackScholesPricerDLL.cpp@{BlackScholesPricerDLL.cpp}}
+{\ttfamily \#include \"{}pch.\+h\"{}}\newline
+{\ttfamily \#include \"{}Black\+Scholes\+Pricer\+DLL.\+hpp\"{}}\newline
+{\ttfamily \#include \"{}Black\+Scholes\+Pricer.\+hpp\"{}}\newline
+{\ttfamily \#include \"{}Option.\+hpp\"{}}\newline
+{\ttfamily \#include \"{}Pricing\+Configuration.\+hpp\"{}}\newline
+{\ttfamily \#include \"{}Date\+Converter.\+hpp\"{}}\newline
+{\ttfamily \#include $<$stdexcept$>$}\newline
+{\ttfamily \#include $<$cstring$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+Include dependency graph for Black\+Scholes\+Pricer\+DLL.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d66/_black_scholes_pricer_d_l_l_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \+\_\+\+\_\+stdcall \mbox{\hyperlink{_black_scholes_pricer_d_l_l_8cpp_a673fdf8aa29dcffd1420322776f43c0a}{Compute\+Option\+Greeks}} (double S, double \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_a74b45da7676e23dd8ec974cfc04c0137}{K}}, double \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_a9e64a35af6ea2c4e18a21ae6ab8f4b4a}{T}}, double \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_a7058482f32dc92202725725112678538}{r}}, double \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_acc82fd456cac0384d2075ece3102201a}{sigma}}, double \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_ae1370efc3e7cbcccb16c9f9725d95188}{q}}, int \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_ababfbfb37e9a9a294f2fbc0c514abade}{option\+Type}}, int \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_ad00273f7d7912cf5b399a84b6ec595ef}{option\+Style}}, const char \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_aad3e2b2887bd0dff4456a8d86ef843f1}{calculation\+Date}}, double \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_afa2fbffc32c40cd7b32c909eb4dea3d7}{delta}}, double \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_a95751aa2ef97efecade491f32c5cde50}{gamma}}, double \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_adbefd4a93bf3d8656cf6e1e089063723}{vega}}, double \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_ae01bf602516416e5bdf198ad18c5c567}{theta}}, double \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_a6e5bcb5da44ba87aeb933c99a674c6af}{rho}})
+\item 
+double \+\_\+\+\_\+stdcall \mbox{\hyperlink{_black_scholes_pricer_d_l_l_8cpp_acc7e996da69e07dcc752e85751e5c612}{Price\+Option}} (double S, double \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_a74b45da7676e23dd8ec974cfc04c0137}{K}}, double \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_a9e64a35af6ea2c4e18a21ae6ab8f4b4a}{T}}, double \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_a7058482f32dc92202725725112678538}{r}}, double \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_acc82fd456cac0384d2075ece3102201a}{sigma}}, double \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_ae1370efc3e7cbcccb16c9f9725d95188}{q}}, int \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_ababfbfb37e9a9a294f2fbc0c514abade}{option\+Type}}, int \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_ad00273f7d7912cf5b399a84b6ec595ef}{option\+Style}}, const char \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_aad3e2b2887bd0dff4456a8d86ef843f1}{calculation\+Date}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_black_scholes_pricer_d_l_l_8cpp_a673fdf8aa29dcffd1420322776f43c0a}\label{_black_scholes_pricer_d_l_l_8cpp_a673fdf8aa29dcffd1420322776f43c0a} 
+\index{BlackScholesPricerDLL.cpp@{BlackScholesPricerDLL.cpp}!ComputeOptionGreeks@{ComputeOptionGreeks}}
+\index{ComputeOptionGreeks@{ComputeOptionGreeks}!BlackScholesPricerDLL.cpp@{BlackScholesPricerDLL.cpp}}
+\doxysubsubsection{\texorpdfstring{ComputeOptionGreeks()}{ComputeOptionGreeks()}}
+{\footnotesize\ttfamily void \+\_\+\+\_\+stdcall Compute\+Option\+Greeks (\begin{DoxyParamCaption}\item[{double}]{S,  }\item[{double}]{K,  }\item[{double}]{T,  }\item[{double}]{r,  }\item[{double}]{sigma,  }\item[{double}]{q,  }\item[{int}]{option\+Type,  }\item[{int}]{option\+Style,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{calculation\+Date,  }\item[{double \texorpdfstring{$\ast$}{*}}]{delta,  }\item[{double \texorpdfstring{$\ast$}{*}}]{gamma,  }\item[{double \texorpdfstring{$\ast$}{*}}]{vega,  }\item[{double \texorpdfstring{$\ast$}{*}}]{theta,  }\item[{double \texorpdfstring{$\ast$}{*}}]{rho }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_black_scholes_pricer_d_l_l_8cpp_source_l00054}{54}} of file \mbox{\hyperlink{_black_scholes_pricer_d_l_l_8cpp_source}{Black\+Scholes\+Pricer\+DLL.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00058\ \ \ \ \ \{}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_pricing_configuration}{PricingConfiguration}}\ config;}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_aad3e2b2887bd0dff4456a8d86ef843f1}{calculationDate}}\ ==\ \textcolor{keyword}{nullptr}\ ||\ strlen(\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_aad3e2b2887bd0dff4456a8d86ef843f1}{calculationDate}})\ ==\ 0)}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ config.\mbox{\hyperlink{struct_pricing_configuration_a86654268cc7202dec16251f02873a629}{calculationDate}}\ =\ \mbox{\hyperlink{class_date_converter_a054a4504080ed36c068868cc2d975fa6}{DateConverter::getTodayDate}}();}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ config.\mbox{\hyperlink{struct_pricing_configuration_a86654268cc7202dec16251f02873a629}{calculationDate}}\ =\ \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_aad3e2b2887bd0dff4456a8d86ef843f1}{calculationDate}};}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ config.\mbox{\hyperlink{struct_pricing_configuration_a9ae4efdabf701f28b5c15dbc54ac3a7a}{maturity}}\ =\ \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_a9e64a35af6ea2c4e18a21ae6ab8f4b4a}{T}};}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ config.\mbox{\hyperlink{struct_pricing_configuration_a77ee8c896b9a6ddd04437a7489b21c91}{riskFreeRate}}\ =\ \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_a7058482f32dc92202725725112678538}{r}};}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_black_scholes_pricer}{BlackScholesPricer}}\ pricer(config);}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_option}{Option}}\ opt(S,\ \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_a74b45da7676e23dd8ec974cfc04c0137}{K}},\ \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_acc82fd456cac0384d2075ece3102201a}{sigma}},\ \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_ae1370efc3e7cbcccb16c9f9725d95188}{q}},}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_ababfbfb37e9a9a294f2fbc0c514abade}{optionType}}\ ==\ 0\ ?\ \mbox{\hyperlink{class_option_ad3a2defb450b67b3d8d4c0d06b475b3bac3755e61202abd74da5885d2e9c9160e}{Option::OptionType::Call}}\ :\ \mbox{\hyperlink{class_option}{Option}}::OptionType::Put),}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_ad00273f7d7912cf5b399a84b6ec595ef}{optionStyle}}\ ==\ 0\ ?\ \mbox{\hyperlink{class_option}{Option}}::OptionStyle::European\ :\ \mbox{\hyperlink{class_option}{Option}}::OptionStyle::American));}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (opt.\mbox{\hyperlink{class_option_aa0359256d21a97f5a280f60e0b088ad3}{getOptionStyle}}()\ !=\ \mbox{\hyperlink{class_option_a9f88b2cb28c4d271515fe52d6332ab9fadfa6ea1d1696cebf5f8e0722812f7bbb}{Option::OptionStyle::European}})}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}BlackScholesPricer\ supports\ only\ European\ options."{}});}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_greeks}{Greeks}}\ g\ =\ pricer.computeGreeks(opt);}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_afa2fbffc32c40cd7b32c909eb4dea3d7}{delta}})\ *\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_afa2fbffc32c40cd7b32c909eb4dea3d7}{delta}}\ =\ g.\mbox{\hyperlink{struct_greeks_a9d16140323f20876507a2d5453696b1a}{delta}};}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_a95751aa2ef97efecade491f32c5cde50}{gamma}})\ *\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_a95751aa2ef97efecade491f32c5cde50}{gamma}}\ =\ g.\mbox{\hyperlink{struct_greeks_afcef8fafe28ec46b041eda551aefac76}{gamma}};}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_adbefd4a93bf3d8656cf6e1e089063723}{vega}})\ \ *\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_adbefd4a93bf3d8656cf6e1e089063723}{vega}}\ =\ g.\mbox{\hyperlink{struct_greeks_a87709cf35763c458f36a6935f7d7ce25}{vega}};}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_ae01bf602516416e5bdf198ad18c5c567}{theta}})\ *\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_ae01bf602516416e5bdf198ad18c5c567}{theta}}\ =\ g.\mbox{\hyperlink{struct_greeks_a82fcb8b4f18e8afc91ab23df69ae6f17}{theta}};}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_a6e5bcb5da44ba87aeb933c99a674c6af}{rho}})\ \ \ *\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_a6e5bcb5da44ba87aeb933c99a674c6af}{rho}}\ =\ g.\mbox{\hyperlink{struct_greeks_afaa454ff183cfa3d58902d49e4f363db}{rho}};}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ std::exception\&\ ex)\ \{}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_afa2fbffc32c40cd7b32c909eb4dea3d7}{delta}})\ *\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_afa2fbffc32c40cd7b32c909eb4dea3d7}{delta}}\ =\ NAN;}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_a95751aa2ef97efecade491f32c5cde50}{gamma}})\ *\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_a95751aa2ef97efecade491f32c5cde50}{gamma}}\ =\ NAN;}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_adbefd4a93bf3d8656cf6e1e089063723}{vega}})\ \ *\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_adbefd4a93bf3d8656cf6e1e089063723}{vega}}\ =\ NAN;}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_ae01bf602516416e5bdf198ad18c5c567}{theta}})\ *\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_ae01bf602516416e5bdf198ad18c5c567}{theta}}\ =\ NAN;}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_a6e5bcb5da44ba87aeb933c99a674c6af}{rho}})\ \ \ *\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_a6e5bcb5da44ba87aeb933c99a674c6af}{rho}}\ =\ NAN;}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00091\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{_black_scholes_pricer_d_l_l_8cpp_acc7e996da69e07dcc752e85751e5c612}\label{_black_scholes_pricer_d_l_l_8cpp_acc7e996da69e07dcc752e85751e5c612} 
+\index{BlackScholesPricerDLL.cpp@{BlackScholesPricerDLL.cpp}!PriceOption@{PriceOption}}
+\index{PriceOption@{PriceOption}!BlackScholesPricerDLL.cpp@{BlackScholesPricerDLL.cpp}}
+\doxysubsubsection{\texorpdfstring{PriceOption()}{PriceOption()}}
+{\footnotesize\ttfamily double \+\_\+\+\_\+stdcall Price\+Option (\begin{DoxyParamCaption}\item[{double}]{S,  }\item[{double}]{K,  }\item[{double}]{T,  }\item[{double}]{r,  }\item[{double}]{sigma,  }\item[{double}]{q,  }\item[{int}]{option\+Type,  }\item[{int}]{option\+Style,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{calculation\+Date }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_black_scholes_pricer_d_l_l_8cpp_source_l00023}{23}} of file \mbox{\hyperlink{_black_scholes_pricer_d_l_l_8cpp_source}{Black\+Scholes\+Pricer\+DLL.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00026\ \ \ \ \ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_pricing_configuration}{PricingConfiguration}}\ config;}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_aad3e2b2887bd0dff4456a8d86ef843f1}{calculationDate}}\ ==\ \textcolor{keyword}{nullptr}\ ||\ strlen(\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_aad3e2b2887bd0dff4456a8d86ef843f1}{calculationDate}})\ ==\ 0)}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ config.\mbox{\hyperlink{struct_pricing_configuration_a86654268cc7202dec16251f02873a629}{calculationDate}}\ =\ \mbox{\hyperlink{class_date_converter_a054a4504080ed36c068868cc2d975fa6}{DateConverter::getTodayDate}}();}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ config.\mbox{\hyperlink{struct_pricing_configuration_a86654268cc7202dec16251f02873a629}{calculationDate}}\ =\ \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_aad3e2b2887bd0dff4456a8d86ef843f1}{calculationDate}};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ config.\mbox{\hyperlink{struct_pricing_configuration_a9ae4efdabf701f28b5c15dbc54ac3a7a}{maturity}}\ =\ \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_a9e64a35af6ea2c4e18a21ae6ab8f4b4a}{T}};}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ config.\mbox{\hyperlink{struct_pricing_configuration_a77ee8c896b9a6ddd04437a7489b21c91}{riskFreeRate}}\ =\ \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_a7058482f32dc92202725725112678538}{r}};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_black_scholes_pricer}{BlackScholesPricer}}\ pricer(config);}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_option}{Option}}\ opt(S,\ \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_a74b45da7676e23dd8ec974cfc04c0137}{K}},\ \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_acc82fd456cac0384d2075ece3102201a}{sigma}},\ \mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_ae1370efc3e7cbcccb16c9f9725d95188}{q}},}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_ababfbfb37e9a9a294f2fbc0c514abade}{optionType}}\ ==\ 0\ ?\ \mbox{\hyperlink{class_option_ad3a2defb450b67b3d8d4c0d06b475b3bac3755e61202abd74da5885d2e9c9160e}{Option::OptionType::Call}}\ :\ \mbox{\hyperlink{class_option}{Option}}::OptionType::Put),}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{_binomial_pricer_d_l_l_8hpp_ad00273f7d7912cf5b399a84b6ec595ef}{optionStyle}}\ ==\ 0\ ?\ \mbox{\hyperlink{class_option}{Option}}::OptionStyle::European\ :\ \mbox{\hyperlink{class_option}{Option}}::OptionStyle::American));}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (opt.\mbox{\hyperlink{class_option_aa0359256d21a97f5a280f60e0b088ad3}{getOptionStyle}}()\ !=\ \mbox{\hyperlink{class_option_a9f88b2cb28c4d271515fe52d6332ab9fadfa6ea1d1696cebf5f8e0722812f7bbb}{Option::OptionStyle::European}})}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}BlackScholesPricer\ supports\ only\ European\ options."{}});}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ pricer.price(opt);}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ std::exception\&\ ex)\ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1.0;}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00050\ \ \ \ \ \}}
+
+\end{DoxyCode}

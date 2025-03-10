@@ -1,0 +1,49 @@
+\doxysection{Date\+Converter.\+cpp}
+\hypertarget{_date_converter_8cpp_source}{}\label{_date_converter_8cpp_source}\mbox{\hyperlink{_date_converter_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_date_converter_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{pch_8h}{pch.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_date_converter_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_date_converter_8hpp}{DateConverter.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{_date_converter_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <chrono>}}
+\DoxyCodeLine{\Hypertarget{_date_converter_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <ctime>}}
+\DoxyCodeLine{\Hypertarget{_date_converter_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{\Hypertarget{_date_converter_8cpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <iomanip>}}
+\DoxyCodeLine{\Hypertarget{_date_converter_8cpp_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <stdexcept>}}
+\DoxyCodeLine{\Hypertarget{_date_converter_8cpp_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{_date_converter_8cpp_source_l00017}\mbox{\hyperlink{class_date_converter_a054a4504080ed36c068868cc2d975fa6}{00017}}\ std::string\ \mbox{\hyperlink{class_date_converter_a054a4504080ed36c068868cc2d975fa6}{DateConverter::getTodayDate}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_date_converter_8cpp_source_l00018}00018\ \ \ \ \ \textcolor{comment}{//\ Get\ the\ current\ time\ point\ from\ the\ system\ clock.}}
+\DoxyCodeLine{\Hypertarget{_date_converter_8cpp_source_l00019}00019\ \ \ \ \ \textcolor{keyword}{auto}\ now\ =\ std::chrono::system\_clock::now();}
+\DoxyCodeLine{\Hypertarget{_date_converter_8cpp_source_l00020}00020\ \ \ \ \ \textcolor{comment}{//\ Convert\ the\ time\ point\ to\ a\ time\_t\ object.}}
+\DoxyCodeLine{\Hypertarget{_date_converter_8cpp_source_l00021}00021\ \ \ \ \ std::time\_t\ now\_time\ =\ std::chrono::system\_clock::to\_time\_t(now);}
+\DoxyCodeLine{\Hypertarget{_date_converter_8cpp_source_l00022}00022\ \ \ \ \ \textcolor{comment}{//\ Convert\ time\_t\ to\ a\ tm\ struct\ representing\ local\ time.}}
+\DoxyCodeLine{\Hypertarget{_date_converter_8cpp_source_l00023}00023\ \ \ \ \ std::tm\ local\_tm;}
+\DoxyCodeLine{\Hypertarget{_date_converter_8cpp_source_l00024}00024\ \textcolor{preprocessor}{\#if\ defined(\_MSC\_VER)\ ||\ defined(\_\_MINGW32\_\_)}}
+\DoxyCodeLine{\Hypertarget{_date_converter_8cpp_source_l00025}00025\ \ \ \ \ localtime\_s(\&local\_tm,\ \&now\_time);}
+\DoxyCodeLine{\Hypertarget{_date_converter_8cpp_source_l00026}00026\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{_date_converter_8cpp_source_l00027}00027\ \ \ \ \ localtime\_r(\&now\_time,\ \&local\_tm);}
+\DoxyCodeLine{\Hypertarget{_date_converter_8cpp_source_l00028}00028\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_date_converter_8cpp_source_l00029}00029\ \ \ \ \ \textcolor{comment}{//\ Format\ the\ time\ using\ an\ ostringstream.}}
+\DoxyCodeLine{\Hypertarget{_date_converter_8cpp_source_l00030}00030\ \ \ \ \ std::ostringstream\ oss;}
+\DoxyCodeLine{\Hypertarget{_date_converter_8cpp_source_l00031}00031\ \ \ \ \ oss\ <<\ std::put\_time(\&local\_tm,\ \textcolor{stringliteral}{"{}\%Y-\/\%m-\/\%d"{}});}
+\DoxyCodeLine{\Hypertarget{_date_converter_8cpp_source_l00032}00032\ \ \ \ \ \textcolor{keywordflow}{return}\ oss.str();}
+\DoxyCodeLine{\Hypertarget{_date_converter_8cpp_source_l00033}00033\ \}}
+\DoxyCodeLine{\Hypertarget{_date_converter_8cpp_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{_date_converter_8cpp_source_l00045}\mbox{\hyperlink{class_date_converter_a4e6942fe4c9ec505d14223fe86c45c6e}{00045}}\ std::chrono::system\_clock::time\_point\ \mbox{\hyperlink{class_date_converter_a4e6942fe4c9ec505d14223fe86c45c6e}{DateConverter::parseDate}}(\textcolor{keyword}{const}\ std::string\&\ dateStr)\ \{}
+\DoxyCodeLine{\Hypertarget{_date_converter_8cpp_source_l00046}00046\ \ \ \ \ std::tm\ tm\ =\ \{\};}
+\DoxyCodeLine{\Hypertarget{_date_converter_8cpp_source_l00047}00047\ \ \ \ \ std::istringstream\ ss(dateStr);}
+\DoxyCodeLine{\Hypertarget{_date_converter_8cpp_source_l00048}00048\ \ \ \ \ ss\ >>\ std::get\_time(\&tm,\ \textcolor{stringliteral}{"{}\%Y-\/\%m-\/\%d"{}});}
+\DoxyCodeLine{\Hypertarget{_date_converter_8cpp_source_l00049}00049\ \ \ \ \ \textcolor{keywordflow}{if}\ (ss.fail())\ \{}
+\DoxyCodeLine{\Hypertarget{_date_converter_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Failed\ to\ parse\ date:\ "{}}\ +\ dateStr);}
+\DoxyCodeLine{\Hypertarget{_date_converter_8cpp_source_l00051}00051\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_date_converter_8cpp_source_l00052}00052\ \ \ \ \ std::time\_t\ time\ =\ std::mktime(\&tm);}
+\DoxyCodeLine{\Hypertarget{_date_converter_8cpp_source_l00053}00053\ \ \ \ \ \textcolor{keywordflow}{return}\ std::chrono::system\_clock::from\_time\_t(time);}
+\DoxyCodeLine{\Hypertarget{_date_converter_8cpp_source_l00054}00054\ \}}
+\DoxyCodeLine{\Hypertarget{_date_converter_8cpp_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{_date_converter_8cpp_source_l00066}\mbox{\hyperlink{class_date_converter_a7b86ecd9e814d45c359e489c02b9f17a}{00066}}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_date_converter_a7b86ecd9e814d45c359e489c02b9f17a}{DateConverter::yearsBetween}}(\textcolor{keyword}{const}\ std::chrono::system\_clock::time\_point\&\ start,}
+\DoxyCodeLine{\Hypertarget{_date_converter_8cpp_source_l00067}00067\ \ \ \ \ \textcolor{keyword}{const}\ std::chrono::system\_clock::time\_point\&\ end)\ \{}
+\DoxyCodeLine{\Hypertarget{_date_converter_8cpp_source_l00068}00068\ \ \ \ \ \textcolor{keyword}{auto}\ diff\ =\ end\ -\/\ start;}
+\DoxyCodeLine{\Hypertarget{_date_converter_8cpp_source_l00069}00069\ \ \ \ \ \textcolor{comment}{//\ Convert\ duration\ to\ days\ (using\ 24\ hours\ per\ day)}}
+\DoxyCodeLine{\Hypertarget{_date_converter_8cpp_source_l00070}00070\ \ \ \ \ \textcolor{keyword}{auto}\ days\ =\ std::chrono::duration\_cast<std::chrono::hours>(diff).count()\ /\ 24.0;}
+\DoxyCodeLine{\Hypertarget{_date_converter_8cpp_source_l00071}00071\ \ \ \ \ \textcolor{keywordflow}{return}\ days\ /\ 365.25;}
+\DoxyCodeLine{\Hypertarget{_date_converter_8cpp_source_l00072}00072\ \}}
+
+\end{DoxyCode}

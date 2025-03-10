@@ -1,0 +1,29 @@
+\doxysection{Crank\+Nicolson\+Pricer.\+hpp}
+\hypertarget{_crank_nicolson_pricer_8hpp_source}{}\label{_crank_nicolson_pricer_8hpp_source}\mbox{\hyperlink{_crank_nicolson_pricer_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_crank_nicolson_pricer_8hpp_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ CRANKNICOLSONPRICER\_HPP}}
+\DoxyCodeLine{\Hypertarget{_crank_nicolson_pricer_8hpp_source_l00002}00002\ \textcolor{preprocessor}{\#define\ CRANKNICOLSONPRICER\_HPP}}
+\DoxyCodeLine{\Hypertarget{_crank_nicolson_pricer_8hpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_crank_nicolson_pricer_8hpp_source_l00019}00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{pch_8h}{pch.h}}"{}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_crank_nicolson_pricer_8hpp_source_l00020}00020\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_interface_option_pricer_8hpp}{InterfaceOptionPricer.hpp}}"{}}\ }
+\DoxyCodeLine{\Hypertarget{_crank_nicolson_pricer_8hpp_source_l00021}00021\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_pricing_configuration_8hpp}{PricingConfiguration.hpp}}"{}}\ \ }
+\DoxyCodeLine{\Hypertarget{_crank_nicolson_pricer_8hpp_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{_crank_nicolson_pricer_8hpp_source_l00035}\mbox{\hyperlink{class_crank_nicolson_pricer}{00035}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_crank_nicolson_pricer}{CrankNicolsonPricer}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_i_option_pricer}{IOptionPricer}}\ \{}
+\DoxyCodeLine{\Hypertarget{_crank_nicolson_pricer_8hpp_source_l00036}00036\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_crank_nicolson_pricer_8hpp_source_l00047}00047\ \ \ \ \ \mbox{\hyperlink{class_crank_nicolson_pricer_a540f3cef3e3759e5ea97838a367a483f}{CrankNicolsonPricer}}();}
+\DoxyCodeLine{\Hypertarget{_crank_nicolson_pricer_8hpp_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{_crank_nicolson_pricer_8hpp_source_l00057}00057\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_crank_nicolson_pricer_a42f952df2608342a1a5b23db1e32d11e}{\string~CrankNicolsonPricer}}();}
+\DoxyCodeLine{\Hypertarget{_crank_nicolson_pricer_8hpp_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{_crank_nicolson_pricer_8hpp_source_l00073}00073\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_crank_nicolson_pricer_a5cdd3d767a3512887e921f9b170460d2}{price}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_option}{Option}}\&\ opt)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{\Hypertarget{_crank_nicolson_pricer_8hpp_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{_crank_nicolson_pricer_8hpp_source_l00088}00088\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{struct_greeks}{Greeks}}\ \mbox{\hyperlink{class_crank_nicolson_pricer_addb3858ae0f703d17a35d1ed80c6dad9}{computeGreeks}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_option}{Option}}\&\ opt)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{\Hypertarget{_crank_nicolson_pricer_8hpp_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{_crank_nicolson_pricer_8hpp_source_l00102}00102\ \ \ \ \ \mbox{\hyperlink{class_crank_nicolson_pricer_a540f3cef3e3759e5ea97838a367a483f}{CrankNicolsonPricer}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_pricing_configuration}{PricingConfiguration}}\&\ config);}
+\DoxyCodeLine{\Hypertarget{_crank_nicolson_pricer_8hpp_source_l00103}00103\ }
+\DoxyCodeLine{\Hypertarget{_crank_nicolson_pricer_8hpp_source_l00104}00104\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_crank_nicolson_pricer_8hpp_source_l00116}\mbox{\hyperlink{class_crank_nicolson_pricer_a78f7627876cebf682cb55d1b27ae77b9}{00116}}\ \ \ \ \ \mbox{\hyperlink{struct_pricing_configuration}{PricingConfiguration}}\ \mbox{\hyperlink{class_crank_nicolson_pricer_a78f7627876cebf682cb55d1b27ae77b9}{config\_}};}
+\DoxyCodeLine{\Hypertarget{_crank_nicolson_pricer_8hpp_source_l00117}00117\ \};}
+\DoxyCodeLine{\Hypertarget{_crank_nicolson_pricer_8hpp_source_l00118}00118\ }
+\DoxyCodeLine{\Hypertarget{_crank_nicolson_pricer_8hpp_source_l00119}00119\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ CRANKNICOLSONPRICER\_HPP}}
+
+\end{DoxyCode}

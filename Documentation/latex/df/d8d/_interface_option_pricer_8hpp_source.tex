@@ -1,0 +1,21 @@
+\doxysection{Interface\+Option\+Pricer.\+hpp}
+\hypertarget{_interface_option_pricer_8hpp_source}{}\label{_interface_option_pricer_8hpp_source}\mbox{\hyperlink{_interface_option_pricer_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_interface_option_pricer_8hpp_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ INTERFACEOPTIONPRICER\_HPP}}
+\DoxyCodeLine{\Hypertarget{_interface_option_pricer_8hpp_source_l00002}00002\ \textcolor{preprocessor}{\#define\ INTERFACEOPTIONPRICER\_HPP}}
+\DoxyCodeLine{\Hypertarget{_interface_option_pricer_8hpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_interface_option_pricer_8hpp_source_l00018}00018\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{pch_8h}{pch.h}}"{}}\ \ \ \textcolor{comment}{//\ Precompiled\ header\ for\ faster\ compilation.}}
+\DoxyCodeLine{\Hypertarget{_interface_option_pricer_8hpp_source_l00019}00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_option_8hpp}{Option.hpp}}"{}}\ \textcolor{comment}{//\ Defines\ the\ Option\ class\ and\ the\ Greeks\ structure\ used\ in\ pricing.}}
+\DoxyCodeLine{\Hypertarget{_interface_option_pricer_8hpp_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{_interface_option_pricer_8hpp_source_l00030}\mbox{\hyperlink{class_i_option_pricer}{00030}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_i_option_pricer}{IOptionPricer}}\ \{}
+\DoxyCodeLine{\Hypertarget{_interface_option_pricer_8hpp_source_l00031}00031\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_interface_option_pricer_8hpp_source_l00041}\mbox{\hyperlink{class_i_option_pricer_a54b4bf6ac6f8164479d1b4c7ef009469}{00041}}\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_i_option_pricer_a54b4bf6ac6f8164479d1b4c7ef009469}{\string~IOptionPricer}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{_interface_option_pricer_8hpp_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{_interface_option_pricer_8hpp_source_l00057}\mbox{\hyperlink{class_i_option_pricer_a579dcf7f5ee091f88682d43766226a9b}{00057}}\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_i_option_pricer_a579dcf7f5ee091f88682d43766226a9b}{price}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_option}{Option}}\&\ opt)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_interface_option_pricer_8hpp_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{_interface_option_pricer_8hpp_source_l00073}\mbox{\hyperlink{class_i_option_pricer_a81a689339e44b1a224c44c84756b8d76}{00073}}\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{struct_greeks}{Greeks}}\ \mbox{\hyperlink{class_i_option_pricer_a81a689339e44b1a224c44c84756b8d76}{computeGreeks}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_option}{Option}}\&\ opt)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_interface_option_pricer_8hpp_source_l00074}00074\ \};}
+\DoxyCodeLine{\Hypertarget{_interface_option_pricer_8hpp_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{_interface_option_pricer_8hpp_source_l00076}00076\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ IOPTIONPRICER\_HPP}}
+
+\end{DoxyCode}

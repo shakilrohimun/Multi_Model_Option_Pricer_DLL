@@ -1,0 +1,131 @@
+\doxysection{Black\+Scholes\+Pricer.\+cpp File Reference}
+\hypertarget{_black_scholes_pricer_8cpp}{}\label{_black_scholes_pricer_8cpp}\index{BlackScholesPricer.cpp@{BlackScholesPricer.cpp}}
+
+
+Implementation of the \doxylink{class_black_scholes_pricer}{Black\+Scholes\+Pricer} class using the Black-\/\+Scholes formula.  
+
+
+{\ttfamily \#include \"{}pch.\+h\"{}}\newline
+{\ttfamily \#include \"{}Black\+Scholes\+Pricer.\+hpp\"{}}\newline
+{\ttfamily \#include \"{}Option.\+hpp\"{}}\newline
+{\ttfamily \#include \"{}Date\+Converter.\+hpp\"{}}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$stdexcept$>$}\newline
+Include dependency graph for Black\+Scholes\+Pricer.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/dae/_black_scholes_pricer_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_black_scholes_pricer_8cpp_ae71449b1cc6e6250b91f539153a7a0d3}{M\+\_\+\+PI}}~3.\+14159265358979323846
+\item 
+\#define \mbox{\hyperlink{_black_scholes_pricer_8cpp_acdbb2c2f9429f08916f03c8786d2d2d7}{M\+\_\+\+SQRT1\+\_\+2}}~0.\+70710678118654752440
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static double \mbox{\hyperlink{_black_scholes_pricer_8cpp_af41d1725c1de2184b6e0ecac794e5d0a}{norm\+\_\+cdf}} (double x)
+\begin{DoxyCompactList}\small\item\em Utility function to compute the cumulative distribution function (CDF) of the standard normal distribution. \end{DoxyCompactList}\item 
+static double \mbox{\hyperlink{_black_scholes_pricer_8cpp_ac3341d7be488e08223e55105cc81bbad}{norm\+\_\+pdf}} (double x)
+\begin{DoxyCompactList}\small\item\em Utility function to compute the probability density function (PDF) of the standard normal distribution. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementation of the \doxylink{class_black_scholes_pricer}{Black\+Scholes\+Pricer} class using the Black-\/\+Scholes formula. 
+
+This file implements the \doxylink{class_black_scholes_pricer}{Black\+Scholes\+Pricer} class which derives from the \doxylink{class_i_option_pricer}{IOption\+Pricer} interface. It calculates the price and \doxylink{struct_greeks}{Greeks} (delta, gamma, vega, theta, and rho) of a European option using the Black-\/\+Scholes formula with continuous dividends. 
+
+Definition in file \mbox{\hyperlink{_black_scholes_pricer_8cpp_source}{Black\+Scholes\+Pricer.\+cpp}}.
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_black_scholes_pricer_8cpp_ae71449b1cc6e6250b91f539153a7a0d3}\label{_black_scholes_pricer_8cpp_ae71449b1cc6e6250b91f539153a7a0d3} 
+\index{BlackScholesPricer.cpp@{BlackScholesPricer.cpp}!M\_PI@{M\_PI}}
+\index{M\_PI@{M\_PI}!BlackScholesPricer.cpp@{BlackScholesPricer.cpp}}
+\doxysubsubsection{\texorpdfstring{M\_PI}{M\_PI}}
+{\footnotesize\ttfamily \#define M\+\_\+\+PI~3.\+14159265358979323846}
+
+
+
+Definition at line \mbox{\hyperlink{_black_scholes_pricer_8cpp_source_l00022}{22}} of file \mbox{\hyperlink{_black_scholes_pricer_8cpp_source}{Black\+Scholes\+Pricer.\+cpp}}.
+
+\Hypertarget{_black_scholes_pricer_8cpp_acdbb2c2f9429f08916f03c8786d2d2d7}\label{_black_scholes_pricer_8cpp_acdbb2c2f9429f08916f03c8786d2d2d7} 
+\index{BlackScholesPricer.cpp@{BlackScholesPricer.cpp}!M\_SQRT1\_2@{M\_SQRT1\_2}}
+\index{M\_SQRT1\_2@{M\_SQRT1\_2}!BlackScholesPricer.cpp@{BlackScholesPricer.cpp}}
+\doxysubsubsection{\texorpdfstring{M\_SQRT1\_2}{M\_SQRT1\_2}}
+{\footnotesize\ttfamily \#define M\+\_\+\+SQRT1\+\_\+2~0.\+70710678118654752440}
+
+
+
+Definition at line \mbox{\hyperlink{_black_scholes_pricer_8cpp_source_l00018}{18}} of file \mbox{\hyperlink{_black_scholes_pricer_8cpp_source}{Black\+Scholes\+Pricer.\+cpp}}.
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_black_scholes_pricer_8cpp_af41d1725c1de2184b6e0ecac794e5d0a}\label{_black_scholes_pricer_8cpp_af41d1725c1de2184b6e0ecac794e5d0a} 
+\index{BlackScholesPricer.cpp@{BlackScholesPricer.cpp}!norm\_cdf@{norm\_cdf}}
+\index{norm\_cdf@{norm\_cdf}!BlackScholesPricer.cpp@{BlackScholesPricer.cpp}}
+\doxysubsubsection{\texorpdfstring{norm\_cdf()}{norm\_cdf()}}
+{\footnotesize\ttfamily static double norm\+\_\+cdf (\begin{DoxyParamCaption}\item[{double}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Utility function to compute the cumulative distribution function (CDF) of the standard normal distribution. 
+
+The CDF represents the probability that a normally distributed random variable is less than or equal to a given value. This implementation uses the complementary error function (erfc) to compute the CDF.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The value at which to compute the CDF. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The probability that a standard normal variable is less than or equal to x. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_black_scholes_pricer_8cpp_source_l00036}{36}} of file \mbox{\hyperlink{_black_scholes_pricer_8cpp_source}{Black\+Scholes\+Pricer.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordflow}{return}\ 0.5\ *\ std::erfc(-\/x\ *\ \mbox{\hyperlink{_black_scholes_pricer_8cpp_acdbb2c2f9429f08916f03c8786d2d2d7}{M\_SQRT1\_2}});}
+\DoxyCodeLine{00038\ \}}
+
+\end{DoxyCode}
+\Hypertarget{_black_scholes_pricer_8cpp_ac3341d7be488e08223e55105cc81bbad}\label{_black_scholes_pricer_8cpp_ac3341d7be488e08223e55105cc81bbad} 
+\index{BlackScholesPricer.cpp@{BlackScholesPricer.cpp}!norm\_pdf@{norm\_pdf}}
+\index{norm\_pdf@{norm\_pdf}!BlackScholesPricer.cpp@{BlackScholesPricer.cpp}}
+\doxysubsubsection{\texorpdfstring{norm\_pdf()}{norm\_pdf()}}
+{\footnotesize\ttfamily static double norm\+\_\+pdf (\begin{DoxyParamCaption}\item[{double}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Utility function to compute the probability density function (PDF) of the standard normal distribution. 
+
+The PDF represents the likelihood of a random variable taking a particular value. This function uses the well-\/known formula for the standard normal distribution.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The value at which to compute the PDF. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The density at x. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_black_scholes_pricer_8cpp_source_l00050}{50}} of file \mbox{\hyperlink{_black_scholes_pricer_8cpp_source}{Black\+Scholes\+Pricer.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordflow}{return}\ (1.0\ /\ std::sqrt(2\ *\ \mbox{\hyperlink{_black_scholes_pricer_8cpp_ae71449b1cc6e6250b91f539153a7a0d3}{M\_PI}}))\ *\ std::exp(-\/0.5\ *\ x\ *\ x);}
+\DoxyCodeLine{00052\ \}}
+
+\end{DoxyCode}
